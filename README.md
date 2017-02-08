@@ -15,3 +15,10 @@ It covers the topics:
 ###How to Use With Visual Studio
 You are able to use this with Visual Studio. It's already installed on the school computers. Here is an overview of using 
 [GitHub with Visual Studio](https://visualstudio.github.com/)
+
+---
+###Access the Project from Visual Studio
+* Open Visual Studio
+* Open the **Team Explorer Window**
+* Click the *Clone* option.
+(((((((((PUT THE PICTURE NAMED CLONE HERE)))))))))))
