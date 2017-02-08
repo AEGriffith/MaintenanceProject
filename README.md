@@ -26,4 +26,4 @@ You are able to use this with Visual Studio. It's already installed on the schoo
 * In the first textbox enter the link to the repository. 
 * *https://github.com/AEGriffith/MaintenanceProject*
 
-<img src="LinkToRep.PNG" width="200" height="200" />
+<img src="LinkToRep.PNG" width="250" height="150" />
