@@ -33,3 +33,7 @@ You are able to use this with Visual Studio. It's already installed on the schoo
 * You should also be able to see it under your *Local Git Repositories* section.
 
 <img src="SuccessfulLink.PNG" width="300" height="300" />
+* Click the Repository.
+* You will see this screen.
+
+<img src="OpenScreen.PNG" width="250" height="300" />
