@@ -37,3 +37,9 @@ You are able to use this with Visual Studio. It's already installed on the schoo
 * You will see this screen.
 
 <img src="OpenScreen.PNG" width="250" height="300" />
+* Open the solution file to work on the project.
+* *It is very important to take note of the branch you are working on*
+* You can see or change the branch you are working on from the bottom right of Visual Studio.
+
+<img src="VSGHBranches.PNG" width="200" height="150" />
+* New branches can also be created from here.
