@@ -21,4 +21,5 @@ You are able to use this with Visual Studio. It's already installed on the schoo
 * Open Visual Studio
 * Open the **Team Explorer Window**
 * Click the *Clone* option.
-<img src="Clone.PNG" width="200" height="200" />
+
+<img src="Clone.PNG" width="230" height="200" />
