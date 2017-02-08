@@ -21,4 +21,4 @@ You are able to use this with Visual Studio. It's already installed on the schoo
 * Open Visual Studio
 * Open the **Team Explorer Window**
 * Click the *Clone* option.
-(((((((((PUT THE PICTURE NAMED CLONE HERE)))))))))))
+![Clone](Clone.PNG =893x727)
