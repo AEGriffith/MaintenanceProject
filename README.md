@@ -31,3 +31,5 @@ You are able to use this with Visual Studio. It's already installed on the schoo
 * Click the *Clone* button. 
 * You should get a message saying that the repository was clones successfully.
 * You should also be able to see it under your *Local Git Repositories* section.
+
+<img src="SuccessfulLink.PNG" width="300" height="300" />
