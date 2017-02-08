@@ -23,3 +23,7 @@ You are able to use this with Visual Studio. It's already installed on the schoo
 * Click the *Clone* option.
 
 <img src="Clone.PNG" width="230" height="200" />
+* In the first textbox enter the link to the repository. 
+* *https://github.com/AEGriffith/MaintenanceProject*
+
+<img src="LinkToRep.PNG" width="200" height="200" />
