@@ -26,4 +26,8 @@ You are able to use this with Visual Studio. It's already installed on the schoo
 * In the first textbox enter the link to the repository. 
 * *https://github.com/AEGriffith/MaintenanceProject*
 
-<img src="LinkToRep.PNG" width="250" height="150" />
+<img src="LinkToRep.PNG" width="300" height="150" />
+* The second box is where it will be located on your computer. 
+* Click the *Clone* button. 
+* You should get a message saying that the repository was clones successfully.
+* You should also be able to see it under your *Local Git Repositories* section.
