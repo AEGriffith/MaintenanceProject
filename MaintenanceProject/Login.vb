@@ -73,4 +73,16 @@ Public Class Login
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
+
+    Friend Function getAdminCheck()
+        Return AdminCheck
+    End Function
+
+    Friend Function getCommitteeCheck()
+        Return CommitteeCheck
+    End Function
+
+    Friend Function getAdvisorCheck()
+        Return AdvisorCheck
+    End Function
 End Class

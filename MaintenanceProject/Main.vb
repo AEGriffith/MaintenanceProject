@@ -51,5 +51,6 @@
     Private Sub tbFilter2_TextChanged(sender As Object, e As EventArgs) Handles tbFilter2.TextChanged
 
         StudentsBindingSource.Filter = cbFilter2.Text & " Like '" & tbFilter2.Text & "*' and " & cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
+
     End Sub
 End Class
