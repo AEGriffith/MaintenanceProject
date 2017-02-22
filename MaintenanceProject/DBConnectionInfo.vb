@@ -1,5 +1,5 @@
 ﻿Public Class DBConnectionInfo
-    Private Const Provider = "SQLNCLT11"
+    Private Const Provider = "SQLNCLI11"
     Private Const Server = "msenterprise.waltoncollege.uark.edu"
     Private Const Database = "PROJECTS1730"
     Dim User As String = "PROJECTS1730"

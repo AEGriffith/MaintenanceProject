@@ -39,10 +39,11 @@ Public Class Login
                     Try
                         AdminCheck = commandGetAdmin.ExecuteScalar()
                         CommitteeCheck = commandGetCommittee.ExecuteScalar()
+                        AdvisorCheck = commandGetAdvisor.ExecuteScalar()
                         If AdminCheck = True Then
-                            MessageBox.Show("This user is an Admin!")
+                            Main.Show()
                         ElseIf CommitteeCheck = True Then
-                            MessageBox.Show("This user is a Committee Memeber!")
+                            Main.Show()
                         ElseIf AdvisorCheck = True Then
                             MessageBox.Show("This user is an Advisor!")
                         Else
@@ -50,11 +51,26 @@ Public Class Login
                         End If
                     Catch
                     End Try
+                Else
+                    MessageBox.Show("Incorrect Password", "Data Entry Error")
                 End If
 
             Catch ex As Exception
 
             End Try
         End If
+        con.Close()
+    End Sub
+    Private Sub cbShowPass_CheckedChanged(sender As Object, e As EventArgs) Handles cbShowPass.CheckedChanged
+
+        If cbShowPass.Checked Then
+            tbPassword.PasswordChar = ""
+        Else
+            tbPassword.PasswordChar = "*"
+        End If
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
     End Sub
 End Class
