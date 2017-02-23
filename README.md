@@ -47,3 +47,9 @@ You are able to use this with Visual Studio. It's already installed on the schoo
 ---
 ###Create New Branch
 
+* Click Create Branch.
+* Enter the name of your new branch. (I like to use the case story number)
+
+<img src="CreateBranch.jpg" width="200" height="150" />
+* Be sure to pull from origin/master.
+* Click the Create Branch button.
