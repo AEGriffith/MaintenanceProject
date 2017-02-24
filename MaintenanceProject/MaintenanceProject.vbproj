@@ -72,6 +72,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicantProfile.Designer.vb">
+      <DependentUpon>ApplicantProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicantProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application.Designer.vb">
+      <DependentUpon>Application.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Application.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DBConnectionInfo.vb" />
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
@@ -108,6 +120,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ApplicantProfile.resx">
+      <DependentUpon>ApplicantProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application.resx">
+      <DependentUpon>Application.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>

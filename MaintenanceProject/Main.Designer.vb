@@ -42,6 +42,7 @@ Partial Class Main
         Me.cbFilter2 = New System.Windows.Forms.ComboBox()
         Me.tbFilter1 = New System.Windows.Forms.TextBox()
         Me.tbFilter2 = New System.Windows.Forms.TextBox()
+        Me.ApplicantProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,7 +63,7 @@ Partial Class Main
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.ApplicantProfileToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 22)
         Me.FileToolStripMenuItem.Text = "File"
@@ -70,7 +71,7 @@ Partial Class Main
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(92, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'Panel2
@@ -198,6 +199,12 @@ Partial Class Main
         Me.tbFilter2.Size = New System.Drawing.Size(100, 20)
         Me.tbFilter2.TabIndex = 9
         '
+        'ApplicantProfileToolStripMenuItem
+        '
+        Me.ApplicantProfileToolStripMenuItem.Name = "ApplicantProfileToolStripMenuItem"
+        Me.ApplicantProfileToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.ApplicantProfileToolStripMenuItem.Text = "Applicant Profile"
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -244,4 +251,5 @@ Partial Class Main
     Friend WithEvents cbFilter2 As ComboBox
     Friend WithEvents tbFilter1 As TextBox
     Friend WithEvents tbFilter2 As TextBox
+    Friend WithEvents ApplicantProfileToolStripMenuItem As ToolStripMenuItem
 End Class

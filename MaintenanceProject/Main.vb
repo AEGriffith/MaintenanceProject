@@ -53,4 +53,8 @@
         StudentsBindingSource.Filter = cbFilter2.Text & " Like '" & tbFilter2.Text & "*' and " & cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
 
     End Sub
+
+    Private Sub ApplicantProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApplicantProfileToolStripMenuItem.Click
+        ApplicantProfile.Show()
+    End Sub
 End Class
