@@ -45,9 +45,14 @@ Partial Class ApplicantProfile
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.PersonalTabPage.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnComment
@@ -118,9 +123,13 @@ Partial Class ApplicantProfile
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Label21)
+        Me.TabPage3.Controls.Add(Me.Label20)
+        Me.TabPage3.Controls.Add(Me.Label19)
+        Me.TabPage3.Controls.Add(Me.Label18)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(309, 245)
+        Me.TabPage3.Size = New System.Drawing.Size(309, 278)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Application"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -129,7 +138,7 @@ Partial Class ApplicantProfile
         '
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(309, 245)
+        Me.TabPage4.Size = New System.Drawing.Size(309, 278)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Test Scores"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -277,6 +286,42 @@ Partial Class ApplicantProfile
         Me.Label17.TabIndex = 6
         Me.Label17.Text = "Graduate Institution: "
         '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(16, 54)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(67, 13)
+        Me.Label18.TabIndex = 0
+        Me.Label18.Text = "Student ID:  "
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(16, 88)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(91, 13)
+        Me.Label19.TabIndex = 1
+        Me.Label19.Text = "Application Date: "
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(16, 122)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(71, 13)
+        Me.Label20.TabIndex = 2
+        Me.Label20.Text = "U of A Email: "
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(16, 20)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(79, 13)
+        Me.Label21.TabIndex = 3
+        Me.Label21.Text = "Application ID: "
+        '
         'ApplicantProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -292,6 +337,8 @@ Partial Class ApplicantProfile
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -320,4 +367,8 @@ Partial Class ApplicantProfile
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label18 As Label
 End Class
