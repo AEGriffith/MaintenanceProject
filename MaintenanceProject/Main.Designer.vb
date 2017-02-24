@@ -42,6 +42,7 @@ Partial Class Main
         Me.cbFilter2 = New System.Windows.Forms.ComboBox()
         Me.tbFilter1 = New System.Windows.Forms.TextBox()
         Me.tbFilter2 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -198,11 +199,21 @@ Partial Class Main
         Me.tbFilter2.Size = New System.Drawing.Size(100, 20)
         Me.tbFilter2.TabIndex = 9
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(343, 40)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(28, 13)
+        Me.Label3.TabIndex = 10
+        Me.Label3.Text = "Test"
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(429, 287)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.tbFilter2)
         Me.Controls.Add(Me.tbFilter1)
         Me.Controls.Add(Me.cbFilter2)
@@ -244,4 +255,5 @@ Partial Class Main
     Friend WithEvents cbFilter2 As ComboBox
     Friend WithEvents tbFilter1 As TextBox
     Friend WithEvents tbFilter2 As TextBox
+    Friend WithEvents Label3 As Label
 End Class

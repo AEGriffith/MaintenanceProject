@@ -53,4 +53,8 @@
         StudentsBindingSource.Filter = cbFilter2.Text & " Like '" & tbFilter2.Text & "*' and " & cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
 
     End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
 End Class
