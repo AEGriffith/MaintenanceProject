@@ -93,7 +93,7 @@ Partial Class Main
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 40
-        Me.DataGridView1.Size = New System.Drawing.Size(428, 253)
+        Me.DataGridView1.Size = New System.Drawing.Size(428, 179)
         Me.DataGridView1.TabIndex = 1
         '
         'SIDDataGridViewTextBoxColumn
