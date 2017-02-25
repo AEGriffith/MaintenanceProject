@@ -64,6 +64,17 @@ Namespace My
                 Return CType(Me("PROJECTS1730ConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=msenterprise.waltoncollege.uark.edu;Initial Catalog=PROJECTS1747;User"& _ 
+            " ID=PROJECTS1747;Password=GQ49nw$")>  _
+        Public ReadOnly Property PROJECTS1747ConnectionString() As String
+            Get
+                Return CType(Me("PROJECTS1747ConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
