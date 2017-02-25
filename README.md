@@ -47,9 +47,18 @@ You are able to use this with Visual Studio. It's already installed on the schoo
 ---
 ###Create New Branch
 
-* Click Create Branch.
-* Enter the name of your new branch. (I like to use the case story number)
+* In the Team Explorer window, select Branches
 
-<img src="CreateBranch.JPG" width="200" height="150" />
-* Be sure to pull from origin/master.
-* Click the Create Branch button.
+<img src="SelectBranches.JPG" width="300" height="225" />
+* Select Master (**NOTE: DO NOT SELECT the remotes/origin master**)
+
+<img src="SelectMaster.JPG" width="200" height="150" />
+  * This can also be done by selecting the master branch from the menu at the bottom of Visual Studio.
+
+* Click the home button.
+* Click Sync
+
+<img src="SyncMaster.JPG" width="300" height="300" />
+* 
+
+
