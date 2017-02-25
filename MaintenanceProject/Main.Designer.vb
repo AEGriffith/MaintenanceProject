@@ -29,15 +29,6 @@ Partial Class Main
         Me.ApplicantProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.cbFilter1 = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.cbFilter2 = New System.Windows.Forms.ComboBox()
-        Me.tbFilter1 = New System.Windows.Forms.TextBox()
-        Me.tbFilter2 = New System.Windows.Forms.TextBox()
-        Me.PROJECTS1747DataSet = New MaintenanceProject.PROJECTS1747DataSet()
-        Me.ApplicationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ApplicationTableAdapter = New MaintenanceProject.PROJECTS1747DataSetTableAdapters.ApplicationTableAdapter()
         Me.ApplicationIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StudentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -90,12 +81,22 @@ Partial Class Main
         Me.ResidencyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GGPADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GradMajorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ApplicationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PROJECTS1747DataSet = New MaintenanceProject.PROJECTS1747DataSet()
+        Me.cbFilter1 = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cbFilter2 = New System.Windows.Forms.ComboBox()
+        Me.tbFilter1 = New System.Windows.Forms.TextBox()
+        Me.tbFilter2 = New System.Windows.Forms.TextBox()
+        Me.ApplicationTableAdapter = New MaintenanceProject.PROJECTS1747DataSetTableAdapters.ApplicationTableAdapter()
         Me.ProjectS1730DataSet1 = New MaintenanceProject.PROJECTS1730DataSet()
+        Me.btnViewApplicant = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PROJECTS1747DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PROJECTS1747DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProjectS1730DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -151,79 +152,6 @@ Partial Class Main
         Me.DataGridView1.RowTemplate.Height = 40
         Me.DataGridView1.Size = New System.Drawing.Size(1141, 427)
         Me.DataGridView1.TabIndex = 1
-        '
-        'cbFilter1
-        '
-        Me.cbFilter1.FormattingEnabled = True
-        Me.cbFilter1.Items.AddRange(New Object() {"First_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address"})
-        Me.cbFilter1.Location = New System.Drawing.Point(173, 76)
-        Me.cbFilter1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.cbFilter1.Name = "cbFilter1"
-        Me.cbFilter1.Size = New System.Drawing.Size(316, 39)
-        Me.cbFilter1.TabIndex = 4
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(24, 95)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(134, 32)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Filter By: "
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(24, 167)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(127, 32)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Filter By:"
-        '
-        'cbFilter2
-        '
-        Me.cbFilter2.Enabled = False
-        Me.cbFilter2.FormattingEnabled = True
-        Me.cbFilter2.Items.AddRange(New Object() {"First_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address"})
-        Me.cbFilter2.Location = New System.Drawing.Point(173, 160)
-        Me.cbFilter2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.cbFilter2.Name = "cbFilter2"
-        Me.cbFilter2.Size = New System.Drawing.Size(316, 39)
-        Me.cbFilter2.TabIndex = 7
-        '
-        'tbFilter1
-        '
-        Me.tbFilter1.Enabled = False
-        Me.tbFilter1.Location = New System.Drawing.Point(539, 76)
-        Me.tbFilter1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.tbFilter1.Name = "tbFilter1"
-        Me.tbFilter1.Size = New System.Drawing.Size(260, 38)
-        Me.tbFilter1.TabIndex = 8
-        '
-        'tbFilter2
-        '
-        Me.tbFilter2.Enabled = False
-        Me.tbFilter2.Location = New System.Drawing.Point(539, 160)
-        Me.tbFilter2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.tbFilter2.Name = "tbFilter2"
-        Me.tbFilter2.Size = New System.Drawing.Size(260, 38)
-        Me.tbFilter2.TabIndex = 9
-        '
-        'PROJECTS1747DataSet
-        '
-        Me.PROJECTS1747DataSet.DataSetName = "PROJECTS1747DataSet"
-        Me.PROJECTS1747DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ApplicationBindingSource
-        '
-        Me.ApplicationBindingSource.DataMember = "Application"
-        Me.ApplicationBindingSource.DataSource = Me.PROJECTS1747DataSet
-        '
-        'ApplicationTableAdapter
-        '
-        Me.ApplicationTableAdapter.ClearBeforeFill = True
         '
         'ApplicationIDDataGridViewTextBoxColumn
         '
@@ -589,16 +517,99 @@ Partial Class Main
         Me.GradMajorDataGridViewTextBoxColumn.Name = "GradMajorDataGridViewTextBoxColumn"
         Me.GradMajorDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'ApplicationBindingSource
+        '
+        Me.ApplicationBindingSource.DataMember = "Application"
+        Me.ApplicationBindingSource.DataSource = Me.PROJECTS1747DataSet
+        '
+        'PROJECTS1747DataSet
+        '
+        Me.PROJECTS1747DataSet.DataSetName = "PROJECTS1747DataSet"
+        Me.PROJECTS1747DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'cbFilter1
+        '
+        Me.cbFilter1.FormattingEnabled = True
+        Me.cbFilter1.Items.AddRange(New Object() {"First_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address"})
+        Me.cbFilter1.Location = New System.Drawing.Point(173, 76)
+        Me.cbFilter1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.cbFilter1.Name = "cbFilter1"
+        Me.cbFilter1.Size = New System.Drawing.Size(316, 39)
+        Me.cbFilter1.TabIndex = 4
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(24, 95)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(134, 32)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Filter By: "
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(24, 167)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(127, 32)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Filter By:"
+        '
+        'cbFilter2
+        '
+        Me.cbFilter2.Enabled = False
+        Me.cbFilter2.FormattingEnabled = True
+        Me.cbFilter2.Items.AddRange(New Object() {"First_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address"})
+        Me.cbFilter2.Location = New System.Drawing.Point(173, 160)
+        Me.cbFilter2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.cbFilter2.Name = "cbFilter2"
+        Me.cbFilter2.Size = New System.Drawing.Size(316, 39)
+        Me.cbFilter2.TabIndex = 7
+        '
+        'tbFilter1
+        '
+        Me.tbFilter1.Enabled = False
+        Me.tbFilter1.Location = New System.Drawing.Point(539, 76)
+        Me.tbFilter1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.tbFilter1.Name = "tbFilter1"
+        Me.tbFilter1.Size = New System.Drawing.Size(260, 38)
+        Me.tbFilter1.TabIndex = 8
+        '
+        'tbFilter2
+        '
+        Me.tbFilter2.Enabled = False
+        Me.tbFilter2.Location = New System.Drawing.Point(539, 160)
+        Me.tbFilter2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.tbFilter2.Name = "tbFilter2"
+        Me.tbFilter2.Size = New System.Drawing.Size(260, 38)
+        Me.tbFilter2.TabIndex = 9
+        '
+        'ApplicationTableAdapter
+        '
+        Me.ApplicationTableAdapter.ClearBeforeFill = True
+        '
         'ProjectS1730DataSet1
         '
         Me.ProjectS1730DataSet1.DataSetName = "PROJECTS1730DataSet"
         Me.ProjectS1730DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'btnViewApplicant
+        '
+        Me.btnViewApplicant.Location = New System.Drawing.Point(849, 76)
+        Me.btnViewApplicant.Name = "btnViewApplicant"
+        Me.btnViewApplicant.Size = New System.Drawing.Size(258, 122)
+        Me.btnViewApplicant.TabIndex = 10
+        Me.btnViewApplicant.Text = "View Profile"
+        Me.btnViewApplicant.UseVisualStyleBackColor = True
         '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1144, 684)
+        Me.Controls.Add(Me.btnViewApplicant)
         Me.Controls.Add(Me.tbFilter2)
         Me.Controls.Add(Me.tbFilter1)
         Me.Controls.Add(Me.cbFilter2)
@@ -615,8 +626,8 @@ Partial Class Main
         Me.MenuStrip1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PROJECTS1747DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PROJECTS1747DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProjectS1730DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -690,4 +701,5 @@ Partial Class Main
     Friend WithEvents GGPADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents GradMajorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ProjectS1730DataSet1 As PROJECTS1730DataSet
+    Friend WithEvents btnViewApplicant As Button
 End Class

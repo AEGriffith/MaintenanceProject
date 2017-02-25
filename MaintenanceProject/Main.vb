@@ -1,4 +1,7 @@
 ﻿Public Class Main
+
+    Dim SelectedApplicant
+
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'PROJECTS1747DataSet.Application' table. You can move, or remove it, as needed.
         Me.ApplicationTableAdapter.Fill(Me.PROJECTS1747DataSet.Application)
@@ -76,7 +79,18 @@
 
     End Sub
 
-    Private Sub ApplicantProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApplicantProfileToolStripMenuItem.Click
+    Private Sub ApplicantProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApplicantProfileToolStripMenuItem.Click, btnViewApplicant.Click
+        SelectedApplicant = Me.DataGridView1.CurrentRow.Cells(0).Value
         ApplicantProfile.Show()
     End Sub
+
+    'Uncomment this to troubleshoot getting the applicant data
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnViewApplicant.Click
+        SelectedApplicant = Me.DataGridView1.CurrentRow.Cells(0).Value
+        MessageBox.Show(SelectedApplicant)
+    End Sub
+
+    Friend Function getSelectedApplicant()
+        Return SelectedApplicant
+    End Function
 End Class
