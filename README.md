@@ -91,7 +91,34 @@ Now you are ready to work on your new branch!
 * In the home menu of the Team Explorer window, Click Sync.
 * Click Publish
 
+<img src="PublishBranch.JPG" width="300" height="300" />
 * In the home menu of the Team Explorer window, Click Changes
 * Add a comment
 * Click Commit All and Push (use the arrow next to the Commit All button)
+
+<img src="Commit.JPG" width="300" height="300" />
+
+* Go to Github.com 
+* Select the repository.
+* You should see something like this.
+
+<img src="ComparePull.JPG" width="750" height="300" />
+* Click the Compare and Pull request button
+* Add a comment to give details about the pull request
+
+
+<img src="CreatePullRequest.JPG" width="500" height="500" />
+* Click Create Pull Request
+* You should see a screen like this:
+
+<img src="NoConflicts.JPG" width="750" height="300" />
+* *If it does not say that it has "no conflicts" with the base branch, please contact Amanda and stop here.*
+* Click the Merge Pull Request button
+* Add more comments if you feel it is needed.
+
+<img src="MoreComments.JPG" width="750" height="300" />
+* Click Confirm merge
+* Delete the Branch
+
+<img src="DeleteBranch.JPG" width="500" height="150" />
 
