@@ -80,3 +80,7 @@ You are able to use this with Visual Studio. It's already installed on the schoo
 * Click Create Branch
 
 Now you are ready to work on your new branch!
+* Click the Home button
+* Double click the solution file!
+
+<img src="SyncMaster.JPG" width="300" height="300" />
