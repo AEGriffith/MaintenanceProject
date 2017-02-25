@@ -59,6 +59,13 @@ You are able to use this with Visual Studio. It's already installed on the schoo
 * Click Sync
 
 <img src="SyncMaster.JPG" width="300" height="300" />
-* 
+* This is where you will sync the master file on your computer with the one on the server.
 
+<img src="SyncMaster1.JPG" width="200" height="400" />
+* This will show all of the updates that have been made. 
+* Click Sync
 
+<img src="SyncMaster2.JPG" width="200" height="400" />
+* Now you will receive a message indicating the sync was successful.
+
+<img src="SyncMaster2.JPG" width="200" height="400" />
