@@ -68,4 +68,15 @@ You are able to use this with Visual Studio. It's already installed on the schoo
 <img src="SyncMaster2.JPG" width="200" height="400" />
 * Now you will receive a message indicating the sync was successful.
 
-<img src="SyncMaster2.JPG" width="200" height="400" />
+<img src="SyncMessage.JPG" width="200" height="400" />
+* Now you will click branch menu at the bottom. 
+
+<img src="BranchMenu.JPG" width="300" height="50" />
+* Click New Branch
+* Enter a name for your new branch. (I recommend using your User Story Identification)
+
+<img src="NewBranchName.JPG" width="200" height="400" />
+* Select the branch you want to create the branch from. (This will be the master branch you just updated)
+* Click Create Branch
+
+Now you are ready to work on your new branch!
