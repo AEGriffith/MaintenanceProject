@@ -84,3 +84,14 @@ Now you are ready to work on your new branch!
 * Double click the solution file!
 
 <img src="SyncMaster.JPG" width="300" height="300" />
+
+---
+###Publish Your Work
+
+* In the home menu of the Team Explorer window, Click Sync.
+* Click Publish
+
+* In the home menu of the Team Explorer window, Click Changes
+* Add a comment
+* Click Commit All and Push (use the arrow next to the Commit All button)
+
