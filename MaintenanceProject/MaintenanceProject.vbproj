@@ -118,6 +118,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PROJECTS1730DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PROJECTS1747DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PROJECTS1747DataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ApplicantProfile.resx">
@@ -160,6 +165,17 @@
     </None>
     <None Include="PROJECTS1730DataSet.xss">
       <DependentUpon>PROJECTS1730DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PROJECTS1747DataSet.xsc">
+      <DependentUpon>PROJECTS1747DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PROJECTS1747DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PROJECTS1747DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PROJECTS1747DataSet.xss">
+      <DependentUpon>PROJECTS1747DataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

@@ -1,7 +1,9 @@
 ﻿Public Class Main
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'PROJECTS1747DataSet.Application' table. You can move, or remove it, as needed.
+        Me.ApplicationTableAdapter.Fill(Me.PROJECTS1747DataSet.Application)
         'TODO: This line of code loads data into the 'PROJECTS1730DataSet.Students' table. You can move, or remove it, as needed.
-        Me.StudentsTableAdapter.Fill(Me.PROJECTS1730DataSet.Students)
+
 
 
     End Sub
@@ -61,16 +63,16 @@
     Private Sub tbFilter1_TextChanged(sender As Object, e As EventArgs) Handles tbFilter1.TextChanged
 
         If cbFilter2.SelectedIndex = -1 Then
-            StudentsBindingSource.Filter = cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
+            ApplicationBindingSource.Filter = cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
         Else
-            StudentsBindingSource.Filter = cbFilter2.Text & " Like '" & tbFilter2.Text & "*' and " & cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
+            ApplicationBindingSource.Filter = cbFilter2.Text & " Like '" & tbFilter2.Text & "*' and " & cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
         End If
 
     End Sub
 
     Private Sub tbFilter2_TextChanged(sender As Object, e As EventArgs) Handles tbFilter2.TextChanged
 
-        StudentsBindingSource.Filter = cbFilter2.Text & " Like '" & tbFilter2.Text & "*' and " & cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
+        ApplicationBindingSource.Filter = cbFilter2.Text & " Like '" & tbFilter2.Text & "*' and " & cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
 
     End Sub
 
