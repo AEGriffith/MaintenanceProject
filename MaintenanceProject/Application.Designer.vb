@@ -24,14 +24,14 @@ Partial Class Application
     Private Sub InitializeComponent()
         Me.btnAddComment = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.tbComment = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblStuName = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnAddComment
         '
-        Me.btnAddComment.Location = New System.Drawing.Point(181, 243)
+        Me.btnAddComment.Location = New System.Drawing.Point(102, 296)
         Me.btnAddComment.Name = "btnAddComment"
         Me.btnAddComment.Size = New System.Drawing.Size(91, 23)
         Me.btnAddComment.TabIndex = 0
@@ -41,19 +41,19 @@ Partial Class Application
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(34, 101)
+        Me.Label1.Location = New System.Drawing.Point(12, 99)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(59, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Comments:"
         '
-        'TextBox1
+        'tbComment
         '
-        Me.TextBox1.Location = New System.Drawing.Point(99, 117)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(241, 88)
-        Me.TextBox1.TabIndex = 2
+        Me.tbComment.Location = New System.Drawing.Point(15, 127)
+        Me.tbComment.Multiline = True
+        Me.tbComment.Name = "tbComment"
+        Me.tbComment.Size = New System.Drawing.Size(263, 143)
+        Me.tbComment.TabIndex = 2
         '
         'Label2
         '
@@ -64,24 +64,24 @@ Partial Class Application
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Student Name: "
         '
-        'Label3
+        'lblStuName
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.SystemColors.Control
-        Me.Label3.Location = New System.Drawing.Point(99, 42)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(44, 13)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Student"
+        Me.lblStuName.AutoSize = True
+        Me.lblStuName.BackColor = System.Drawing.SystemColors.Control
+        Me.lblStuName.Location = New System.Drawing.Point(99, 42)
+        Me.lblStuName.Name = "lblStuName"
+        Me.lblStuName.Size = New System.Drawing.Size(44, 13)
+        Me.lblStuName.TabIndex = 4
+        Me.lblStuName.Text = "Student"
         '
         'Application
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(433, 290)
-        Me.Controls.Add(Me.Label3)
+        Me.ClientSize = New System.Drawing.Size(298, 349)
+        Me.Controls.Add(Me.lblStuName)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.tbComment)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnAddComment)
         Me.Name = "Application"
@@ -93,7 +93,7 @@ Partial Class Application
 
     Friend WithEvents btnAddComment As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents tbComment As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblStuName As Label
 End Class

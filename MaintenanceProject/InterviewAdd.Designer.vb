@@ -36,18 +36,20 @@ Partial Class InterviewAdd
         '
         Me.lblStuName.AutoSize = True
         Me.lblStuName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStuName.Location = New System.Drawing.Point(17, 45)
+        Me.lblStuName.Location = New System.Drawing.Point(6, 19)
+        Me.lblStuName.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblStuName.Name = "lblStuName"
-        Me.lblStuName.Size = New System.Drawing.Size(286, 46)
+        Me.lblStuName.Size = New System.Drawing.Size(124, 20)
         Me.lblStuName.TabIndex = 0
         Me.lblStuName.Text = "Student Name"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(19, 160)
+        Me.Label2.Location = New System.Drawing.Point(7, 67)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(89, 32)
+        Me.Label2.Size = New System.Drawing.Size(35, 13)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Score"
         '
@@ -55,37 +57,39 @@ Partial Class InterviewAdd
         '
         Me.numScore.DecimalPlaces = 1
         Me.numScore.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
-        Me.numScore.Location = New System.Drawing.Point(134, 154)
+        Me.numScore.Location = New System.Drawing.Point(50, 65)
+        Me.numScore.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.numScore.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
         Me.numScore.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.numScore.Name = "numScore"
-        Me.numScore.Size = New System.Drawing.Size(120, 38)
+        Me.numScore.Size = New System.Drawing.Size(45, 20)
         Me.numScore.TabIndex = 2
         Me.numScore.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 244)
+        Me.Label3.Location = New System.Drawing.Point(4, 102)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(137, 32)
+        Me.Label3.Size = New System.Drawing.Size(51, 13)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Comment"
         '
         'tbComment
         '
-        Me.tbComment.Location = New System.Drawing.Point(17, 283)
-        Me.tbComment.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.tbComment.Location = New System.Drawing.Point(6, 119)
         Me.tbComment.Multiline = True
         Me.tbComment.Name = "tbComment"
-        Me.tbComment.Size = New System.Drawing.Size(703, 256)
+        Me.tbComment.Size = New System.Drawing.Size(266, 110)
         Me.tbComment.TabIndex = 4
         '
         'btnAccept
         '
-        Me.btnAccept.Location = New System.Drawing.Point(261, 606)
+        Me.btnAccept.Location = New System.Drawing.Point(98, 254)
+        Me.btnAccept.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.btnAccept.Name = "btnAccept"
-        Me.btnAccept.Size = New System.Drawing.Size(218, 58)
+        Me.btnAccept.Size = New System.Drawing.Size(82, 24)
         Me.btnAccept.TabIndex = 5
         Me.btnAccept.Text = "&Accept"
         Me.btnAccept.UseVisualStyleBackColor = True
@@ -93,9 +97,10 @@ Partial Class InterviewAdd
         'btnCancel
         '
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancel.Location = New System.Drawing.Point(485, 606)
+        Me.btnCancel.Location = New System.Drawing.Point(182, 254)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(218, 58)
+        Me.btnCancel.Size = New System.Drawing.Size(82, 24)
         Me.btnCancel.TabIndex = 6
         Me.btnCancel.Text = "&Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
@@ -103,10 +108,10 @@ Partial Class InterviewAdd
         'InterviewAdd
         '
         Me.AcceptButton = Me.btnAccept
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancel
-        Me.ClientSize = New System.Drawing.Size(733, 719)
+        Me.ClientSize = New System.Drawing.Size(275, 302)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnAccept)
         Me.Controls.Add(Me.tbComment)
@@ -114,6 +119,7 @@ Partial Class InterviewAdd
         Me.Controls.Add(Me.numScore)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblStuName)
+        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Name = "InterviewAdd"
         Me.Text = "Interview Score"
         CType(Me.numScore, System.ComponentModel.ISupportInitialize).EndInit()
