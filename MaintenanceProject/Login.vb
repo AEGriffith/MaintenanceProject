@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 
 Public Class Login
-    Dim UserName As String
+    Dim UserName As Integer
     Dim Password As String
     Dim AdvisorCheck As Boolean
     Dim CommitteeCheck As Boolean
@@ -22,12 +22,16 @@ Public Class Login
         ElseIf tbPassword.Text = "" Then
             MessageBox.Show("Please enter a password.", "Data Entry Error")
         Else
-            UserName = tbUsername.Text
+            Try
+                UserName = Integer.Parse(tbUsername.Text)
 
-            Dim commandGetPass As New OleDbCommand("SELECT Password FROM Users WHERE Username = '" & UserName & "'", con)
-            Dim commandGetAdmin As New OleDbCommand("SELECT Admin FROM Users WHERE Username = '" & UserName & "'", con)
-            Dim commandGetCommittee As New OleDbCommand("SELECT Committee FROM Users WHERE Username = '" & UserName & "'", con)
-            Dim commandGetAdvisor As New OleDbCommand("SELECT Advisor FROM Users WHERE Username = '" & UserName & "'", con)
+            Catch
+                MessageBox.Show("Please enter an appropriate User ID.")
+            End Try
+            Dim commandGetPass As New OleDbCommand("SELECT Password FROM User_ID WHERE User_ID = " & UserName, con)
+            Dim commandGetAdmin As New OleDbCommand("SELECT Admin FROM User_ID WHERE User_ID = " & UserName, con)
+            Dim commandGetCommittee As New OleDbCommand("SELECT Commitee_Member FROM User_ID WHERE User_ID = " & UserName, con)
+            Dim commandGetAdvisor As New OleDbCommand("SELECT Advisor FROM User_ID WHERE User_ID = " & UserName, con)
             con.ConnectionString = ConnString
             con.Open()
 
@@ -36,6 +40,7 @@ Public Class Login
                 If Password = "" Then
                     MessageBox.Show("User not found.", "Data Entry Error")
                 ElseIf Password = tbPassword.Text Then
+                    Main.Show()
                     Try
                         AdminCheck = commandGetAdmin.ExecuteScalar()
                         CommitteeCheck = commandGetCommittee.ExecuteScalar()
