@@ -74,6 +74,10 @@ Public Class Login
         Me.Close()
     End Sub
 
+    Friend Function getUsername()
+        Return UserName
+    End Function
+
     Friend Function getAdminCheck()
         Return AdminCheck
     End Function
