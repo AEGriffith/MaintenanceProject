@@ -16,14 +16,17 @@
     End Sub
 
     Private Sub cbFilter1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbFilter1.SelectedIndexChanged
-        Dim number As Int16 = cbFilter1.SelectedIndex
-        If number = -1 Then
-            number = number + 2
-        End If
+
+
         tbFilter1.Clear()
         If cbFilter2.SelectedIndex <> -1 And cbFilter1.SelectedIndex = cbFilter2.SelectedIndex Then
             MessageBox.Show("You are already using this value as a filter. Please use another value.")
-            cbFilter1.SelectedIndex = number - 1
+            If cbFilter1.SelectedIndex = 0 Then
+                cbFilter1.SelectedIndex = cbFilter1.SelectedIndex + 1
+            Else
+                cbFilter1.SelectedIndex = cbFilter1.SelectedIndex - 1
+            End If
+
 
         End If
         Select Case cbFilter1.SelectedIndex
@@ -85,10 +88,10 @@
     End Sub
 
     'Uncomment this to troubleshoot getting the applicant data
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnViewApplicant.Click
-        SelectedApplicant = Me.DataGridView1.CurrentRow.Cells(0).Value
-        MessageBox.Show(SelectedApplicant)
-    End Sub
+    'Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnViewApplicant.Click
+    '    SelectedApplicant = Me.DataGridView1.CurrentRow.Cells(0).Value
+    '    MessageBox.Show(SelectedApplicant)
+    'End Sub
 
     Friend Function getSelectedApplicant()
         Return SelectedApplicant
