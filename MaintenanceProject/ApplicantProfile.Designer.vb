@@ -364,6 +364,7 @@ Partial Class ApplicantProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1003, 1112)
         Me.Controls.Add(Me.btnAddInterview)
         Me.Controls.Add(Me.Label1)

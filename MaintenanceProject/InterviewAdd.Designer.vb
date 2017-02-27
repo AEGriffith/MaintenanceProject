@@ -24,12 +24,12 @@ Partial Class InterviewAdd
     Private Sub InitializeComponent()
         Me.lblStuName = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.numScore = New System.Windows.Forms.NumericUpDown()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.tbComment = New System.Windows.Forms.TextBox()
         Me.btnAccept = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numScore, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblStuName
@@ -51,17 +51,17 @@ Partial Class InterviewAdd
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Score"
         '
-        'NumericUpDown1
+        'numScore
         '
-        Me.NumericUpDown1.DecimalPlaces = 1
-        Me.NumericUpDown1.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
-        Me.NumericUpDown1.Location = New System.Drawing.Point(134, 154)
-        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
-        Me.NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(120, 38)
-        Me.NumericUpDown1.TabIndex = 2
-        Me.NumericUpDown1.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.numScore.DecimalPlaces = 1
+        Me.numScore.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
+        Me.numScore.Location = New System.Drawing.Point(134, 154)
+        Me.numScore.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.numScore.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.numScore.Name = "numScore"
+        Me.numScore.Size = New System.Drawing.Size(120, 38)
+        Me.numScore.TabIndex = 2
+        Me.numScore.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label3
         '
@@ -72,14 +72,14 @@ Partial Class InterviewAdd
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Comment"
         '
-        'TextBox1
+        'tbComment
         '
-        Me.TextBox1.Location = New System.Drawing.Point(17, 283)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(703, 256)
-        Me.TextBox1.TabIndex = 4
+        Me.tbComment.Location = New System.Drawing.Point(17, 283)
+        Me.tbComment.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.tbComment.Multiline = True
+        Me.tbComment.Name = "tbComment"
+        Me.tbComment.Size = New System.Drawing.Size(703, 256)
+        Me.tbComment.TabIndex = 4
         '
         'btnAccept
         '
@@ -109,14 +109,14 @@ Partial Class InterviewAdd
         Me.ClientSize = New System.Drawing.Size(733, 719)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnAccept)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.tbComment)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.NumericUpDown1)
+        Me.Controls.Add(Me.numScore)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblStuName)
         Me.Name = "InterviewAdd"
         Me.Text = "Interview Score"
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numScore, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -124,9 +124,9 @@ Partial Class InterviewAdd
 
     Friend WithEvents lblStuName As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents numScore As NumericUpDown
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents tbComment As TextBox
     Friend WithEvents btnAccept As Button
     Friend WithEvents btnCancel As Button
 End Class

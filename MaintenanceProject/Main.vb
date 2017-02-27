@@ -3,6 +3,12 @@
     Dim SelectedApplicant
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'PROJECTS1747DataSet2.View_ApplicationTable' table. You can move, or remove it, as needed.
+        Me.View_ApplicationTableTableAdapter1.Fill(Me.PROJECTS1747DataSet2.View_ApplicationTable)
+        'TODO: This line of code loads data into the 'PROJECTS1747DataSet1.View_ApplicationTable' table. You can move, or remove it, as needed.
+        Me.View_ApplicationTableTableAdapter.Fill(Me.PROJECTS1747DataSet1.View_ApplicationTable)
+        'TODO: This line of code loads data into the 'PROJECTS1747DataSet1.Application' table. You can move, or remove it, as needed.
+        Me.ApplicationTableAdapter1.Fill(Me.PROJECTS1747DataSet1.Application)
         'TODO: This line of code loads data into the 'PROJECTS1747DataSet.Application' table. You can move, or remove it, as needed.
         Me.ApplicationTableAdapter.Fill(Me.PROJECTS1747DataSet.Application)
         'TODO: This line of code loads data into the 'PROJECTS1730DataSet.Students' table. You can move, or remove it, as needed.
