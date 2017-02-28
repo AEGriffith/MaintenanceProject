@@ -31,7 +31,7 @@ Partial Class Application
         '
         'btnAddComment
         '
-        Me.btnAddComment.Location = New System.Drawing.Point(102, 296)
+        Me.btnAddComment.Location = New System.Drawing.Point(220, 272)
         Me.btnAddComment.Name = "btnAddComment"
         Me.btnAddComment.Size = New System.Drawing.Size(91, 23)
         Me.btnAddComment.TabIndex = 0
@@ -41,7 +41,7 @@ Partial Class Application
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 99)
+        Me.Label1.Location = New System.Drawing.Point(9, 57)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(59, 13)
         Me.Label1.TabIndex = 1
@@ -49,28 +49,30 @@ Partial Class Application
         '
         'tbComment
         '
-        Me.tbComment.Location = New System.Drawing.Point(15, 127)
+        Me.tbComment.Location = New System.Drawing.Point(12, 85)
         Me.tbComment.Multiline = True
         Me.tbComment.Name = "tbComment"
-        Me.tbComment.Size = New System.Drawing.Size(263, 143)
+        Me.tbComment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.tbComment.Size = New System.Drawing.Size(299, 165)
         Me.tbComment.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 42)
+        Me.Label2.Location = New System.Drawing.Point(9, 19)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(81, 13)
+        Me.Label2.Size = New System.Drawing.Size(88, 13)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Student Name: "
+        Me.Label2.Text = "Applicant Name: "
         '
         'lblStuName
         '
         Me.lblStuName.AutoSize = True
         Me.lblStuName.BackColor = System.Drawing.SystemColors.Control
-        Me.lblStuName.Location = New System.Drawing.Point(99, 42)
+        Me.lblStuName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStuName.Location = New System.Drawing.Point(106, 19)
         Me.lblStuName.Name = "lblStuName"
-        Me.lblStuName.Size = New System.Drawing.Size(44, 13)
+        Me.lblStuName.Size = New System.Drawing.Size(51, 13)
         Me.lblStuName.TabIndex = 4
         Me.lblStuName.Text = "Student"
         '
@@ -78,14 +80,14 @@ Partial Class Application
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(298, 349)
+        Me.ClientSize = New System.Drawing.Size(323, 318)
         Me.Controls.Add(Me.lblStuName)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.tbComment)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnAddComment)
         Me.Name = "Application"
-        Me.Text = "Application Comment"
+        Me.Text = "Add Application Comment"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
