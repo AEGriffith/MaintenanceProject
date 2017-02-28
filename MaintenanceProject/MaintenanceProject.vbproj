@@ -139,6 +139,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PROJECTS1747DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ViewComments.Designer.vb">
+      <DependentUpon>ViewComments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComments.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ApplicantProfile.resx">
@@ -161,6 +167,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComments.resx">
+      <DependentUpon>ViewComments.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
