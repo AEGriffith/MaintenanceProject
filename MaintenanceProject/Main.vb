@@ -3,6 +3,8 @@
     Dim SelectedApplicant
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'PROJECTS1747DataSet3.View_ApplicationTable' table. You can move, or remove it, as needed.
+        Me.View_ApplicationTableTableAdapter2.Fill(Me.PROJECTS1747DataSet3.View_ApplicationTable)
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         'TODO: This line of code loads data into the 'PROJECTS1747DataSet2.View_ApplicationTable' table. You can move, or remove it, as needed.
         Me.View_ApplicationTableTableAdapter1.Fill(Me.PROJECTS1747DataSet2.View_ApplicationTable)
