@@ -58,9 +58,13 @@ Public Class InterviewAdd
             InsertNewRecord()
             MessageBox.Show("Data Successfully Added!")
             Me.Close()
-        Catch
+        Catch ex As Exception
             MessageBox.Show("Data was not added.")
+            'MessageBox.Show(ex.ToString) (system message)
         End Try
     End Sub
 
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
+    End Sub
 End Class

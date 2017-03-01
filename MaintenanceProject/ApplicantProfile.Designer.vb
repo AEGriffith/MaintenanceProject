@@ -70,31 +70,32 @@ Partial Class ApplicantProfile
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.lblStuName = New System.Windows.Forms.Label()
         Me.btnAddInterview = New System.Windows.Forms.Button()
         Me.ApplicationTableAdapter = New MaintenanceProject.PROJECTS1747DataSet2TableAdapters.ApplicationTableAdapter()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.Label37 = New System.Windows.Forms.Label()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.Label39 = New System.Windows.Forms.Label()
-        Me.Label40 = New System.Windows.Forms.Label()
         Me.btnView = New System.Windows.Forms.Button()
         Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label_ProgramType = New System.Windows.Forms.Label()
         Me.PersonalTabPage.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -600,6 +601,196 @@ Partial Class ApplicantProfile
         Me.TabPage4.Text = "Test Scores"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Toefl", True))
+        Me.Label40.Location = New System.Drawing.Point(146, 218)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(41, 13)
+        Me.Label40.TabIndex = 19
+        Me.Label40.Text = "TOEFL"
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "WR", True))
+        Me.Label39.Location = New System.Drawing.Point(146, 195)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(26, 13)
+        Me.Label39.TabIndex = 18
+        Me.Label39.Text = "WR"
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "V_Q_percent", True))
+        Me.Label38.Location = New System.Drawing.Point(146, 171)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(33, 13)
+        Me.Label38.TabIndex = 17
+        Me.Label38.Text = "V-Q%"
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "GMAT_Q_Percentage", True))
+        Me.Label37.Location = New System.Drawing.Point(146, 149)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(23, 13)
+        Me.Label37.TabIndex = 16
+        Me.Label37.Text = "Q%"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "GMAT_Quan", True))
+        Me.Label36.Location = New System.Drawing.Point(146, 127)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(33, 13)
+        Me.Label36.TabIndex = 15
+        Me.Label36.Text = "Quan"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "GMAT_V_Percentage", True))
+        Me.Label35.Location = New System.Drawing.Point(146, 105)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(22, 13)
+        Me.Label35.TabIndex = 14
+        Me.Label35.Text = "V%"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "GMAT_Verb", True))
+        Me.Label34.Location = New System.Drawing.Point(146, 83)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(29, 13)
+        Me.Label34.TabIndex = 13
+        Me.Label34.Text = "Verb"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "GMAT", True))
+        Me.Label33.Location = New System.Drawing.Point(146, 61)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(38, 13)
+        Me.Label33.TabIndex = 12
+        Me.Label33.Text = "GMAT"
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "ELAC_Reg", True))
+        Me.Label32.Location = New System.Drawing.Point(146, 39)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(34, 13)
+        Me.Label32.TabIndex = 11
+        Me.Label32.Text = "ELAC"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Eval_I20", True))
+        Me.Label31.Location = New System.Drawing.Point(146, 17)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(28, 13)
+        Me.Label31.TabIndex = 10
+        Me.Label31.Text = "Eval"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(93, 218)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(47, 13)
+        Me.Label30.TabIndex = 9
+        Me.Label30.Text = "TOEFL: "
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(108, 195)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(32, 13)
+        Me.Label29.TabIndex = 8
+        Me.Label29.Text = "WR: "
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(104, 171)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(36, 13)
+        Me.Label28.TabIndex = 7
+        Me.Label28.Text = "V-Q%:"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(111, 149)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(29, 13)
+        Me.Label27.TabIndex = 6
+        Me.Label27.Text = "Q%: "
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(112, 104)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(28, 13)
+        Me.Label26.TabIndex = 5
+        Me.Label26.Text = "V%: "
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(101, 127)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(39, 13)
+        Me.Label25.TabIndex = 4
+        Me.Label25.Text = "Quan: "
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(105, 84)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(35, 13)
+        Me.Label24.TabIndex = 3
+        Me.Label24.Text = "Verb: "
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(96, 61)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(44, 13)
+        Me.Label23.TabIndex = 2
+        Me.Label23.Text = "GMAT: "
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(77, 39)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(63, 13)
+        Me.Label22.TabIndex = 1
+        Me.Label22.Text = "ELAC Req: "
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(80, 17)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(60, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Eval/ I-20: "
+        '
         'lblStuName
         '
         Me.lblStuName.AutoSize = True
@@ -623,196 +814,6 @@ Partial Class ApplicantProfile
         '
         Me.ApplicationTableAdapter.ClearBeforeFill = True
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(80, 17)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(60, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Eval/ I-20: "
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(77, 39)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(63, 13)
-        Me.Label22.TabIndex = 1
-        Me.Label22.Text = "ELAC Req: "
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(96, 61)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(44, 13)
-        Me.Label23.TabIndex = 2
-        Me.Label23.Text = "GMAT: "
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(105, 84)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(35, 13)
-        Me.Label24.TabIndex = 3
-        Me.Label24.Text = "Verb: "
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(101, 127)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(39, 13)
-        Me.Label25.TabIndex = 4
-        Me.Label25.Text = "Quan: "
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(112, 104)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(28, 13)
-        Me.Label26.TabIndex = 5
-        Me.Label26.Text = "V%: "
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(111, 149)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(29, 13)
-        Me.Label27.TabIndex = 6
-        Me.Label27.Text = "Q%: "
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(104, 171)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(36, 13)
-        Me.Label28.TabIndex = 7
-        Me.Label28.Text = "V-Q%:"
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(108, 195)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(32, 13)
-        Me.Label29.TabIndex = 8
-        Me.Label29.Text = "WR: "
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(93, 218)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(47, 13)
-        Me.Label30.TabIndex = 9
-        Me.Label30.Text = "TOEFL: "
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Eval_I20", True))
-        Me.Label31.Location = New System.Drawing.Point(146, 17)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(28, 13)
-        Me.Label31.TabIndex = 10
-        Me.Label31.Text = "Eval"
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "ELAC_Reg", True))
-        Me.Label32.Location = New System.Drawing.Point(146, 39)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(34, 13)
-        Me.Label32.TabIndex = 11
-        Me.Label32.Text = "ELAC"
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "GMAT", True))
-        Me.Label33.Location = New System.Drawing.Point(146, 61)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(38, 13)
-        Me.Label33.TabIndex = 12
-        Me.Label33.Text = "GMAT"
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "GMAT_Verb", True))
-        Me.Label34.Location = New System.Drawing.Point(146, 83)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(29, 13)
-        Me.Label34.TabIndex = 13
-        Me.Label34.Text = "Verb"
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "GMAT_V_Percentage", True))
-        Me.Label35.Location = New System.Drawing.Point(146, 105)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(22, 13)
-        Me.Label35.TabIndex = 14
-        Me.Label35.Text = "V%"
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "GMAT_Quan", True))
-        Me.Label36.Location = New System.Drawing.Point(146, 127)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(33, 13)
-        Me.Label36.TabIndex = 15
-        Me.Label36.Text = "Quan"
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "GMAT_Q_Percentage", True))
-        Me.Label37.Location = New System.Drawing.Point(146, 149)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(23, 13)
-        Me.Label37.TabIndex = 16
-        Me.Label37.Text = "Q%"
-        '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "V_Q_percent", True))
-        Me.Label38.Location = New System.Drawing.Point(146, 171)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(33, 13)
-        Me.Label38.TabIndex = 17
-        Me.Label38.Text = "V-Q%"
-        '
-        'Label39
-        '
-        Me.Label39.AutoSize = True
-        Me.Label39.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "WR", True))
-        Me.Label39.Location = New System.Drawing.Point(146, 195)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(26, 13)
-        Me.Label39.TabIndex = 18
-        Me.Label39.Text = "WR"
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Toefl", True))
-        Me.Label40.Location = New System.Drawing.Point(146, 218)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(41, 13)
-        Me.Label40.TabIndex = 19
-        Me.Label40.Text = "TOEFL"
-        '
         'btnView
         '
         Me.btnView.Location = New System.Drawing.Point(307, 383)
@@ -831,12 +832,22 @@ Partial Class ApplicantProfile
         Me.Label41.TabIndex = 5
         Me.Label41.Text = "Applicant Name: "
         '
+        'Label_ProgramType
+        '
+        Me.Label_ProgramType.AutoSize = True
+        Me.Label_ProgramType.Font = New System.Drawing.Font("Castellar", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_ProgramType.Location = New System.Drawing.Point(307, 21)
+        Me.Label_ProgramType.Name = "Label_ProgramType"
+        Me.Label_ProgramType.Size = New System.Drawing.Size(0, 16)
+        Me.Label_ProgramType.TabIndex = 6
+        '
         'ApplicantProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(423, 438)
+        Me.ClientSize = New System.Drawing.Size(417, 429)
+        Me.Controls.Add(Me.Label_ProgramType)
         Me.Controls.Add(Me.Label41)
         Me.Controls.Add(Me.btnView)
         Me.Controls.Add(Me.btnAddInterview)
@@ -933,4 +944,5 @@ Partial Class ApplicantProfile
     Friend WithEvents Label1 As Label
     Friend WithEvents btnView As Button
     Friend WithEvents Label41 As Label
+    Friend WithEvents Label_ProgramType As Label
 End Class
