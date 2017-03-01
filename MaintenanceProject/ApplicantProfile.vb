@@ -31,8 +31,12 @@ Public Class ApplicantProfile
     Private Sub Application_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         programtype()
 
+
+
         'TODO: This line of code loads data into the 'PROJECTS1747DataSet2.Application' table. You can move, or remove it, as needed.
         Me.ApplicationTableAdapter.Fill(Me.PROJECTS1747DataSet2.Application)
+
+        ApplicationBindingSource.Filter = String.Format("Application_ID = '{0}'", AppID)
 
         Dim commandGetFName As New OleDbCommand("SELECT First_Name FROM Application WHERE Application_Id = '" & AppID & "'", con)
         Dim commandGetLName As New OleDbCommand("SELECT Last_Name FROM Application WHERE Application_Id = '" & AppID & "'", con)
