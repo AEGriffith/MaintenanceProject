@@ -154,6 +154,12 @@
     <Compile Include="ViewComments.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ViewInterviewComments.Designer.vb">
+      <DependentUpon>ViewInterviewComments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewInterviewComments.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ApplicantProfile.resx">
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComments.resx">
       <DependentUpon>ViewComments.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewInterviewComments.resx">
+      <DependentUpon>ViewInterviewComments.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

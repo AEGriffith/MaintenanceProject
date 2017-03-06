@@ -58,11 +58,15 @@ Public Class ApplicantProfile
     End Sub
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAddInterview.Click
+    Private Sub ButtonAddInterview_Click(sender As Object, e As EventArgs) Handles btnAddInterview.Click
         InterviewAdd.Show()
     End Sub
 
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
         ViewComments.Show()
+    End Sub
+
+    Private Sub ButtonViewInterview_Click_1(sender As Object, e As EventArgs) Handles btnViewInterview.Click
+        ViewInterviewComments.Show()
     End Sub
 End Class
