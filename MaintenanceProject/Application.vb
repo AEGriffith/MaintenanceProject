@@ -30,27 +30,31 @@ Public Class Application
     Private Sub InsertNewRecord()
 
 
-
+        If ComboBox_suggesteddecision.SelectedIndex > -1 Then
             con.ConnectionString = ConnString
 
             Dim sqlComm As New OleDbCommand
 
             sqlComm.Connection = con
 
-        sqlComm.CommandText = "addApplicationComment"
-        sqlComm.CommandType = CommandType.StoredProcedure
+            sqlComm.CommandText = "addApplicationComment"
+            sqlComm.CommandType = CommandType.StoredProcedure
 
             sqlComm.Parameters.AddWithValue("AppID", Integer.Parse(AppID))
             sqlComm.Parameters.AddWithValue("userID", Integer.Parse(Username))
             sqlComm.Parameters.AddWithValue("comment", tbComment.Text)
+            sqlComm.Parameters.AddWithValue("recommmendations", ComboBox_suggesteddecision.Text)
 
-        con.Open()
+            con.Open()
 
             sqlComm.ExecuteNonQuery()
             con.Close()
+        Else
+            MessageBox.Show("Recommendation required")
+        End If
 
 
-        End Sub
+    End Sub
 
     Private Sub btnAddComment_Click(sender As Object, e As EventArgs) Handles btnAddComment.Click
         Try
@@ -61,5 +65,6 @@ Public Class Application
             MessageBox.Show("Data was not added.")
         End Try
     End Sub
+
 
 End Class

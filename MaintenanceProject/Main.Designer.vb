@@ -28,6 +28,9 @@ Partial Class Main
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ApplicantProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ViewApplicationTableBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PROJECTS1747DataSet2 = New MaintenanceProject.PROJECTS1747DataSet2()
         Me.ApplicationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PROJECTS1747DataSet = New MaintenanceProject.PROJECTS1747DataSet()
         Me.cbFilter1 = New System.Windows.Forms.ComboBox()
@@ -45,15 +48,17 @@ Partial Class Main
         Me.ApplicationTableAdapter1 = New MaintenanceProject.PROJECTS1747DataSet1TableAdapters.ApplicationTableAdapter()
         Me.ViewApplicationTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.View_ApplicationTableTableAdapter = New MaintenanceProject.PROJECTS1747DataSet1TableAdapters.View_ApplicationTableTableAdapter()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.PROJECTS1747DataSet2 = New MaintenanceProject.PROJECTS1747DataSet2()
-        Me.ViewApplicationTableBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.View_ApplicationTableTableAdapter1 = New MaintenanceProject.PROJECTS1747DataSet2TableAdapters.View_ApplicationTableTableAdapter()
+        Me.PROJECTS1747DataSet3 = New MaintenanceProject.PROJECTS1747DataSet3()
+        Me.PROJECTS1747DataSet3BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ViewApplicationTableBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.View_ApplicationTableTableAdapter2 = New MaintenanceProject.PROJECTS1747DataSet3TableAdapters.View_ApplicationTableTableAdapter()
         Me.ApplicationIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StudentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AppDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProgramDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DecisionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MatRDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -103,6 +108,9 @@ Partial Class Main
         Me.ResidencyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ViewApplicationTableBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PROJECTS1747DataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PROJECTS1747DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProjectS1730DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,9 +118,9 @@ Partial Class Main
         CType(Me.PROJECTS1747DataSet1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ApplicationBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ViewApplicationTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PROJECTS1747DataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ViewApplicationTableBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PROJECTS1747DataSet3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PROJECTS1747DataSet3BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ViewApplicationTableBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -121,8 +129,8 @@ Partial Class Main
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1144, 49)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(2, 1, 0, 1)
+        Me.MenuStrip1.Size = New System.Drawing.Size(434, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -130,29 +138,61 @@ Partial Class Main
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.ApplicantProfileToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 45)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 22)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(350, 46)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'ApplicantProfileToolStripMenuItem
         '
         Me.ApplicantProfileToolStripMenuItem.Name = "ApplicantProfileToolStripMenuItem"
-        Me.ApplicantProfileToolStripMenuItem.Size = New System.Drawing.Size(350, 46)
+        Me.ApplicantProfileToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.ApplicantProfileToolStripMenuItem.Text = "Applicant Profile"
         '
         'Panel2
         '
+        Me.Panel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.Controls.Add(Me.DataGridView1)
-        Me.Panel2.Location = New System.Drawing.Point(0, 258)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel2.Location = New System.Drawing.Point(0, 108)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(1)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1144, 551)
+        Me.Panel2.Size = New System.Drawing.Size(429, 231)
         Me.Panel2.TabIndex = 3
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ApplicationIDDataGridViewTextBoxColumn, Me.StudentIDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.AppDateDataGridViewTextBoxColumn, Me.ProgramDataGridViewTextBoxColumn, Me.DecisionDataGridViewTextBoxColumn, Me.GADataGridViewTextBoxColumn, Me.MatRDataGridViewTextBoxColumn, Me.EvalI20DataGridViewTextBoxColumn, Me.StatusMissingDataGridViewTextBoxColumn, Me.TrscDataGridViewTextBoxColumn, Me.ReceivedDataGridViewTextBoxColumn, Me.LettersFrmDataGridViewTextBoxColumn, Me.NotesDataGridViewTextBoxColumn, Me.FeeDataGridViewTextBoxColumn, Me.VQpercentDataGridViewTextBoxColumn, Me.UGPADataGridViewTextBoxColumn, Me.ToeflDataGridViewTextBoxColumn, Me.GenderDataGridViewTextBoxColumn, Me.EthnicityDataGridViewTextBoxColumn, Me.TWEDataGridViewTextBoxColumn, Me.CurrentEmployerDataGridViewTextBoxColumn, Me.UInstDataGridViewTextBoxColumn, Me.UDegDataGridViewTextBoxColumn, Me.UDRGMajorDataGridViewTextBoxColumn, Me.GRADDataGridViewTextBoxColumn, Me.GGPADataGridViewTextBoxColumn, Me.GDegreeDataGridViewTextBoxColumn, Me.GradMajorDataGridViewTextBoxColumn, Me.ELACRegDataGridViewTextBoxColumn, Me.GMATDataGridViewTextBoxColumn, Me.GMATVerbDataGridViewTextBoxColumn, Me.GMATVPercentageDataGridViewTextBoxColumn, Me.GMATQuanDataGridViewTextBoxColumn, Me.GMATQPercentageDataGridViewTextBoxColumn, Me.AWADataGridViewTextBoxColumn, Me.GREDataGridViewTextBoxColumn, Me.GREVerbDataGridViewTextBoxColumn, Me.GREVpercentageDataGridViewTextBoxColumn, Me.GREQuanDataGridViewTextBoxColumn, Me.GREQpercentageDataGridViewTextBoxColumn, Me.WRDataGridViewTextBoxColumn, Me.UAEmailDataGridViewTextBoxColumn, Me.NonUAEmailDataGridViewTextBoxColumn, Me.AgeDataGridViewTextBoxColumn, Me.PhoneDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.CityDataGridViewTextBoxColumn, Me.StateDataGridViewTextBoxColumn, Me.PostalDataGridViewTextBoxColumn, Me.CountryDataGridViewTextBoxColumn, Me.ResidencyDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.ViewApplicationTableBindingSource2
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 1)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowTemplate.Height = 40
+        Me.DataGridView1.Size = New System.Drawing.Size(428, 230)
+        Me.DataGridView1.TabIndex = 0
+        '
+        'ViewApplicationTableBindingSource1
+        '
+        Me.ViewApplicationTableBindingSource1.DataMember = "View_ApplicationTable"
+        Me.ViewApplicationTableBindingSource1.DataSource = Me.PROJECTS1747DataSet2
+        '
+        'PROJECTS1747DataSet2
+        '
+        Me.PROJECTS1747DataSet2.DataSetName = "PROJECTS1747DataSet2"
+        Me.PROJECTS1747DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ApplicationBindingSource
         '
@@ -168,29 +208,26 @@ Partial Class Main
         '
         Me.cbFilter1.FormattingEnabled = True
         Me.cbFilter1.Items.AddRange(New Object() {"First_Name", "Last_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address"})
-        Me.cbFilter1.Location = New System.Drawing.Point(173, 76)
-        Me.cbFilter1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.cbFilter1.Location = New System.Drawing.Point(65, 32)
         Me.cbFilter1.Name = "cbFilter1"
-        Me.cbFilter1.Size = New System.Drawing.Size(316, 39)
+        Me.cbFilter1.Size = New System.Drawing.Size(121, 21)
         Me.cbFilter1.TabIndex = 4
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(24, 95)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.Label1.Location = New System.Drawing.Point(9, 40)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(134, 32)
+        Me.Label1.Size = New System.Drawing.Size(50, 13)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Filter By: "
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(24, 167)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.Label2.Location = New System.Drawing.Point(9, 70)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(127, 32)
+        Me.Label2.Size = New System.Drawing.Size(47, 13)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Filter By:"
         '
@@ -199,28 +236,25 @@ Partial Class Main
         Me.cbFilter2.Enabled = False
         Me.cbFilter2.FormattingEnabled = True
         Me.cbFilter2.Items.AddRange(New Object() {"First_Name", "Last_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address"})
-        Me.cbFilter2.Location = New System.Drawing.Point(173, 160)
-        Me.cbFilter2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.cbFilter2.Location = New System.Drawing.Point(65, 67)
         Me.cbFilter2.Name = "cbFilter2"
-        Me.cbFilter2.Size = New System.Drawing.Size(316, 39)
+        Me.cbFilter2.Size = New System.Drawing.Size(121, 21)
         Me.cbFilter2.TabIndex = 7
         '
         'tbFilter1
         '
         Me.tbFilter1.Enabled = False
-        Me.tbFilter1.Location = New System.Drawing.Point(539, 76)
-        Me.tbFilter1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.tbFilter1.Location = New System.Drawing.Point(202, 32)
         Me.tbFilter1.Name = "tbFilter1"
-        Me.tbFilter1.Size = New System.Drawing.Size(260, 38)
+        Me.tbFilter1.Size = New System.Drawing.Size(100, 20)
         Me.tbFilter1.TabIndex = 8
         '
         'tbFilter2
         '
         Me.tbFilter2.Enabled = False
-        Me.tbFilter2.Location = New System.Drawing.Point(539, 160)
-        Me.tbFilter2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.tbFilter2.Location = New System.Drawing.Point(202, 67)
         Me.tbFilter2.Name = "tbFilter2"
-        Me.tbFilter2.Size = New System.Drawing.Size(260, 38)
+        Me.tbFilter2.Size = New System.Drawing.Size(100, 20)
         Me.tbFilter2.TabIndex = 9
         '
         'ApplicationTableAdapter
@@ -234,9 +268,10 @@ Partial Class Main
         '
         'btnViewApplicant
         '
-        Me.btnViewApplicant.Location = New System.Drawing.Point(849, 76)
+        Me.btnViewApplicant.Location = New System.Drawing.Point(318, 32)
+        Me.btnViewApplicant.Margin = New System.Windows.Forms.Padding(1)
         Me.btnViewApplicant.Name = "btnViewApplicant"
-        Me.btnViewApplicant.Size = New System.Drawing.Size(258, 122)
+        Me.btnViewApplicant.Size = New System.Drawing.Size(97, 51)
         Me.btnViewApplicant.TabIndex = 10
         Me.btnViewApplicant.Text = "View Profile"
         Me.btnViewApplicant.UseVisualStyleBackColor = True
@@ -269,34 +304,28 @@ Partial Class Main
         '
         Me.View_ApplicationTableTableAdapter.ClearBeforeFill = True
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ApplicationIDDataGridViewTextBoxColumn, Me.StudentIDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.AppDateDataGridViewTextBoxColumn, Me.DecisionDataGridViewTextBoxColumn, Me.GADataGridViewTextBoxColumn, Me.MatRDataGridViewTextBoxColumn, Me.EvalI20DataGridViewTextBoxColumn, Me.StatusMissingDataGridViewTextBoxColumn, Me.TrscDataGridViewTextBoxColumn, Me.ReceivedDataGridViewTextBoxColumn, Me.LettersFrmDataGridViewTextBoxColumn, Me.NotesDataGridViewTextBoxColumn, Me.FeeDataGridViewTextBoxColumn, Me.VQpercentDataGridViewTextBoxColumn, Me.UGPADataGridViewTextBoxColumn, Me.ToeflDataGridViewTextBoxColumn, Me.GenderDataGridViewTextBoxColumn, Me.EthnicityDataGridViewTextBoxColumn, Me.TWEDataGridViewTextBoxColumn, Me.CurrentEmployerDataGridViewTextBoxColumn, Me.UInstDataGridViewTextBoxColumn, Me.UDegDataGridViewTextBoxColumn, Me.UDRGMajorDataGridViewTextBoxColumn, Me.GRADDataGridViewTextBoxColumn, Me.GGPADataGridViewTextBoxColumn, Me.GDegreeDataGridViewTextBoxColumn, Me.GradMajorDataGridViewTextBoxColumn, Me.ELACRegDataGridViewTextBoxColumn, Me.GMATDataGridViewTextBoxColumn, Me.GMATVerbDataGridViewTextBoxColumn, Me.GMATVPercentageDataGridViewTextBoxColumn, Me.GMATQuanDataGridViewTextBoxColumn, Me.GMATQPercentageDataGridViewTextBoxColumn, Me.AWADataGridViewTextBoxColumn, Me.GREDataGridViewTextBoxColumn, Me.GREVerbDataGridViewTextBoxColumn, Me.GREVpercentageDataGridViewTextBoxColumn, Me.GREQuanDataGridViewTextBoxColumn, Me.GREQpercentageDataGridViewTextBoxColumn, Me.WRDataGridViewTextBoxColumn, Me.UAEmailDataGridViewTextBoxColumn, Me.NonUAEmailDataGridViewTextBoxColumn, Me.AgeDataGridViewTextBoxColumn, Me.PhoneDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.CityDataGridViewTextBoxColumn, Me.StateDataGridViewTextBoxColumn, Me.PostalDataGridViewTextBoxColumn, Me.CountryDataGridViewTextBoxColumn, Me.ResidencyDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ViewApplicationTableBindingSource1
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 3)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowTemplate.Height = 40
-        Me.DataGridView1.Size = New System.Drawing.Size(1144, 548)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'PROJECTS1747DataSet2
-        '
-        Me.PROJECTS1747DataSet2.DataSetName = "PROJECTS1747DataSet2"
-        Me.PROJECTS1747DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ViewApplicationTableBindingSource1
-        '
-        Me.ViewApplicationTableBindingSource1.DataMember = "View_ApplicationTable"
-        Me.ViewApplicationTableBindingSource1.DataSource = Me.PROJECTS1747DataSet2
-        '
         'View_ApplicationTableTableAdapter1
         '
         Me.View_ApplicationTableTableAdapter1.ClearBeforeFill = True
+        '
+        'PROJECTS1747DataSet3
+        '
+        Me.PROJECTS1747DataSet3.DataSetName = "PROJECTS1747DataSet3"
+        Me.PROJECTS1747DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PROJECTS1747DataSet3BindingSource
+        '
+        Me.PROJECTS1747DataSet3BindingSource.DataSource = Me.PROJECTS1747DataSet3
+        Me.PROJECTS1747DataSet3BindingSource.Position = 0
+        '
+        'ViewApplicationTableBindingSource2
+        '
+        Me.ViewApplicationTableBindingSource2.DataMember = "View_ApplicationTable"
+        Me.ViewApplicationTableBindingSource2.DataSource = Me.PROJECTS1747DataSet3BindingSource
+        '
+        'View_ApplicationTableTableAdapter2
+        '
+        Me.View_ApplicationTableTableAdapter2.ClearBeforeFill = True
         '
         'ApplicationIDDataGridViewTextBoxColumn
         '
@@ -332,6 +361,13 @@ Partial Class Main
         Me.AppDateDataGridViewTextBoxColumn.HeaderText = "App_Date"
         Me.AppDateDataGridViewTextBoxColumn.Name = "AppDateDataGridViewTextBoxColumn"
         Me.AppDateDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ProgramDataGridViewTextBoxColumn
+        '
+        Me.ProgramDataGridViewTextBoxColumn.DataPropertyName = "Program"
+        Me.ProgramDataGridViewTextBoxColumn.HeaderText = "Program"
+        Me.ProgramDataGridViewTextBoxColumn.Name = "ProgramDataGridViewTextBoxColumn"
+        Me.ProgramDataGridViewTextBoxColumn.ReadOnly = True
         '
         'DecisionDataGridViewTextBoxColumn
         '
@@ -664,9 +700,9 @@ Partial Class Main
         '
         'Main
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1144, 816)
+        Me.ClientSize = New System.Drawing.Size(434, 344)
         Me.Controls.Add(Me.btnViewApplicant)
         Me.Controls.Add(Me.tbFilter2)
         Me.Controls.Add(Me.tbFilter1)
@@ -677,12 +713,15 @@ Partial Class Main
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(1)
         Me.Name = "Main"
         Me.Text = "Applicants"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ViewApplicationTableBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PROJECTS1747DataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PROJECTS1747DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProjectS1730DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -690,9 +729,9 @@ Partial Class Main
         CType(Me.PROJECTS1747DataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ApplicationBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ViewApplicationTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PROJECTS1747DataSet2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ViewApplicationTableBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PROJECTS1747DataSet3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PROJECTS1747DataSet3BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ViewApplicationTableBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -723,11 +762,16 @@ Partial Class Main
     Friend WithEvents PROJECTS1747DataSet2 As PROJECTS1747DataSet2
     Friend WithEvents ViewApplicationTableBindingSource1 As BindingSource
     Friend WithEvents View_ApplicationTableTableAdapter1 As PROJECTS1747DataSet2TableAdapters.View_ApplicationTableTableAdapter
+    Friend WithEvents PROJECTS1747DataSet3BindingSource As BindingSource
+    Friend WithEvents PROJECTS1747DataSet3 As PROJECTS1747DataSet3
+    Friend WithEvents ViewApplicationTableBindingSource2 As BindingSource
+    Friend WithEvents View_ApplicationTableTableAdapter2 As PROJECTS1747DataSet3TableAdapters.View_ApplicationTableTableAdapter
     Friend WithEvents ApplicationIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents StudentIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FirstNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents AppDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProgramDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DecisionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents GADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents MatRDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

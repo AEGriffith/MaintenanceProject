@@ -40,7 +40,7 @@ Public Class Login
                 If Password = "" Then
                     MessageBox.Show("User not found.", "Data Entry Error")
                 ElseIf Password = tbPassword.Text Then
-                    Main.Show()
+                    'Main.Show()
                     Try
                         AdminCheck = commandGetAdmin.ExecuteScalar()
                         CommitteeCheck = commandGetCommittee.ExecuteScalar()
@@ -54,7 +54,8 @@ Public Class Login
                         Else
                             MessageBox.Show("Please contact your System Administrator.")
                         End If
-                    Catch
+                    Catch ex As Exception
+                        MsgBox(ex.ToString)
                     End Try
                 Else
                     MessageBox.Show("Incorrect Password", "Data Entry Error")

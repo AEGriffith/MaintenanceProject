@@ -58,7 +58,7 @@ Partial Class InterviewAdd
         Me.numScore.DecimalPlaces = 1
         Me.numScore.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
         Me.numScore.Location = New System.Drawing.Point(50, 65)
-        Me.numScore.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.numScore.Margin = New System.Windows.Forms.Padding(1)
         Me.numScore.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
         Me.numScore.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.numScore.Name = "numScore"
@@ -87,7 +87,7 @@ Partial Class InterviewAdd
         'btnAccept
         '
         Me.btnAccept.Location = New System.Drawing.Point(98, 254)
-        Me.btnAccept.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.btnAccept.Margin = New System.Windows.Forms.Padding(1)
         Me.btnAccept.Name = "btnAccept"
         Me.btnAccept.Size = New System.Drawing.Size(82, 24)
         Me.btnAccept.TabIndex = 5
@@ -97,8 +97,8 @@ Partial Class InterviewAdd
         'btnCancel
         '
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancel.Location = New System.Drawing.Point(182, 254)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.btnCancel.Location = New System.Drawing.Point(183, 254)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(1)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(82, 24)
         Me.btnCancel.TabIndex = 6
@@ -119,7 +119,7 @@ Partial Class InterviewAdd
         Me.Controls.Add(Me.numScore)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblStuName)
-        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Margin = New System.Windows.Forms.Padding(1)
         Me.Name = "InterviewAdd"
         Me.Text = "Interview Score"
         CType(Me.numScore, System.ComponentModel.ISupportInitialize).EndInit()

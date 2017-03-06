@@ -104,6 +104,7 @@
       <DependentUpon>Main.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -138,6 +139,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PROJECTS1747DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECTS1747DataSet2.vb">
+      <DependentUpon>PROJECTS1747DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECTS1747DataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PROJECTS1747DataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="ViewComments.Designer.vb">
       <DependentUpon>ViewComments.vb</DependentUpon>
@@ -226,6 +235,17 @@
     </None>
     <None Include="PROJECTS1747DataSet2.xss">
       <DependentUpon>PROJECTS1747DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PROJECTS1747DataSet3.xsc">
+      <DependentUpon>PROJECTS1747DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="PROJECTS1747DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PROJECTS1747DataSet3.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PROJECTS1747DataSet3.xss">
+      <DependentUpon>PROJECTS1747DataSet3.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
