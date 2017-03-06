@@ -30,7 +30,7 @@ Public Class Login
             End Try
             Dim commandGetPass As New OleDbCommand("SELECT Password FROM User_ID WHERE User_ID = " & UserName, con)
             Dim commandGetAdmin As New OleDbCommand("SELECT Admin FROM User_ID WHERE User_ID = " & UserName, con)
-            Dim commandGetCommittee As New OleDbCommand("SELECT Commitee_Member FROM User_ID WHERE User_ID = " & UserName, con)
+            Dim commandGetCommittee As New OleDbCommand("SELECT Committee_Member FROM User_ID WHERE User_ID = " & UserName, con)
             Dim commandGetAdvisor As New OleDbCommand("SELECT Advisor FROM User_ID WHERE User_ID = " & UserName, con)
             con.ConnectionString = ConnString
             con.Open()
