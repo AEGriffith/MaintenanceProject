@@ -5,6 +5,7 @@ Public Class ViewComments
     Dim StuLName As String
     Dim ApplID As Integer
 
+
     Dim ConnInfo As New DBConnectionInfo
     Dim ConnString As String = ConnInfo.GetConnString()
     Dim con As New OleDbConnection()
@@ -22,7 +23,7 @@ Public Class ViewComments
         con.Open()
 
         With commandGetComments
-            .CommandText = "SELECT A.Comments, U.First_Name, U.Last_Name FROM Application_Comment A INNER JOIN User_ID U ON A.User_ID = U.User_ID WHERE A.Application_ID = '" & AppID & "'"
+            .CommandText = "SELECT A.Comments, A.Recomendations, U.First_Name, U.Last_Name FROM Application_Comment A INNER JOIN User_ID U ON A.User_ID = U.User_ID WHERE A.Application_ID = '" & AppID & "'"
             .CommandType = CommandType.Text
             .Connection = con
         End With
@@ -43,7 +44,7 @@ Public Class ViewComments
             Do While reader.Read()
                 '        The numbers will represent the order of columns from your query. Whatever comes first in the select statement will start at 0 And will increment for each column.
                 '        Make sure you get the right data type - Like my scores need to be .GetDecimal because they are a data decimal type.
-                TextBox1.Text &= reader.GetString(1) & " " & reader.GetString(2) & vbNewLine & "-- " & vbNewLine & reader.GetString(0) & "" & vbNewLine & vbNewLine
+                TextBox1.Text &= reader.GetString(2) & " " & reader.GetString(3) & vbNewLine & "Recomendation:" & vbNewLine & reader.GetString(1) & vbNewLine & "Comments:" & vbNewLine & reader.GetString(0) & "" & vbNewLine & vbNewLine
                 '        The &= Is very important here because it allows you To append the text so you're not just replacing it every time
             Loop
         Catch ex As Exception
