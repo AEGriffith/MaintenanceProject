@@ -50,7 +50,7 @@ Public Class Login
                         ElseIf CommitteeCheck = True Then
                             Main.Show()
                         ElseIf AdvisorCheck = True Then
-                            MessageBox.Show("This user is an Advisor!")
+                            Advising.Show()
                         Else
                             MessageBox.Show("Please contact your System Administrator.")
                         End If
