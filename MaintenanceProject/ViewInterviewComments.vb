@@ -10,6 +10,7 @@ Public Class ViewInterviewComments
     'Get application ID to use in queries
     Dim AppID = Integer.Parse(Main.getSelectedApplicant())
 
+
     'Set variables to store items returned by queries
     Dim fName As String
     Dim lName As String
@@ -58,7 +59,7 @@ Public Class ViewInterviewComments
             Do While reader.Read()
                 'The numbers will represent the order of columns from your query. Whatever comes first in the select statement will start at 0 and will increment for each column.
                 'Make sure you get the right data type - like my scores need to be .GetDecimal because they are a data decimal type.
-                TextBox1.Text &= reader.GetDecimal(1) & vbNewLine & reader.GetString(0) & vbNewLine & "-- " & reader.GetString(2) & "" & reader.GetString(3) & vbNewLine & vbNewLine
+                TextBox1.Text &= reader.GetString(2) & "" & reader.GetString(3) & ": " & reader.GetDecimal(1).ToString("N") & vbNewLine & reader.GetString(0) & vbNewLine & vbNewLine
                 'The &= is very important here because it allows you to append the text so you're not just replacing it every time
             Loop
         Catch ex As Exception
