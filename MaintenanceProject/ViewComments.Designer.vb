@@ -52,10 +52,10 @@ Partial Class ViewComments
         '
         'TextBox1
         '
-        Me.TextBox1.Enabled = False
         Me.TextBox1.Location = New System.Drawing.Point(16, 96)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
         Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextBox1.Size = New System.Drawing.Size(296, 154)
         Me.TextBox1.TabIndex = 2
