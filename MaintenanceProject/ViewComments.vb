@@ -44,7 +44,7 @@ Public Class ViewComments
             Do While reader.Read()
                 '        The numbers will represent the order of columns from your query. Whatever comes first in the select statement will start at 0 And will increment for each column.
                 '        Make sure you get the right data type - Like my scores need to be .GetDecimal because they are a data decimal type.
-                TextBox1.Text &= reader.GetString(2) & " " & reader.GetString(3) & vbNewLine & "Recomendation:" & vbNewLine & reader.GetString(1) & vbNewLine & "Comments:" & vbNewLine & reader.GetString(0) & "" & vbNewLine & vbNewLine
+                TextBox1.Text &= reader.GetString(2) & " " & reader.GetString(3) & vbNewLine & "Recommendation: " & reader.GetString(1) & vbNewLine & "Comments:" & vbNewLine & reader.GetString(0) & "" & vbNewLine & vbNewLine
                 '        The &= Is very important here because it allows you To append the text so you're not just replacing it every time
             Loop
         Catch ex As Exception
@@ -52,14 +52,6 @@ Public Class ViewComments
             MessageBox.Show(ex.ToString)
         End Try
         con.Close()
-
-        'Try
-        '    'ApplID = commandGetApplID.ExecuteScalar
-        '    StuFName = commandGetFName.ExecuteScalar
-        '    StuLName = commandGetLName.ExecuteScalar
-        'Catch ex As Exception
-        '    MessageBox.Show(ex.ToString)
-        'End Try
 
 
     End Sub
