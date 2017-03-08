@@ -29,13 +29,15 @@ Partial Class Application
         Me.lblStuName = New System.Windows.Forms.Label()
         Me.ComboBox_suggesteddecision = New System.Windows.Forms.ComboBox()
         Me.Label_decisionsuggested = New System.Windows.Forms.Label()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnAddComment
         '
-        Me.btnAddComment.Location = New System.Drawing.Point(220, 296)
+        Me.btnAddComment.Location = New System.Drawing.Point(321, 704)
+        Me.btnAddComment.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.btnAddComment.Name = "btnAddComment"
-        Me.btnAddComment.Size = New System.Drawing.Size(91, 23)
+        Me.btnAddComment.Size = New System.Drawing.Size(243, 55)
         Me.btnAddComment.TabIndex = 0
         Me.btnAddComment.Text = "Add Comment"
         Me.btnAddComment.UseVisualStyleBackColor = True
@@ -43,27 +45,30 @@ Partial Class Application
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 91)
+        Me.Label1.Location = New System.Drawing.Point(32, 217)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 13)
+        Me.Label1.Size = New System.Drawing.Size(159, 32)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Comments:"
         '
         'tbComment
         '
-        Me.tbComment.Location = New System.Drawing.Point(12, 116)
+        Me.tbComment.Location = New System.Drawing.Point(32, 277)
+        Me.tbComment.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.tbComment.Multiline = True
         Me.tbComment.Name = "tbComment"
         Me.tbComment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.tbComment.Size = New System.Drawing.Size(299, 165)
+        Me.tbComment.Size = New System.Drawing.Size(791, 388)
         Me.tbComment.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(9, 19)
+        Me.Label2.Location = New System.Drawing.Point(24, 45)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(88, 13)
+        Me.Label2.Size = New System.Drawing.Size(231, 32)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Applicant Name: "
         '
@@ -72,9 +77,10 @@ Partial Class Application
         Me.lblStuName.AutoSize = True
         Me.lblStuName.BackColor = System.Drawing.SystemColors.Control
         Me.lblStuName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStuName.Location = New System.Drawing.Point(106, 19)
+        Me.lblStuName.Location = New System.Drawing.Point(283, 45)
+        Me.lblStuName.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.lblStuName.Name = "lblStuName"
-        Me.lblStuName.Size = New System.Drawing.Size(51, 13)
+        Me.lblStuName.Size = New System.Drawing.Size(121, 32)
         Me.lblStuName.TabIndex = 4
         Me.lblStuName.Text = "Student"
         '
@@ -82,25 +88,40 @@ Partial Class Application
         '
         Me.ComboBox_suggesteddecision.FormattingEnabled = True
         Me.ComboBox_suggesteddecision.Items.AddRange(New Object() {"Gold", "Silver", "Assistantship", "Waitlist", "Reject"})
-        Me.ComboBox_suggesteddecision.Location = New System.Drawing.Point(190, 55)
+        Me.ComboBox_suggesteddecision.Location = New System.Drawing.Point(507, 131)
+        Me.ComboBox_suggesteddecision.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.ComboBox_suggesteddecision.Name = "ComboBox_suggesteddecision"
-        Me.ComboBox_suggesteddecision.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox_suggesteddecision.Size = New System.Drawing.Size(316, 39)
         Me.ComboBox_suggesteddecision.TabIndex = 5
         '
         'Label_decisionsuggested
         '
         Me.Label_decisionsuggested.AutoSize = True
-        Me.Label_decisionsuggested.Location = New System.Drawing.Point(9, 58)
+        Me.Label_decisionsuggested.Location = New System.Drawing.Point(24, 138)
+        Me.Label_decisionsuggested.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label_decisionsuggested.Name = "Label_decisionsuggested"
-        Me.Label_decisionsuggested.Size = New System.Drawing.Size(102, 13)
+        Me.Label_decisionsuggested.Size = New System.Drawing.Size(269, 32)
         Me.Label_decisionsuggested.TabIndex = 6
         Me.Label_decisionsuggested.Text = "Suggested Decision"
         '
+        'btnCancel
+        '
+        Me.btnCancel.Location = New System.Drawing.Point(580, 704)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(243, 55)
+        Me.btnCancel.TabIndex = 7
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
+        '
         'Application
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AcceptButton = Me.btnAddComment
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(325, 325)
+        Me.CancelButton = Me.btnCancel
+        Me.ClientSize = New System.Drawing.Size(867, 775)
+        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.Label_decisionsuggested)
         Me.Controls.Add(Me.ComboBox_suggesteddecision)
         Me.Controls.Add(Me.lblStuName)
@@ -108,6 +129,7 @@ Partial Class Application
         Me.Controls.Add(Me.tbComment)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnAddComment)
+        Me.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.Name = "Application"
         Me.Text = "Add Comment"
         Me.ResumeLayout(False)
@@ -122,4 +144,5 @@ Partial Class Application
     Friend WithEvents lblStuName As Label
     Friend WithEvents ComboBox_suggesteddecision As ComboBox
     Friend WithEvents Label_decisionsuggested As Label
+    Friend WithEvents btnCancel As Button
 End Class
