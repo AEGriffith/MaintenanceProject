@@ -88,7 +88,7 @@ Partial Class Application
         '
         Me.ComboBox_suggesteddecision.FormattingEnabled = True
         Me.ComboBox_suggesteddecision.Items.AddRange(New Object() {"Gold", "Silver", "Assistantship", "Waitlist", "Reject"})
-        Me.ComboBox_suggesteddecision.Location = New System.Drawing.Point(507, 131)
+        Me.ComboBox_suggesteddecision.Location = New System.Drawing.Point(347, 138)
         Me.ComboBox_suggesteddecision.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.ComboBox_suggesteddecision.Name = "ComboBox_suggesteddecision"
         Me.ComboBox_suggesteddecision.Size = New System.Drawing.Size(316, 39)
@@ -106,6 +106,7 @@ Partial Class Application
         '
         'btnCancel
         '
+        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.Location = New System.Drawing.Point(580, 704)
         Me.btnCancel.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.btnCancel.Name = "btnCancel"
