@@ -72,12 +72,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admissions.Designer.vb">
-      <DependentUpon>Admissions.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Admissions.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Advising.Designer.vb">
       <DependentUpon>Advising.vb</DependentUpon>
     </Compile>
@@ -184,9 +178,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Admissions.resx">
-      <DependentUpon>Admissions.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Advising.resx">
       <DependentUpon>Advising.vb</DependentUpon>
     </EmbeddedResource>

@@ -4,7 +4,8 @@ Public Class ApplicantProfile
     Dim StuFName As String
     Dim StuLName As String
     Dim Program As String
-    Dim Decision As String
+    Dim Decision
+    Dim Response
     'set options for MIS combobox
     Dim MISDecision = New String() {"Gold", "Silver", "Waitlist", "Reject"}
     'set options for PMIS combobox
@@ -33,6 +34,8 @@ Public Class ApplicantProfile
         Dim commandGetProgram As New OleDbCommand("SELECT Program FROM Application WHERE Application_Id = '" & AppID & "'", con)
         'sql that gets Decision
         Dim commandGetDecision As New OleDbCommand("SELECT Decision From Application WHERE Application_Id = '" & AppID & "'", con)
+        'sql that gets Response
+        Dim commandGetResponse As New OleDbCommand("SELECT Response From Application WHERE Application_Id = '" & AppID & "'", con)
 
         con.ConnectionString = ConnString
         con.Open()
@@ -43,6 +46,7 @@ Public Class ApplicantProfile
             StuLName = commandGetLName.ExecuteScalar
             Program = commandGetProgram.ExecuteScalar
             Decision = commandGetDecision.ExecuteScalar
+            Response = commandGetResponse.ExecuteScalar
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
@@ -64,8 +68,29 @@ Public Class ApplicantProfile
         'Will not be editable by committee members, only Program Director (Admin)
         If Not IsDBNull(Decision) Then
             cbDecision.Text = Decision
+            If Not IsDBNull(Response) Then
+                Select Case Decision
+                'Checking to see if the decision was Accept, Gold, or Silver. If it is not one of these, there should be no response.
+                    Case "Accept"
+                        tbResponse.Text = Response
+                    Case "Silver"
+                        tbResponse.Text = Response
+                    Case "Gold"
+                        tbResponse.Text = Response
+                    Case "Reject"
+                        tbResponse.Clear()
+                    Case "Waitlist"
+                        tbResponse.Clear()
+
+                End Select
+            Else
+                tbResponse.Clear()
+            End If
+
         Else
-            cbDecision.SelectedIndex = -1
+                cbDecision.SelectedIndex = -1
+            'If there is no decision yet, there should be no response. The textbox won't show a response if there is no decision.
+            tbResponse.Clear()
         End If
 
         'Populates Decision combobox based on student's program
@@ -80,8 +105,12 @@ Public Class ApplicantProfile
         'All Committee members can see decision, but cannot edit unless Program Director
         If ProgramDirector = True Then
             cbDecision.Enabled = True
+            lblResponse.Visible = True
+            tbResponse.Visible = True
         Else
             cbDecision.Enabled = False
+            lblResponse.Visible = False
+            tbResponse.Visible = False
         End If
 
     End Sub
