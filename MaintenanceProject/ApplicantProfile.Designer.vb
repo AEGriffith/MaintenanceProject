@@ -23,7 +23,6 @@ Partial Class ApplicantProfile
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.btnComment = New System.Windows.Forms.Button()
         Me.PersonalTabPage = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.lblAddress = New System.Windows.Forms.Label()
@@ -90,25 +89,23 @@ Partial Class ApplicantProfile
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.tabAdmissions = New System.Windows.Forms.TabPage()
+        Me.btnSubmit = New System.Windows.Forms.Button()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.cbDecision = New System.Windows.Forms.ComboBox()
         Me.lblStuName = New System.Windows.Forms.Label()
-        Me.btnAddInterview = New System.Windows.Forms.Button()
         Me.ApplicationTableAdapter = New MaintenanceProject.PROJECTS1747DataSet2TableAdapters.ApplicationTableAdapter()
-        Me.btnView = New System.Windows.Forms.Button()
         Me.Label41 = New System.Windows.Forms.Label()
         Me.Label_ProgramType = New System.Windows.Forms.Label()
-        Me.btnViewInterview = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddUpdateCommentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddUpdateInterviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuEditRecommendation = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuEditInterview = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CommentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InterviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tabAdmissions = New System.Windows.Forms.TabPage()
-        Me.cbDecision = New System.Windows.Forms.ComboBox()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.btnSubmit = New System.Windows.Forms.Button()
+        Me.menuViewRecommendations = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuViewInterview = New System.Windows.Forms.ToolStripMenuItem()
         Me.PersonalTabPage.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,19 +113,9 @@ Partial Class ApplicantProfile
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         Me.tabAdmissions.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'btnComment
-        '
-        Me.btnComment.Location = New System.Drawing.Point(549, 913)
-        Me.btnComment.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.btnComment.Name = "btnComment"
-        Me.btnComment.Size = New System.Drawing.Size(253, 55)
-        Me.btnComment.TabIndex = 0
-        Me.btnComment.Text = "Add Comment"
-        Me.btnComment.UseVisualStyleBackColor = True
         '
         'PersonalTabPage
         '
@@ -137,7 +124,7 @@ Partial Class ApplicantProfile
         Me.PersonalTabPage.Controls.Add(Me.TabPage3)
         Me.PersonalTabPage.Controls.Add(Me.TabPage4)
         Me.PersonalTabPage.Controls.Add(Me.tabAdmissions)
-        Me.PersonalTabPage.Location = New System.Drawing.Point(149, 134)
+        Me.PersonalTabPage.Location = New System.Drawing.Point(17, 134)
         Me.PersonalTabPage.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.PersonalTabPage.Name = "PersonalTabPage"
         Me.PersonalTabPage.SelectedIndex = 0
@@ -872,6 +859,45 @@ Partial Class ApplicantProfile
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Eval/ I-20: "
         '
+        'tabAdmissions
+        '
+        Me.tabAdmissions.Controls.Add(Me.btnSubmit)
+        Me.tabAdmissions.Controls.Add(Me.Label42)
+        Me.tabAdmissions.Controls.Add(Me.cbDecision)
+        Me.tabAdmissions.Location = New System.Drawing.Point(10, 48)
+        Me.tabAdmissions.Name = "tabAdmissions"
+        Me.tabAdmissions.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabAdmissions.Size = New System.Drawing.Size(825, 667)
+        Me.tabAdmissions.TabIndex = 4
+        Me.tabAdmissions.Text = "Admissions"
+        Me.tabAdmissions.UseVisualStyleBackColor = True
+        '
+        'btnSubmit
+        '
+        Me.btnSubmit.Location = New System.Drawing.Point(672, 145)
+        Me.btnSubmit.Name = "btnSubmit"
+        Me.btnSubmit.Size = New System.Drawing.Size(134, 48)
+        Me.btnSubmit.TabIndex = 2
+        Me.btnSubmit.Text = "Submit"
+        Me.btnSubmit.UseVisualStyleBackColor = True
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(542, 48)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(264, 32)
+        Me.Label42.TabIndex = 1
+        Me.Label42.Text = "Admission Decision"
+        '
+        'cbDecision
+        '
+        Me.cbDecision.FormattingEnabled = True
+        Me.cbDecision.Location = New System.Drawing.Point(542, 86)
+        Me.cbDecision.Name = "cbDecision"
+        Me.cbDecision.Size = New System.Drawing.Size(264, 39)
+        Me.cbDecision.TabIndex = 0
+        '
         'lblStuName
         '
         Me.lblStuName.AutoSize = True
@@ -883,29 +909,9 @@ Partial Class ApplicantProfile
         Me.lblStuName.TabIndex = 2
         Me.lblStuName.Text = "Applicant Name"
         '
-        'btnAddInterview
-        '
-        Me.btnAddInterview.Location = New System.Drawing.Point(280, 913)
-        Me.btnAddInterview.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.btnAddInterview.Name = "btnAddInterview"
-        Me.btnAddInterview.Size = New System.Drawing.Size(253, 55)
-        Me.btnAddInterview.TabIndex = 3
-        Me.btnAddInterview.Text = "Add Interview"
-        Me.btnAddInterview.UseVisualStyleBackColor = True
-        '
         'ApplicationTableAdapter
         '
         Me.ApplicationTableAdapter.ClearBeforeFill = True
-        '
-        'btnView
-        '
-        Me.btnView.Location = New System.Drawing.Point(819, 913)
-        Me.btnView.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.btnView.Name = "btnView"
-        Me.btnView.Size = New System.Drawing.Size(253, 55)
-        Me.btnView.TabIndex = 4
-        Me.btnView.Text = "View Comments"
-        Me.btnView.UseVisualStyleBackColor = True
         '
         'Label41
         '
@@ -927,123 +933,77 @@ Partial Class ApplicantProfile
         Me.Label_ProgramType.Size = New System.Drawing.Size(0, 40)
         Me.Label_ProgramType.TabIndex = 6
         '
-        'btnViewInterview
-        '
-        Me.btnViewInterview.Location = New System.Drawing.Point(16, 913)
-        Me.btnViewInterview.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.btnViewInterview.Name = "btnViewInterview"
-        Me.btnViewInterview.Size = New System.Drawing.Size(253, 55)
-        Me.btnViewInterview.TabIndex = 7
-        Me.btnViewInterview.Text = "View Comments"
-        Me.btnViewInterview.UseVisualStyleBackColor = True
-        '
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(40, 40)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ViewToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1112, 49)
+        Me.MenuStrip1.Size = New System.Drawing.Size(896, 49)
         Me.MenuStrip1.TabIndex = 8
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
         '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 45)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 48)
         Me.FileToolStripMenuItem.Text = "File"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(179, 46)
+        Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'EditToolStripMenuItem
         '
-        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddUpdateCommentToolStripMenuItem, Me.AddUpdateInterviewToolStripMenuItem})
+        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuEditRecommendation, Me.menuEditInterview})
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(80, 45)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(80, 48)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
-        'AddUpdateCommentToolStripMenuItem
+        'menuEditRecommendation
         '
-        Me.AddUpdateCommentToolStripMenuItem.Name = "AddUpdateCommentToolStripMenuItem"
-        Me.AddUpdateCommentToolStripMenuItem.Size = New System.Drawing.Size(541, 46)
-        Me.AddUpdateCommentToolStripMenuItem.Text = "Add/Update Recommendation"
+        Me.menuEditRecommendation.Name = "menuEditRecommendation"
+        Me.menuEditRecommendation.Size = New System.Drawing.Size(541, 46)
+        Me.menuEditRecommendation.Text = "Add/Update Recommendation"
         '
-        'AddUpdateInterviewToolStripMenuItem
+        'menuEditInterview
         '
-        Me.AddUpdateInterviewToolStripMenuItem.Name = "AddUpdateInterviewToolStripMenuItem"
-        Me.AddUpdateInterviewToolStripMenuItem.Size = New System.Drawing.Size(541, 46)
-        Me.AddUpdateInterviewToolStripMenuItem.Text = "Add/Update Interview"
+        Me.menuEditInterview.Name = "menuEditInterview"
+        Me.menuEditInterview.Size = New System.Drawing.Size(541, 46)
+        Me.menuEditInterview.Text = "Add/Update Interview"
         '
         'ViewToolStripMenuItem
         '
-        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CommentsToolStripMenuItem, Me.InterviewToolStripMenuItem})
+        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuViewRecommendations, Me.menuViewInterview})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 45)
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 48)
         Me.ViewToolStripMenuItem.Text = "View"
         '
-        'CommentsToolStripMenuItem
+        'menuViewRecommendations
         '
-        Me.CommentsToolStripMenuItem.Name = "CommentsToolStripMenuItem"
-        Me.CommentsToolStripMenuItem.Size = New System.Drawing.Size(381, 46)
-        Me.CommentsToolStripMenuItem.Text = "Recommendations"
+        Me.menuViewRecommendations.Name = "menuViewRecommendations"
+        Me.menuViewRecommendations.Size = New System.Drawing.Size(381, 46)
+        Me.menuViewRecommendations.Text = "Recommendations"
         '
-        'InterviewToolStripMenuItem
+        'menuViewInterview
         '
-        Me.InterviewToolStripMenuItem.Name = "InterviewToolStripMenuItem"
-        Me.InterviewToolStripMenuItem.Size = New System.Drawing.Size(381, 46)
-        Me.InterviewToolStripMenuItem.Text = "Interview"
-        '
-        'tabAdmissions
-        '
-        Me.tabAdmissions.Controls.Add(Me.btnSubmit)
-        Me.tabAdmissions.Controls.Add(Me.Label42)
-        Me.tabAdmissions.Controls.Add(Me.cbDecision)
-        Me.tabAdmissions.Location = New System.Drawing.Point(10, 48)
-        Me.tabAdmissions.Name = "tabAdmissions"
-        Me.tabAdmissions.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabAdmissions.Size = New System.Drawing.Size(825, 667)
-        Me.tabAdmissions.TabIndex = 4
-        Me.tabAdmissions.Text = "Admissions"
-        Me.tabAdmissions.UseVisualStyleBackColor = True
-        '
-        'cbDecision
-        '
-        Me.cbDecision.FormattingEnabled = True
-        Me.cbDecision.Location = New System.Drawing.Point(542, 86)
-        Me.cbDecision.Name = "cbDecision"
-        Me.cbDecision.Size = New System.Drawing.Size(264, 39)
-        Me.cbDecision.TabIndex = 0
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(542, 48)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(264, 32)
-        Me.Label42.TabIndex = 1
-        Me.Label42.Text = "Admission Decision"
-        '
-        'btnSubmit
-        '
-        Me.btnSubmit.Location = New System.Drawing.Point(672, 145)
-        Me.btnSubmit.Name = "btnSubmit"
-        Me.btnSubmit.Size = New System.Drawing.Size(134, 48)
-        Me.btnSubmit.TabIndex = 2
-        Me.btnSubmit.Text = "Submit"
-        Me.btnSubmit.UseVisualStyleBackColor = True
+        Me.menuViewInterview.Name = "menuViewInterview"
+        Me.menuViewInterview.Size = New System.Drawing.Size(381, 46)
+        Me.menuViewInterview.Text = "Interview"
         '
         'ApplicantProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1112, 990)
-        Me.Controls.Add(Me.btnViewInterview)
+        Me.ClientSize = New System.Drawing.Size(896, 907)
         Me.Controls.Add(Me.Label_ProgramType)
         Me.Controls.Add(Me.Label41)
-        Me.Controls.Add(Me.btnView)
-        Me.Controls.Add(Me.btnAddInterview)
         Me.Controls.Add(Me.lblStuName)
         Me.Controls.Add(Me.PersonalTabPage)
-        Me.Controls.Add(Me.btnComment)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
@@ -1060,16 +1020,14 @@ Partial Class ApplicantProfile
         Me.TabPage3.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.tabAdmissions.ResumeLayout(False)
         Me.tabAdmissions.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents btnComment As Button
     Friend WithEvents PersonalTabPage As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents Label10 As Label
@@ -1096,7 +1054,6 @@ Partial Class ApplicantProfile
     Friend WithEvents Label20 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label18 As Label
-    Friend WithEvents btnAddInterview As Button
     Friend WithEvents lblAddress As Label
     Friend WithEvents lblPhone As Label
     Friend WithEvents lblEmail As Label
@@ -1139,20 +1096,19 @@ Partial Class ApplicantProfile
     Friend WithEvents Label23 As Label
     Friend WithEvents Label22 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnView As Button
     Friend WithEvents Label41 As Label
     Friend WithEvents Label_ProgramType As Label
-    Friend WithEvents btnViewInterview As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AddUpdateCommentToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AddUpdateInterviewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents menuEditRecommendation As ToolStripMenuItem
+    Friend WithEvents menuEditInterview As ToolStripMenuItem
     Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CommentsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InterviewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents menuViewRecommendations As ToolStripMenuItem
+    Friend WithEvents menuViewInterview As ToolStripMenuItem
     Friend WithEvents tabAdmissions As TabPage
     Friend WithEvents Label42 As Label
     Friend WithEvents cbDecision As ComboBox
     Friend WithEvents btnSubmit As Button
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
 End Class
