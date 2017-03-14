@@ -106,6 +106,8 @@ Partial Class ApplicantProfile
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuViewRecommendations = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuViewInterview = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tbResponse = New System.Windows.Forms.TextBox()
+        Me.lblResponse = New System.Windows.Forms.Label()
         Me.PersonalTabPage.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -861,6 +863,8 @@ Partial Class ApplicantProfile
         '
         'tabAdmissions
         '
+        Me.tabAdmissions.Controls.Add(Me.lblResponse)
+        Me.tabAdmissions.Controls.Add(Me.tbResponse)
         Me.tabAdmissions.Controls.Add(Me.btnSubmit)
         Me.tabAdmissions.Controls.Add(Me.Label42)
         Me.tabAdmissions.Controls.Add(Me.cbDecision)
@@ -874,7 +878,7 @@ Partial Class ApplicantProfile
         '
         'btnSubmit
         '
-        Me.btnSubmit.Location = New System.Drawing.Point(672, 145)
+        Me.btnSubmit.Location = New System.Drawing.Point(383, 189)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(134, 48)
         Me.btnSubmit.TabIndex = 2
@@ -884,7 +888,7 @@ Partial Class ApplicantProfile
         'Label42
         '
         Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(542, 48)
+        Me.Label42.Location = New System.Drawing.Point(253, 96)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(264, 32)
         Me.Label42.TabIndex = 1
@@ -893,7 +897,7 @@ Partial Class ApplicantProfile
         'cbDecision
         '
         Me.cbDecision.FormattingEnabled = True
-        Me.cbDecision.Location = New System.Drawing.Point(542, 86)
+        Me.cbDecision.Location = New System.Drawing.Point(253, 134)
         Me.cbDecision.Name = "cbDecision"
         Me.cbDecision.Size = New System.Drawing.Size(264, 39)
         Me.cbDecision.TabIndex = 0
@@ -947,7 +951,7 @@ Partial Class ApplicantProfile
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 48)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 45)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'ExitToolStripMenuItem
@@ -960,7 +964,7 @@ Partial Class ApplicantProfile
         '
         Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuEditRecommendation, Me.menuEditInterview})
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(80, 48)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(80, 45)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'menuEditRecommendation
@@ -979,7 +983,7 @@ Partial Class ApplicantProfile
         '
         Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuViewRecommendations, Me.menuViewInterview})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 48)
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 45)
         Me.ViewToolStripMenuItem.Text = "View"
         '
         'menuViewRecommendations
@@ -993,6 +997,23 @@ Partial Class ApplicantProfile
         Me.menuViewInterview.Name = "menuViewInterview"
         Me.menuViewInterview.Size = New System.Drawing.Size(381, 46)
         Me.menuViewInterview.Text = "Interview"
+        '
+        'tbResponse
+        '
+        Me.tbResponse.Location = New System.Drawing.Point(259, 330)
+        Me.tbResponse.Name = "tbResponse"
+        Me.tbResponse.ReadOnly = True
+        Me.tbResponse.Size = New System.Drawing.Size(258, 38)
+        Me.tbResponse.TabIndex = 3
+        '
+        'lblResponse
+        '
+        Me.lblResponse.AutoSize = True
+        Me.lblResponse.Location = New System.Drawing.Point(259, 292)
+        Me.lblResponse.Name = "lblResponse"
+        Me.lblResponse.Size = New System.Drawing.Size(151, 32)
+        Me.lblResponse.TabIndex = 4
+        Me.lblResponse.Text = "Response:"
         '
         'ApplicantProfile
         '
@@ -1111,4 +1132,6 @@ Partial Class ApplicantProfile
     Friend WithEvents cbDecision As ComboBox
     Friend WithEvents btnSubmit As Button
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents lblResponse As Label
+    Friend WithEvents tbResponse As TextBox
 End Class
