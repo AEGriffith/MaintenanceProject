@@ -16,6 +16,7 @@ Public Class ApplicantProfile
     'get information from other forms
     Dim AppID = Integer.Parse(Main.getSelectedApplicant())
     Dim Username = Integer.Parse(Login.getUsername())
+    Dim ProgramDirector = Login.getAdminCheck()
 
 
 
@@ -36,6 +37,7 @@ Public Class ApplicantProfile
         con.ConnectionString = ConnString
         con.Open()
 
+        'sets variables to values in the database using sql
         Try
             StuFName = commandGetFName.ExecuteScalar
             StuLName = commandGetLName.ExecuteScalar
@@ -45,17 +47,28 @@ Public Class ApplicantProfile
             MessageBox.Show(ex.ToString)
         End Try
         con.Close()
+
+        'Displays the student's name
         lblStuName.Text = StuLName & ", " & StuFName
 
-        MessageBox.Show(Decision)
+        'For some reason, the database allows these values to be null. Tables must be deleted and recreated to change this.
+        If IsDBNull(StuFName) Then
+            MessageBox.Show("Student Information Missing (Name), Contact Database Administrator.")
+        ElseIf IsDBNull(StuLName) Then
+            MessageBox.Show("Student Information Missing (Name), Contact Database Administrator.")
+        ElseIf IsDBNull(Program) Then
+            MessageBox.Show("Student Information Missing (Name), Contact Database Administrator.")
+        End If
 
-        'If Decision = "" Or null Then
-        '    cbDecision.SelectedIndex = -1
-        'Else
-        '    cbDecision.SelectedText = Decision
-        'End If
+        'Checks to see if there is a decision for this application. If there is, it will populate the combobox with that decision.
+        'Will not be editable by committee members, only Program Director (Admin)
+        If Not IsDBNull(Decision) Then
+            cbDecision.Text = Decision
+        Else
+            cbDecision.SelectedIndex = -1
+        End If
 
-        'sets combobox items based on program
+        'Populates Decision combobox based on student's program
         Select Case Program
             Case "MIS"
                 cbDecision.Items.AddRange(MISDecision)
@@ -63,28 +76,16 @@ Public Class ApplicantProfile
                 cbDecision.Items.AddRange(PMISDecision)
         End Select
 
-    End Sub
-    Private Sub btnComment_Click(sender As Object, e As EventArgs) Handles btnComment.Click
-        Application.Show()
+        'Checks to see if user is program director to enable combobox for decisions.
+        'All Committee members can see decision, but cannot edit unless Program Director
+        If ProgramDirector = True Then
+            cbDecision.Enabled = True
+        Else
+            cbDecision.Enabled = False
+        End If
 
     End Sub
 
-
-    Private Sub ButtonAddInterview_Click(sender As Object, e As EventArgs) Handles btnAddInterview.Click
-        InterviewAdd.Show()
-    End Sub
-
-    Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
-        ViewComments.Show()
-    End Sub
-
-    Private Sub ButtonViewInterview_Click_1(sender As Object, e As EventArgs) Handles btnViewInterview.Click
-        ViewInterviewComments.Show()
-    End Sub
-
-    Private Sub AddUpdateCommentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddUpdateCommentToolStripMenuItem.Click
-
-    End Sub
 
     Friend Function getProgram()
         Return Program
@@ -94,13 +95,11 @@ Public Class ApplicantProfile
         Return StuLName & ", " & StuFName
     End Function
 
-    Private Sub SetAdmissionDecisionToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        Admissions.Show()
-    End Sub
+
 
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         'sql that updates admissions decision
-        Dim commandSetDecision As New OleDbCommand("UPDATE Application SET Decision = '" & cbDecision.SelectedValue & "' WHERE Application_ID = '" & AppID & "'", con)
+        Dim commandSetDecision As New OleDbCommand("UPDATE Application SET Decision = '" & cbDecision.SelectedItem & "' WHERE Application_ID = '" & AppID & "'", con)
         con.ConnectionString = ConnString
         con.Open()
 
@@ -114,7 +113,20 @@ Public Class ApplicantProfile
         con.Close()
     End Sub
 
-    Private Sub cbDecision_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDecision.SelectedIndexChanged
+    'Removed buttons, access comments from menu
+    Private Sub menuEditRecommendation_Click(sender As Object, e As EventArgs) Handles menuEditRecommendation.Click
+        Application.Show()
+    End Sub
 
+    Private Sub menuEditInterview_Click(sender As Object, e As EventArgs) Handles menuEditInterview.Click
+        InterviewAdd.Show()
+    End Sub
+
+    Private Sub menuViewRecommendations_Click(sender As Object, e As EventArgs) Handles menuViewRecommendations.Click
+        ViewComments.Show()
+    End Sub
+
+    Private Sub menuViewInterview_Click(sender As Object, e As EventArgs) Handles menuViewInterview.Click
+        ViewInterviewComments.Show()
     End Sub
 End Class
