@@ -54,7 +54,7 @@ Public Class ApplicantProfile
 
         'Displays the student's name
         lblStuName.Text = StuLName & ", " & StuFName
-        MessageBox.Show(Program)
+
         'For some reason, the database allows these values to be null. Tables must be deleted and recreated to change this.
         If IsDBNull(StuFName) Then
             MessageBox.Show("Student Information Missing (Name), Contact Database Administrator.")
@@ -176,4 +176,12 @@ Public Class ApplicantProfile
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
+
+    Friend Function getMISDecision()
+        Return MISDecision
+    End Function
+
+    Friend Function getPMISDecision()
+        Return PMISDecision
+    End Function
 End Class

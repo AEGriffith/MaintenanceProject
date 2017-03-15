@@ -12,16 +12,15 @@ Public Class ViewInterviewComments
 
 
     'Set variables to store items returned by queries
-    Dim fName As String
-    Dim lName As String
-    Dim score As Decimal
+    Dim StuName = ApplicantProfile.getName()
+    Dim score
 
     'Most of the stuff will be done on the form load since this will jsut display comments
     Private Sub ViewInterviewComments_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Setup commands
         Dim reader As OleDbDataReader
         Dim commandGetComments As New OleDbCommand
-        Dim commandGetScore As New OleDbCommand("SELECT AVG(Interview_Score) FROM Interview WHERE Application_ID = '" & AppID & "'", con)
+        Dim commandGetScore As New OleDbCommand("SELECT FORMAT(AVG(Interview_Score),'0.00') FROM Interview WHERE Application_ID = '" & AppID & "'", con)
 
         'Setup commandGetComments - it doesn't have to be done this way, I was trying several things. This works the other way too (as above), I was just too lazy to change it
         'Personally I'd do it the way I did commandGetScore, this way is a bit long
@@ -31,9 +30,7 @@ Public Class ViewInterviewComments
             .Connection = con
         End With
 
-        'Query for first and last name
-        Dim commandGetFName As New OleDbCommand("SELECT First_Name FROM Application WHERE Application_Id = '" & AppID & "'", con)
-        Dim commandGetLName As New OleDbCommand("SELECT Last_Name FROM Application WHERE Application_Id = '" & AppID & "'", con)
+
 
 
         con.ConnectionString = ConnString
@@ -43,17 +40,16 @@ Public Class ViewInterviewComments
 
         'Put it in a try catch so that if something goes wrong with loading the data, we can get feedback
         Try
-            'get student name
-            fName = commandGetFName.ExecuteScalar()
-            lName = commandGetLName.ExecuteScalar()
+
             'get averaged score
             score = commandGetScore.ExecuteScalar()
             'get all comments
             reader = commandGetComments.ExecuteReader()
             'set label to student name
-            lblName.Text = lName & ", " & fName
-            'set label to average score
-            lblAvgScore.Text = score.ToString("N")
+            lblName.Text = StuName
+
+
+
 
             'Will loop through until there are no more records
             Do While reader.Read()
@@ -68,7 +64,13 @@ Public Class ViewInterviewComments
         End Try
         con.Close()
 
-
+        'Handles null score value
+        If IsDBNull(score) Then
+            lblAvgScore.Text = "No scores available."
+        Else
+            'set label to average score
+            lblAvgScore.Text = "Average score: " & score & " out of 5.00"
+        End If
 
     End Sub
 
