@@ -49,11 +49,11 @@
     End Function
 
 
-    Private Sub MISToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MISToolStripMenuItem.Click
+    Private Sub MISToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MISToolStripMenuItem1.Click
         MISReq.Show()
     End Sub
 
-    Private Sub PMISToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PMISToolStripMenuItem.Click
+    Private Sub PMISToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PMISToolStripMenuItem1.Click
         PMISReq.Show()
     End Sub
 End Class
