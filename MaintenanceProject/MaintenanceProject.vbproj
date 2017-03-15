@@ -110,6 +110,12 @@
       <DependentUpon>Main.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MISReq.Designer.vb">
+      <DependentUpon>MISReq.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MISReq.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -125,6 +131,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PMISReq.Designer.vb">
+      <DependentUpon>PMISReq.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PMISReq.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="PROJECTS1730DataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -196,11 +208,17 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MISReq.resx">
+      <DependentUpon>MISReq.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMISReq.resx">
+      <DependentUpon>PMISReq.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComments.resx">
       <DependentUpon>ViewComments.vb</DependentUpon>
@@ -297,6 +315,24 @@
     <None Include="PROJECTS1747DataSet5.xss">
       <DependentUpon>PROJECTS1747DataSet5.xsd</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MIS ERP.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MIS ES.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MIS IT.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MIS Software Engineering.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PMIS ERP.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PMIS ES.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
