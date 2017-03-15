@@ -36,7 +36,7 @@ Partial Class PMISReq
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(26, 157)
+        Me.Label2.Location = New System.Drawing.Point(22, 124)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(92, 13)
         Me.Label2.TabIndex = 12
@@ -57,16 +57,16 @@ Partial Class PMISReq
         Me.GroupBox1.Controls.Add(Me.RadioButton3)
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(46, 52)
+        Me.GroupBox1.Location = New System.Drawing.Point(44, 52)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(221, 86)
+        Me.GroupBox1.Size = New System.Drawing.Size(320, 51)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         '
         'RadioButton3
         '
         Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(6, 53)
+        Me.RadioButton3.Location = New System.Drawing.Point(196, 19)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(114, 17)
         Me.RadioButton3.TabIndex = 3
@@ -87,9 +87,9 @@ Partial Class PMISReq
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(46, 199)
+        Me.PictureBox1.Location = New System.Drawing.Point(44, 153)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(434, 285)
+        Me.PictureBox1.Size = New System.Drawing.Size(701, 626)
         Me.PictureBox1.TabIndex = 13
         Me.PictureBox1.TabStop = False
         '
@@ -97,7 +97,7 @@ Partial Class PMISReq
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(527, 530)
+        Me.ClientSize = New System.Drawing.Size(784, 809)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)

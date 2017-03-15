@@ -158,4 +158,13 @@ Public Class ApplicantProfile
     Private Sub menuViewInterview_Click(sender As Object, e As EventArgs) Handles menuViewInterview.Click
         ViewInterviewComments.Show()
     End Sub
+
+    Private Sub MISToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MISToolStripMenuItem.Click
+        MISReq.Show()
+
+    End Sub
+
+    Private Sub PMISToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PMISToolStripMenuItem.Click
+        PMISReq.Show()
+    End Sub
 End Class
