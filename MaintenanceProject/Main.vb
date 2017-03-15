@@ -3,19 +3,14 @@
     Dim SelectedApplicant
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'PROJECTS1747DataSet3.View_ApplicationTable' table. You can move, or remove it, as needed.
-        Me.View_ApplicationTableTableAdapter2.Fill(Me.PROJECTS1747DataSet3.View_ApplicationTable)
-        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        'TODO: This line of code loads data into the 'PROJECTS1747DataSet2.View_ApplicationTable' table. You can move, or remove it, as needed.
-        Me.View_ApplicationTableTableAdapter1.Fill(Me.PROJECTS1747DataSet2.View_ApplicationTable)
-        'TODO: This line of code loads data into the 'PROJECTS1747DataSet1.View_ApplicationTable' table. You can move, or remove it, as needed.
-        Me.View_ApplicationTableTableAdapter.Fill(Me.PROJECTS1747DataSet1.View_ApplicationTable)
-        'TODO: This line of code loads data into the 'PROJECTS1747DataSet1.Application' table. You can move, or remove it, as needed.
-        Me.ApplicationTableAdapter1.Fill(Me.PROJECTS1747DataSet1.Application)
-        'TODO: This line of code loads data into the 'PROJECTS1747DataSet.Application' table. You can move, or remove it, as needed.
-        Me.ApplicationTableAdapter.Fill(Me.PROJECTS1747DataSet.Application)
-        'TODO: This line of code loads data into the 'PROJECTS1730DataSet.Students' table. You can move, or remove it, as needed.
+        'TODO: This line of code loads data into the 'PROJECTS1747DataSet8.ApplicantView' table. You can move, or remove it, as needed.
+        Me.ApplicantViewTableAdapter.Fill(Me.PROJECTS1747DataSet8.ApplicantView)
+        'TODO: This line of code loads data into the 'PROJECTS1747DataSet8.ApplicationView' table. You can move, or remove it, as needed.
+        'Me.ApplicationViewTableAdapter.Fill(Me.PROJECTS1747DataSet8.ApplicationView)
 
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+
+        'ViewApplicationTableBindingSource2.Filter = String.Format()
 
 
     End Sub

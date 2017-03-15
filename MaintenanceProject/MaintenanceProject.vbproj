@@ -164,6 +164,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PROJECTS1747DataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PROJECTS1747DataSet6.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PROJECTS1747DataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECTS1747DataSet7.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PROJECTS1747DataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PROJECTS1747DataSet8.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PROJECTS1747DataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StudentProfile.Designer.vb">
+      <DependentUpon>StudentProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StudentProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ViewComments.Designer.vb">
       <DependentUpon>ViewComments.vb</DependentUpon>
     </Compile>
@@ -201,6 +222,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentProfile.resx">
+      <DependentUpon>StudentProfile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComments.resx">
       <DependentUpon>ViewComments.vb</DependentUpon>
@@ -297,6 +321,45 @@
     <None Include="PROJECTS1747DataSet5.xss">
       <DependentUpon>PROJECTS1747DataSet5.xsd</DependentUpon>
     </None>
+    <None Include="PROJECTS1747DataSet6.xsc">
+      <DependentUpon>PROJECTS1747DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="PROJECTS1747DataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PROJECTS1747DataSet6.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PROJECTS1747DataSet6.xss">
+      <DependentUpon>PROJECTS1747DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="PROJECTS1747DataSet7.xsc">
+      <DependentUpon>PROJECTS1747DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="PROJECTS1747DataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PROJECTS1747DataSet7.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PROJECTS1747DataSet7.xss">
+      <DependentUpon>PROJECTS1747DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="PROJECTS1747DataSet8.xsc">
+      <DependentUpon>PROJECTS1747DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="PROJECTS1747DataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PROJECTS1747DataSet8.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PROJECTS1747DataSet8.xss">
+      <DependentUpon>PROJECTS1747DataSet8.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\galaxy.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

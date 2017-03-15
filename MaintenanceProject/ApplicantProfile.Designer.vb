@@ -25,17 +25,8 @@ Partial Class ApplicantProfile
         Me.components = New System.ComponentModel.Container()
         Me.PersonalTabPage = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.lblAddress = New System.Windows.Forms.Label()
-        Me.lblPhone = New System.Windows.Forms.Label()
         Me.ApplicationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PROJECTS1747DataSet2 = New MaintenanceProject.PROJECTS1747DataSet2()
-        Me.lblEmail = New System.Windows.Forms.Label()
-        Me.lblYears = New System.Windows.Forms.Label()
-        Me.lblEmployer = New System.Windows.Forms.Label()
-        Me.lblEthnicity = New System.Windows.Forms.Label()
-        Me.lblGender = New System.Windows.Forms.Label()
-        Me.lblAge = New System.Windows.Forms.Label()
-        Me.lblStuID = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -46,12 +37,6 @@ Partial Class ApplicantProfile
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.lblGDegree = New System.Windows.Forms.Label()
-        Me.lblGInstitution = New System.Windows.Forms.Label()
-        Me.lblMajor = New System.Windows.Forms.Label()
-        Me.lblDegree = New System.Windows.Forms.Label()
-        Me.lblGPA = New System.Windows.Forms.Label()
-        Me.lblInstitution = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -60,10 +45,6 @@ Partial Class ApplicantProfile
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.lblUAEmail = New System.Windows.Forms.Label()
-        Me.lblAppDate = New System.Windows.Forms.Label()
-        Me.lblStudID = New System.Windows.Forms.Label()
-        Me.lblAppID = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -90,6 +71,8 @@ Partial Class ApplicantProfile
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tabAdmissions = New System.Windows.Forms.TabPage()
+        Me.lblResponse = New System.Windows.Forms.Label()
+        Me.tbResponse = New System.Windows.Forms.TextBox()
         Me.btnSubmit = New System.Windows.Forms.Button()
         Me.Label42 = New System.Windows.Forms.Label()
         Me.cbDecision = New System.Windows.Forms.ComboBox()
@@ -106,8 +89,21 @@ Partial Class ApplicantProfile
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuViewRecommendations = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuViewInterview = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tbResponse = New System.Windows.Forms.TextBox()
-        Me.lblResponse = New System.Windows.Forms.Label()
+        Me.tbStuID = New System.Windows.Forms.TextBox()
+        Me.tbAge = New System.Windows.Forms.TextBox()
+        Me.tbGender = New System.Windows.Forms.TextBox()
+        Me.tbEthnicity = New System.Windows.Forms.TextBox()
+        Me.tbEmployer = New System.Windows.Forms.TextBox()
+        Me.tbYears = New System.Windows.Forms.TextBox()
+        Me.tbEmail = New System.Windows.Forms.TextBox()
+        Me.tbPhone = New System.Windows.Forms.TextBox()
+        Me.tbAddress = New System.Windows.Forms.TextBox()
+        Me.tbUDGInst = New System.Windows.Forms.TextBox()
+        Me.tbUDGGPA = New System.Windows.Forms.TextBox()
+        Me.tbUGDDegree = New System.Windows.Forms.TextBox()
+        Me.tbUGDMajor = New System.Windows.Forms.TextBox()
+        Me.tbGDInst = New System.Windows.Forms.TextBox()
+        Me.tbGDDegree = New System.Windows.Forms.TextBox()
         Me.PersonalTabPage.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -135,15 +131,15 @@ Partial Class ApplicantProfile
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.lblAddress)
-        Me.TabPage1.Controls.Add(Me.lblPhone)
-        Me.TabPage1.Controls.Add(Me.lblEmail)
-        Me.TabPage1.Controls.Add(Me.lblYears)
-        Me.TabPage1.Controls.Add(Me.lblEmployer)
-        Me.TabPage1.Controls.Add(Me.lblEthnicity)
-        Me.TabPage1.Controls.Add(Me.lblGender)
-        Me.TabPage1.Controls.Add(Me.lblAge)
-        Me.TabPage1.Controls.Add(Me.lblStuID)
+        Me.TabPage1.Controls.Add(Me.tbAddress)
+        Me.TabPage1.Controls.Add(Me.tbPhone)
+        Me.TabPage1.Controls.Add(Me.tbEmail)
+        Me.TabPage1.Controls.Add(Me.tbYears)
+        Me.TabPage1.Controls.Add(Me.tbEmployer)
+        Me.TabPage1.Controls.Add(Me.tbEthnicity)
+        Me.TabPage1.Controls.Add(Me.tbGender)
+        Me.TabPage1.Controls.Add(Me.tbAge)
+        Me.TabPage1.Controls.Add(Me.tbStuID)
         Me.TabPage1.Controls.Add(Me.Label11)
         Me.TabPage1.Controls.Add(Me.Label10)
         Me.TabPage1.Controls.Add(Me.Label9)
@@ -162,27 +158,6 @@ Partial Class ApplicantProfile
         Me.TabPage1.Text = "Personal"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'lblAddress
-        '
-        Me.lblAddress.AutoSize = True
-        Me.lblAddress.Location = New System.Drawing.Point(443, 565)
-        Me.lblAddress.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblAddress.Name = "lblAddress"
-        Me.lblAddress.Size = New System.Drawing.Size(119, 32)
-        Me.lblAddress.TabIndex = 18
-        Me.lblAddress.Text = "Address"
-        '
-        'lblPhone
-        '
-        Me.lblPhone.AutoSize = True
-        Me.lblPhone.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Phone", True))
-        Me.lblPhone.Location = New System.Drawing.Point(443, 501)
-        Me.lblPhone.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblPhone.Name = "lblPhone"
-        Me.lblPhone.Size = New System.Drawing.Size(98, 32)
-        Me.lblPhone.TabIndex = 17
-        Me.lblPhone.Text = "Phone"
-        '
         'ApplicationBindingSource
         '
         Me.ApplicationBindingSource.DataMember = "Application"
@@ -193,87 +168,10 @@ Partial Class ApplicantProfile
         Me.PROJECTS1747DataSet2.DataSetName = "PROJECTS1747DataSet2"
         Me.PROJECTS1747DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'lblEmail
-        '
-        Me.lblEmail.AutoSize = True
-        Me.lblEmail.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Non_UA_Email", True))
-        Me.lblEmail.Location = New System.Drawing.Point(443, 436)
-        Me.lblEmail.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblEmail.Name = "lblEmail"
-        Me.lblEmail.Size = New System.Drawing.Size(87, 32)
-        Me.lblEmail.TabIndex = 16
-        Me.lblEmail.Text = "Email"
-        '
-        'lblYears
-        '
-        Me.lblYears.AutoSize = True
-        Me.lblYears.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "TWE", True))
-        Me.lblYears.Location = New System.Drawing.Point(443, 372)
-        Me.lblYears.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblYears.Name = "lblYears"
-        Me.lblYears.Size = New System.Drawing.Size(89, 32)
-        Me.lblYears.TabIndex = 15
-        Me.lblYears.Text = "Years"
-        '
-        'lblEmployer
-        '
-        Me.lblEmployer.AutoSize = True
-        Me.lblEmployer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Current_Employer", True))
-        Me.lblEmployer.Location = New System.Drawing.Point(443, 308)
-        Me.lblEmployer.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblEmployer.Name = "lblEmployer"
-        Me.lblEmployer.Size = New System.Drawing.Size(135, 32)
-        Me.lblEmployer.TabIndex = 14
-        Me.lblEmployer.Text = "Employer"
-        '
-        'lblEthnicity
-        '
-        Me.lblEthnicity.AutoSize = True
-        Me.lblEthnicity.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Ethnicity", True))
-        Me.lblEthnicity.Location = New System.Drawing.Point(443, 243)
-        Me.lblEthnicity.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblEthnicity.Name = "lblEthnicity"
-        Me.lblEthnicity.Size = New System.Drawing.Size(124, 32)
-        Me.lblEthnicity.TabIndex = 13
-        Me.lblEthnicity.Text = "Ethnicity"
-        '
-        'lblGender
-        '
-        Me.lblGender.AutoSize = True
-        Me.lblGender.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Gender", True))
-        Me.lblGender.Location = New System.Drawing.Point(443, 179)
-        Me.lblGender.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblGender.Name = "lblGender"
-        Me.lblGender.Size = New System.Drawing.Size(110, 32)
-        Me.lblGender.TabIndex = 12
-        Me.lblGender.Text = "Gender"
-        '
-        'lblAge
-        '
-        Me.lblAge.AutoSize = True
-        Me.lblAge.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Age", True))
-        Me.lblAge.Location = New System.Drawing.Point(443, 114)
-        Me.lblAge.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblAge.Name = "lblAge"
-        Me.lblAge.Size = New System.Drawing.Size(66, 32)
-        Me.lblAge.TabIndex = 11
-        Me.lblAge.Text = "Age"
-        '
-        'lblStuID
-        '
-        Me.lblStuID.AutoSize = True
-        Me.lblStuID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Student_ID", True))
-        Me.lblStuID.Location = New System.Drawing.Point(443, 50)
-        Me.lblStuID.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblStuID.Name = "lblStuID"
-        Me.lblStuID.Size = New System.Drawing.Size(85, 32)
-        Me.lblStuID.TabIndex = 10
-        Me.lblStuID.Text = "StuID"
-        '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(275, 565)
+        Me.Label11.Location = New System.Drawing.Point(16, 565)
         Me.Label11.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(134, 32)
@@ -283,7 +181,7 @@ Partial Class ApplicantProfile
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(293, 503)
+        Me.Label10.Location = New System.Drawing.Point(16, 501)
         Me.Label10.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(113, 32)
@@ -293,7 +191,7 @@ Partial Class ApplicantProfile
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(309, 434)
+        Me.Label9.Location = New System.Drawing.Point(16, 436)
         Me.Label9.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(102, 32)
@@ -303,7 +201,7 @@ Partial Class ApplicantProfile
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(333, 114)
+        Me.Label8.Location = New System.Drawing.Point(16, 114)
         Me.Label8.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(74, 32)
@@ -313,7 +211,7 @@ Partial Class ApplicantProfile
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(304, 372)
+        Me.Label7.Location = New System.Drawing.Point(16, 372)
         Me.Label7.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(104, 32)
@@ -323,7 +221,7 @@ Partial Class ApplicantProfile
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(261, 308)
+        Me.Label6.Location = New System.Drawing.Point(16, 308)
         Me.Label6.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(150, 32)
@@ -333,7 +231,7 @@ Partial Class ApplicantProfile
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(272, 243)
+        Me.Label5.Location = New System.Drawing.Point(16, 243)
         Me.Label5.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(132, 32)
@@ -343,7 +241,7 @@ Partial Class ApplicantProfile
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(283, 179)
+        Me.Label4.Location = New System.Drawing.Point(16, 179)
         Me.Label4.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(125, 32)
@@ -353,7 +251,7 @@ Partial Class ApplicantProfile
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(248, 50)
+        Me.Label2.Location = New System.Drawing.Point(16, 50)
         Me.Label2.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(156, 32)
@@ -362,12 +260,12 @@ Partial Class ApplicantProfile
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.lblGDegree)
-        Me.TabPage2.Controls.Add(Me.lblGInstitution)
-        Me.TabPage2.Controls.Add(Me.lblMajor)
-        Me.TabPage2.Controls.Add(Me.lblDegree)
-        Me.TabPage2.Controls.Add(Me.lblGPA)
-        Me.TabPage2.Controls.Add(Me.lblInstitution)
+        Me.TabPage2.Controls.Add(Me.tbGDDegree)
+        Me.TabPage2.Controls.Add(Me.tbGDInst)
+        Me.TabPage2.Controls.Add(Me.tbUGDMajor)
+        Me.TabPage2.Controls.Add(Me.tbUGDDegree)
+        Me.TabPage2.Controls.Add(Me.tbUDGGPA)
+        Me.TabPage2.Controls.Add(Me.tbUDGInst)
         Me.TabPage2.Controls.Add(Me.Label17)
         Me.TabPage2.Controls.Add(Me.Label16)
         Me.TabPage2.Controls.Add(Me.Label15)
@@ -384,76 +282,10 @@ Partial Class ApplicantProfile
         Me.TabPage2.Text = "Academics"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'lblGDegree
-        '
-        Me.lblGDegree.AutoSize = True
-        Me.lblGDegree.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "G_Degree", True))
-        Me.lblGDegree.Location = New System.Drawing.Point(456, 436)
-        Me.lblGDegree.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblGDegree.Name = "lblGDegree"
-        Me.lblGDegree.Size = New System.Drawing.Size(130, 32)
-        Me.lblGDegree.TabIndex = 12
-        Me.lblGDegree.Text = "GDegree"
-        '
-        'lblGInstitution
-        '
-        Me.lblGInstitution.AutoSize = True
-        Me.lblGInstitution.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "GRAD", True))
-        Me.lblGInstitution.Location = New System.Drawing.Point(456, 360)
-        Me.lblGInstitution.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblGInstitution.Name = "lblGInstitution"
-        Me.lblGInstitution.Size = New System.Drawing.Size(160, 32)
-        Me.lblGInstitution.TabIndex = 11
-        Me.lblGInstitution.Text = "GInstitution"
-        '
-        'lblMajor
-        '
-        Me.lblMajor.AutoSize = True
-        Me.lblMajor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "UDRG_Major", True))
-        Me.lblMajor.Location = New System.Drawing.Point(456, 284)
-        Me.lblMajor.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblMajor.Name = "lblMajor"
-        Me.lblMajor.Size = New System.Drawing.Size(86, 32)
-        Me.lblMajor.TabIndex = 10
-        Me.lblMajor.Text = "Major"
-        '
-        'lblDegree
-        '
-        Me.lblDegree.AutoSize = True
-        Me.lblDegree.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "U_Deg", True))
-        Me.lblDegree.Location = New System.Drawing.Point(456, 207)
-        Me.lblDegree.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblDegree.Name = "lblDegree"
-        Me.lblDegree.Size = New System.Drawing.Size(108, 32)
-        Me.lblDegree.TabIndex = 9
-        Me.lblDegree.Text = "Degree"
-        '
-        'lblGPA
-        '
-        Me.lblGPA.AutoSize = True
-        Me.lblGPA.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "U_GPA", True))
-        Me.lblGPA.Location = New System.Drawing.Point(456, 131)
-        Me.lblGPA.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblGPA.Name = "lblGPA"
-        Me.lblGPA.Size = New System.Drawing.Size(75, 32)
-        Me.lblGPA.TabIndex = 8
-        Me.lblGPA.Text = "GPA"
-        '
-        'lblInstitution
-        '
-        Me.lblInstitution.AutoSize = True
-        Me.lblInstitution.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "U_Inst", True))
-        Me.lblInstitution.Location = New System.Drawing.Point(456, 55)
-        Me.lblInstitution.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblInstitution.Name = "lblInstitution"
-        Me.lblInstitution.Size = New System.Drawing.Size(138, 32)
-        Me.lblInstitution.TabIndex = 7
-        Me.lblInstitution.Text = "Institution"
-        '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(157, 360)
+        Me.Label17.Location = New System.Drawing.Point(16, 360)
         Me.Label17.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(279, 32)
@@ -463,7 +295,7 @@ Partial Class ApplicantProfile
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(184, 436)
+        Me.Label16.Location = New System.Drawing.Point(16, 436)
         Me.Label16.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(249, 32)
@@ -473,7 +305,7 @@ Partial Class ApplicantProfile
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(192, 284)
+        Me.Label15.Location = New System.Drawing.Point(16, 284)
         Me.Label15.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(242, 32)
@@ -483,7 +315,7 @@ Partial Class ApplicantProfile
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(168, 207)
+        Me.Label14.Location = New System.Drawing.Point(16, 207)
         Me.Label14.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(264, 32)
@@ -493,7 +325,7 @@ Partial Class ApplicantProfile
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(141, 55)
+        Me.Label13.Location = New System.Drawing.Point(16, 55)
         Me.Label13.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(294, 32)
@@ -512,7 +344,7 @@ Partial Class ApplicantProfile
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(203, 131)
+        Me.Label3.Location = New System.Drawing.Point(16, 131)
         Me.Label3.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(231, 32)
@@ -521,10 +353,6 @@ Partial Class ApplicantProfile
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add(Me.lblUAEmail)
-        Me.TabPage3.Controls.Add(Me.lblAppDate)
-        Me.TabPage3.Controls.Add(Me.lblStudID)
-        Me.TabPage3.Controls.Add(Me.lblAppID)
         Me.TabPage3.Controls.Add(Me.Label21)
         Me.TabPage3.Controls.Add(Me.Label20)
         Me.TabPage3.Controls.Add(Me.Label19)
@@ -537,54 +365,10 @@ Partial Class ApplicantProfile
         Me.TabPage3.Text = "Application"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'lblUAEmail
-        '
-        Me.lblUAEmail.AutoSize = True
-        Me.lblUAEmail.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "UA_Email", True))
-        Me.lblUAEmail.Location = New System.Drawing.Point(429, 281)
-        Me.lblUAEmail.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblUAEmail.Name = "lblUAEmail"
-        Me.lblUAEmail.Size = New System.Drawing.Size(126, 32)
-        Me.lblUAEmail.TabIndex = 7
-        Me.lblUAEmail.Text = "UAEmail"
-        '
-        'lblAppDate
-        '
-        Me.lblAppDate.AutoSize = True
-        Me.lblAppDate.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "App_Date", True))
-        Me.lblAppDate.Location = New System.Drawing.Point(429, 200)
-        Me.lblAppDate.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblAppDate.Name = "lblAppDate"
-        Me.lblAppDate.Size = New System.Drawing.Size(126, 32)
-        Me.lblAppDate.TabIndex = 6
-        Me.lblAppDate.Text = "AppDate"
-        '
-        'lblStudID
-        '
-        Me.lblStudID.AutoSize = True
-        Me.lblStudID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Student_ID", True))
-        Me.lblStudID.Location = New System.Drawing.Point(429, 117)
-        Me.lblStudID.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblStudID.Name = "lblStudID"
-        Me.lblStudID.Size = New System.Drawing.Size(101, 32)
-        Me.lblStudID.TabIndex = 5
-        Me.lblStudID.Text = "StudID"
-        '
-        'lblAppID
-        '
-        Me.lblAppID.AutoSize = True
-        Me.lblAppID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Application_ID", True))
-        Me.lblAppID.Location = New System.Drawing.Point(429, 38)
-        Me.lblAppID.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.lblAppID.Name = "lblAppID"
-        Me.lblAppID.Size = New System.Drawing.Size(93, 32)
-        Me.lblAppID.TabIndex = 4
-        Me.lblAppID.Text = "AppID"
-        '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(171, 38)
+        Me.Label21.Location = New System.Drawing.Point(41, 38)
         Me.Label21.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(206, 32)
@@ -594,7 +378,7 @@ Partial Class ApplicantProfile
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(192, 281)
+        Me.Label20.Location = New System.Drawing.Point(41, 281)
         Me.Label20.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(186, 32)
@@ -604,7 +388,7 @@ Partial Class ApplicantProfile
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(139, 200)
+        Me.Label19.Location = New System.Drawing.Point(41, 200)
         Me.Label19.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(239, 32)
@@ -614,7 +398,7 @@ Partial Class ApplicantProfile
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(203, 119)
+        Me.Label18.Location = New System.Drawing.Point(41, 117)
         Me.Label18.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(170, 32)
@@ -876,6 +660,23 @@ Partial Class ApplicantProfile
         Me.tabAdmissions.Text = "Admissions"
         Me.tabAdmissions.UseVisualStyleBackColor = True
         '
+        'lblResponse
+        '
+        Me.lblResponse.AutoSize = True
+        Me.lblResponse.Location = New System.Drawing.Point(259, 292)
+        Me.lblResponse.Name = "lblResponse"
+        Me.lblResponse.Size = New System.Drawing.Size(151, 32)
+        Me.lblResponse.TabIndex = 4
+        Me.lblResponse.Text = "Response:"
+        '
+        'tbResponse
+        '
+        Me.tbResponse.Location = New System.Drawing.Point(259, 330)
+        Me.tbResponse.Name = "tbResponse"
+        Me.tbResponse.ReadOnly = True
+        Me.tbResponse.Size = New System.Drawing.Size(258, 38)
+        Me.tbResponse.TabIndex = 3
+        '
         'btnSubmit
         '
         Me.btnSubmit.Location = New System.Drawing.Point(383, 189)
@@ -998,22 +799,143 @@ Partial Class ApplicantProfile
         Me.menuViewInterview.Size = New System.Drawing.Size(381, 46)
         Me.menuViewInterview.Text = "Interview"
         '
-        'tbResponse
+        'tbStuID
         '
-        Me.tbResponse.Location = New System.Drawing.Point(259, 330)
-        Me.tbResponse.Name = "tbResponse"
-        Me.tbResponse.ReadOnly = True
-        Me.tbResponse.Size = New System.Drawing.Size(258, 38)
-        Me.tbResponse.TabIndex = 3
+        Me.tbStuID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Student_ID", True))
+        Me.tbStuID.Location = New System.Drawing.Point(210, 47)
+        Me.tbStuID.Name = "tbStuID"
+        Me.tbStuID.ReadOnly = True
+        Me.tbStuID.Size = New System.Drawing.Size(341, 38)
+        Me.tbStuID.TabIndex = 19
+        Me.tbStuID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'lblResponse
+        'tbAge
         '
-        Me.lblResponse.AutoSize = True
-        Me.lblResponse.Location = New System.Drawing.Point(259, 292)
-        Me.lblResponse.Name = "lblResponse"
-        Me.lblResponse.Size = New System.Drawing.Size(151, 32)
-        Me.lblResponse.TabIndex = 4
-        Me.lblResponse.Text = "Response:"
+        Me.tbAge.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Age", True))
+        Me.tbAge.Location = New System.Drawing.Point(210, 111)
+        Me.tbAge.Name = "tbAge"
+        Me.tbAge.ReadOnly = True
+        Me.tbAge.Size = New System.Drawing.Size(341, 38)
+        Me.tbAge.TabIndex = 20
+        Me.tbAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'tbGender
+        '
+        Me.tbGender.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Gender", True))
+        Me.tbGender.Location = New System.Drawing.Point(210, 176)
+        Me.tbGender.Name = "tbGender"
+        Me.tbGender.ReadOnly = True
+        Me.tbGender.Size = New System.Drawing.Size(341, 38)
+        Me.tbGender.TabIndex = 21
+        '
+        'tbEthnicity
+        '
+        Me.tbEthnicity.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Ethnicity", True))
+        Me.tbEthnicity.Location = New System.Drawing.Point(210, 240)
+        Me.tbEthnicity.Name = "tbEthnicity"
+        Me.tbEthnicity.ReadOnly = True
+        Me.tbEthnicity.Size = New System.Drawing.Size(341, 38)
+        Me.tbEthnicity.TabIndex = 22
+        '
+        'tbEmployer
+        '
+        Me.tbEmployer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Current_Employer", True))
+        Me.tbEmployer.Location = New System.Drawing.Point(210, 305)
+        Me.tbEmployer.Name = "tbEmployer"
+        Me.tbEmployer.ReadOnly = True
+        Me.tbEmployer.Size = New System.Drawing.Size(341, 38)
+        Me.tbEmployer.TabIndex = 23
+        '
+        'tbYears
+        '
+        Me.tbYears.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "TWE", True))
+        Me.tbYears.Location = New System.Drawing.Point(210, 369)
+        Me.tbYears.Name = "tbYears"
+        Me.tbYears.ReadOnly = True
+        Me.tbYears.Size = New System.Drawing.Size(341, 38)
+        Me.tbYears.TabIndex = 24
+        Me.tbYears.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'tbEmail
+        '
+        Me.tbEmail.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Non_UA_Email", True))
+        Me.tbEmail.Location = New System.Drawing.Point(210, 433)
+        Me.tbEmail.Name = "tbEmail"
+        Me.tbEmail.ReadOnly = True
+        Me.tbEmail.Size = New System.Drawing.Size(341, 38)
+        Me.tbEmail.TabIndex = 25
+        '
+        'tbPhone
+        '
+        Me.tbPhone.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Phone", True))
+        Me.tbPhone.Location = New System.Drawing.Point(210, 498)
+        Me.tbPhone.Name = "tbPhone"
+        Me.tbPhone.ReadOnly = True
+        Me.tbPhone.Size = New System.Drawing.Size(341, 38)
+        Me.tbPhone.TabIndex = 26
+        '
+        'tbAddress
+        '
+        Me.tbAddress.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Phone", True))
+        Me.tbAddress.Location = New System.Drawing.Point(210, 562)
+        Me.tbAddress.Name = "tbAddress"
+        Me.tbAddress.ReadOnly = True
+        Me.tbAddress.Size = New System.Drawing.Size(341, 38)
+        Me.tbAddress.TabIndex = 27
+        '
+        'tbUDGInst
+        '
+        Me.tbUDGInst.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Student_ID", True))
+        Me.tbUDGInst.Location = New System.Drawing.Point(335, 52)
+        Me.tbUDGInst.Name = "tbUDGInst"
+        Me.tbUDGInst.ReadOnly = True
+        Me.tbUDGInst.Size = New System.Drawing.Size(371, 38)
+        Me.tbUDGInst.TabIndex = 22
+        '
+        'tbUDGGPA
+        '
+        Me.tbUDGGPA.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Student_ID", True))
+        Me.tbUDGGPA.Location = New System.Drawing.Point(335, 128)
+        Me.tbUDGGPA.Name = "tbUDGGPA"
+        Me.tbUDGGPA.ReadOnly = True
+        Me.tbUDGGPA.Size = New System.Drawing.Size(371, 38)
+        Me.tbUDGGPA.TabIndex = 23
+        '
+        'tbUGDDegree
+        '
+        Me.tbUGDDegree.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Student_ID", True))
+        Me.tbUGDDegree.Location = New System.Drawing.Point(335, 204)
+        Me.tbUGDDegree.Name = "tbUGDDegree"
+        Me.tbUGDDegree.ReadOnly = True
+        Me.tbUGDDegree.Size = New System.Drawing.Size(371, 38)
+        Me.tbUGDDegree.TabIndex = 24
+        '
+        'tbUGDMajor
+        '
+        Me.tbUGDMajor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Student_ID", True))
+        Me.tbUGDMajor.Location = New System.Drawing.Point(335, 281)
+        Me.tbUGDMajor.Name = "tbUGDMajor"
+        Me.tbUGDMajor.ReadOnly = True
+        Me.tbUGDMajor.Size = New System.Drawing.Size(371, 38)
+        Me.tbUGDMajor.TabIndex = 25
+        '
+        'tbGDInst
+        '
+        Me.tbGDInst.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Student_ID", True))
+        Me.tbGDInst.Location = New System.Drawing.Point(335, 357)
+        Me.tbGDInst.Name = "tbGDInst"
+        Me.tbGDInst.ReadOnly = True
+        Me.tbGDInst.Size = New System.Drawing.Size(371, 38)
+        Me.tbGDInst.TabIndex = 26
+        '
+        'tbGDDegree
+        '
+        Me.tbGDDegree.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Student_ID", True))
+        Me.tbGDDegree.Location = New System.Drawing.Point(335, 433)
+        Me.tbGDDegree.Name = "tbGDDegree"
+        Me.tbGDDegree.ReadOnly = True
+        Me.tbGDDegree.Size = New System.Drawing.Size(371, 38)
+        Me.tbGDDegree.TabIndex = 27
         '
         'ApplicantProfile
         '
@@ -1075,28 +997,9 @@ Partial Class ApplicantProfile
     Friend WithEvents Label20 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label18 As Label
-    Friend WithEvents lblAddress As Label
-    Friend WithEvents lblPhone As Label
-    Friend WithEvents lblEmail As Label
-    Friend WithEvents lblYears As Label
-    Friend WithEvents lblEmployer As Label
-    Friend WithEvents lblEthnicity As Label
-    Friend WithEvents lblGender As Label
-    Friend WithEvents lblAge As Label
-    Friend WithEvents lblStuID As Label
     Friend WithEvents PROJECTS1747DataSet2 As PROJECTS1747DataSet2
     Friend WithEvents ApplicationBindingSource As BindingSource
     Friend WithEvents ApplicationTableAdapter As PROJECTS1747DataSet2TableAdapters.ApplicationTableAdapter
-    Friend WithEvents lblGDegree As Label
-    Friend WithEvents lblGInstitution As Label
-    Friend WithEvents lblMajor As Label
-    Friend WithEvents lblDegree As Label
-    Friend WithEvents lblGPA As Label
-    Friend WithEvents lblInstitution As Label
-    Friend WithEvents lblUAEmail As Label
-    Friend WithEvents lblAppDate As Label
-    Friend WithEvents lblStudID As Label
-    Friend WithEvents lblAppID As Label
     Friend WithEvents Label40 As Label
     Friend WithEvents Label39 As Label
     Friend WithEvents Label38 As Label
@@ -1134,4 +1037,19 @@ Partial Class ApplicantProfile
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblResponse As Label
     Friend WithEvents tbResponse As TextBox
+    Friend WithEvents tbStuID As TextBox
+    Friend WithEvents tbAddress As TextBox
+    Friend WithEvents tbPhone As TextBox
+    Friend WithEvents tbEmail As TextBox
+    Friend WithEvents tbYears As TextBox
+    Friend WithEvents tbEmployer As TextBox
+    Friend WithEvents tbEthnicity As TextBox
+    Friend WithEvents tbGender As TextBox
+    Friend WithEvents tbAge As TextBox
+    Friend WithEvents tbGDDegree As TextBox
+    Friend WithEvents tbGDInst As TextBox
+    Friend WithEvents tbUGDMajor As TextBox
+    Friend WithEvents tbUGDDegree As TextBox
+    Friend WithEvents tbUDGGPA As TextBox
+    Friend WithEvents tbUDGInst As TextBox
 End Class
