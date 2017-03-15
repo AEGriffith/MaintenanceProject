@@ -31,7 +31,7 @@ Public Class ApplicantProfile
         Dim commandGetFName As New OleDbCommand("SELECT First_Name FROM Application WHERE Application_Id = '" & AppID & "'", con)
         Dim commandGetLName As New OleDbCommand("SELECT Last_Name FROM Application WHERE Application_Id = '" & AppID & "'", con)
         'sql that gets program
-        Dim commandGetProgram As New OleDbCommand("SELECT Program FROM Application WHERE Application_Id = '" & AppID & "'", con)
+        Dim commandGetProgram As New OleDbCommand("SELECT P.Program_Name FROM Program_Requirement P INNER JOIN Student S ON P.Program_ID = S.Program_ID INNER JOIN Application A ON S.Student_ID = A.Student_ID WHERE A.Application_Id = '" & AppID & "'", con)
         'sql that gets Decision
         Dim commandGetDecision As New OleDbCommand("SELECT Decision From Application WHERE Application_Id = '" & AppID & "'", con)
         'sql that gets Response
@@ -54,7 +54,7 @@ Public Class ApplicantProfile
 
         'Displays the student's name
         lblStuName.Text = StuLName & ", " & StuFName
-
+        MessageBox.Show(Program)
         'For some reason, the database allows these values to be null. Tables must be deleted and recreated to change this.
         If IsDBNull(StuFName) Then
             MessageBox.Show("Student Information Missing (Name), Contact Database Administrator.")
@@ -166,5 +166,14 @@ Public Class ApplicantProfile
 
     Private Sub PMISToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PMISToolStripMenuItem.Click
         PMISReq.Show()
+    End Sub
+
+    Private Sub tabAdmissions_Click(sender As Object, e As EventArgs) Handles tabAdmissions.GotFocus, tabAdmissions.Click
+
+        MessageBox.Show(Program)
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
     End Sub
 End Class

@@ -93,8 +93,8 @@ Partial Class Main
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1157, 49)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(2, 1, 0, 1)
+        Me.MenuStrip1.Size = New System.Drawing.Size(434, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -102,19 +102,19 @@ Partial Class Main
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.ApplicantProfileToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 45)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 22)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(350, 46)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'ApplicantProfileToolStripMenuItem
         '
         Me.ApplicantProfileToolStripMenuItem.Name = "ApplicantProfileToolStripMenuItem"
-        Me.ApplicantProfileToolStripMenuItem.Size = New System.Drawing.Size(350, 46)
+        Me.ApplicantProfileToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.ApplicantProfileToolStripMenuItem.Text = "Applicant Profile"
         '
         'Panel2
@@ -123,10 +123,10 @@ Partial Class Main
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.Controls.Add(Me.DataGridView1)
-        Me.Panel2.Location = New System.Drawing.Point(0, 258)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel2.Location = New System.Drawing.Point(0, 108)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1144, 551)
+        Me.Panel2.Size = New System.Drawing.Size(429, 231)
         Me.Panel2.TabIndex = 3
         '
         'DataGridView1
@@ -140,12 +140,12 @@ Partial Class Main
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.ProgramDataGridViewTextBoxColumn, Me.ConcentrationDataGridViewTextBoxColumn, Me.ApplicationDateDataGridViewTextBoxColumn, Me.ResidencyDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ApplicantViewBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 2)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 1)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 40
-        Me.DataGridView1.Size = New System.Drawing.Size(1141, 548)
+        Me.DataGridView1.Size = New System.Drawing.Size(428, 230)
         Me.DataGridView1.TabIndex = 0
         '
         'IDDataGridViewTextBoxColumn
@@ -246,29 +246,26 @@ Partial Class Main
         '
         Me.cbFilter1.FormattingEnabled = True
         Me.cbFilter1.Items.AddRange(New Object() {"First_Name", "Last_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address", "First_Name", "Last_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address"})
-        Me.cbFilter1.Location = New System.Drawing.Point(187, 91)
-        Me.cbFilter1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.cbFilter1.Location = New System.Drawing.Point(70, 38)
         Me.cbFilter1.Name = "cbFilter1"
-        Me.cbFilter1.Size = New System.Drawing.Size(121, 39)
+        Me.cbFilter1.Size = New System.Drawing.Size(93, 21)
         Me.cbFilter1.TabIndex = 4
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(37, 91)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.Label1.Location = New System.Drawing.Point(14, 38)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(134, 32)
+        Me.Label1.Size = New System.Drawing.Size(50, 13)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Filter By: "
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(37, 147)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.Label2.Location = New System.Drawing.Point(14, 62)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(127, 32)
+        Me.Label2.Size = New System.Drawing.Size(47, 13)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Filter By:"
         '
@@ -277,28 +274,25 @@ Partial Class Main
         Me.cbFilter2.Enabled = False
         Me.cbFilter2.FormattingEnabled = True
         Me.cbFilter2.Items.AddRange(New Object() {"First_Name", "Last_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address", "First_Name", "Last_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address"})
-        Me.cbFilter2.Location = New System.Drawing.Point(187, 144)
-        Me.cbFilter2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.cbFilter2.Location = New System.Drawing.Point(70, 60)
         Me.cbFilter2.Name = "cbFilter2"
-        Me.cbFilter2.Size = New System.Drawing.Size(121, 39)
+        Me.cbFilter2.Size = New System.Drawing.Size(93, 21)
         Me.cbFilter2.TabIndex = 7
         '
         'tbFilter1
         '
         Me.tbFilter1.Enabled = False
-        Me.tbFilter1.Location = New System.Drawing.Point(450, 92)
-        Me.tbFilter1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.tbFilter1.Location = New System.Drawing.Point(169, 39)
         Me.tbFilter1.Name = "tbFilter1"
-        Me.tbFilter1.Size = New System.Drawing.Size(100, 38)
+        Me.tbFilter1.Size = New System.Drawing.Size(110, 20)
         Me.tbFilter1.TabIndex = 8
         '
         'tbFilter2
         '
         Me.tbFilter2.Enabled = False
-        Me.tbFilter2.Location = New System.Drawing.Point(450, 144)
-        Me.tbFilter2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.tbFilter2.Location = New System.Drawing.Point(169, 60)
         Me.tbFilter2.Name = "tbFilter2"
-        Me.tbFilter2.Size = New System.Drawing.Size(100, 38)
+        Me.tbFilter2.Size = New System.Drawing.Size(110, 20)
         Me.tbFilter2.TabIndex = 9
         '
         'ApplicationTableAdapter
@@ -312,10 +306,10 @@ Partial Class Main
         '
         'btnViewApplicant
         '
-        Me.btnViewApplicant.Location = New System.Drawing.Point(843, 82)
-        Me.btnViewApplicant.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnViewApplicant.Location = New System.Drawing.Point(316, 34)
+        Me.btnViewApplicant.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.btnViewApplicant.Name = "btnViewApplicant"
-        Me.btnViewApplicant.Size = New System.Drawing.Size(267, 139)
+        Me.btnViewApplicant.Size = New System.Drawing.Size(100, 58)
         Me.btnViewApplicant.TabIndex = 10
         Me.btnViewApplicant.Text = "View Profile"
         Me.btnViewApplicant.UseVisualStyleBackColor = True
@@ -376,9 +370,9 @@ Partial Class Main
         '
         'Main
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1157, 820)
+        Me.ClientSize = New System.Drawing.Size(434, 344)
         Me.Controls.Add(Me.btnViewApplicant)
         Me.Controls.Add(Me.tbFilter2)
         Me.Controls.Add(Me.tbFilter1)
@@ -389,7 +383,7 @@ Partial Class Main
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Name = "Main"
         Me.Text = "Applicants"
         Me.MenuStrip1.ResumeLayout(False)
