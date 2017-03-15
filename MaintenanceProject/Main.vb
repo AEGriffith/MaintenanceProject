@@ -100,4 +100,6 @@
     Friend Function getSelectedApplicant()
         Return SelectedApplicant
     End Function
+
+
 End Class

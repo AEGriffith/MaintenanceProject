@@ -66,6 +66,30 @@ Partial Class Main
         Me.ConcentrationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ApplicationDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ResidencyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ViewApplicationTableBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PROJECTS1747DataSet3BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PROJECTS1747DataSet3 = New MaintenanceProject.PROJECTS1747DataSet3()
+        Me.ViewApplicationTableBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PROJECTS1747DataSet2 = New MaintenanceProject.PROJECTS1747DataSet2()
+        Me.ApplicationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PROJECTS1747DataSet = New MaintenanceProject.PROJECTS1747DataSet()
+        Me.cbFilter1 = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cbFilter2 = New System.Windows.Forms.ComboBox()
+        Me.tbFilter1 = New System.Windows.Forms.TextBox()
+        Me.tbFilter2 = New System.Windows.Forms.TextBox()
+        Me.ApplicationTableAdapter = New MaintenanceProject.PROJECTS1747DataSetTableAdapters.ApplicationTableAdapter()
+        Me.ProjectS1730DataSet1 = New MaintenanceProject.PROJECTS1730DataSet()
+        Me.btnViewApplicant = New System.Windows.Forms.Button()
+        Me.PROJECTS1747DataSet1 = New MaintenanceProject.PROJECTS1747DataSet1()
+        Me.PROJECTS1747DataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ApplicationBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ApplicationTableAdapter1 = New MaintenanceProject.PROJECTS1747DataSet1TableAdapters.ApplicationTableAdapter()
+        Me.ViewApplicationTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.View_ApplicationTableTableAdapter = New MaintenanceProject.PROJECTS1747DataSet1TableAdapters.View_ApplicationTableTableAdapter()
+        Me.View_ApplicationTableTableAdapter1 = New MaintenanceProject.PROJECTS1747DataSet2TableAdapters.View_ApplicationTableTableAdapter()
+        Me.View_ApplicationTableTableAdapter2 = New MaintenanceProject.PROJECTS1747DataSet3TableAdapters.View_ApplicationTableTableAdapter()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -373,6 +397,149 @@ Partial Class Main
         Me.ResidencyDataGridViewTextBoxColumn.HeaderText = "Residency"
         Me.ResidencyDataGridViewTextBoxColumn.Name = "ResidencyDataGridViewTextBoxColumn"
         Me.ResidencyDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ViewApplicationTableBindingSource2
+        '
+        Me.ViewApplicationTableBindingSource2.DataMember = "View_ApplicationTable"
+        Me.ViewApplicationTableBindingSource2.DataSource = Me.PROJECTS1747DataSet3BindingSource
+        '
+        'PROJECTS1747DataSet3BindingSource
+        '
+        Me.PROJECTS1747DataSet3BindingSource.DataSource = Me.PROJECTS1747DataSet3
+        Me.PROJECTS1747DataSet3BindingSource.Position = 0
+        '
+        'PROJECTS1747DataSet3
+        '
+        Me.PROJECTS1747DataSet3.DataSetName = "PROJECTS1747DataSet3"
+        Me.PROJECTS1747DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ViewApplicationTableBindingSource1
+        '
+        Me.ViewApplicationTableBindingSource1.DataMember = "View_ApplicationTable"
+        Me.ViewApplicationTableBindingSource1.DataSource = Me.PROJECTS1747DataSet2
+        '
+        'PROJECTS1747DataSet2
+        '
+        Me.PROJECTS1747DataSet2.DataSetName = "PROJECTS1747DataSet2"
+        Me.PROJECTS1747DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ApplicationBindingSource
+        '
+        Me.ApplicationBindingSource.DataMember = "Application"
+        Me.ApplicationBindingSource.DataSource = Me.PROJECTS1747DataSet
+        '
+        'PROJECTS1747DataSet
+        '
+        Me.PROJECTS1747DataSet.DataSetName = "PROJECTS1747DataSet"
+        Me.PROJECTS1747DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'cbFilter1
+        '
+        Me.cbFilter1.FormattingEnabled = True
+        Me.cbFilter1.Items.AddRange(New Object() {"First_Name", "Last_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address"})
+        Me.cbFilter1.Location = New System.Drawing.Point(65, 32)
+        Me.cbFilter1.Name = "cbFilter1"
+        Me.cbFilter1.Size = New System.Drawing.Size(121, 21)
+        Me.cbFilter1.TabIndex = 4
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(9, 40)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(50, 13)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Filter By: "
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(9, 70)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(47, 13)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Filter By:"
+        '
+        'cbFilter2
+        '
+        Me.cbFilter2.Enabled = False
+        Me.cbFilter2.FormattingEnabled = True
+        Me.cbFilter2.Items.AddRange(New Object() {"First_Name", "Last_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address"})
+        Me.cbFilter2.Location = New System.Drawing.Point(65, 67)
+        Me.cbFilter2.Name = "cbFilter2"
+        Me.cbFilter2.Size = New System.Drawing.Size(121, 21)
+        Me.cbFilter2.TabIndex = 7
+        '
+        'tbFilter1
+        '
+        Me.tbFilter1.Enabled = False
+        Me.tbFilter1.Location = New System.Drawing.Point(202, 32)
+        Me.tbFilter1.Name = "tbFilter1"
+        Me.tbFilter1.Size = New System.Drawing.Size(100, 20)
+        Me.tbFilter1.TabIndex = 8
+        '
+        'tbFilter2
+        '
+        Me.tbFilter2.Enabled = False
+        Me.tbFilter2.Location = New System.Drawing.Point(202, 67)
+        Me.tbFilter2.Name = "tbFilter2"
+        Me.tbFilter2.Size = New System.Drawing.Size(100, 20)
+        Me.tbFilter2.TabIndex = 9
+        '
+        'ApplicationTableAdapter
+        '
+        Me.ApplicationTableAdapter.ClearBeforeFill = True
+        '
+        'ProjectS1730DataSet1
+        '
+        Me.ProjectS1730DataSet1.DataSetName = "PROJECTS1730DataSet"
+        Me.ProjectS1730DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'btnViewApplicant
+        '
+        Me.btnViewApplicant.Location = New System.Drawing.Point(318, 32)
+        Me.btnViewApplicant.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnViewApplicant.Name = "btnViewApplicant"
+        Me.btnViewApplicant.Size = New System.Drawing.Size(97, 51)
+        Me.btnViewApplicant.TabIndex = 10
+        Me.btnViewApplicant.Text = "View Profile"
+        Me.btnViewApplicant.UseVisualStyleBackColor = True
+        '
+        'PROJECTS1747DataSet1
+        '
+        Me.PROJECTS1747DataSet1.DataSetName = "PROJECTS1747DataSet1"
+        Me.PROJECTS1747DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PROJECTS1747DataSet1BindingSource
+        '
+        Me.PROJECTS1747DataSet1BindingSource.DataSource = Me.PROJECTS1747DataSet1
+        Me.PROJECTS1747DataSet1BindingSource.Position = 0
+        '
+        'ApplicationBindingSource1
+        '
+        Me.ApplicationBindingSource1.DataMember = "Application"
+        Me.ApplicationBindingSource1.DataSource = Me.PROJECTS1747DataSet1BindingSource
+        '
+        'ApplicationTableAdapter1
+        '
+        Me.ApplicationTableAdapter1.ClearBeforeFill = True
+        '
+        'ViewApplicationTableBindingSource
+        '
+        Me.ViewApplicationTableBindingSource.DataMember = "View_ApplicationTable"
+        Me.ViewApplicationTableBindingSource.DataSource = Me.PROJECTS1747DataSet1BindingSource
+        '
+        'View_ApplicationTableTableAdapter
+        '
+        Me.View_ApplicationTableTableAdapter.ClearBeforeFill = True
+        '
+        'View_ApplicationTableTableAdapter1
+        '
+        Me.View_ApplicationTableTableAdapter1.ClearBeforeFill = True
+        '
+        'View_ApplicationTableTableAdapter2
+        '
+        Me.View_ApplicationTableTableAdapter2.ClearBeforeFill = True
         '
         'Main
         '

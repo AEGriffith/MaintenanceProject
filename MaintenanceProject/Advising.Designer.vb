@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Advising
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,16 +20,24 @@ Partial Class Advising
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GPADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProgramDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ConcentrationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StudentViewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PROJECTS1747DataSet4 = New MaintenanceProject.PROJECTS1747DataSet4()
         Me.Student_ViewTableAdapter = New MaintenanceProject.PROJECTS1747DataSet4TableAdapters.Student_ViewTableAdapter()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RequirementsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MISToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PMISToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnView = New System.Windows.Forms.Button()
@@ -72,6 +80,36 @@ Partial Class Advising
         Me.DataGridView1.Size = New System.Drawing.Size(1649, 606)
         Me.DataGridView1.TabIndex = 0
         '
+        'LastNameDataGridViewTextBoxColumn
+        '
+        Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "Last Name"
+        Me.LastNameDataGridViewTextBoxColumn.HeaderText = "Last Name"
+        Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
+        '
+        'FirstNameDataGridViewTextBoxColumn
+        '
+        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name"
+        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "First Name"
+        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
+        '
+        'GPADataGridViewTextBoxColumn
+        '
+        Me.GPADataGridViewTextBoxColumn.DataPropertyName = "GPA"
+        Me.GPADataGridViewTextBoxColumn.HeaderText = "GPA"
+        Me.GPADataGridViewTextBoxColumn.Name = "GPADataGridViewTextBoxColumn"
+        '
+        'ProgramDataGridViewTextBoxColumn
+        '
+        Me.ProgramDataGridViewTextBoxColumn.DataPropertyName = "Program"
+        Me.ProgramDataGridViewTextBoxColumn.HeaderText = "Program"
+        Me.ProgramDataGridViewTextBoxColumn.Name = "ProgramDataGridViewTextBoxColumn"
+        '
+        'ConcentrationDataGridViewTextBoxColumn
+        '
+        Me.ConcentrationDataGridViewTextBoxColumn.DataPropertyName = "Concentration"
+        Me.ConcentrationDataGridViewTextBoxColumn.HeaderText = "Concentration"
+        Me.ConcentrationDataGridViewTextBoxColumn.Name = "ConcentrationDataGridViewTextBoxColumn"
+        '
         'StudentViewBindingSource
         '
         Me.StudentViewBindingSource.DataMember = "Student_View"
@@ -99,21 +137,42 @@ Partial Class Advising
         'FileToolStripMenuItem
         '
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 45)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 22)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'ViewToolStripMenuItem
         '
+        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RequirementsToolStripMenuItem})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 45)
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(44, 22)
         Me.ViewToolStripMenuItem.Text = "View"
+        '
+        'RequirementsToolStripMenuItem
+        '
+        Me.RequirementsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MISToolStripMenuItem, Me.PMISToolStripMenuItem})
+        Me.RequirementsToolStripMenuItem.Name = "RequirementsToolStripMenuItem"
+        Me.RequirementsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.RequirementsToolStripMenuItem.Text = "Requirements"
+        '
+        'MISToolStripMenuItem
+        '
+        Me.MISToolStripMenuItem.Name = "MISToolStripMenuItem"
+        Me.MISToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.MISToolStripMenuItem.Text = "MIS"
+        '
+        'PMISToolStripMenuItem
+        '
+        Me.PMISToolStripMenuItem.Name = "PMISToolStripMenuItem"
+        Me.PMISToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PMISToolStripMenuItem.Text = "PMIS"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 78)
+        Me.Label1.Location = New System.Drawing.Point(4, 33)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(128, 32)
+        Me.Label1.Size = New System.Drawing.Size(49, 13)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Students"
         '
@@ -121,7 +180,7 @@ Partial Class Advising
         '
         Me.btnCancel.Location = New System.Drawing.Point(1488, 760)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(161, 45)
+        Me.btnCancel.Size = New System.Drawing.Size(60, 19)
         Me.btnCancel.TabIndex = 3
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
@@ -130,7 +189,7 @@ Partial Class Advising
         '
         Me.btnView.Location = New System.Drawing.Point(1309, 760)
         Me.btnView.Name = "btnView"
-        Me.btnView.Size = New System.Drawing.Size(161, 45)
+        Me.btnView.Size = New System.Drawing.Size(60, 19)
         Me.btnView.TabIndex = 4
         Me.btnView.Text = "View"
         Me.btnView.UseVisualStyleBackColor = True
@@ -212,7 +271,7 @@ Partial Class Advising
         '
         'Advising
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1673, 833)
@@ -222,6 +281,7 @@ Partial Class Advising
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(1)
         Me.Name = "Advising"
         Me.Text = "Advising"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
