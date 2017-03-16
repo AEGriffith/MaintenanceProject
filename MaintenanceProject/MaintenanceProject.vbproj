@@ -13,6 +13,21 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -138,58 +153,10 @@
     <Compile Include="PMISReq.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PROJECTS1730DataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1730DataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="PROJECTS1747DataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PROJECTS1747DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PROJECTS1747DataSet1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1747DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PROJECTS1747DataSet2.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1747DataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PROJECTS1747DataSet2.vb">
-      <DependentUpon>PROJECTS1747DataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PROJECTS1747DataSet3.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1747DataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PROJECTS1747DataSet4.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1747DataSet4.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PROJECTS1747DataSet5.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1747DataSet5.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PROJECTS1747DataSet6.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1747DataSet6.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PROJECTS1747DataSet7.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1747DataSet7.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PROJECTS1747DataSet8.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1747DataSet8.xsd</DependentUpon>
     </Compile>
     <Compile Include="StudentProfile.Designer.vb">
       <DependentUpon>StudentProfile.vb</DependentUpon>
@@ -262,17 +229,8 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="PROJECTS1730DataSet.xsc">
-      <DependentUpon>PROJECTS1730DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1730DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1730DataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PROJECTS1730DataSet.xss">
-      <DependentUpon>PROJECTS1730DataSet.xsd</DependentUpon>
-    </None>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="PROJECTS1747DataSet.xsc">
       <DependentUpon>PROJECTS1747DataSet.xsd</DependentUpon>
     </None>
@@ -284,96 +242,6 @@
     <None Include="PROJECTS1747DataSet.xss">
       <DependentUpon>PROJECTS1747DataSet.xsd</DependentUpon>
     </None>
-    <None Include="PROJECTS1747DataSet1.xsc">
-      <DependentUpon>PROJECTS1747DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1747DataSet1.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PROJECTS1747DataSet1.xss">
-      <DependentUpon>PROJECTS1747DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet2.xsc">
-      <DependentUpon>PROJECTS1747DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1747DataSet2.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PROJECTS1747DataSet2.xss">
-      <DependentUpon>PROJECTS1747DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet3.xsc">
-      <DependentUpon>PROJECTS1747DataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1747DataSet3.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PROJECTS1747DataSet3.xss">
-      <DependentUpon>PROJECTS1747DataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet4.xsc">
-      <DependentUpon>PROJECTS1747DataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1747DataSet4.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PROJECTS1747DataSet4.xss">
-      <DependentUpon>PROJECTS1747DataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet5.xsc">
-      <DependentUpon>PROJECTS1747DataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet5.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1747DataSet5.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PROJECTS1747DataSet5.xss">
-      <DependentUpon>PROJECTS1747DataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet6.xsc">
-      <DependentUpon>PROJECTS1747DataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet6.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1747DataSet6.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PROJECTS1747DataSet6.xss">
-      <DependentUpon>PROJECTS1747DataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet7.xsc">
-      <DependentUpon>PROJECTS1747DataSet7.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet7.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1747DataSet7.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PROJECTS1747DataSet7.xss">
-      <DependentUpon>PROJECTS1747DataSet7.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet8.xsc">
-      <DependentUpon>PROJECTS1747DataSet8.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet8.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1747DataSet8.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PROJECTS1747DataSet8.xss">
-      <DependentUpon>PROJECTS1747DataSet8.xsd</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Test.png" />
   </ItemGroup>
   <ItemGroup>
@@ -396,6 +264,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PMIS ES.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

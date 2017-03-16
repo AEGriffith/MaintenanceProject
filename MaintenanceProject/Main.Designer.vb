@@ -23,68 +23,62 @@ Partial Class Main
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ApplicantProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.btnViewApplicant = New System.Windows.Forms.Button()
+        Me.PROJECTS1747DataSet = New MaintenanceProject.PROJECTS1747DataSet()
+        Me.ViewApplicantBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ViewApplicantTableAdapter = New MaintenanceProject.PROJECTS1747DataSetTableAdapters.viewApplicantTableAdapter()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProgramDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ConcentrationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ApplicationDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MissingStatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ReceivedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NotesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VerbalQuantitativeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GMATDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GMATVerbalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GMATVerbalDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GMATQuantitativeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GMATQuantitativeDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AWADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GREDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GREVerbalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GREVerbalDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GREQuantitativeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GREQuantitativeDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WRDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TOEFLDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TimeWithEmployerDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CurrentEmployerDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UndergraduateGPADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GraduateGPADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UndergraduateInstitutionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UndergraduateDegreeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UndergraduateMajorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GraduateInstitutionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GraduateDegreeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GraduateMajorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GenderDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EthnicityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AgeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PostalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CountryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ResidencyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ApplicantViewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PROJECTS1747DataSet8 = New MaintenanceProject.PROJECTS1747DataSet8()
-        Me.ViewApplicationTableBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PROJECTS1747DataSet3BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PROJECTS1747DataSet3 = New MaintenanceProject.PROJECTS1747DataSet3()
-        Me.ViewApplicationTableBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PROJECTS1747DataSet2 = New MaintenanceProject.PROJECTS1747DataSet2()
-        Me.ApplicationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PROJECTS1747DataSet = New MaintenanceProject.PROJECTS1747DataSet()
-        Me.cbFilter1 = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.cbFilter2 = New System.Windows.Forms.ComboBox()
-        Me.tbFilter1 = New System.Windows.Forms.TextBox()
-        Me.tbFilter2 = New System.Windows.Forms.TextBox()
-        Me.ApplicationTableAdapter = New MaintenanceProject.PROJECTS1747DataSetTableAdapters.ApplicationTableAdapter()
-        Me.ProjectS1730DataSet1 = New MaintenanceProject.PROJECTS1730DataSet()
-        Me.btnViewApplicant = New System.Windows.Forms.Button()
-        Me.PROJECTS1747DataSet1 = New MaintenanceProject.PROJECTS1747DataSet1()
-        Me.PROJECTS1747DataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ApplicationBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ApplicationTableAdapter1 = New MaintenanceProject.PROJECTS1747DataSet1TableAdapters.ApplicationTableAdapter()
-        Me.ViewApplicationTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.View_ApplicationTableTableAdapter = New MaintenanceProject.PROJECTS1747DataSet1TableAdapters.View_ApplicationTableTableAdapter()
-        Me.View_ApplicationTableTableAdapter1 = New MaintenanceProject.PROJECTS1747DataSet2TableAdapters.View_ApplicationTableTableAdapter()
-        Me.View_ApplicationTableTableAdapter2 = New MaintenanceProject.PROJECTS1747DataSet3TableAdapters.View_ApplicationTableTableAdapter()
-        Me.ApplicationViewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ApplicationViewTableAdapter = New MaintenanceProject.PROJECTS1747DataSet8TableAdapters.ApplicationViewTableAdapter()
-        Me.ApplicantViewTableAdapter = New MaintenanceProject.PROJECTS1747DataSet8TableAdapters.ApplicantViewTableAdapter()
-        Me.ApplicationViewBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ApplicantViewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PROJECTS1747DataSet8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ViewApplicationTableBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PROJECTS1747DataSet3BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PROJECTS1747DataSet3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ViewApplicationTableBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PROJECTS1747DataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PROJECTS1747DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProjectS1730DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PROJECTS1747DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PROJECTS1747DataSet1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ApplicationBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ViewApplicationTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ApplicationViewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ApplicationViewBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ViewApplicantBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -93,8 +87,8 @@ Partial Class Main
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(2, 1, 0, 1)
-        Me.MenuStrip1.Size = New System.Drawing.Size(434, 24)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1157, 49)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -102,19 +96,19 @@ Partial Class Main
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.ApplicantProfileToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 22)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 45)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(350, 46)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'ApplicantProfileToolStripMenuItem
         '
         Me.ApplicantProfileToolStripMenuItem.Name = "ApplicantProfileToolStripMenuItem"
-        Me.ApplicantProfileToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.ApplicantProfileToolStripMenuItem.Size = New System.Drawing.Size(350, 46)
         Me.ApplicantProfileToolStripMenuItem.Text = "Applicant Profile"
         '
         'Panel2
@@ -123,30 +117,58 @@ Partial Class Main
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.Controls.Add(Me.DataGridView1)
-        Me.Panel2.Location = New System.Drawing.Point(0, 108)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Panel2.Location = New System.Drawing.Point(0, 258)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(429, 231)
+        Me.Panel2.Size = New System.Drawing.Size(1144, 551)
         Me.Panel2.TabIndex = 3
         '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.ProgramDataGridViewTextBoxColumn, Me.ConcentrationDataGridViewTextBoxColumn, Me.ApplicationDateDataGridViewTextBoxColumn, Me.ResidencyDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ApplicantViewBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 1)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.ProgramDataGridViewTextBoxColumn, Me.ApplicationDateDataGridViewTextBoxColumn, Me.MissingStatusDataGridViewTextBoxColumn, Me.ReceivedDataGridViewTextBoxColumn, Me.NotesDataGridViewTextBoxColumn, Me.VerbalQuantitativeDataGridViewTextBoxColumn, Me.GMATDataGridViewTextBoxColumn, Me.GMATVerbalDataGridViewTextBoxColumn, Me.GMATVerbalDataGridViewTextBoxColumn1, Me.GMATQuantitativeDataGridViewTextBoxColumn, Me.GMATQuantitativeDataGridViewTextBoxColumn1, Me.AWADataGridViewTextBoxColumn, Me.GREDataGridViewTextBoxColumn, Me.GREVerbalDataGridViewTextBoxColumn, Me.GREVerbalDataGridViewTextBoxColumn1, Me.GREQuantitativeDataGridViewTextBoxColumn, Me.GREQuantitativeDataGridViewTextBoxColumn1, Me.WRDataGridViewTextBoxColumn, Me.TOEFLDataGridViewTextBoxColumn, Me.TimeWithEmployerDataGridViewTextBoxColumn, Me.CurrentEmployerDataGridViewTextBoxColumn, Me.UndergraduateGPADataGridViewTextBoxColumn, Me.GraduateGPADataGridViewTextBoxColumn, Me.UndergraduateInstitutionDataGridViewTextBoxColumn, Me.UndergraduateDegreeDataGridViewTextBoxColumn, Me.UndergraduateMajorDataGridViewTextBoxColumn, Me.GraduateInstitutionDataGridViewTextBoxColumn, Me.GraduateDegreeDataGridViewTextBoxColumn, Me.GraduateMajorDataGridViewTextBoxColumn, Me.GenderDataGridViewTextBoxColumn, Me.EthnicityDataGridViewTextBoxColumn, Me.AgeDataGridViewTextBoxColumn, Me.CityDataGridViewTextBoxColumn, Me.StateDataGridViewTextBoxColumn, Me.PostalDataGridViewTextBoxColumn, Me.CountryDataGridViewTextBoxColumn, Me.ResidencyDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.ViewApplicantBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 2)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 40
-        Me.DataGridView1.Size = New System.Drawing.Size(428, 230)
+        Me.DataGridView1.Size = New System.Drawing.Size(1141, 548)
         Me.DataGridView1.TabIndex = 0
+        '
+        'btnViewApplicant
+        '
+        Me.btnViewApplicant.Location = New System.Drawing.Point(843, 81)
+        Me.btnViewApplicant.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnViewApplicant.Name = "btnViewApplicant"
+        Me.btnViewApplicant.Size = New System.Drawing.Size(267, 138)
+        Me.btnViewApplicant.TabIndex = 10
+        Me.btnViewApplicant.Text = "View Profile"
+        Me.btnViewApplicant.UseVisualStyleBackColor = True
+        '
+        'PROJECTS1747DataSet
+        '
+        Me.PROJECTS1747DataSet.DataSetName = "PROJECTS1747DataSet"
+        Me.PROJECTS1747DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ViewApplicantBindingSource
+        '
+        Me.ViewApplicantBindingSource.DataMember = "viewApplicant"
+        Me.ViewApplicantBindingSource.DataSource = Me.PROJECTS1747DataSet
+        '
+        'ViewApplicantTableAdapter
+        '
+        Me.ViewApplicantTableAdapter.ClearBeforeFill = True
         '
         'IDDataGridViewTextBoxColumn
         '
@@ -154,6 +176,7 @@ Partial Class Main
         Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
         Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
         Me.IDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IDDataGridViewTextBoxColumn.Width = 96
         '
         'FirstNameDataGridViewTextBoxColumn
         '
@@ -161,6 +184,7 @@ Partial Class Main
         Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "First Name"
         Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
         Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.FirstNameDataGridViewTextBoxColumn.Width = 190
         '
         'LastNameDataGridViewTextBoxColumn
         '
@@ -168,6 +192,7 @@ Partial Class Main
         Me.LastNameDataGridViewTextBoxColumn.HeaderText = "Last Name"
         Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
         Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.LastNameDataGridViewTextBoxColumn.Width = 189
         '
         'ProgramDataGridViewTextBoxColumn
         '
@@ -175,13 +200,7 @@ Partial Class Main
         Me.ProgramDataGridViewTextBoxColumn.HeaderText = "Program"
         Me.ProgramDataGridViewTextBoxColumn.Name = "ProgramDataGridViewTextBoxColumn"
         Me.ProgramDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ConcentrationDataGridViewTextBoxColumn
-        '
-        Me.ConcentrationDataGridViewTextBoxColumn.DataPropertyName = "Concentration"
-        Me.ConcentrationDataGridViewTextBoxColumn.HeaderText = "Concentration"
-        Me.ConcentrationDataGridViewTextBoxColumn.Name = "ConcentrationDataGridViewTextBoxColumn"
-        Me.ConcentrationDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ProgramDataGridViewTextBoxColumn.Width = 177
         '
         'ApplicationDateDataGridViewTextBoxColumn
         '
@@ -189,6 +208,279 @@ Partial Class Main
         Me.ApplicationDateDataGridViewTextBoxColumn.HeaderText = "Application Date"
         Me.ApplicationDateDataGridViewTextBoxColumn.Name = "ApplicationDateDataGridViewTextBoxColumn"
         Me.ApplicationDateDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ApplicationDateDataGridViewTextBoxColumn.Width = 255
+        '
+        'MissingStatusDataGridViewTextBoxColumn
+        '
+        Me.MissingStatusDataGridViewTextBoxColumn.DataPropertyName = "Missing Status"
+        Me.MissingStatusDataGridViewTextBoxColumn.HeaderText = "Missing Status"
+        Me.MissingStatusDataGridViewTextBoxColumn.Name = "MissingStatusDataGridViewTextBoxColumn"
+        Me.MissingStatusDataGridViewTextBoxColumn.ReadOnly = True
+        Me.MissingStatusDataGridViewTextBoxColumn.Width = 233
+        '
+        'ReceivedDataGridViewTextBoxColumn
+        '
+        Me.ReceivedDataGridViewTextBoxColumn.DataPropertyName = "Received"
+        Me.ReceivedDataGridViewTextBoxColumn.HeaderText = "Received"
+        Me.ReceivedDataGridViewTextBoxColumn.Name = "ReceivedDataGridViewTextBoxColumn"
+        Me.ReceivedDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ReceivedDataGridViewTextBoxColumn.Width = 188
+        '
+        'NotesDataGridViewTextBoxColumn
+        '
+        Me.NotesDataGridViewTextBoxColumn.DataPropertyName = "Notes"
+        Me.NotesDataGridViewTextBoxColumn.HeaderText = "Notes"
+        Me.NotesDataGridViewTextBoxColumn.Name = "NotesDataGridViewTextBoxColumn"
+        Me.NotesDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NotesDataGridViewTextBoxColumn.Width = 143
+        '
+        'VerbalQuantitativeDataGridViewTextBoxColumn
+        '
+        Me.VerbalQuantitativeDataGridViewTextBoxColumn.DataPropertyName = "Verbal + Quantitative"
+        Me.VerbalQuantitativeDataGridViewTextBoxColumn.HeaderText = "Verbal + Quantitative"
+        Me.VerbalQuantitativeDataGridViewTextBoxColumn.Name = "VerbalQuantitativeDataGridViewTextBoxColumn"
+        Me.VerbalQuantitativeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.VerbalQuantitativeDataGridViewTextBoxColumn.Width = 307
+        '
+        'GMATDataGridViewTextBoxColumn
+        '
+        Me.GMATDataGridViewTextBoxColumn.DataPropertyName = "GMAT"
+        Me.GMATDataGridViewTextBoxColumn.HeaderText = "GMAT"
+        Me.GMATDataGridViewTextBoxColumn.Name = "GMATDataGridViewTextBoxColumn"
+        Me.GMATDataGridViewTextBoxColumn.ReadOnly = True
+        Me.GMATDataGridViewTextBoxColumn.Width = 150
+        '
+        'GMATVerbalDataGridViewTextBoxColumn
+        '
+        Me.GMATVerbalDataGridViewTextBoxColumn.DataPropertyName = "GMAT Verbal"
+        Me.GMATVerbalDataGridViewTextBoxColumn.HeaderText = "GMAT Verbal"
+        Me.GMATVerbalDataGridViewTextBoxColumn.Name = "GMATVerbalDataGridViewTextBoxColumn"
+        Me.GMATVerbalDataGridViewTextBoxColumn.ReadOnly = True
+        Me.GMATVerbalDataGridViewTextBoxColumn.Width = 221
+        '
+        'GMATVerbalDataGridViewTextBoxColumn1
+        '
+        Me.GMATVerbalDataGridViewTextBoxColumn1.DataPropertyName = "GMAT Verbal %"
+        Me.GMATVerbalDataGridViewTextBoxColumn1.HeaderText = "GMAT Verbal %"
+        Me.GMATVerbalDataGridViewTextBoxColumn1.Name = "GMATVerbalDataGridViewTextBoxColumn1"
+        Me.GMATVerbalDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.GMATVerbalDataGridViewTextBoxColumn1.Width = 227
+        '
+        'GMATQuantitativeDataGridViewTextBoxColumn
+        '
+        Me.GMATQuantitativeDataGridViewTextBoxColumn.DataPropertyName = "GMAT Quantitative"
+        Me.GMATQuantitativeDataGridViewTextBoxColumn.HeaderText = "GMAT Quantitative"
+        Me.GMATQuantitativeDataGridViewTextBoxColumn.Name = "GMATQuantitativeDataGridViewTextBoxColumn"
+        Me.GMATQuantitativeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.GMATQuantitativeDataGridViewTextBoxColumn.Width = 285
+        '
+        'GMATQuantitativeDataGridViewTextBoxColumn1
+        '
+        Me.GMATQuantitativeDataGridViewTextBoxColumn1.DataPropertyName = "GMAT Quantitative %"
+        Me.GMATQuantitativeDataGridViewTextBoxColumn1.HeaderText = "GMAT Quantitative %"
+        Me.GMATQuantitativeDataGridViewTextBoxColumn1.Name = "GMATQuantitativeDataGridViewTextBoxColumn1"
+        Me.GMATQuantitativeDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.GMATQuantitativeDataGridViewTextBoxColumn1.Width = 285
+        '
+        'AWADataGridViewTextBoxColumn
+        '
+        Me.AWADataGridViewTextBoxColumn.DataPropertyName = "AWA"
+        Me.AWADataGridViewTextBoxColumn.HeaderText = "AWA"
+        Me.AWADataGridViewTextBoxColumn.Name = "AWADataGridViewTextBoxColumn"
+        Me.AWADataGridViewTextBoxColumn.ReadOnly = True
+        Me.AWADataGridViewTextBoxColumn.Width = 133
+        '
+        'GREDataGridViewTextBoxColumn
+        '
+        Me.GREDataGridViewTextBoxColumn.DataPropertyName = "GRE"
+        Me.GREDataGridViewTextBoxColumn.HeaderText = "GRE"
+        Me.GREDataGridViewTextBoxColumn.Name = "GREDataGridViewTextBoxColumn"
+        Me.GREDataGridViewTextBoxColumn.ReadOnly = True
+        Me.GREDataGridViewTextBoxColumn.Width = 130
+        '
+        'GREVerbalDataGridViewTextBoxColumn
+        '
+        Me.GREVerbalDataGridViewTextBoxColumn.DataPropertyName = "GRE Verbal"
+        Me.GREVerbalDataGridViewTextBoxColumn.HeaderText = "GRE Verbal"
+        Me.GREVerbalDataGridViewTextBoxColumn.Name = "GREVerbalDataGridViewTextBoxColumn"
+        Me.GREVerbalDataGridViewTextBoxColumn.ReadOnly = True
+        Me.GREVerbalDataGridViewTextBoxColumn.Width = 203
+        '
+        'GREVerbalDataGridViewTextBoxColumn1
+        '
+        Me.GREVerbalDataGridViewTextBoxColumn1.DataPropertyName = "GRE Verbal %"
+        Me.GREVerbalDataGridViewTextBoxColumn1.HeaderText = "GRE Verbal %"
+        Me.GREVerbalDataGridViewTextBoxColumn1.Name = "GREVerbalDataGridViewTextBoxColumn1"
+        Me.GREVerbalDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.GREVerbalDataGridViewTextBoxColumn1.Width = 209
+        '
+        'GREQuantitativeDataGridViewTextBoxColumn
+        '
+        Me.GREQuantitativeDataGridViewTextBoxColumn.DataPropertyName = "GRE Quantitative"
+        Me.GREQuantitativeDataGridViewTextBoxColumn.HeaderText = "GRE Quantitative"
+        Me.GREQuantitativeDataGridViewTextBoxColumn.Name = "GREQuantitativeDataGridViewTextBoxColumn"
+        Me.GREQuantitativeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.GREQuantitativeDataGridViewTextBoxColumn.Width = 267
+        '
+        'GREQuantitativeDataGridViewTextBoxColumn1
+        '
+        Me.GREQuantitativeDataGridViewTextBoxColumn1.DataPropertyName = "GRE Quantitative %"
+        Me.GREQuantitativeDataGridViewTextBoxColumn1.HeaderText = "GRE Quantitative %"
+        Me.GREQuantitativeDataGridViewTextBoxColumn1.Name = "GREQuantitativeDataGridViewTextBoxColumn1"
+        Me.GREQuantitativeDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.GREQuantitativeDataGridViewTextBoxColumn1.Width = 267
+        '
+        'WRDataGridViewTextBoxColumn
+        '
+        Me.WRDataGridViewTextBoxColumn.DataPropertyName = "WR"
+        Me.WRDataGridViewTextBoxColumn.HeaderText = "WR"
+        Me.WRDataGridViewTextBoxColumn.Name = "WRDataGridViewTextBoxColumn"
+        Me.WRDataGridViewTextBoxColumn.ReadOnly = True
+        Me.WRDataGridViewTextBoxColumn.Width = 115
+        '
+        'TOEFLDataGridViewTextBoxColumn
+        '
+        Me.TOEFLDataGridViewTextBoxColumn.DataPropertyName = "TOEFL"
+        Me.TOEFLDataGridViewTextBoxColumn.HeaderText = "TOEFL"
+        Me.TOEFLDataGridViewTextBoxColumn.Name = "TOEFLDataGridViewTextBoxColumn"
+        Me.TOEFLDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TOEFLDataGridViewTextBoxColumn.Width = 160
+        '
+        'TimeWithEmployerDataGridViewTextBoxColumn
+        '
+        Me.TimeWithEmployerDataGridViewTextBoxColumn.DataPropertyName = "Time With Employer"
+        Me.TimeWithEmployerDataGridViewTextBoxColumn.HeaderText = "Time With Employer"
+        Me.TimeWithEmployerDataGridViewTextBoxColumn.Name = "TimeWithEmployerDataGridViewTextBoxColumn"
+        Me.TimeWithEmployerDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TimeWithEmployerDataGridViewTextBoxColumn.Width = 296
+        '
+        'CurrentEmployerDataGridViewTextBoxColumn
+        '
+        Me.CurrentEmployerDataGridViewTextBoxColumn.DataPropertyName = "Current Employer"
+        Me.CurrentEmployerDataGridViewTextBoxColumn.HeaderText = "Current Employer"
+        Me.CurrentEmployerDataGridViewTextBoxColumn.Name = "CurrentEmployerDataGridViewTextBoxColumn"
+        Me.CurrentEmployerDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CurrentEmployerDataGridViewTextBoxColumn.Width = 266
+        '
+        'UndergraduateGPADataGridViewTextBoxColumn
+        '
+        Me.UndergraduateGPADataGridViewTextBoxColumn.DataPropertyName = "Undergraduate GPA"
+        Me.UndergraduateGPADataGridViewTextBoxColumn.HeaderText = "Undergraduate GPA"
+        Me.UndergraduateGPADataGridViewTextBoxColumn.Name = "UndergraduateGPADataGridViewTextBoxColumn"
+        Me.UndergraduateGPADataGridViewTextBoxColumn.ReadOnly = True
+        Me.UndergraduateGPADataGridViewTextBoxColumn.Width = 298
+        '
+        'GraduateGPADataGridViewTextBoxColumn
+        '
+        Me.GraduateGPADataGridViewTextBoxColumn.DataPropertyName = "Graduate GPA"
+        Me.GraduateGPADataGridViewTextBoxColumn.HeaderText = "Graduate GPA"
+        Me.GraduateGPADataGridViewTextBoxColumn.Name = "GraduateGPADataGridViewTextBoxColumn"
+        Me.GraduateGPADataGridViewTextBoxColumn.ReadOnly = True
+        Me.GraduateGPADataGridViewTextBoxColumn.Width = 234
+        '
+        'UndergraduateInstitutionDataGridViewTextBoxColumn
+        '
+        Me.UndergraduateInstitutionDataGridViewTextBoxColumn.DataPropertyName = "Undergraduate Institution"
+        Me.UndergraduateInstitutionDataGridViewTextBoxColumn.HeaderText = "Undergraduate Institution"
+        Me.UndergraduateInstitutionDataGridViewTextBoxColumn.Name = "UndergraduateInstitutionDataGridViewTextBoxColumn"
+        Me.UndergraduateInstitutionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UndergraduateInstitutionDataGridViewTextBoxColumn.Width = 355
+        '
+        'UndergraduateDegreeDataGridViewTextBoxColumn
+        '
+        Me.UndergraduateDegreeDataGridViewTextBoxColumn.DataPropertyName = "Undergraduate Degree"
+        Me.UndergraduateDegreeDataGridViewTextBoxColumn.HeaderText = "Undergraduate Degree"
+        Me.UndergraduateDegreeDataGridViewTextBoxColumn.Name = "UndergraduateDegreeDataGridViewTextBoxColumn"
+        Me.UndergraduateDegreeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UndergraduateDegreeDataGridViewTextBoxColumn.Width = 328
+        '
+        'UndergraduateMajorDataGridViewTextBoxColumn
+        '
+        Me.UndergraduateMajorDataGridViewTextBoxColumn.DataPropertyName = "Undergraduate Major"
+        Me.UndergraduateMajorDataGridViewTextBoxColumn.HeaderText = "Undergraduate Major"
+        Me.UndergraduateMajorDataGridViewTextBoxColumn.Name = "UndergraduateMajorDataGridViewTextBoxColumn"
+        Me.UndergraduateMajorDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UndergraduateMajorDataGridViewTextBoxColumn.Width = 308
+        '
+        'GraduateInstitutionDataGridViewTextBoxColumn
+        '
+        Me.GraduateInstitutionDataGridViewTextBoxColumn.DataPropertyName = "Graduate Institution"
+        Me.GraduateInstitutionDataGridViewTextBoxColumn.HeaderText = "Graduate Institution"
+        Me.GraduateInstitutionDataGridViewTextBoxColumn.Name = "GraduateInstitutionDataGridViewTextBoxColumn"
+        Me.GraduateInstitutionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.GraduateInstitutionDataGridViewTextBoxColumn.Width = 291
+        '
+        'GraduateDegreeDataGridViewTextBoxColumn
+        '
+        Me.GraduateDegreeDataGridViewTextBoxColumn.DataPropertyName = "Graduate Degree"
+        Me.GraduateDegreeDataGridViewTextBoxColumn.HeaderText = "Graduate Degree"
+        Me.GraduateDegreeDataGridViewTextBoxColumn.Name = "GraduateDegreeDataGridViewTextBoxColumn"
+        Me.GraduateDegreeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.GraduateDegreeDataGridViewTextBoxColumn.Width = 264
+        '
+        'GraduateMajorDataGridViewTextBoxColumn
+        '
+        Me.GraduateMajorDataGridViewTextBoxColumn.DataPropertyName = "Graduate Major"
+        Me.GraduateMajorDataGridViewTextBoxColumn.HeaderText = "Graduate Major"
+        Me.GraduateMajorDataGridViewTextBoxColumn.Name = "GraduateMajorDataGridViewTextBoxColumn"
+        Me.GraduateMajorDataGridViewTextBoxColumn.ReadOnly = True
+        Me.GraduateMajorDataGridViewTextBoxColumn.Width = 244
+        '
+        'GenderDataGridViewTextBoxColumn
+        '
+        Me.GenderDataGridViewTextBoxColumn.DataPropertyName = "Gender"
+        Me.GenderDataGridViewTextBoxColumn.HeaderText = "Gender"
+        Me.GenderDataGridViewTextBoxColumn.Name = "GenderDataGridViewTextBoxColumn"
+        Me.GenderDataGridViewTextBoxColumn.ReadOnly = True
+        Me.GenderDataGridViewTextBoxColumn.Width = 164
+        '
+        'EthnicityDataGridViewTextBoxColumn
+        '
+        Me.EthnicityDataGridViewTextBoxColumn.DataPropertyName = "Ethnicity"
+        Me.EthnicityDataGridViewTextBoxColumn.HeaderText = "Ethnicity"
+        Me.EthnicityDataGridViewTextBoxColumn.Name = "EthnicityDataGridViewTextBoxColumn"
+        Me.EthnicityDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EthnicityDataGridViewTextBoxColumn.Width = 178
+        '
+        'AgeDataGridViewTextBoxColumn
+        '
+        Me.AgeDataGridViewTextBoxColumn.DataPropertyName = "Age"
+        Me.AgeDataGridViewTextBoxColumn.HeaderText = "Age"
+        Me.AgeDataGridViewTextBoxColumn.Name = "AgeDataGridViewTextBoxColumn"
+        Me.AgeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.AgeDataGridViewTextBoxColumn.Width = 120
+        '
+        'CityDataGridViewTextBoxColumn
+        '
+        Me.CityDataGridViewTextBoxColumn.DataPropertyName = "City"
+        Me.CityDataGridViewTextBoxColumn.HeaderText = "City"
+        Me.CityDataGridViewTextBoxColumn.Name = "CityDataGridViewTextBoxColumn"
+        Me.CityDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CityDataGridViewTextBoxColumn.Width = 118
+        '
+        'StateDataGridViewTextBoxColumn
+        '
+        Me.StateDataGridViewTextBoxColumn.DataPropertyName = "State"
+        Me.StateDataGridViewTextBoxColumn.HeaderText = "State"
+        Me.StateDataGridViewTextBoxColumn.Name = "StateDataGridViewTextBoxColumn"
+        Me.StateDataGridViewTextBoxColumn.ReadOnly = True
+        Me.StateDataGridViewTextBoxColumn.Width = 136
+        '
+        'PostalDataGridViewTextBoxColumn
+        '
+        Me.PostalDataGridViewTextBoxColumn.DataPropertyName = "Postal"
+        Me.PostalDataGridViewTextBoxColumn.HeaderText = "Postal"
+        Me.PostalDataGridViewTextBoxColumn.Name = "PostalDataGridViewTextBoxColumn"
+        Me.PostalDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PostalDataGridViewTextBoxColumn.Width = 149
+        '
+        'CountryDataGridViewTextBoxColumn
+        '
+        Me.CountryDataGridViewTextBoxColumn.DataPropertyName = "Country"
+        Me.CountryDataGridViewTextBoxColumn.HeaderText = "Country"
+        Me.CountryDataGridViewTextBoxColumn.Name = "CountryDataGridViewTextBoxColumn"
+        Me.CountryDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CountryDataGridViewTextBoxColumn.Width = 168
         '
         'ResidencyDataGridViewTextBoxColumn
         '
@@ -196,216 +488,26 @@ Partial Class Main
         Me.ResidencyDataGridViewTextBoxColumn.HeaderText = "Residency"
         Me.ResidencyDataGridViewTextBoxColumn.Name = "ResidencyDataGridViewTextBoxColumn"
         Me.ResidencyDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ApplicantViewBindingSource
-        '
-        Me.ApplicantViewBindingSource.DataMember = "ApplicantView"
-        Me.ApplicantViewBindingSource.DataSource = Me.PROJECTS1747DataSet8
-        '
-        'PROJECTS1747DataSet8
-        '
-        Me.PROJECTS1747DataSet8.DataSetName = "PROJECTS1747DataSet8"
-        Me.PROJECTS1747DataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ViewApplicationTableBindingSource2
-        '
-        Me.ViewApplicationTableBindingSource2.DataMember = "View_ApplicationTable"
-        Me.ViewApplicationTableBindingSource2.DataSource = Me.PROJECTS1747DataSet3BindingSource
-        '
-        'PROJECTS1747DataSet3BindingSource
-        '
-        Me.PROJECTS1747DataSet3BindingSource.DataSource = Me.PROJECTS1747DataSet3
-        Me.PROJECTS1747DataSet3BindingSource.Position = 0
-        '
-        'PROJECTS1747DataSet3
-        '
-        Me.PROJECTS1747DataSet3.DataSetName = "PROJECTS1747DataSet3"
-        Me.PROJECTS1747DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ViewApplicationTableBindingSource1
-        '
-        Me.ViewApplicationTableBindingSource1.DataMember = "View_ApplicationTable"
-        Me.ViewApplicationTableBindingSource1.DataSource = Me.PROJECTS1747DataSet2
-        '
-        'PROJECTS1747DataSet2
-        '
-        Me.PROJECTS1747DataSet2.DataSetName = "PROJECTS1747DataSet2"
-        Me.PROJECTS1747DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ApplicationBindingSource
-        '
-        Me.ApplicationBindingSource.DataMember = "Application"
-        Me.ApplicationBindingSource.DataSource = Me.PROJECTS1747DataSet
-        '
-        'PROJECTS1747DataSet
-        '
-        Me.PROJECTS1747DataSet.DataSetName = "PROJECTS1747DataSet"
-        Me.PROJECTS1747DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'cbFilter1
-        '
-        Me.cbFilter1.FormattingEnabled = True
-        Me.cbFilter1.Items.AddRange(New Object() {"First_Name", "Last_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address", "First_Name", "Last_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address"})
-        Me.cbFilter1.Location = New System.Drawing.Point(70, 38)
-        Me.cbFilter1.Name = "cbFilter1"
-        Me.cbFilter1.Size = New System.Drawing.Size(93, 21)
-        Me.cbFilter1.TabIndex = 4
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(14, 38)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(50, 13)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Filter By: "
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(14, 62)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(47, 13)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Filter By:"
-        '
-        'cbFilter2
-        '
-        Me.cbFilter2.Enabled = False
-        Me.cbFilter2.FormattingEnabled = True
-        Me.cbFilter2.Items.AddRange(New Object() {"First_Name", "Last_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address", "First_Name", "Last_Name", "App_Date", "Decision", "GA", "Eval_I20", "Trsc", "Letters_Frm", "Fee", "U_GPA", "Toefl", "Gender", "Ethnicity", "TWE", "Current_Employer", "U_Inst", "U_Deg", "UDRG_Major", "GRAD", "G_Degree", "ELAC_Reg", "GMAT", "Verb", "Quan", "WR", "UA_Email", "Non_UA_Email", "Phone", "Address"})
-        Me.cbFilter2.Location = New System.Drawing.Point(70, 60)
-        Me.cbFilter2.Name = "cbFilter2"
-        Me.cbFilter2.Size = New System.Drawing.Size(93, 21)
-        Me.cbFilter2.TabIndex = 7
-        '
-        'tbFilter1
-        '
-        Me.tbFilter1.Enabled = False
-        Me.tbFilter1.Location = New System.Drawing.Point(169, 39)
-        Me.tbFilter1.Name = "tbFilter1"
-        Me.tbFilter1.Size = New System.Drawing.Size(110, 20)
-        Me.tbFilter1.TabIndex = 8
-        '
-        'tbFilter2
-        '
-        Me.tbFilter2.Enabled = False
-        Me.tbFilter2.Location = New System.Drawing.Point(169, 60)
-        Me.tbFilter2.Name = "tbFilter2"
-        Me.tbFilter2.Size = New System.Drawing.Size(110, 20)
-        Me.tbFilter2.TabIndex = 9
-        '
-        'ApplicationTableAdapter
-        '
-        Me.ApplicationTableAdapter.ClearBeforeFill = True
-        '
-        'ProjectS1730DataSet1
-        '
-        Me.ProjectS1730DataSet1.DataSetName = "PROJECTS1730DataSet"
-        Me.ProjectS1730DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'btnViewApplicant
-        '
-        Me.btnViewApplicant.Location = New System.Drawing.Point(316, 34)
-        Me.btnViewApplicant.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
-        Me.btnViewApplicant.Name = "btnViewApplicant"
-        Me.btnViewApplicant.Size = New System.Drawing.Size(100, 58)
-        Me.btnViewApplicant.TabIndex = 10
-        Me.btnViewApplicant.Text = "View Profile"
-        Me.btnViewApplicant.UseVisualStyleBackColor = True
-        '
-        'PROJECTS1747DataSet1
-        '
-        Me.PROJECTS1747DataSet1.DataSetName = "PROJECTS1747DataSet1"
-        Me.PROJECTS1747DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PROJECTS1747DataSet1BindingSource
-        '
-        Me.PROJECTS1747DataSet1BindingSource.DataSource = Me.PROJECTS1747DataSet1
-        Me.PROJECTS1747DataSet1BindingSource.Position = 0
-        '
-        'ApplicationBindingSource1
-        '
-        Me.ApplicationBindingSource1.DataMember = "Application"
-        Me.ApplicationBindingSource1.DataSource = Me.PROJECTS1747DataSet1BindingSource
-        '
-        'ApplicationTableAdapter1
-        '
-        Me.ApplicationTableAdapter1.ClearBeforeFill = True
-        '
-        'ViewApplicationTableBindingSource
-        '
-        Me.ViewApplicationTableBindingSource.DataMember = "View_ApplicationTable"
-        Me.ViewApplicationTableBindingSource.DataSource = Me.PROJECTS1747DataSet1BindingSource
-        '
-        'View_ApplicationTableTableAdapter
-        '
-        Me.View_ApplicationTableTableAdapter.ClearBeforeFill = True
-        '
-        'View_ApplicationTableTableAdapter1
-        '
-        Me.View_ApplicationTableTableAdapter1.ClearBeforeFill = True
-        '
-        'View_ApplicationTableTableAdapter2
-        '
-        Me.View_ApplicationTableTableAdapter2.ClearBeforeFill = True
-        '
-        'ApplicationViewBindingSource
-        '
-        Me.ApplicationViewBindingSource.DataMember = "ApplicationView"
-        Me.ApplicationViewBindingSource.DataSource = Me.PROJECTS1747DataSet8
-        '
-        'ApplicationViewTableAdapter
-        '
-        Me.ApplicationViewTableAdapter.ClearBeforeFill = True
-        '
-        'ApplicantViewTableAdapter
-        '
-        Me.ApplicantViewTableAdapter.ClearBeforeFill = True
-        '
-        'ApplicationViewBindingSource1
-        '
-        Me.ApplicationViewBindingSource1.DataMember = "ApplicationView"
-        Me.ApplicationViewBindingSource1.DataSource = Me.PROJECTS1747DataSet8
+        Me.ResidencyDataGridViewTextBoxColumn.Width = 202
         '
         'Main
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(434, 344)
+        Me.ClientSize = New System.Drawing.Size(1157, 820)
         Me.Controls.Add(Me.btnViewApplicant)
-        Me.Controls.Add(Me.tbFilter2)
-        Me.Controls.Add(Me.tbFilter1)
-        Me.Controls.Add(Me.cbFilter2)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.cbFilter1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Main"
         Me.Text = "Applicants"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ApplicantViewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PROJECTS1747DataSet8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ViewApplicationTableBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PROJECTS1747DataSet3BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PROJECTS1747DataSet3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ViewApplicationTableBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PROJECTS1747DataSet2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PROJECTS1747DataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProjectS1730DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PROJECTS1747DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PROJECTS1747DataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ApplicationBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ViewApplicationTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ApplicationViewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ApplicationViewBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ViewApplicantBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -414,43 +516,50 @@ Partial Class Main
     Friend WithEvents Panel2 As Panel
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents cbFilter1 As ComboBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents cbFilter2 As ComboBox
-    Friend WithEvents tbFilter1 As TextBox
-    Friend WithEvents tbFilter2 As TextBox
     Friend WithEvents ApplicantProfileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PROJECTS1747DataSet As PROJECTS1747DataSet
-    Friend WithEvents ApplicationBindingSource As BindingSource
-    Friend WithEvents ApplicationTableAdapter As PROJECTS1747DataSetTableAdapters.ApplicationTableAdapter
-    Friend WithEvents ProjectS1730DataSet1 As PROJECTS1730DataSet
     Friend WithEvents btnViewApplicant As Button
-    Friend WithEvents PROJECTS1747DataSet1BindingSource As BindingSource
-    Friend WithEvents PROJECTS1747DataSet1 As PROJECTS1747DataSet1
-    Friend WithEvents ApplicationBindingSource1 As BindingSource
-    Friend WithEvents ApplicationTableAdapter1 As PROJECTS1747DataSet1TableAdapters.ApplicationTableAdapter
-    Friend WithEvents ViewApplicationTableBindingSource As BindingSource
-    Friend WithEvents View_ApplicationTableTableAdapter As PROJECTS1747DataSet1TableAdapters.View_ApplicationTableTableAdapter
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents PROJECTS1747DataSet2 As PROJECTS1747DataSet2
-    Friend WithEvents ViewApplicationTableBindingSource1 As BindingSource
-    Friend WithEvents View_ApplicationTableTableAdapter1 As PROJECTS1747DataSet2TableAdapters.View_ApplicationTableTableAdapter
-    Friend WithEvents PROJECTS1747DataSet3BindingSource As BindingSource
-    Friend WithEvents PROJECTS1747DataSet3 As PROJECTS1747DataSet3
-    Friend WithEvents ViewApplicationTableBindingSource2 As BindingSource
-    Friend WithEvents View_ApplicationTableTableAdapter2 As PROJECTS1747DataSet3TableAdapters.View_ApplicationTableTableAdapter
-    Friend WithEvents PROJECTS1747DataSet8 As PROJECTS1747DataSet8
-    Friend WithEvents ApplicationViewBindingSource As BindingSource
-    Friend WithEvents ApplicationViewTableAdapter As PROJECTS1747DataSet8TableAdapters.ApplicationViewTableAdapter
-    Friend WithEvents ApplicantViewBindingSource As BindingSource
-    Friend WithEvents ApplicantViewTableAdapter As PROJECTS1747DataSet8TableAdapters.ApplicantViewTableAdapter
+    Friend WithEvents PROJECTS1747DataSet As PROJECTS1747DataSet
+    Friend WithEvents ViewApplicantBindingSource As BindingSource
+    Friend WithEvents ViewApplicantTableAdapter As PROJECTS1747DataSetTableAdapters.viewApplicantTableAdapter
     Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FirstNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ProgramDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ConcentrationDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ApplicationDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MissingStatusDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ReceivedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NotesDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents VerbalQuantitativeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GMATDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GMATVerbalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GMATVerbalDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents GMATQuantitativeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GMATQuantitativeDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents AWADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GREDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GREVerbalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GREVerbalDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents GREQuantitativeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GREQuantitativeDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents WRDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TOEFLDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TimeWithEmployerDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CurrentEmployerDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents UndergraduateGPADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GraduateGPADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents UndergraduateInstitutionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents UndergraduateDegreeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents UndergraduateMajorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GraduateInstitutionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GraduateDegreeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GraduateMajorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GenderDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EthnicityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents AgeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents StateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PostalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CountryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ResidencyDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ApplicationViewBindingSource1 As BindingSource
 End Class

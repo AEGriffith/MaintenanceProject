@@ -23,8 +23,11 @@ Public Class ApplicantProfile
 
 
     Private Sub Application_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'PROJECTS1747DataSet2.Application' table. You can move, or remove it, as needed.
-        Me.ApplicationTableAdapter.Fill(Me.PROJECTS1747DataSet2.Application)
+        'TODO: This line of code loads data into the 'ProjectS1747DataSet1.Program_Requirement' table. You can move, or remove it, as needed.
+        Me.Program_RequirementTableAdapter.Fill(Me.ProjectS1747DataSet1.Program_Requirement)
+        'TODO: This line of code loads data into the 'ProjectS1747DataSet1.Application' table. You can move, or remove it, as needed.
+        Me.ApplicationTableAdapter.Fill(Me.ProjectS1747DataSet1.Application)
+
 
         ApplicationBindingSource.Filter = String.Format("Application_ID = '{0}'", AppID)
         'sql that gets name

@@ -26,8 +26,6 @@ Partial Class ApplicantProfile
         Me.PersonalTabPage = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.tbAddress = New System.Windows.Forms.TextBox()
-        Me.ApplicationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PROJECTS1747DataSet2 = New MaintenanceProject.PROJECTS1747DataSet2()
         Me.tbPhone = New System.Windows.Forms.TextBox()
         Me.tbEmail = New System.Windows.Forms.TextBox()
         Me.tbYears = New System.Windows.Forms.TextBox()
@@ -95,7 +93,6 @@ Partial Class ApplicantProfile
         Me.Label42 = New System.Windows.Forms.Label()
         Me.cbDecision = New System.Windows.Forms.ComboBox()
         Me.lblStuName = New System.Windows.Forms.Label()
-        Me.ApplicationTableAdapter = New MaintenanceProject.PROJECTS1747DataSet2TableAdapters.ApplicationTableAdapter()
         Me.Label41 = New System.Windows.Forms.Label()
         Me.Label_ProgramType = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -108,15 +105,25 @@ Partial Class ApplicantProfile
         Me.menuViewRecommendations = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuViewInterview = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.ProjectS1747DataSet1 = New MaintenanceProject.PROJECTS1747DataSet()
+        Me.ApplicationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ApplicationTableAdapter = New MaintenanceProject.PROJECTS1747DataSetTableAdapters.ApplicationTableAdapter()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.tbProgram = New System.Windows.Forms.TextBox()
+        Me.tbConcentration = New System.Windows.Forms.TextBox()
+        Me.ProgramRequirementBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Program_RequirementTableAdapter = New MaintenanceProject.PROJECTS1747DataSetTableAdapters.Program_RequirementTableAdapter()
         Me.PersonalTabPage.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PROJECTS1747DataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.tabAdmissions.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.ProjectS1747DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProgramRequirementBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PersonalTabPage
@@ -164,23 +171,13 @@ Partial Class ApplicantProfile
         '
         'tbAddress
         '
-        Me.tbAddress.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Phone", True))
+        Me.tbAddress.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "Address", True))
         Me.tbAddress.Location = New System.Drawing.Point(211, 563)
         Me.tbAddress.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tbAddress.Name = "tbAddress"
         Me.tbAddress.ReadOnly = True
         Me.tbAddress.Size = New System.Drawing.Size(340, 38)
         Me.tbAddress.TabIndex = 27
-        '
-        'ApplicationBindingSource
-        '
-        Me.ApplicationBindingSource.DataMember = "Application"
-        Me.ApplicationBindingSource.DataSource = Me.PROJECTS1747DataSet2
-        '
-        'PROJECTS1747DataSet2
-        '
-        Me.PROJECTS1747DataSet2.DataSetName = "PROJECTS1747DataSet2"
-        Me.PROJECTS1747DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'tbPhone
         '
@@ -648,7 +645,7 @@ Partial Class ApplicantProfile
         '
         'tbVQPct
         '
-        Me.tbVQPct.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "GMAT_Q_Percentage", True))
+        Me.tbVQPct.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ApplicationBindingSource, "V_Q_percent", True))
         Me.tbVQPct.Location = New System.Drawing.Point(192, 439)
         Me.tbVQPct.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tbVQPct.Name = "tbVQPct"
@@ -828,6 +825,10 @@ Partial Class ApplicantProfile
         '
         'tabAdmissions
         '
+        Me.tabAdmissions.Controls.Add(Me.tbConcentration)
+        Me.tabAdmissions.Controls.Add(Me.tbProgram)
+        Me.tabAdmissions.Controls.Add(Me.Label31)
+        Me.tabAdmissions.Controls.Add(Me.Label12)
         Me.tabAdmissions.Controls.Add(Me.lblResponse)
         Me.tabAdmissions.Controls.Add(Me.tbResponse)
         Me.tabAdmissions.Controls.Add(Me.btnSubmit)
@@ -845,7 +846,7 @@ Partial Class ApplicantProfile
         'lblResponse
         '
         Me.lblResponse.AutoSize = True
-        Me.lblResponse.Location = New System.Drawing.Point(320, 272)
+        Me.lblResponse.Location = New System.Drawing.Point(33, 264)
         Me.lblResponse.Name = "lblResponse"
         Me.lblResponse.Size = New System.Drawing.Size(151, 32)
         Me.lblResponse.TabIndex = 4
@@ -853,16 +854,16 @@ Partial Class ApplicantProfile
         '
         'tbResponse
         '
-        Me.tbResponse.Location = New System.Drawing.Point(267, 310)
+        Me.tbResponse.Location = New System.Drawing.Point(311, 261)
         Me.tbResponse.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tbResponse.Name = "tbResponse"
         Me.tbResponse.ReadOnly = True
-        Me.tbResponse.Size = New System.Drawing.Size(257, 38)
+        Me.tbResponse.Size = New System.Drawing.Size(306, 38)
         Me.tbResponse.TabIndex = 3
         '
         'btnSubmit
         '
-        Me.btnSubmit.Location = New System.Drawing.Point(392, 169)
+        Me.btnSubmit.Location = New System.Drawing.Point(660, 191)
         Me.btnSubmit.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(133, 48)
@@ -873,19 +874,19 @@ Partial Class ApplicantProfile
         'Label42
         '
         Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(264, 76)
+        Me.Label42.Location = New System.Drawing.Point(33, 191)
         Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(264, 32)
+        Me.Label42.Size = New System.Drawing.Size(272, 32)
         Me.Label42.TabIndex = 1
-        Me.Label42.Text = "Admission Decision"
+        Me.Label42.Text = "Admission Decision:"
         '
         'cbDecision
         '
         Me.cbDecision.FormattingEnabled = True
-        Me.cbDecision.Location = New System.Drawing.Point(264, 114)
+        Me.cbDecision.Location = New System.Drawing.Point(311, 188)
         Me.cbDecision.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbDecision.Name = "cbDecision"
-        Me.cbDecision.Size = New System.Drawing.Size(265, 39)
+        Me.cbDecision.Size = New System.Drawing.Size(306, 39)
         Me.cbDecision.TabIndex = 0
         '
         'lblStuName
@@ -898,10 +899,6 @@ Partial Class ApplicantProfile
         Me.lblStuName.Size = New System.Drawing.Size(230, 32)
         Me.lblStuName.TabIndex = 2
         Me.lblStuName.Text = "Applicant Name"
-        '
-        'ApplicationTableAdapter
-        '
-        Me.ApplicationTableAdapter.ClearBeforeFill = True
         '
         'Label41
         '
@@ -930,7 +927,7 @@ Partial Class ApplicantProfile
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(885, 52)
+        Me.MenuStrip1.Size = New System.Drawing.Size(885, 49)
         Me.MenuStrip1.TabIndex = 8
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -938,7 +935,7 @@ Partial Class ApplicantProfile
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 48)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 45)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'ExitToolStripMenuItem
@@ -951,7 +948,7 @@ Partial Class ApplicantProfile
         '
         Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuEditRecommendation, Me.menuEditInterview})
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(80, 48)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(80, 45)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'menuEditRecommendation
@@ -970,7 +967,7 @@ Partial Class ApplicantProfile
         '
         Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuViewRecommendations, Me.menuViewInterview})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 48)
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 45)
         Me.ViewToolStripMenuItem.Text = "View"
         '
         'menuViewRecommendations
@@ -995,6 +992,67 @@ Partial Class ApplicantProfile
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
+        'ProjectS1747DataSet1
+        '
+        Me.ProjectS1747DataSet1.DataSetName = "PROJECTS1747DataSet"
+        Me.ProjectS1747DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ApplicationBindingSource
+        '
+        Me.ApplicationBindingSource.DataMember = "Application"
+        Me.ApplicationBindingSource.DataSource = Me.ProjectS1747DataSet1
+        '
+        'ApplicationTableAdapter
+        '
+        Me.ApplicationTableAdapter.ClearBeforeFill = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(33, 45)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(131, 32)
+        Me.Label12.TabIndex = 5
+        Me.Label12.Text = "Program:"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(33, 118)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(201, 32)
+        Me.Label31.TabIndex = 6
+        Me.Label31.Text = "Concentration:"
+        '
+        'tbProgram
+        '
+        Me.tbProgram.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProgramRequirementBindingSource, "Program_Name", True))
+        Me.tbProgram.Location = New System.Drawing.Point(311, 45)
+        Me.tbProgram.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tbProgram.Name = "tbProgram"
+        Me.tbProgram.ReadOnly = True
+        Me.tbProgram.Size = New System.Drawing.Size(306, 38)
+        Me.tbProgram.TabIndex = 26
+        '
+        'tbConcentration
+        '
+        Me.tbConcentration.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProgramRequirementBindingSource, "Concentration", True))
+        Me.tbConcentration.Location = New System.Drawing.Point(311, 115)
+        Me.tbConcentration.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tbConcentration.Name = "tbConcentration"
+        Me.tbConcentration.ReadOnly = True
+        Me.tbConcentration.Size = New System.Drawing.Size(306, 38)
+        Me.tbConcentration.TabIndex = 27
+        '
+        'ProgramRequirementBindingSource
+        '
+        Me.ProgramRequirementBindingSource.DataMember = "Program_Requirement"
+        Me.ProgramRequirementBindingSource.DataSource = Me.ProjectS1747DataSet1
+        '
+        'Program_RequirementTableAdapter
+        '
+        Me.Program_RequirementTableAdapter.ClearBeforeFill = True
+        '
         'ApplicantProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
@@ -1014,8 +1072,6 @@ Partial Class ApplicantProfile
         Me.PersonalTabPage.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PROJECTS1747DataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
@@ -1026,6 +1082,9 @@ Partial Class ApplicantProfile
         Me.tabAdmissions.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.ProjectS1747DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProgramRequirementBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1055,9 +1114,6 @@ Partial Class ApplicantProfile
     Friend WithEvents Label20 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label18 As Label
-    Friend WithEvents PROJECTS1747DataSet2 As PROJECTS1747DataSet2
-    Friend WithEvents ApplicationBindingSource As BindingSource
-    Friend WithEvents ApplicationTableAdapter As PROJECTS1747DataSet2TableAdapters.ApplicationTableAdapter
     Friend WithEvents Label30 As Label
     Friend WithEvents Label29 As Label
     Friend WithEvents Label28 As Label
@@ -1115,4 +1171,13 @@ Partial Class ApplicantProfile
     Friend WithEvents tbEval As TextBox
     Friend WithEvents tbElac As TextBox
     Friend WithEvents btnClose As Button
+    Friend WithEvents ProjectS1747DataSet1 As PROJECTS1747DataSet
+    Friend WithEvents ApplicationBindingSource As BindingSource
+    Friend WithEvents ApplicationTableAdapter As PROJECTS1747DataSetTableAdapters.ApplicationTableAdapter
+    Friend WithEvents tbConcentration As TextBox
+    Friend WithEvents tbProgram As TextBox
+    Friend WithEvents Label31 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents ProgramRequirementBindingSource As BindingSource
+    Friend WithEvents Program_RequirementTableAdapter As PROJECTS1747DataSetTableAdapters.Program_RequirementTableAdapter
 End Class

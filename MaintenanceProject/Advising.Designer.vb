@@ -23,41 +23,30 @@ Partial Class Advising
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProgramDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ConcentrationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GPADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ViewStudentBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PROJECTS1747DataSet7BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PROJECTS1747DataSet7 = New MaintenanceProject.PROJECTS1747DataSet7()
-        Me.StudentViewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PROJECTS1747DataSet4 = New MaintenanceProject.PROJECTS1747DataSet4()
-        Me.Student_ViewTableAdapter = New MaintenanceProject.PROJECTS1747DataSet4TableAdapters.Student_ViewTableAdapter()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MISToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MISToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PMISToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnView = New System.Windows.Forms.Button()
-        Me.PROJECTS1747DataSet6 = New MaintenanceProject.PROJECTS1747DataSet6()
+        Me.PROJECTS1747DataSet = New MaintenanceProject.PROJECTS1747DataSet()
         Me.ViewStudentBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ViewStudentTableAdapter = New MaintenanceProject.PROJECTS1747DataSet6TableAdapters.viewStudentTableAdapter()
-        Me.ViewStudentTableAdapter1 = New MaintenanceProject.PROJECTS1747DataSet7TableAdapters.viewStudentTableAdapter()
-        Me.MISToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PMISToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewStudentTableAdapter = New MaintenanceProject.PROJECTS1747DataSetTableAdapters.viewStudentTableAdapter()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ViewStudentBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PROJECTS1747DataSet7BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PROJECTS1747DataSet7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StudentViewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PROJECTS1747DataSet4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.PROJECTS1747DataSet6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PROJECTS1747DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ViewStudentBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -65,11 +54,14 @@ Partial Class Advising
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.ProgramDataGridViewTextBoxColumn, Me.ConcentrationDataGridViewTextBoxColumn, Me.GPADataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ViewStudentBindingSource1
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
+        Me.DataGridView1.DataSource = Me.ViewStudentBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(32, 291)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.DataGridView1.Name = "DataGridView1"
@@ -78,83 +70,6 @@ Partial Class Advising
         Me.DataGridView1.Size = New System.Drawing.Size(1441, 544)
         Me.DataGridView1.TabIndex = 0
         '
-        'IDDataGridViewTextBoxColumn
-        '
-        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
-        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
-        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IDDataGridViewTextBoxColumn.Width = 96
-        '
-        'FirstNameDataGridViewTextBoxColumn
-        '
-        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name"
-        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "First Name"
-        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
-        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.FirstNameDataGridViewTextBoxColumn.Width = 190
-        '
-        'LastNameDataGridViewTextBoxColumn
-        '
-        Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "Last Name"
-        Me.LastNameDataGridViewTextBoxColumn.HeaderText = "Last Name"
-        Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
-        Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.LastNameDataGridViewTextBoxColumn.Width = 189
-        '
-        'ProgramDataGridViewTextBoxColumn
-        '
-        Me.ProgramDataGridViewTextBoxColumn.DataPropertyName = "Program"
-        Me.ProgramDataGridViewTextBoxColumn.HeaderText = "Program"
-        Me.ProgramDataGridViewTextBoxColumn.Name = "ProgramDataGridViewTextBoxColumn"
-        Me.ProgramDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ProgramDataGridViewTextBoxColumn.Width = 177
-        '
-        'ConcentrationDataGridViewTextBoxColumn
-        '
-        Me.ConcentrationDataGridViewTextBoxColumn.DataPropertyName = "Concentration"
-        Me.ConcentrationDataGridViewTextBoxColumn.HeaderText = "Concentration"
-        Me.ConcentrationDataGridViewTextBoxColumn.Name = "ConcentrationDataGridViewTextBoxColumn"
-        Me.ConcentrationDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ConcentrationDataGridViewTextBoxColumn.Width = 247
-        '
-        'GPADataGridViewTextBoxColumn
-        '
-        Me.GPADataGridViewTextBoxColumn.DataPropertyName = "GPA"
-        Me.GPADataGridViewTextBoxColumn.HeaderText = "GPA"
-        Me.GPADataGridViewTextBoxColumn.Name = "GPADataGridViewTextBoxColumn"
-        Me.GPADataGridViewTextBoxColumn.ReadOnly = True
-        Me.GPADataGridViewTextBoxColumn.Width = 129
-        '
-        'ViewStudentBindingSource1
-        '
-        Me.ViewStudentBindingSource1.DataMember = "viewStudent"
-        Me.ViewStudentBindingSource1.DataSource = Me.PROJECTS1747DataSet7BindingSource
-        '
-        'PROJECTS1747DataSet7BindingSource
-        '
-        Me.PROJECTS1747DataSet7BindingSource.DataSource = Me.PROJECTS1747DataSet7
-        Me.PROJECTS1747DataSet7BindingSource.Position = 0
-        '
-        'PROJECTS1747DataSet7
-        '
-        Me.PROJECTS1747DataSet7.DataSetName = "PROJECTS1747DataSet7"
-        Me.PROJECTS1747DataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'StudentViewBindingSource
-        '
-        Me.StudentViewBindingSource.DataMember = "Student_View"
-        Me.StudentViewBindingSource.DataSource = Me.PROJECTS1747DataSet4
-        '
-        'PROJECTS1747DataSet4
-        '
-        Me.PROJECTS1747DataSet4.DataSetName = "PROJECTS1747DataSet4"
-        Me.PROJECTS1747DataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Student_ViewTableAdapter
-        '
-        Me.Student_ViewTableAdapter.ClearBeforeFill = True
-        '
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(40, 40)
@@ -162,7 +77,7 @@ Partial Class Advising
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(16, 5, 0, 5)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1507, 58)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1507, 55)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -181,15 +96,27 @@ Partial Class Advising
         '
         Me.ViewToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MISToolStripMenuItem})
         Me.ViewToolStripMenuItem1.Name = "ViewToolStripMenuItem1"
-        Me.ViewToolStripMenuItem1.Size = New System.Drawing.Size(94, 48)
+        Me.ViewToolStripMenuItem1.Size = New System.Drawing.Size(94, 45)
         Me.ViewToolStripMenuItem1.Text = "View"
         '
         'MISToolStripMenuItem
         '
         Me.MISToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MISToolStripMenuItem1, Me.PMISToolStripMenuItem1})
         Me.MISToolStripMenuItem.Name = "MISToolStripMenuItem"
-        Me.MISToolStripMenuItem.Size = New System.Drawing.Size(327, 46)
+        Me.MISToolStripMenuItem.Size = New System.Drawing.Size(316, 46)
         Me.MISToolStripMenuItem.Text = "Requirements"
+        '
+        'MISToolStripMenuItem1
+        '
+        Me.MISToolStripMenuItem1.Name = "MISToolStripMenuItem1"
+        Me.MISToolStripMenuItem1.Size = New System.Drawing.Size(201, 46)
+        Me.MISToolStripMenuItem1.Text = "MIS"
+        '
+        'PMISToolStripMenuItem1
+        '
+        Me.PMISToolStripMenuItem1.Name = "PMISToolStripMenuItem1"
+        Me.PMISToolStripMenuItem1.Size = New System.Drawing.Size(201, 46)
+        Me.PMISToolStripMenuItem1.Text = "PMIS"
         '
         'Label1
         '
@@ -207,7 +134,7 @@ Partial Class Advising
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(160, 45)
         Me.btnCancel.TabIndex = 3
-        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.Text = "&Close"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'btnView
@@ -217,38 +144,70 @@ Partial Class Advising
         Me.btnView.Name = "btnView"
         Me.btnView.Size = New System.Drawing.Size(160, 45)
         Me.btnView.TabIndex = 4
-        Me.btnView.Text = "View"
+        Me.btnView.Text = "&View"
         Me.btnView.UseVisualStyleBackColor = True
         '
-        'PROJECTS1747DataSet6
+        'PROJECTS1747DataSet
         '
-        Me.PROJECTS1747DataSet6.DataSetName = "PROJECTS1747DataSet6"
-        Me.PROJECTS1747DataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.PROJECTS1747DataSet.DataSetName = "PROJECTS1747DataSet"
+        Me.PROJECTS1747DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ViewStudentBindingSource
         '
         Me.ViewStudentBindingSource.DataMember = "viewStudent"
-        Me.ViewStudentBindingSource.DataSource = Me.PROJECTS1747DataSet6
+        Me.ViewStudentBindingSource.DataSource = Me.PROJECTS1747DataSet
         '
         'ViewStudentTableAdapter
         '
         Me.ViewStudentTableAdapter.ClearBeforeFill = True
         '
-        'ViewStudentTableAdapter1
+        'DataGridViewTextBoxColumn1
         '
-        Me.ViewStudentTableAdapter1.ClearBeforeFill = True
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 96
         '
-        'MISToolStripMenuItem1
+        'DataGridViewTextBoxColumn2
         '
-        Me.MISToolStripMenuItem1.Name = "MISToolStripMenuItem1"
-        Me.MISToolStripMenuItem1.Size = New System.Drawing.Size(327, 46)
-        Me.MISToolStripMenuItem1.Text = "MIS"
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "First Name"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "First Name"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 206
         '
-        'PMISToolStripMenuItem1
+        'DataGridViewTextBoxColumn3
         '
-        Me.PMISToolStripMenuItem1.Name = "PMISToolStripMenuItem1"
-        Me.PMISToolStripMenuItem1.Size = New System.Drawing.Size(327, 46)
-        Me.PMISToolStripMenuItem1.Text = "PMIS"
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Last Name"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 205
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Program"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Program"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 177
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Concentration"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Concentration"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 247
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "GPA"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "GPA"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        Me.DataGridViewTextBoxColumn6.Width = 129
         '
         'Advising
         '
@@ -267,14 +226,9 @@ Partial Class Advising
         Me.Name = "Advising"
         Me.Text = "Advising"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ViewStudentBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PROJECTS1747DataSet7BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PROJECTS1747DataSet7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StudentViewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PROJECTS1747DataSet4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PROJECTS1747DataSet6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PROJECTS1747DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ViewStudentBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -282,22 +236,14 @@ Partial Class Advising
     End Sub
 
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents PROJECTS1747DataSet4 As PROJECTS1747DataSet4
-    Friend WithEvents StudentViewBindingSource As BindingSource
-    Friend WithEvents Student_ViewTableAdapter As PROJECTS1747DataSet4TableAdapters.Student_ViewTableAdapter
+
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnView As Button
-    Friend WithEvents PROJECTS1747DataSet6 As PROJECTS1747DataSet6
-    Friend WithEvents ViewStudentBindingSource As BindingSource
-    Friend WithEvents ViewStudentTableAdapter As PROJECTS1747DataSet6TableAdapters.viewStudentTableAdapter
-    Friend WithEvents PROJECTS1747DataSet7BindingSource As BindingSource
-    Friend WithEvents PROJECTS1747DataSet7 As PROJECTS1747DataSet7
-    Friend WithEvents ViewStudentBindingSource1 As BindingSource
-    Friend WithEvents ViewStudentTableAdapter1 As PROJECTS1747DataSet7TableAdapters.viewStudentTableAdapter
+
     Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FirstNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -308,4 +254,13 @@ Partial Class Advising
     Friend WithEvents MISToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MISToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents PMISToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents PROJECTS1747DataSet As PROJECTS1747DataSet
+    Friend WithEvents ViewStudentBindingSource As BindingSource
+    Friend WithEvents ViewStudentTableAdapter As PROJECTS1747DataSetTableAdapters.viewStudentTableAdapter
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
 End Class
