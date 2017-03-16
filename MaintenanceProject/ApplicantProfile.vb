@@ -107,10 +107,14 @@ Public Class ApplicantProfile
             cbDecision.Enabled = True
             lblResponse.Visible = True
             tbResponse.Visible = True
+            btnSubmit.Visible = True
+            btnSubmit.Enabled = True
         Else
             cbDecision.Enabled = False
             lblResponse.Visible = False
             tbResponse.Visible = False
+            btnSubmit.Visible = False
+            btnSubmit.Enabled = False
         End If
 
     End Sub
@@ -157,20 +161,6 @@ Public Class ApplicantProfile
 
     Private Sub menuViewInterview_Click(sender As Object, e As EventArgs) Handles menuViewInterview.Click
         ViewInterviewComments.Show()
-    End Sub
-
-    Private Sub MISToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MISToolStripMenuItem.Click
-        MISReq.Show()
-
-    End Sub
-
-    Private Sub PMISToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PMISToolStripMenuItem.Click
-        PMISReq.Show()
-    End Sub
-
-    Private Sub tabAdmissions_Click(sender As Object, e As EventArgs) Handles tabAdmissions.GotFocus, tabAdmissions.Click
-
-        MessageBox.Show(Program)
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
