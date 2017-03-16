@@ -100,5 +100,26 @@
         Return SelectedApplicant
     End Function
 
+    'Filters the grid
+    Private Sub tbFName_TextChanged(sender As Object, e As EventArgs) Handles tbFName.TextChanged, tbLName.TextChanged, cbProgram.SelectedIndexChanged, tbEmployer.TextChanged, tbTWE.TextChanged, tbGender.TextChanged, tbEthnicity.TextChanged
 
+        Try
+            ViewApplicantBindingSource.Filter = "[First Name] LIKE '" & tbFName.Text & "*' AND [Last Name] LIKE '" & tbLName.Text & "*' AND Program LIKE '" &
+        cbProgram.Text & "*' AND [Current Employer] LIKE '" & tbEmployer.Text & "*' AND [Time With Employer] LIKE '" & tbTWE.Text &
+        "*' AND Gender LIKE '" & tbGender.Text & "*' AND Ethnicity LIKE '" & tbEthnicity.Text & "*' "
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
+
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        tbLName.Clear()
+        tbFName.Clear()
+        cbProgram.SelectedIndex = -1
+        tbEmployer.Clear()
+        tbTWE.Clear()
+        tbGender.Clear()
+        tbEthnicity.Clear()
+    End Sub
 End Class
