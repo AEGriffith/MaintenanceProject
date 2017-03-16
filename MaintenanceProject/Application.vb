@@ -69,7 +69,6 @@ Public Class Application
                 cbRecommendation.Items.Clear()
                 cbRecommendation.Items.AddRange(MISDecision)
             Case "PMIS"
-                MessageBox.Show("PMIS")
                 cbRecommendation.Items.Clear()
                 cbRecommendation.Items.AddRange(PMISDecision)
         End Select
