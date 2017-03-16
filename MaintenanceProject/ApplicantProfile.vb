@@ -121,6 +121,8 @@ Public Class ApplicantProfile
         End If
 
         tbProgram.Text = Program
+        lblProgram.Text = Program
+
 
     End Sub
 

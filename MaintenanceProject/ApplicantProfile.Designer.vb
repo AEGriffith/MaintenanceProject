@@ -114,6 +114,7 @@ Partial Class ApplicantProfile
         Me.btnClose = New System.Windows.Forms.Button()
         Me.ApplicationTableAdapter = New MaintenanceProject.PROJECTS1747DataSetTableAdapters.ApplicationTableAdapter()
         Me.Program_RequirementTableAdapter = New MaintenanceProject.PROJECTS1747DataSetTableAdapters.Program_RequirementTableAdapter()
+        Me.lblProgram = New System.Windows.Forms.Label()
         Me.PersonalTabPage.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.ApplicationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1052,12 +1053,22 @@ Partial Class ApplicantProfile
         '
         Me.Program_RequirementTableAdapter.ClearBeforeFill = True
         '
+        'lblProgram
+        '
+        Me.lblProgram.AutoSize = True
+        Me.lblProgram.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.1!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProgram.Location = New System.Drawing.Point(735, 76)
+        Me.lblProgram.Name = "lblProgram"
+        Me.lblProgram.Size = New System.Drawing.Size(0, 32)
+        Me.lblProgram.TabIndex = 10
+        '
         'ApplicantProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(885, 932)
+        Me.Controls.Add(Me.lblProgram)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label_ProgramType)
         Me.Controls.Add(Me.Label41)
@@ -1179,4 +1190,5 @@ Partial Class ApplicantProfile
     Friend WithEvents Label12 As Label
     Friend WithEvents ProgramRequirementBindingSource As BindingSource
     Friend WithEvents Program_RequirementTableAdapter As PROJECTS1747DataSetTableAdapters.Program_RequirementTableAdapter
+    Friend WithEvents lblProgram As Label
 End Class
