@@ -120,6 +120,10 @@ Public Class ApplicantProfile
             btnSubmit.Enabled = False
         End If
 
+        tbProgram.Text = Program
+        lblProgram.Text = Program
+
+
     End Sub
 
 
