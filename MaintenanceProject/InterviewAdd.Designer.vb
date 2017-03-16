@@ -110,9 +110,9 @@ Partial Class InterviewAdd
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(138, 120)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 25)
+        Me.Label1.Size = New System.Drawing.Size(83, 25)
         Me.Label1.TabIndex = 8
-        Me.Label1.Text = "Poor"
+        Me.Label1.Text = "1 (Poor)"
         '
         'Label4
         '
@@ -120,9 +120,9 @@ Partial Class InterviewAdd
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(413, 120)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(91, 25)
+        Me.Label4.Size = New System.Drawing.Size(121, 25)
         Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Excellent"
+        Me.Label4.Text = "5 (Excellent)"
         '
         'InterviewAdd
         '
