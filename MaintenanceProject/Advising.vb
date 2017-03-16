@@ -8,14 +8,11 @@
 
 
     Private Sub Advising_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'PROJECTS1747DataSet7.viewStudent' table. You can move, or remove it, as needed.
-        Me.ViewStudentTableAdapter1.Fill(Me.PROJECTS1747DataSet7.viewStudent)
+        'TODO: This line of code loads data into the 'PROJECTS1747DataSet.viewStudent' table. You can move, or remove it, as needed.
+        Me.ViewStudentTableAdapter.Fill(Me.PROJECTS1747DataSet.viewStudent)
+        'This is important
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
 
-        'TODO: This line of code loads data into the 'PROJECTS1747DataSet6.viewStudent' table. You can move, or remove it, as needed.
-        'Me.ViewStudentTableAdapter.Fill(Me.PROJECTS1747DataSet6.viewStudent)
-        'TODO: This line of code loads data into the 'PROJECTS1747DataSet4.Student_View' table. You can move, or remove it, as needed.
-        ' Me.Student_ViewTableAdapter.Fill(Me.PROJECTS1747DataSet4.Student_View)
 
     End Sub
 

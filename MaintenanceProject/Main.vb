@@ -3,10 +3,9 @@
     Dim SelectedApplicant
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'PROJECTS1747DataSet8.ApplicantView' table. You can move, or remove it, as needed.
-        Me.ApplicantViewTableAdapter.Fill(Me.PROJECTS1747DataSet8.ApplicantView)
-        'TODO: This line of code loads data into the 'PROJECTS1747DataSet8.ApplicationView' table. You can move, or remove it, as needed.
-        'Me.ApplicationViewTableAdapter.Fill(Me.PROJECTS1747DataSet8.ApplicationView)
+        'TODO: This line of code loads data into the 'PROJECTS1747DataSet.viewApplicant' table. You can move, or remove it, as needed.
+        Me.ViewApplicantTableAdapter.Fill(Me.PROJECTS1747DataSet.viewApplicant)
+
 
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
 
@@ -19,72 +18,72 @@
         Me.Close()
     End Sub
 
-    Private Sub cbFilter1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbFilter1.SelectedIndexChanged
+    'Private Sub cbFilter1_SelectedIndexChanged(sender As Object, e As EventArgs)
 
 
-        tbFilter1.Clear()
-        If cbFilter2.SelectedIndex <> -1 And cbFilter1.SelectedIndex = cbFilter2.SelectedIndex Then
-            MessageBox.Show("You are already using this value as a filter. Please use another value.")
-            If cbFilter1.SelectedIndex = 0 Then
-                cbFilter1.SelectedIndex = cbFilter1.SelectedIndex + 1
-            Else
-                cbFilter1.SelectedIndex = cbFilter1.SelectedIndex - 1
-            End If
+    'tbFilter1.Clear()
+    'If cbFilter2.SelectedIndex <> -1 And cbFilter1.SelectedIndex = cbFilter2.SelectedIndex Then
+    '    MessageBox.Show("You are already using this value as a filter. Please use another value.")
+    '    If cbFilter1.SelectedIndex = 0 Then
+    '        cbFilter1.SelectedIndex = cbFilter1.SelectedIndex + 1
+    '    Else
+    '        cbFilter1.SelectedIndex = cbFilter1.SelectedIndex - 1
+    '    End If
 
 
-        End If
-        Select Case cbFilter1.SelectedIndex
-            Case -1
-                cbFilter2.Enabled = False
-                tbFilter1.Enabled = False
-                tbFilter2.Enabled = False
-            Case 0
-                cbFilter2.Enabled = True
-                tbFilter1.Enabled = True
-                'tbFilter2.Enabled = True
-            Case 1
-                cbFilter2.Enabled = True
-                tbFilter1.Enabled = True
-                'tbFilter2.Enabled = True
-            Case 2
-                cbFilter2.Enabled = True
-                tbFilter1.Enabled = True
-                'tbFilter2.Enabled = True
-            Case 3
-                cbFilter2.Enabled = True
-                tbFilter1.Enabled = True
-                'tbFilter2.Enabled = True
-        End Select
-    End Sub
+    'End If
+    'Select Case cbFilter1.SelectedIndex
+    '    Case -1
+    '        cbFilter2.Enabled = False
+    '        tbFilter1.Enabled = False
+    '        tbFilter2.Enabled = False
+    '    Case 0
+    '        cbFilter2.Enabled = True
+    '        tbFilter1.Enabled = True
+    '        'tbFilter2.Enabled = True
+    '    Case 1
+    '        cbFilter2.Enabled = True
+    '        tbFilter1.Enabled = True
+    '        'tbFilter2.Enabled = True
+    '    Case 2
+    '        cbFilter2.Enabled = True
+    '        tbFilter1.Enabled = True
+    '        'tbFilter2.Enabled = True
+    '    Case 3
+    '        cbFilter2.Enabled = True
+    '        tbFilter1.Enabled = True
+    '        'tbFilter2.Enabled = True
+    'End Select
+    'End Sub
 
-    Private Sub cbFilter2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbFilter2.SelectedIndexChanged
-        tbFilter2.Clear()
-        If cbFilter2.SelectedIndex = -1 Then
-            tbFilter2.Enabled = False
-        Else
-            tbFilter2.Enabled = True
-        End If
-        If cbFilter1.SelectedIndex <> -1 And cbFilter1.SelectedIndex = cbFilter2.SelectedIndex Then
-            MessageBox.Show("You are already using this value as a filter. Please use another value.")
-            cbFilter2.SelectedIndex = -1
-        End If
-    End Sub
+    'Private Sub cbFilter2_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    tbFilter2.Clear()
+    '    If cbFilter2.SelectedIndex = -1 Then
+    '        tbFilter2.Enabled = False
+    '    Else
+    '        tbFilter2.Enabled = True
+    '    End If
+    '    If cbFilter1.SelectedIndex <> -1 And cbFilter1.SelectedIndex = cbFilter2.SelectedIndex Then
+    '        MessageBox.Show("You are already using this value as a filter. Please use another value.")
+    '        cbFilter2.SelectedIndex = -1
+    '    End If
+    'End Sub
 
-    Private Sub tbFilter1_TextChanged(sender As Object, e As EventArgs) Handles tbFilter1.TextChanged
+    'Private Sub tbFilter1_TextChanged(sender As Object, e As EventArgs)
 
-        If cbFilter2.SelectedIndex = -1 Then
-            ApplicationBindingSource.Filter = cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
-        Else
-            ApplicationBindingSource.Filter = cbFilter2.Text & " Like '" & tbFilter2.Text & "*' and " & cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
-        End If
-        DataGridView1.DataSource = ApplicationBindingSource
-    End Sub
+    '    If cbFilter2.SelectedIndex = -1 Then
+    '        ApplicationBindingSource.Filter = cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
+    '    Else
+    '        ApplicationBindingSource.Filter = cbFilter2.Text & " Like '" & tbFilter2.Text & "*' and " & cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
+    '    End If
+    '    DataGridView1.DataSource = ApplicationBindingSource
+    'End Sub
 
-    Private Sub tbFilter2_TextChanged(sender As Object, e As EventArgs) Handles tbFilter2.TextChanged
+    'Private Sub tbFilter2_TextChanged(sender As Object, e As EventArgs)
 
-        ApplicationBindingSource.Filter = cbFilter2.Text & " Like '" & tbFilter2.Text & "*' and " & cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
+    '    ApplicationBindingSource.Filter = cbFilter2.Text & " Like '" & tbFilter2.Text & "*' and " & cbFilter1.Text & " Like '" & tbFilter1.Text & "*'"
 
-    End Sub
+    'End Sub
 
     Private Sub ApplicantProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApplicantProfileToolStripMenuItem.Click, btnViewApplicant.Click
         SelectedApplicant = Me.DataGridView1.CurrentRow.Cells(0).Value

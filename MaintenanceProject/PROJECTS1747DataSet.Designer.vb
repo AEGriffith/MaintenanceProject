@@ -25,6 +25,8 @@ Option Explicit On
 Partial Public Class PROJECTS1747DataSet
     Inherits Global.System.Data.DataSet
     
+    Private tableAdmissionDecision As AdmissionDecisionDataTable
+    
     Private tableApplication As ApplicationDataTable
     
     Private tableApplication_Comment As Application_CommentDataTable
@@ -51,11 +53,17 @@ Partial Public Class PROJECTS1747DataSet
     
     Private tableAcademicsView As AcademicsViewDataTable
     
+    Private tableApplicantView As ApplicantViewDataTable
+    
     Private tableApplicationView As ApplicationViewDataTable
     
     Private tablePersonalView As PersonalViewDataTable
     
     Private tableTestScoresView As TestScoresViewDataTable
+    
+    Private tableviewApplicant As viewApplicantDataTable
+    
+    Private tableviewStudent As viewStudentDataTable
     
     Private relationFK__Applicati__Stude__25869641 As Global.System.Data.DataRelation
     
@@ -112,6 +120,9 @@ Partial Public Class PROJECTS1747DataSet
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
+            If (Not (ds.Tables("AdmissionDecision")) Is Nothing) Then
+                MyBase.Tables.Add(New AdmissionDecisionDataTable(ds.Tables("AdmissionDecision")))
+            End If
             If (Not (ds.Tables("Application")) Is Nothing) Then
                 MyBase.Tables.Add(New ApplicationDataTable(ds.Tables("Application")))
             End If
@@ -151,6 +162,9 @@ Partial Public Class PROJECTS1747DataSet
             If (Not (ds.Tables("AcademicsView")) Is Nothing) Then
                 MyBase.Tables.Add(New AcademicsViewDataTable(ds.Tables("AcademicsView")))
             End If
+            If (Not (ds.Tables("ApplicantView")) Is Nothing) Then
+                MyBase.Tables.Add(New ApplicantViewDataTable(ds.Tables("ApplicantView")))
+            End If
             If (Not (ds.Tables("ApplicationView")) Is Nothing) Then
                 MyBase.Tables.Add(New ApplicationViewDataTable(ds.Tables("ApplicationView")))
             End If
@@ -159,6 +173,12 @@ Partial Public Class PROJECTS1747DataSet
             End If
             If (Not (ds.Tables("TestScoresView")) Is Nothing) Then
                 MyBase.Tables.Add(New TestScoresViewDataTable(ds.Tables("TestScoresView")))
+            End If
+            If (Not (ds.Tables("viewApplicant")) Is Nothing) Then
+                MyBase.Tables.Add(New viewApplicantDataTable(ds.Tables("viewApplicant")))
+            End If
+            If (Not (ds.Tables("viewStudent")) Is Nothing) Then
+                MyBase.Tables.Add(New viewStudentDataTable(ds.Tables("viewStudent")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -176,6 +196,16 @@ Partial Public Class PROJECTS1747DataSet
         AddHandler MyBase.Tables.CollectionChanged, schemaChangedHandler
         AddHandler Me.Relations.CollectionChanged, schemaChangedHandler
     End Sub
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property AdmissionDecision() As AdmissionDecisionDataTable
+        Get
+            Return Me.tableAdmissionDecision
+        End Get
+    End Property
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
@@ -311,6 +341,16 @@ Partial Public Class PROJECTS1747DataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property ApplicantView() As ApplicantViewDataTable
+        Get
+            Return Me.tableApplicantView
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
     Public ReadOnly Property ApplicationView() As ApplicationViewDataTable
         Get
             Return Me.tableApplicationView
@@ -334,6 +374,26 @@ Partial Public Class PROJECTS1747DataSet
     Public ReadOnly Property TestScoresView() As TestScoresViewDataTable
         Get
             Return Me.tableTestScoresView
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property viewApplicant() As viewApplicantDataTable
+        Get
+            Return Me.tableviewApplicant
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property viewStudent() As viewStudentDataTable
+        Get
+            Return Me.tableviewStudent
         End Get
     End Property
     
@@ -404,6 +464,9 @@ Partial Public Class PROJECTS1747DataSet
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
+            If (Not (ds.Tables("AdmissionDecision")) Is Nothing) Then
+                MyBase.Tables.Add(New AdmissionDecisionDataTable(ds.Tables("AdmissionDecision")))
+            End If
             If (Not (ds.Tables("Application")) Is Nothing) Then
                 MyBase.Tables.Add(New ApplicationDataTable(ds.Tables("Application")))
             End If
@@ -443,6 +506,9 @@ Partial Public Class PROJECTS1747DataSet
             If (Not (ds.Tables("AcademicsView")) Is Nothing) Then
                 MyBase.Tables.Add(New AcademicsViewDataTable(ds.Tables("AcademicsView")))
             End If
+            If (Not (ds.Tables("ApplicantView")) Is Nothing) Then
+                MyBase.Tables.Add(New ApplicantViewDataTable(ds.Tables("ApplicantView")))
+            End If
             If (Not (ds.Tables("ApplicationView")) Is Nothing) Then
                 MyBase.Tables.Add(New ApplicationViewDataTable(ds.Tables("ApplicationView")))
             End If
@@ -451,6 +517,12 @@ Partial Public Class PROJECTS1747DataSet
             End If
             If (Not (ds.Tables("TestScoresView")) Is Nothing) Then
                 MyBase.Tables.Add(New TestScoresViewDataTable(ds.Tables("TestScoresView")))
+            End If
+            If (Not (ds.Tables("viewApplicant")) Is Nothing) Then
+                MyBase.Tables.Add(New viewApplicantDataTable(ds.Tables("viewApplicant")))
+            End If
+            If (Not (ds.Tables("viewStudent")) Is Nothing) Then
+                MyBase.Tables.Add(New viewStudentDataTable(ds.Tables("viewStudent")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -484,6 +556,12 @@ Partial Public Class PROJECTS1747DataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
+        Me.tableAdmissionDecision = CType(MyBase.Tables("AdmissionDecision"),AdmissionDecisionDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableAdmissionDecision) Is Nothing) Then
+                Me.tableAdmissionDecision.InitVars
+            End If
+        End If
         Me.tableApplication = CType(MyBase.Tables("Application"),ApplicationDataTable)
         If (initTable = true) Then
             If (Not (Me.tableApplication) Is Nothing) Then
@@ -562,6 +640,12 @@ Partial Public Class PROJECTS1747DataSet
                 Me.tableAcademicsView.InitVars
             End If
         End If
+        Me.tableApplicantView = CType(MyBase.Tables("ApplicantView"),ApplicantViewDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableApplicantView) Is Nothing) Then
+                Me.tableApplicantView.InitVars
+            End If
+        End If
         Me.tableApplicationView = CType(MyBase.Tables("ApplicationView"),ApplicationViewDataTable)
         If (initTable = true) Then
             If (Not (Me.tableApplicationView) Is Nothing) Then
@@ -578,6 +662,18 @@ Partial Public Class PROJECTS1747DataSet
         If (initTable = true) Then
             If (Not (Me.tableTestScoresView) Is Nothing) Then
                 Me.tableTestScoresView.InitVars
+            End If
+        End If
+        Me.tableviewApplicant = CType(MyBase.Tables("viewApplicant"),viewApplicantDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableviewApplicant) Is Nothing) Then
+                Me.tableviewApplicant.InitVars
+            End If
+        End If
+        Me.tableviewStudent = CType(MyBase.Tables("viewStudent"),viewStudentDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableviewStudent) Is Nothing) Then
+                Me.tableviewStudent.InitVars
             End If
         End If
         Me.relationFK__Applicati__Stude__25869641 = Me.Relations("FK__Applicati__Stude__25869641")
@@ -603,6 +699,8 @@ Partial Public Class PROJECTS1747DataSet
         Me.Namespace = "http://tempuri.org/PROJECTS1747DataSet.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
+        Me.tableAdmissionDecision = New AdmissionDecisionDataTable()
+        MyBase.Tables.Add(Me.tableAdmissionDecision)
         Me.tableApplication = New ApplicationDataTable()
         MyBase.Tables.Add(Me.tableApplication)
         Me.tableApplication_Comment = New Application_CommentDataTable()
@@ -629,12 +727,18 @@ Partial Public Class PROJECTS1747DataSet
         MyBase.Tables.Add(Me.tableUser_ID)
         Me.tableAcademicsView = New AcademicsViewDataTable()
         MyBase.Tables.Add(Me.tableAcademicsView)
+        Me.tableApplicantView = New ApplicantViewDataTable()
+        MyBase.Tables.Add(Me.tableApplicantView)
         Me.tableApplicationView = New ApplicationViewDataTable()
         MyBase.Tables.Add(Me.tableApplicationView)
         Me.tablePersonalView = New PersonalViewDataTable()
         MyBase.Tables.Add(Me.tablePersonalView)
         Me.tableTestScoresView = New TestScoresViewDataTable()
         MyBase.Tables.Add(Me.tableTestScoresView)
+        Me.tableviewApplicant = New viewApplicantDataTable()
+        MyBase.Tables.Add(Me.tableviewApplicant)
+        Me.tableviewStudent = New viewStudentDataTable()
+        MyBase.Tables.Add(Me.tableviewStudent)
         Me.relationFK__Applicati__Stude__25869641 = New Global.System.Data.DataRelation("FK__Applicati__Stude__25869641", New Global.System.Data.DataColumn() {Me.tableStudent.Student_IDColumn}, New Global.System.Data.DataColumn() {Me.tableApplication.Student_IDColumn}, false)
         Me.Relations.Add(Me.relationFK__Applicati__Stude__25869641)
         Me.relationFK__Applicati__Appli__2A4B4B5E = New Global.System.Data.DataRelation("FK__Applicati__Appli__2A4B4B5E", New Global.System.Data.DataColumn() {Me.tableApplication.Application_IDColumn}, New Global.System.Data.DataColumn() {Me.tableApplication_Comment.Application_IDColumn}, false)
@@ -662,6 +766,12 @@ Partial Public Class PROJECTS1747DataSet
         Me.relationFK__Student__Program__1ED998B2 = New Global.System.Data.DataRelation("FK__Student__Program__1ED998B2", New Global.System.Data.DataColumn() {Me.tableProgram_Requirement.Program_IDColumn}, New Global.System.Data.DataColumn() {Me.tableStudent.Program_IDColumn}, false)
         Me.Relations.Add(Me.relationFK__Student__Program__1ED998B2)
     End Sub
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializeAdmissionDecision() As Boolean
+        Return false
+    End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -743,6 +853,12 @@ Partial Public Class PROJECTS1747DataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializeApplicantView() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializeApplicationView() As Boolean
         Return false
     End Function
@@ -756,6 +872,18 @@ Partial Public Class PROJECTS1747DataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializeTestScoresView() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializeviewApplicant() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializeviewStudent() As Boolean
         Return false
     End Function
     
@@ -818,6 +946,9 @@ Partial Public Class PROJECTS1747DataSet
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub AdmissionDecisionRowChangeEventHandler(ByVal sender As Object, ByVal e As AdmissionDecisionRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub ApplicationRowChangeEventHandler(ByVal sender As Object, ByVal e As ApplicationRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -857,6 +988,9 @@ Partial Public Class PROJECTS1747DataSet
     Public Delegate Sub AcademicsViewRowChangeEventHandler(ByVal sender As Object, ByVal e As AcademicsViewRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub ApplicantViewRowChangeEventHandler(ByVal sender As Object, ByVal e As ApplicantViewRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub ApplicationViewRowChangeEventHandler(ByVal sender As Object, ByVal e As ApplicationViewRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -864,6 +998,279 @@ Partial Public Class PROJECTS1747DataSet
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub TestScoresViewRowChangeEventHandler(ByVal sender As Object, ByVal e As TestScoresViewRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub viewApplicantRowChangeEventHandler(ByVal sender As Object, ByVal e As viewApplicantRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub viewStudentRowChangeEventHandler(ByVal sender As Object, ByVal e As viewStudentRowChangeEvent)
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class AdmissionDecisionDataTable
+        Inherits Global.System.Data.TypedTableBase(Of AdmissionDecisionRow)
+        
+        Private columnProgram As Global.System.Data.DataColumn
+        
+        Private columnDecision As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "AdmissionDecision"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ProgramColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnProgram
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DecisionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDecision
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As AdmissionDecisionRow
+            Get
+                Return CType(Me.Rows(index),AdmissionDecisionRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AdmissionDecisionRowChanging As AdmissionDecisionRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AdmissionDecisionRowChanged As AdmissionDecisionRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AdmissionDecisionRowDeleting As AdmissionDecisionRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AdmissionDecisionRowDeleted As AdmissionDecisionRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddAdmissionDecisionRow(ByVal row As AdmissionDecisionRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddAdmissionDecisionRow(ByVal Program As String, ByVal Decision As String) As AdmissionDecisionRow
+            Dim rowAdmissionDecisionRow As AdmissionDecisionRow = CType(Me.NewRow,AdmissionDecisionRow)
+            Dim columnValuesArray() As Object = New Object() {Program, Decision}
+            rowAdmissionDecisionRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowAdmissionDecisionRow)
+            Return rowAdmissionDecisionRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As AdmissionDecisionDataTable = CType(MyBase.Clone,AdmissionDecisionDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New AdmissionDecisionDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnProgram = MyBase.Columns("Program")
+            Me.columnDecision = MyBase.Columns("Decision")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnProgram = New Global.System.Data.DataColumn("Program", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProgram)
+            Me.columnDecision = New Global.System.Data.DataColumn("Decision", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDecision)
+            Me.columnProgram.MaxLength = 50
+            Me.columnDecision.MaxLength = 50
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewAdmissionDecisionRow() As AdmissionDecisionRow
+            Return CType(Me.NewRow,AdmissionDecisionRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New AdmissionDecisionRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(AdmissionDecisionRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.AdmissionDecisionRowChangedEvent) Is Nothing) Then
+                RaiseEvent AdmissionDecisionRowChanged(Me, New AdmissionDecisionRowChangeEvent(CType(e.Row,AdmissionDecisionRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.AdmissionDecisionRowChangingEvent) Is Nothing) Then
+                RaiseEvent AdmissionDecisionRowChanging(Me, New AdmissionDecisionRowChangeEvent(CType(e.Row,AdmissionDecisionRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.AdmissionDecisionRowDeletedEvent) Is Nothing) Then
+                RaiseEvent AdmissionDecisionRowDeleted(Me, New AdmissionDecisionRowChangeEvent(CType(e.Row,AdmissionDecisionRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.AdmissionDecisionRowDeletingEvent) Is Nothing) Then
+                RaiseEvent AdmissionDecisionRowDeleting(Me, New AdmissionDecisionRowChangeEvent(CType(e.Row,AdmissionDecisionRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemoveAdmissionDecisionRow(ByVal row As AdmissionDecisionRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As PROJECTS1747DataSet = New PROJECTS1747DataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "AdmissionDecisionDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -976,6 +1383,10 @@ Partial Public Class PROJECTS1747DataSet
         Private columnG_GPA As Global.System.Data.DataColumn
         
         Private columnGrad_Major As Global.System.Data.DataColumn
+        
+        Private columnProgram As Global.System.Data.DataColumn
+        
+        Private columnResponse As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -1429,6 +1840,22 @@ Partial Public Class PROJECTS1747DataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ProgramColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnProgram
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ResponseColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnResponse
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1480,8 +1907,8 @@ Partial Public Class PROJECTS1747DataSet
                     ByVal Notes As String,  _
                     ByVal Fee As String,  _
                     ByVal V_Q_percent As Integer,  _
-                    ByVal U_GPA As String,  _
-                    ByVal Toefl As String,  _
+                    ByVal U_GPA As Decimal,  _
+                    ByVal Toefl As Integer,  _
                     ByVal Gender As String,  _
                     ByVal Ethnicity As String,  _
                     ByVal TWE As String,  _
@@ -1492,23 +1919,23 @@ Partial Public Class PROJECTS1747DataSet
                     ByVal GRAD As String,  _
                     ByVal G_Degree As String,  _
                     ByVal ELAC_Reg As String,  _
-                    ByVal GMAT As String,  _
-                    ByVal GMAT_Verb As String,  _
+                    ByVal GMAT As Integer,  _
+                    ByVal GMAT_Verb As Integer,  _
                     ByVal GMAT_V_Percentage As Integer,  _
-                    ByVal GMAT_Quan As String,  _
+                    ByVal GMAT_Quan As Integer,  _
                     ByVal GMAT_Q_Percentage As Integer,  _
-                    ByVal AWA As String,  _
+                    ByVal AWA As Decimal,  _
                     ByVal UA_Email As String,  _
                     ByVal Non_UA_Email As String,  _
                     ByVal Age As Integer,  _
                     ByVal Phone As String,  _
                     ByVal Last_Name As String,  _
-                    ByVal GRE As String,  _
-                    ByVal GRE_Verb As String,  _
+                    ByVal GRE As Integer,  _
+                    ByVal GRE_Verb As Integer,  _
                     ByVal GRE_V_percentage As Integer,  _
-                    ByVal GRE_Quan As String,  _
+                    ByVal GRE_Quan As Integer,  _
                     ByVal GRE_Q_percentage As Integer,  _
-                    ByVal WR As String,  _
+                    ByVal WR As Decimal,  _
                     ByVal Address As String,  _
                     ByVal City As String,  _
                     ByVal State As String,  _
@@ -1516,9 +1943,11 @@ Partial Public Class PROJECTS1747DataSet
                     ByVal Country As String,  _
                     ByVal Residency As String,  _
                     ByVal G_GPA As Decimal,  _
-                    ByVal Grad_Major As String) As ApplicationRow
+                    ByVal Grad_Major As String,  _
+                    ByVal Program As String,  _
+                    ByVal Response As String) As ApplicationRow
             Dim rowApplicationRow As ApplicationRow = CType(Me.NewRow,ApplicationRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, First_Name, App_Date, Decision, GA, MatR, Eval_I20, Status_Missing, Trsc, Received, Letters_Frm, Notes, Fee, V_Q_percent, U_GPA, Toefl, Gender, Ethnicity, TWE, Current_Employer, U_Inst, U_Deg, UDRG_Major, GRAD, G_Degree, ELAC_Reg, GMAT, GMAT_Verb, GMAT_V_Percentage, GMAT_Quan, GMAT_Q_Percentage, AWA, UA_Email, Non_UA_Email, Age, Phone, Last_Name, GRE, GRE_Verb, GRE_V_percentage, GRE_Quan, GRE_Q_percentage, WR, Address, City, State, Postal, Country, Residency, G_GPA, Grad_Major}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, First_Name, App_Date, Decision, GA, MatR, Eval_I20, Status_Missing, Trsc, Received, Letters_Frm, Notes, Fee, V_Q_percent, U_GPA, Toefl, Gender, Ethnicity, TWE, Current_Employer, U_Inst, U_Deg, UDRG_Major, GRAD, G_Degree, ELAC_Reg, GMAT, GMAT_Verb, GMAT_V_Percentage, GMAT_Quan, GMAT_Q_Percentage, AWA, UA_Email, Non_UA_Email, Age, Phone, Last_Name, GRE, GRE_Verb, GRE_V_percentage, GRE_Quan, GRE_Q_percentage, WR, Address, City, State, Postal, Country, Residency, G_GPA, Grad_Major, Program, Response}
             If (Not (parentStudentRowByFK__Applicati__Stude__25869641) Is Nothing) Then
                 columnValuesArray(1) = parentStudentRowByFK__Applicati__Stude__25869641(0)
             End If
@@ -1602,6 +2031,8 @@ Partial Public Class PROJECTS1747DataSet
             Me.columnResidency = MyBase.Columns("Residency")
             Me.columnG_GPA = MyBase.Columns("G_GPA")
             Me.columnGrad_Major = MyBase.Columns("Grad_Major")
+            Me.columnProgram = MyBase.Columns("Program")
+            Me.columnResponse = MyBase.Columns("Response")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1637,9 +2068,9 @@ Partial Public Class PROJECTS1747DataSet
             MyBase.Columns.Add(Me.columnFee)
             Me.columnV_Q_percent = New Global.System.Data.DataColumn("V_Q_percent", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnV_Q_percent)
-            Me.columnU_GPA = New Global.System.Data.DataColumn("U_GPA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnU_GPA = New Global.System.Data.DataColumn("U_GPA", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnU_GPA)
-            Me.columnToefl = New Global.System.Data.DataColumn("Toefl", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnToefl = New Global.System.Data.DataColumn("Toefl", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnToefl)
             Me.columnGender = New Global.System.Data.DataColumn("Gender", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGender)
@@ -1661,17 +2092,17 @@ Partial Public Class PROJECTS1747DataSet
             MyBase.Columns.Add(Me.columnG_Degree)
             Me.columnELAC_Reg = New Global.System.Data.DataColumn("ELAC_Reg", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnELAC_Reg)
-            Me.columnGMAT = New Global.System.Data.DataColumn("GMAT", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnGMAT = New Global.System.Data.DataColumn("GMAT", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGMAT)
-            Me.columnGMAT_Verb = New Global.System.Data.DataColumn("GMAT_Verb", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnGMAT_Verb = New Global.System.Data.DataColumn("GMAT_Verb", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGMAT_Verb)
             Me.columnGMAT_V_Percentage = New Global.System.Data.DataColumn("GMAT_V_Percentage", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGMAT_V_Percentage)
-            Me.columnGMAT_Quan = New Global.System.Data.DataColumn("GMAT_Quan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnGMAT_Quan = New Global.System.Data.DataColumn("GMAT_Quan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGMAT_Quan)
             Me.columnGMAT_Q_Percentage = New Global.System.Data.DataColumn("GMAT_Q_Percentage", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGMAT_Q_Percentage)
-            Me.columnAWA = New Global.System.Data.DataColumn("AWA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnAWA = New Global.System.Data.DataColumn("AWA", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAWA)
             Me.columnUA_Email = New Global.System.Data.DataColumn("UA_Email", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnUA_Email)
@@ -1683,17 +2114,17 @@ Partial Public Class PROJECTS1747DataSet
             MyBase.Columns.Add(Me.columnPhone)
             Me.columnLast_Name = New Global.System.Data.DataColumn("Last_Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnLast_Name)
-            Me.columnGRE = New Global.System.Data.DataColumn("GRE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnGRE = New Global.System.Data.DataColumn("GRE", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGRE)
-            Me.columnGRE_Verb = New Global.System.Data.DataColumn("GRE_Verb", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnGRE_Verb = New Global.System.Data.DataColumn("GRE_Verb", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGRE_Verb)
             Me.columnGRE_V_percentage = New Global.System.Data.DataColumn("GRE_V_percentage", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGRE_V_percentage)
-            Me.columnGRE_Quan = New Global.System.Data.DataColumn("GRE_Quan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnGRE_Quan = New Global.System.Data.DataColumn("GRE_Quan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGRE_Quan)
             Me.columnGRE_Q_percentage = New Global.System.Data.DataColumn("GRE_Q_percentage", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGRE_Q_percentage)
-            Me.columnWR = New Global.System.Data.DataColumn("WR", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnWR = New Global.System.Data.DataColumn("WR", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnWR)
             Me.columnAddress = New Global.System.Data.DataColumn("Address", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAddress)
@@ -1711,6 +2142,10 @@ Partial Public Class PROJECTS1747DataSet
             MyBase.Columns.Add(Me.columnG_GPA)
             Me.columnGrad_Major = New Global.System.Data.DataColumn("Grad_Major", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGrad_Major)
+            Me.columnProgram = New Global.System.Data.DataColumn("Program", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProgram)
+            Me.columnResponse = New Global.System.Data.DataColumn("Response", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnResponse)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnApplication_ID}, true))
             Me.columnApplication_ID.AutoIncrement = true
             Me.columnApplication_ID.AutoIncrementSeed = -1
@@ -1730,8 +2165,6 @@ Partial Public Class PROJECTS1747DataSet
             Me.columnLetters_Frm.MaxLength = 50
             Me.columnNotes.MaxLength = 256
             Me.columnFee.MaxLength = 10
-            Me.columnU_GPA.MaxLength = 50
-            Me.columnToefl.MaxLength = 50
             Me.columnGender.MaxLength = 10
             Me.columnEthnicity.MaxLength = 30
             Me.columnTWE.MaxLength = 30
@@ -1742,18 +2175,10 @@ Partial Public Class PROJECTS1747DataSet
             Me.columnGRAD.MaxLength = 256
             Me.columnG_Degree.MaxLength = 30
             Me.columnELAC_Reg.MaxLength = 50
-            Me.columnGMAT.MaxLength = 20
-            Me.columnGMAT_Verb.MaxLength = 20
-            Me.columnGMAT_Quan.MaxLength = 20
-            Me.columnAWA.MaxLength = 20
             Me.columnUA_Email.MaxLength = 256
             Me.columnNon_UA_Email.MaxLength = 256
             Me.columnPhone.MaxLength = 50
             Me.columnLast_Name.MaxLength = 50
-            Me.columnGRE.MaxLength = 20
-            Me.columnGRE_Verb.MaxLength = 20
-            Me.columnGRE_Quan.MaxLength = 20
-            Me.columnWR.MaxLength = 20
             Me.columnAddress.MaxLength = 256
             Me.columnCity.MaxLength = 50
             Me.columnState.MaxLength = 50
@@ -1761,6 +2186,8 @@ Partial Public Class PROJECTS1747DataSet
             Me.columnCountry.MaxLength = 50
             Me.columnResidency.MaxLength = 50
             Me.columnGrad_Major.MaxLength = 50
+            Me.columnProgram.MaxLength = 10
+            Me.columnResponse.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1906,6 +2333,8 @@ Partial Public Class PROJECTS1747DataSet
         
         Private columnComments As Global.System.Data.DataColumn
         
+        Private columnRecomendations As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -1974,6 +2403,14 @@ Partial Public Class PROJECTS1747DataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property RecomendationsColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRecomendations
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2010,9 +2447,9 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddApplication_CommentRow(ByVal parentUser_IDRowByFK__Applicati__User___29572725 As User_IDRow, ByVal parentApplicationRowByFK__Applicati__Appli__2A4B4B5E As ApplicationRow, ByVal Comments As String) As Application_CommentRow
+        Public Overloads Function AddApplication_CommentRow(ByVal parentUser_IDRowByFK__Applicati__User___29572725 As User_IDRow, ByVal parentApplicationRowByFK__Applicati__Appli__2A4B4B5E As ApplicationRow, ByVal Comments As String, ByVal Recomendations As String) As Application_CommentRow
             Dim rowApplication_CommentRow As Application_CommentRow = CType(Me.NewRow,Application_CommentRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Nothing, Comments}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Nothing, Comments, Recomendations}
             If (Not (parentUser_IDRowByFK__Applicati__User___29572725) Is Nothing) Then
                 columnValuesArray(1) = parentUser_IDRowByFK__Applicati__User___29572725(0)
             End If
@@ -2051,6 +2488,7 @@ Partial Public Class PROJECTS1747DataSet
             Me.columnUser_ID = MyBase.Columns("User_ID")
             Me.columnApplication_ID = MyBase.Columns("Application_ID")
             Me.columnComments = MyBase.Columns("Comments")
+            Me.columnRecomendations = MyBase.Columns("Recomendations")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2064,6 +2502,8 @@ Partial Public Class PROJECTS1747DataSet
             MyBase.Columns.Add(Me.columnApplication_ID)
             Me.columnComments = New Global.System.Data.DataColumn("Comments", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnComments)
+            Me.columnRecomendations = New Global.System.Data.DataColumn("Recomendations", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRecomendations)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnApplication_Comment_ID}, true))
             Me.columnApplication_Comment_ID.AutoIncrement = true
             Me.columnApplication_Comment_ID.AutoIncrementSeed = -1
@@ -2072,6 +2512,7 @@ Partial Public Class PROJECTS1747DataSet
             Me.columnApplication_Comment_ID.ReadOnly = true
             Me.columnApplication_Comment_ID.Unique = true
             Me.columnComments.MaxLength = 8000
+            Me.columnRecomendations.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2493,6 +2934,8 @@ Partial Public Class PROJECTS1747DataSet
         
         Private columnCourse_Name As Global.System.Data.DataColumn
         
+        Private columnSubject As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -2545,6 +2988,14 @@ Partial Public Class PROJECTS1747DataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SubjectColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSubject
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2581,9 +3032,9 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddCoursesRow(ByVal Course_Name As String) As CoursesRow
+        Public Overloads Function AddCoursesRow(ByVal Course_Name As String, ByVal Subject As String) As CoursesRow
             Dim rowCoursesRow As CoursesRow = CType(Me.NewRow,CoursesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Course_Name}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Course_Name, Subject}
             rowCoursesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowCoursesRow)
             Return rowCoursesRow
@@ -2614,6 +3065,7 @@ Partial Public Class PROJECTS1747DataSet
         Friend Sub InitVars()
             Me.columnCourse_ID = MyBase.Columns("Course_ID")
             Me.columnCourse_Name = MyBase.Columns("Course_Name")
+            Me.columnSubject = MyBase.Columns("Subject")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2623,6 +3075,8 @@ Partial Public Class PROJECTS1747DataSet
             MyBase.Columns.Add(Me.columnCourse_ID)
             Me.columnCourse_Name = New Global.System.Data.DataColumn("Course_Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCourse_Name)
+            Me.columnSubject = New Global.System.Data.DataColumn("Subject", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSubject)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCourse_ID}, true))
             Me.columnCourse_ID.AutoIncrement = true
             Me.columnCourse_ID.AutoIncrementSeed = -1
@@ -2632,6 +3086,7 @@ Partial Public Class PROJECTS1747DataSet
             Me.columnCourse_ID.Unique = true
             Me.columnCourse_Name.AllowDBNull = false
             Me.columnCourse_Name.MaxLength = 30
+            Me.columnSubject.MaxLength = 256
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2877,12 +3332,6 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByProgram_IDCourse_ID(ByVal Program_ID As Integer, ByVal Course_ID As Integer) As Courses_RequirementRow
-            Return CType(Me.Rows.Find(New Object() {Program_ID, Course_ID}),Courses_RequirementRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As Courses_RequirementDataTable = CType(MyBase.Clone,Courses_RequirementDataTable)
             cln.InitVars
@@ -2909,7 +3358,6 @@ Partial Public Class PROJECTS1747DataSet
             MyBase.Columns.Add(Me.columnProgram_ID)
             Me.columnCourse_ID = New Global.System.Data.DataColumn("Course_ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCourse_ID)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnProgram_ID, Me.columnCourse_ID}, true))
             Me.columnProgram_ID.AllowDBNull = false
             Me.columnCourse_ID.AllowDBNull = false
         End Sub
@@ -4939,7 +5387,7 @@ Partial Public Class PROJECTS1747DataSet
         
         Private columnAdvisor As Global.System.Data.DataColumn
         
-        Private columnCommitee_Member As Global.System.Data.DataColumn
+        Private columnCommittee_Member As Global.System.Data.DataColumn
         
         Private columnAdmin As Global.System.Data.DataColumn
         
@@ -5020,9 +5468,9 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Commitee_MemberColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property Committee_MemberColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnCommitee_Member
+                Return Me.columnCommittee_Member
             End Get
         End Property
         
@@ -5071,9 +5519,9 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddUser_IDRow(ByVal Password As String, ByVal First_Name As String, ByVal Last_Name As String, ByVal Advisor As Boolean, ByVal Commitee_Member As Boolean, ByVal Admin As Boolean) As User_IDRow
+        Public Overloads Function AddUser_IDRow(ByVal Password As String, ByVal First_Name As String, ByVal Last_Name As String, ByVal Advisor As Boolean, ByVal Committee_Member As Boolean, ByVal Admin As Boolean) As User_IDRow
             Dim rowUser_IDRow As User_IDRow = CType(Me.NewRow,User_IDRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Password, First_Name, Last_Name, Advisor, Commitee_Member, Admin}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Password, First_Name, Last_Name, Advisor, Committee_Member, Admin}
             rowUser_IDRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowUser_IDRow)
             Return rowUser_IDRow
@@ -5107,7 +5555,7 @@ Partial Public Class PROJECTS1747DataSet
             Me.columnFirst_Name = MyBase.Columns("First_Name")
             Me.columnLast_Name = MyBase.Columns("Last_Name")
             Me.columnAdvisor = MyBase.Columns("Advisor")
-            Me.columnCommitee_Member = MyBase.Columns("Commitee_Member")
+            Me.columnCommittee_Member = MyBase.Columns("Committee_Member")
             Me.columnAdmin = MyBase.Columns("Admin")
         End Sub
         
@@ -5124,8 +5572,8 @@ Partial Public Class PROJECTS1747DataSet
             MyBase.Columns.Add(Me.columnLast_Name)
             Me.columnAdvisor = New Global.System.Data.DataColumn("Advisor", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAdvisor)
-            Me.columnCommitee_Member = New Global.System.Data.DataColumn("Commitee_Member", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCommitee_Member)
+            Me.columnCommittee_Member = New Global.System.Data.DataColumn("Committee_Member", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCommittee_Member)
             Me.columnAdmin = New Global.System.Data.DataColumn("Admin", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAdmin)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnUser_ID}, true))
@@ -5464,6 +5912,360 @@ Partial Public Class PROJECTS1747DataSet
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "AcademicsViewDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class ApplicantViewDataTable
+        Inherits Global.System.Data.TypedTableBase(Of ApplicantViewRow)
+        
+        Private columnID As Global.System.Data.DataColumn
+        
+        Private columnFirst_Name As Global.System.Data.DataColumn
+        
+        Private columnLast_Name As Global.System.Data.DataColumn
+        
+        Private columnProgram As Global.System.Data.DataColumn
+        
+        Private columnConcentration As Global.System.Data.DataColumn
+        
+        Private columnApplication_Date As Global.System.Data.DataColumn
+        
+        Private columnResidency As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "ApplicantView"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property IDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property First_NameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFirst_Name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Last_NameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLast_Name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ProgramColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnProgram
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ConcentrationColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnConcentration
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Application_DateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnApplication_Date
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ResidencyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnResidency
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As ApplicantViewRow
+            Get
+                Return CType(Me.Rows(index),ApplicantViewRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event ApplicantViewRowChanging As ApplicantViewRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event ApplicantViewRowChanged As ApplicantViewRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event ApplicantViewRowDeleting As ApplicantViewRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event ApplicantViewRowDeleted As ApplicantViewRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddApplicantViewRow(ByVal row As ApplicantViewRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddApplicantViewRow(ByVal ID As Integer, ByVal First_Name As String, ByVal Last_Name As String, ByVal Program As String, ByVal Concentration As String, ByVal Application_Date As String, ByVal Residency As String) As ApplicantViewRow
+            Dim rowApplicantViewRow As ApplicantViewRow = CType(Me.NewRow,ApplicantViewRow)
+            Dim columnValuesArray() As Object = New Object() {ID, First_Name, Last_Name, Program, Concentration, Application_Date, Residency}
+            rowApplicantViewRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowApplicantViewRow)
+            Return rowApplicantViewRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByID(ByVal ID As Integer) As ApplicantViewRow
+            Return CType(Me.Rows.Find(New Object() {ID}),ApplicantViewRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As ApplicantViewDataTable = CType(MyBase.Clone,ApplicantViewDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New ApplicantViewDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnID = MyBase.Columns("ID")
+            Me.columnFirst_Name = MyBase.Columns("First Name")
+            Me.columnLast_Name = MyBase.Columns("Last Name")
+            Me.columnProgram = MyBase.Columns("Program")
+            Me.columnConcentration = MyBase.Columns("Concentration")
+            Me.columnApplication_Date = MyBase.Columns("Application Date")
+            Me.columnResidency = MyBase.Columns("Residency")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnID)
+            Me.columnFirst_Name = New Global.System.Data.DataColumn("First Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnFirst_Name.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "First_Name")
+            Me.columnFirst_Name.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "First_NameColumn")
+            Me.columnFirst_Name.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnFirst_Name")
+            Me.columnFirst_Name.ExtendedProperties.Add("Generator_UserColumnName", "First Name")
+            MyBase.Columns.Add(Me.columnFirst_Name)
+            Me.columnLast_Name = New Global.System.Data.DataColumn("Last Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnLast_Name.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Last_Name")
+            Me.columnLast_Name.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Last_NameColumn")
+            Me.columnLast_Name.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnLast_Name")
+            Me.columnLast_Name.ExtendedProperties.Add("Generator_UserColumnName", "Last Name")
+            MyBase.Columns.Add(Me.columnLast_Name)
+            Me.columnProgram = New Global.System.Data.DataColumn("Program", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProgram)
+            Me.columnConcentration = New Global.System.Data.DataColumn("Concentration", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnConcentration)
+            Me.columnApplication_Date = New Global.System.Data.DataColumn("Application Date", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnApplication_Date)
+            Me.columnResidency = New Global.System.Data.DataColumn("Residency", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnResidency)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
+            Me.columnID.AllowDBNull = false
+            Me.columnID.Unique = true
+            Me.columnFirst_Name.MaxLength = 50
+            Me.columnLast_Name.MaxLength = 50
+            Me.columnProgram.AllowDBNull = false
+            Me.columnProgram.MaxLength = 50
+            Me.columnConcentration.MaxLength = 50
+            Me.columnApplication_Date.MaxLength = 50
+            Me.columnResidency.MaxLength = 50
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewApplicantViewRow() As ApplicantViewRow
+            Return CType(Me.NewRow,ApplicantViewRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New ApplicantViewRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(ApplicantViewRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.ApplicantViewRowChangedEvent) Is Nothing) Then
+                RaiseEvent ApplicantViewRowChanged(Me, New ApplicantViewRowChangeEvent(CType(e.Row,ApplicantViewRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.ApplicantViewRowChangingEvent) Is Nothing) Then
+                RaiseEvent ApplicantViewRowChanging(Me, New ApplicantViewRowChangeEvent(CType(e.Row,ApplicantViewRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.ApplicantViewRowDeletedEvent) Is Nothing) Then
+                RaiseEvent ApplicantViewRowDeleted(Me, New ApplicantViewRowChangeEvent(CType(e.Row,ApplicantViewRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.ApplicantViewRowDeletingEvent) Is Nothing) Then
+                RaiseEvent ApplicantViewRowDeleting(Me, New ApplicantViewRowChangeEvent(CType(e.Row,ApplicantViewRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemoveApplicantViewRow(ByVal row As ApplicantViewRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As PROJECTS1747DataSet = New PROJECTS1747DataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "ApplicantViewDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -6225,6 +7027,1268 @@ Partial Public Class PROJECTS1747DataSet
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class viewApplicantDataTable
+        Inherits Global.System.Data.TypedTableBase(Of viewApplicantRow)
+        
+        Private columnID As Global.System.Data.DataColumn
+        
+        Private columnFirst_Name As Global.System.Data.DataColumn
+        
+        Private columnLast_Name As Global.System.Data.DataColumn
+        
+        Private columnProgram As Global.System.Data.DataColumn
+        
+        Private columnApplication_Date As Global.System.Data.DataColumn
+        
+        Private columnMissing_Status As Global.System.Data.DataColumn
+        
+        Private columnReceived As Global.System.Data.DataColumn
+        
+        Private columnNotes As Global.System.Data.DataColumn
+        
+        Private _columnVerbal___Quantitative As Global.System.Data.DataColumn
+        
+        Private columnGMAT As Global.System.Data.DataColumn
+        
+        Private columnGMAT_Verbal As Global.System.Data.DataColumn
+        
+        Private _columnGMAT_Verbal__ As Global.System.Data.DataColumn
+        
+        Private columnGMAT_Quantitative As Global.System.Data.DataColumn
+        
+        Private _columnGMAT_Quantitative__ As Global.System.Data.DataColumn
+        
+        Private columnAWA As Global.System.Data.DataColumn
+        
+        Private columnGRE As Global.System.Data.DataColumn
+        
+        Private columnGRE_Verbal As Global.System.Data.DataColumn
+        
+        Private _columnGRE_Verbal__ As Global.System.Data.DataColumn
+        
+        Private columnGRE_Quantitative As Global.System.Data.DataColumn
+        
+        Private _columnGRE_Quantitative__ As Global.System.Data.DataColumn
+        
+        Private columnWR As Global.System.Data.DataColumn
+        
+        Private columnTOEFL As Global.System.Data.DataColumn
+        
+        Private columnTime_With_Employer As Global.System.Data.DataColumn
+        
+        Private columnCurrent_Employer As Global.System.Data.DataColumn
+        
+        Private columnUndergraduate_GPA As Global.System.Data.DataColumn
+        
+        Private columnGraduate_GPA As Global.System.Data.DataColumn
+        
+        Private columnUndergraduate_Institution As Global.System.Data.DataColumn
+        
+        Private columnUndergraduate_Degree As Global.System.Data.DataColumn
+        
+        Private columnUndergraduate_Major As Global.System.Data.DataColumn
+        
+        Private columnGraduate_Institution As Global.System.Data.DataColumn
+        
+        Private columnGraduate_Degree As Global.System.Data.DataColumn
+        
+        Private columnGraduate_Major As Global.System.Data.DataColumn
+        
+        Private columnGender As Global.System.Data.DataColumn
+        
+        Private columnEthnicity As Global.System.Data.DataColumn
+        
+        Private columnAge As Global.System.Data.DataColumn
+        
+        Private columnCity As Global.System.Data.DataColumn
+        
+        Private columnState As Global.System.Data.DataColumn
+        
+        Private columnPostal As Global.System.Data.DataColumn
+        
+        Private columnCountry As Global.System.Data.DataColumn
+        
+        Private columnResidency As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "viewApplicant"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property IDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property First_NameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFirst_Name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Last_NameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLast_Name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ProgramColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnProgram
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Application_DateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnApplication_Date
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Missing_StatusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMissing_Status
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ReceivedColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnReceived
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NotesColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNotes
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property _Verbal___QuantitativeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me._columnVerbal___Quantitative
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GMATColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGMAT
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GMAT_VerbalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGMAT_Verbal
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property _GMAT_Verbal__Column() As Global.System.Data.DataColumn
+            Get
+                Return Me._columnGMAT_Verbal__
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GMAT_QuantitativeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGMAT_Quantitative
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property _GMAT_Quantitative__Column() As Global.System.Data.DataColumn
+            Get
+                Return Me._columnGMAT_Quantitative__
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property AWAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAWA
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GREColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGRE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GRE_VerbalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGRE_Verbal
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property _GRE_Verbal__Column() As Global.System.Data.DataColumn
+            Get
+                Return Me._columnGRE_Verbal__
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GRE_QuantitativeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGRE_Quantitative
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property _GRE_Quantitative__Column() As Global.System.Data.DataColumn
+            Get
+                Return Me._columnGRE_Quantitative__
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property WRColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnWR
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property TOEFLColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTOEFL
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Time_With_EmployerColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTime_With_Employer
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Current_EmployerColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCurrent_Employer
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Undergraduate_GPAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUndergraduate_GPA
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Graduate_GPAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGraduate_GPA
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Undergraduate_InstitutionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUndergraduate_Institution
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Undergraduate_DegreeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUndergraduate_Degree
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Undergraduate_MajorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUndergraduate_Major
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Graduate_InstitutionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGraduate_Institution
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Graduate_DegreeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGraduate_Degree
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Graduate_MajorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGraduate_Major
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GenderColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGender
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property EthnicityColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEthnicity
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property AgeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAge
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CityColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCity
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property StateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnState
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property PostalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPostal
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CountryColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCountry
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ResidencyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnResidency
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As viewApplicantRow
+            Get
+                Return CType(Me.Rows(index),viewApplicantRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event viewApplicantRowChanging As viewApplicantRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event viewApplicantRowChanged As viewApplicantRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event viewApplicantRowDeleting As viewApplicantRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event viewApplicantRowDeleted As viewApplicantRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddviewApplicantRow(ByVal row As viewApplicantRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddviewApplicantRow( _
+                    ByVal ID As Integer,  _
+                    ByVal First_Name As String,  _
+                    ByVal Last_Name As String,  _
+                    ByVal Program As String,  _
+                    ByVal Application_Date As String,  _
+                    ByVal Missing_Status As String,  _
+                    ByVal Received As String,  _
+                    ByVal Notes As String,  _
+                    ByVal _Verbal___Quantitative As Integer,  _
+                    ByVal GMAT As Integer,  _
+                    ByVal GMAT_Verbal As Integer,  _
+                    ByVal _GMAT_Verbal__ As Integer,  _
+                    ByVal GMAT_Quantitative As Integer,  _
+                    ByVal _GMAT_Quantitative__ As Integer,  _
+                    ByVal AWA As Decimal,  _
+                    ByVal GRE As Integer,  _
+                    ByVal GRE_Verbal As Integer,  _
+                    ByVal _GRE_Verbal__ As Integer,  _
+                    ByVal GRE_Quantitative As Integer,  _
+                    ByVal _GRE_Quantitative__ As Integer,  _
+                    ByVal WR As Decimal,  _
+                    ByVal TOEFL As Integer,  _
+                    ByVal Time_With_Employer As String,  _
+                    ByVal Current_Employer As String,  _
+                    ByVal Undergraduate_GPA As Decimal,  _
+                    ByVal Graduate_GPA As Decimal,  _
+                    ByVal Undergraduate_Institution As String,  _
+                    ByVal Undergraduate_Degree As String,  _
+                    ByVal Undergraduate_Major As String,  _
+                    ByVal Graduate_Institution As String,  _
+                    ByVal Graduate_Degree As String,  _
+                    ByVal Graduate_Major As String,  _
+                    ByVal Gender As String,  _
+                    ByVal Ethnicity As String,  _
+                    ByVal Age As Integer,  _
+                    ByVal City As String,  _
+                    ByVal State As String,  _
+                    ByVal Postal As String,  _
+                    ByVal Country As String,  _
+                    ByVal Residency As String) As viewApplicantRow
+            Dim rowviewApplicantRow As viewApplicantRow = CType(Me.NewRow,viewApplicantRow)
+            Dim columnValuesArray() As Object = New Object() {ID, First_Name, Last_Name, Program, Application_Date, Missing_Status, Received, Notes, _Verbal___Quantitative, GMAT, GMAT_Verbal, _GMAT_Verbal__, GMAT_Quantitative, _GMAT_Quantitative__, AWA, GRE, GRE_Verbal, _GRE_Verbal__, GRE_Quantitative, _GRE_Quantitative__, WR, TOEFL, Time_With_Employer, Current_Employer, Undergraduate_GPA, Graduate_GPA, Undergraduate_Institution, Undergraduate_Degree, Undergraduate_Major, Graduate_Institution, Graduate_Degree, Graduate_Major, Gender, Ethnicity, Age, City, State, Postal, Country, Residency}
+            rowviewApplicantRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowviewApplicantRow)
+            Return rowviewApplicantRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByID(ByVal ID As Integer) As viewApplicantRow
+            Return CType(Me.Rows.Find(New Object() {ID}),viewApplicantRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As viewApplicantDataTable = CType(MyBase.Clone,viewApplicantDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New viewApplicantDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnID = MyBase.Columns("ID")
+            Me.columnFirst_Name = MyBase.Columns("First Name")
+            Me.columnLast_Name = MyBase.Columns("Last Name")
+            Me.columnProgram = MyBase.Columns("Program")
+            Me.columnApplication_Date = MyBase.Columns("Application Date")
+            Me.columnMissing_Status = MyBase.Columns("Missing Status")
+            Me.columnReceived = MyBase.Columns("Received")
+            Me.columnNotes = MyBase.Columns("Notes")
+            Me._columnVerbal___Quantitative = MyBase.Columns("Verbal + Quantitative")
+            Me.columnGMAT = MyBase.Columns("GMAT")
+            Me.columnGMAT_Verbal = MyBase.Columns("GMAT Verbal")
+            Me._columnGMAT_Verbal__ = MyBase.Columns("GMAT Verbal %")
+            Me.columnGMAT_Quantitative = MyBase.Columns("GMAT Quantitative")
+            Me._columnGMAT_Quantitative__ = MyBase.Columns("GMAT Quantitative %")
+            Me.columnAWA = MyBase.Columns("AWA")
+            Me.columnGRE = MyBase.Columns("GRE")
+            Me.columnGRE_Verbal = MyBase.Columns("GRE Verbal")
+            Me._columnGRE_Verbal__ = MyBase.Columns("GRE Verbal %")
+            Me.columnGRE_Quantitative = MyBase.Columns("GRE Quantitative")
+            Me._columnGRE_Quantitative__ = MyBase.Columns("GRE Quantitative %")
+            Me.columnWR = MyBase.Columns("WR")
+            Me.columnTOEFL = MyBase.Columns("TOEFL")
+            Me.columnTime_With_Employer = MyBase.Columns("Time With Employer")
+            Me.columnCurrent_Employer = MyBase.Columns("Current Employer")
+            Me.columnUndergraduate_GPA = MyBase.Columns("Undergraduate GPA")
+            Me.columnGraduate_GPA = MyBase.Columns("Graduate GPA")
+            Me.columnUndergraduate_Institution = MyBase.Columns("Undergraduate Institution")
+            Me.columnUndergraduate_Degree = MyBase.Columns("Undergraduate Degree")
+            Me.columnUndergraduate_Major = MyBase.Columns("Undergraduate Major")
+            Me.columnGraduate_Institution = MyBase.Columns("Graduate Institution")
+            Me.columnGraduate_Degree = MyBase.Columns("Graduate Degree")
+            Me.columnGraduate_Major = MyBase.Columns("Graduate Major")
+            Me.columnGender = MyBase.Columns("Gender")
+            Me.columnEthnicity = MyBase.Columns("Ethnicity")
+            Me.columnAge = MyBase.Columns("Age")
+            Me.columnCity = MyBase.Columns("City")
+            Me.columnState = MyBase.Columns("State")
+            Me.columnPostal = MyBase.Columns("Postal")
+            Me.columnCountry = MyBase.Columns("Country")
+            Me.columnResidency = MyBase.Columns("Residency")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnID)
+            Me.columnFirst_Name = New Global.System.Data.DataColumn("First Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnFirst_Name.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "First_Name")
+            Me.columnFirst_Name.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "First_NameColumn")
+            Me.columnFirst_Name.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnFirst_Name")
+            Me.columnFirst_Name.ExtendedProperties.Add("Generator_UserColumnName", "First Name")
+            MyBase.Columns.Add(Me.columnFirst_Name)
+            Me.columnLast_Name = New Global.System.Data.DataColumn("Last Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnLast_Name.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Last_Name")
+            Me.columnLast_Name.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Last_NameColumn")
+            Me.columnLast_Name.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnLast_Name")
+            Me.columnLast_Name.ExtendedProperties.Add("Generator_UserColumnName", "Last Name")
+            MyBase.Columns.Add(Me.columnLast_Name)
+            Me.columnProgram = New Global.System.Data.DataColumn("Program", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProgram)
+            Me.columnApplication_Date = New Global.System.Data.DataColumn("Application Date", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnApplication_Date)
+            Me.columnMissing_Status = New Global.System.Data.DataColumn("Missing Status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMissing_Status)
+            Me.columnReceived = New Global.System.Data.DataColumn("Received", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnReceived)
+            Me.columnNotes = New Global.System.Data.DataColumn("Notes", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNotes)
+            Me._columnVerbal___Quantitative = New Global.System.Data.DataColumn("Verbal + Quantitative", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me._columnVerbal___Quantitative.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnVerbal___Quantitative")
+            Me._columnVerbal___Quantitative.ExtendedProperties.Add("Generator_UserColumnName", "Verbal + Quantitative")
+            MyBase.Columns.Add(Me._columnVerbal___Quantitative)
+            Me.columnGMAT = New Global.System.Data.DataColumn("GMAT", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGMAT)
+            Me.columnGMAT_Verbal = New Global.System.Data.DataColumn("GMAT Verbal", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGMAT_Verbal)
+            Me._columnGMAT_Verbal__ = New Global.System.Data.DataColumn("GMAT Verbal %", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me._columnGMAT_Verbal__.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnGMAT_Verbal__")
+            Me._columnGMAT_Verbal__.ExtendedProperties.Add("Generator_UserColumnName", "GMAT Verbal %")
+            MyBase.Columns.Add(Me._columnGMAT_Verbal__)
+            Me.columnGMAT_Quantitative = New Global.System.Data.DataColumn("GMAT Quantitative", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGMAT_Quantitative)
+            Me._columnGMAT_Quantitative__ = New Global.System.Data.DataColumn("GMAT Quantitative %", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me._columnGMAT_Quantitative__.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnGMAT_Quantitative__")
+            Me._columnGMAT_Quantitative__.ExtendedProperties.Add("Generator_UserColumnName", "GMAT Quantitative %")
+            MyBase.Columns.Add(Me._columnGMAT_Quantitative__)
+            Me.columnAWA = New Global.System.Data.DataColumn("AWA", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAWA)
+            Me.columnGRE = New Global.System.Data.DataColumn("GRE", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGRE)
+            Me.columnGRE_Verbal = New Global.System.Data.DataColumn("GRE Verbal", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGRE_Verbal)
+            Me._columnGRE_Verbal__ = New Global.System.Data.DataColumn("GRE Verbal %", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me._columnGRE_Verbal__.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnGRE_Verbal__")
+            Me._columnGRE_Verbal__.ExtendedProperties.Add("Generator_UserColumnName", "GRE Verbal %")
+            MyBase.Columns.Add(Me._columnGRE_Verbal__)
+            Me.columnGRE_Quantitative = New Global.System.Data.DataColumn("GRE Quantitative", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGRE_Quantitative)
+            Me._columnGRE_Quantitative__ = New Global.System.Data.DataColumn("GRE Quantitative %", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me._columnGRE_Quantitative__.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnGRE_Quantitative__")
+            Me._columnGRE_Quantitative__.ExtendedProperties.Add("Generator_UserColumnName", "GRE Quantitative %")
+            MyBase.Columns.Add(Me._columnGRE_Quantitative__)
+            Me.columnWR = New Global.System.Data.DataColumn("WR", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnWR)
+            Me.columnTOEFL = New Global.System.Data.DataColumn("TOEFL", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTOEFL)
+            Me.columnTime_With_Employer = New Global.System.Data.DataColumn("Time With Employer", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTime_With_Employer)
+            Me.columnCurrent_Employer = New Global.System.Data.DataColumn("Current Employer", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnCurrent_Employer.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Current_Employer")
+            Me.columnCurrent_Employer.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Current_EmployerColumn")
+            Me.columnCurrent_Employer.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnCurrent_Employer")
+            Me.columnCurrent_Employer.ExtendedProperties.Add("Generator_UserColumnName", "Current Employer")
+            MyBase.Columns.Add(Me.columnCurrent_Employer)
+            Me.columnUndergraduate_GPA = New Global.System.Data.DataColumn("Undergraduate GPA", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUndergraduate_GPA)
+            Me.columnGraduate_GPA = New Global.System.Data.DataColumn("Graduate GPA", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGraduate_GPA)
+            Me.columnUndergraduate_Institution = New Global.System.Data.DataColumn("Undergraduate Institution", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUndergraduate_Institution)
+            Me.columnUndergraduate_Degree = New Global.System.Data.DataColumn("Undergraduate Degree", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUndergraduate_Degree)
+            Me.columnUndergraduate_Major = New Global.System.Data.DataColumn("Undergraduate Major", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUndergraduate_Major)
+            Me.columnGraduate_Institution = New Global.System.Data.DataColumn("Graduate Institution", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGraduate_Institution)
+            Me.columnGraduate_Degree = New Global.System.Data.DataColumn("Graduate Degree", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGraduate_Degree)
+            Me.columnGraduate_Major = New Global.System.Data.DataColumn("Graduate Major", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGraduate_Major)
+            Me.columnGender = New Global.System.Data.DataColumn("Gender", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGender)
+            Me.columnEthnicity = New Global.System.Data.DataColumn("Ethnicity", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEthnicity)
+            Me.columnAge = New Global.System.Data.DataColumn("Age", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAge)
+            Me.columnCity = New Global.System.Data.DataColumn("City", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCity)
+            Me.columnState = New Global.System.Data.DataColumn("State", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnState)
+            Me.columnPostal = New Global.System.Data.DataColumn("Postal", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPostal)
+            Me.columnCountry = New Global.System.Data.DataColumn("Country", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCountry)
+            Me.columnResidency = New Global.System.Data.DataColumn("Residency", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnResidency)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
+            Me.columnID.AllowDBNull = false
+            Me.columnID.Unique = true
+            Me.columnFirst_Name.MaxLength = 50
+            Me.columnLast_Name.MaxLength = 50
+            Me.columnProgram.AllowDBNull = false
+            Me.columnProgram.MaxLength = 50
+            Me.columnApplication_Date.MaxLength = 50
+            Me.columnMissing_Status.MaxLength = 256
+            Me.columnReceived.MaxLength = 256
+            Me.columnNotes.MaxLength = 256
+            Me.columnTime_With_Employer.MaxLength = 30
+            Me.columnCurrent_Employer.MaxLength = 256
+            Me.columnUndergraduate_Institution.MaxLength = 256
+            Me.columnUndergraduate_Degree.MaxLength = 30
+            Me.columnUndergraduate_Major.MaxLength = 100
+            Me.columnGraduate_Institution.MaxLength = 256
+            Me.columnGraduate_Degree.MaxLength = 30
+            Me.columnGraduate_Major.MaxLength = 50
+            Me.columnGender.MaxLength = 10
+            Me.columnEthnicity.MaxLength = 30
+            Me.columnCity.MaxLength = 50
+            Me.columnState.MaxLength = 50
+            Me.columnPostal.MaxLength = 50
+            Me.columnCountry.MaxLength = 50
+            Me.columnResidency.MaxLength = 50
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewviewApplicantRow() As viewApplicantRow
+            Return CType(Me.NewRow,viewApplicantRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New viewApplicantRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(viewApplicantRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.viewApplicantRowChangedEvent) Is Nothing) Then
+                RaiseEvent viewApplicantRowChanged(Me, New viewApplicantRowChangeEvent(CType(e.Row,viewApplicantRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.viewApplicantRowChangingEvent) Is Nothing) Then
+                RaiseEvent viewApplicantRowChanging(Me, New viewApplicantRowChangeEvent(CType(e.Row,viewApplicantRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.viewApplicantRowDeletedEvent) Is Nothing) Then
+                RaiseEvent viewApplicantRowDeleted(Me, New viewApplicantRowChangeEvent(CType(e.Row,viewApplicantRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.viewApplicantRowDeletingEvent) Is Nothing) Then
+                RaiseEvent viewApplicantRowDeleting(Me, New viewApplicantRowChangeEvent(CType(e.Row,viewApplicantRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemoveviewApplicantRow(ByVal row As viewApplicantRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As PROJECTS1747DataSet = New PROJECTS1747DataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "viewApplicantDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class viewStudentDataTable
+        Inherits Global.System.Data.TypedTableBase(Of viewStudentRow)
+        
+        Private columnID As Global.System.Data.DataColumn
+        
+        Private columnFirst_Name As Global.System.Data.DataColumn
+        
+        Private columnLast_Name As Global.System.Data.DataColumn
+        
+        Private columnProgram As Global.System.Data.DataColumn
+        
+        Private columnConcentration As Global.System.Data.DataColumn
+        
+        Private columnGPA As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "viewStudent"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property IDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property First_NameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFirst_Name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Last_NameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLast_Name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ProgramColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnProgram
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ConcentrationColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnConcentration
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GPAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGPA
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As viewStudentRow
+            Get
+                Return CType(Me.Rows(index),viewStudentRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event viewStudentRowChanging As viewStudentRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event viewStudentRowChanged As viewStudentRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event viewStudentRowDeleting As viewStudentRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event viewStudentRowDeleted As viewStudentRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddviewStudentRow(ByVal row As viewStudentRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddviewStudentRow(ByVal ID As Integer, ByVal First_Name As String, ByVal Last_Name As String, ByVal Program As String, ByVal Concentration As String, ByVal GPA As Decimal) As viewStudentRow
+            Dim rowviewStudentRow As viewStudentRow = CType(Me.NewRow,viewStudentRow)
+            Dim columnValuesArray() As Object = New Object() {ID, First_Name, Last_Name, Program, Concentration, GPA}
+            rowviewStudentRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowviewStudentRow)
+            Return rowviewStudentRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByID(ByVal ID As Integer) As viewStudentRow
+            Return CType(Me.Rows.Find(New Object() {ID}),viewStudentRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As viewStudentDataTable = CType(MyBase.Clone,viewStudentDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New viewStudentDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnID = MyBase.Columns("ID")
+            Me.columnFirst_Name = MyBase.Columns("First Name")
+            Me.columnLast_Name = MyBase.Columns("Last Name")
+            Me.columnProgram = MyBase.Columns("Program")
+            Me.columnConcentration = MyBase.Columns("Concentration")
+            Me.columnGPA = MyBase.Columns("GPA")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnID)
+            Me.columnFirst_Name = New Global.System.Data.DataColumn("First Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnFirst_Name.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "First_Name")
+            Me.columnFirst_Name.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "First_NameColumn")
+            Me.columnFirst_Name.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnFirst_Name")
+            Me.columnFirst_Name.ExtendedProperties.Add("Generator_UserColumnName", "First Name")
+            MyBase.Columns.Add(Me.columnFirst_Name)
+            Me.columnLast_Name = New Global.System.Data.DataColumn("Last Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnLast_Name.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Last_Name")
+            Me.columnLast_Name.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Last_NameColumn")
+            Me.columnLast_Name.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnLast_Name")
+            Me.columnLast_Name.ExtendedProperties.Add("Generator_UserColumnName", "Last Name")
+            MyBase.Columns.Add(Me.columnLast_Name)
+            Me.columnProgram = New Global.System.Data.DataColumn("Program", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProgram)
+            Me.columnConcentration = New Global.System.Data.DataColumn("Concentration", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnConcentration)
+            Me.columnGPA = New Global.System.Data.DataColumn("GPA", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGPA)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
+            Me.columnID.AllowDBNull = false
+            Me.columnID.Unique = true
+            Me.columnFirst_Name.MaxLength = 50
+            Me.columnLast_Name.MaxLength = 50
+            Me.columnProgram.AllowDBNull = false
+            Me.columnProgram.MaxLength = 50
+            Me.columnConcentration.MaxLength = 50
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewviewStudentRow() As viewStudentRow
+            Return CType(Me.NewRow,viewStudentRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New viewStudentRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(viewStudentRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.viewStudentRowChangedEvent) Is Nothing) Then
+                RaiseEvent viewStudentRowChanged(Me, New viewStudentRowChangeEvent(CType(e.Row,viewStudentRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.viewStudentRowChangingEvent) Is Nothing) Then
+                RaiseEvent viewStudentRowChanging(Me, New viewStudentRowChangeEvent(CType(e.Row,viewStudentRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.viewStudentRowDeletedEvent) Is Nothing) Then
+                RaiseEvent viewStudentRowDeleted(Me, New viewStudentRowChangeEvent(CType(e.Row,viewStudentRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.viewStudentRowDeletingEvent) Is Nothing) Then
+                RaiseEvent viewStudentRowDeleting(Me, New viewStudentRowChangeEvent(CType(e.Row,viewStudentRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemoveviewStudentRow(ByVal row As viewStudentRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As PROJECTS1747DataSet = New PROJECTS1747DataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "viewStudentDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class AdmissionDecisionRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableAdmissionDecision As AdmissionDecisionDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableAdmissionDecision = CType(Me.Table,AdmissionDecisionDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Program() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAdmissionDecision.ProgramColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Program' in table 'AdmissionDecision' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAdmissionDecision.ProgramColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Decision() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAdmissionDecision.DecisionColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Decision' in table 'AdmissionDecision' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAdmissionDecision.DecisionColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsProgramNull() As Boolean
+            Return Me.IsNull(Me.tableAdmissionDecision.ProgramColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetProgramNull()
+            Me(Me.tableAdmissionDecision.ProgramColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDecisionNull() As Boolean
+            Return Me.IsNull(Me.tableAdmissionDecision.DecisionColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDecisionNull()
+            Me(Me.tableAdmissionDecision.DecisionColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class ApplicationRow
@@ -6462,10 +8526,10 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property U_GPA() As String
+        Public Property U_GPA() As Decimal
             Get
                 Try 
-                    Return CType(Me(Me.tableApplication.U_GPAColumn),String)
+                    Return CType(Me(Me.tableApplication.U_GPAColumn),Decimal)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'U_GPA' in table 'Application' is DBNull.", e)
                 End Try
@@ -6477,10 +8541,10 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Toefl() As String
+        Public Property Toefl() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableApplication.ToeflColumn),String)
+                    Return CType(Me(Me.tableApplication.ToeflColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'Toefl' in table 'Application' is DBNull.", e)
                 End Try
@@ -6642,10 +8706,10 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property GMAT() As String
+        Public Property GMAT() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableApplication.GMATColumn),String)
+                    Return CType(Me(Me.tableApplication.GMATColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'GMAT' in table 'Application' is DBNull.", e)
                 End Try
@@ -6657,10 +8721,10 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property GMAT_Verb() As String
+        Public Property GMAT_Verb() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableApplication.GMAT_VerbColumn),String)
+                    Return CType(Me(Me.tableApplication.GMAT_VerbColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'GMAT_Verb' in table 'Application' is DBNull.", e)
                 End Try
@@ -6687,10 +8751,10 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property GMAT_Quan() As String
+        Public Property GMAT_Quan() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableApplication.GMAT_QuanColumn),String)
+                    Return CType(Me(Me.tableApplication.GMAT_QuanColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'GMAT_Quan' in table 'Application' is DBNull.", e)
                 End Try
@@ -6717,10 +8781,10 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property AWA() As String
+        Public Property AWA() As Decimal
             Get
                 Try 
-                    Return CType(Me(Me.tableApplication.AWAColumn),String)
+                    Return CType(Me(Me.tableApplication.AWAColumn),Decimal)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'AWA' in table 'Application' is DBNull.", e)
                 End Try
@@ -6807,10 +8871,10 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property GRE() As String
+        Public Property GRE() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableApplication.GREColumn),String)
+                    Return CType(Me(Me.tableApplication.GREColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'GRE' in table 'Application' is DBNull.", e)
                 End Try
@@ -6822,10 +8886,10 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property GRE_Verb() As String
+        Public Property GRE_Verb() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableApplication.GRE_VerbColumn),String)
+                    Return CType(Me(Me.tableApplication.GRE_VerbColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'GRE_Verb' in table 'Application' is DBNull.", e)
                 End Try
@@ -6852,10 +8916,10 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property GRE_Quan() As String
+        Public Property GRE_Quan() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableApplication.GRE_QuanColumn),String)
+                    Return CType(Me(Me.tableApplication.GRE_QuanColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'GRE_Quan' in table 'Application' is DBNull.", e)
                 End Try
@@ -6882,10 +8946,10 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property WR() As String
+        Public Property WR() As Decimal
             Get
                 Try 
-                    Return CType(Me(Me.tableApplication.WRColumn),String)
+                    Return CType(Me(Me.tableApplication.WRColumn),Decimal)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'WR' in table 'Application' is DBNull.", e)
                 End Try
@@ -7012,6 +9076,36 @@ Partial Public Class PROJECTS1747DataSet
             End Get
             Set
                 Me(Me.tableApplication.Grad_MajorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Program() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableApplication.ProgramColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Program' in table 'Application' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableApplication.ProgramColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Response() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableApplication.ResponseColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Response' in table 'Application' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableApplication.ResponseColumn) = value
             End Set
         End Property
         
@@ -7640,6 +9734,30 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsProgramNull() As Boolean
+            Return Me.IsNull(Me.tableApplication.ProgramColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetProgramNull()
+            Me(Me.tableApplication.ProgramColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsResponseNull() As Boolean
+            Return Me.IsNull(Me.tableApplication.ResponseColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetResponseNull()
+            Me(Me.tableApplication.ResponseColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function GetApplication_CommentRows() As Application_CommentRow()
             If (Me.Table.ChildRelations("FK__Applicati__Appli__2A4B4B5E") Is Nothing) Then
                 Return New Application_CommentRow(-1) {}
@@ -7732,6 +9850,21 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Recomendations() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableApplication_Comment.RecomendationsColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Recomendations' in table 'Application_Comment' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableApplication_Comment.RecomendationsColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ApplicationRow() As ApplicationRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK__Applicati__Appli__2A4B4B5E")),ApplicationRow)
@@ -7786,6 +9919,18 @@ Partial Public Class PROJECTS1747DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetCommentsNull()
             Me(Me.tableApplication_Comment.CommentsColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsRecomendationsNull() As Boolean
+            Return Me.IsNull(Me.tableApplication_Comment.RecomendationsColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetRecomendationsNull()
+            Me(Me.tableApplication_Comment.RecomendationsColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -7885,6 +10030,33 @@ Partial Public Class PROJECTS1747DataSet
                 Me(Me.tableCourses.Course_NameColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Subject() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableCourses.SubjectColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Subject' in table 'Courses' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableCourses.SubjectColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsSubjectNull() As Boolean
+            Return Me.IsNull(Me.tableCourses.SubjectColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetSubjectNull()
+            Me(Me.tableCourses.SubjectColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -8825,16 +10997,16 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Commitee_Member() As Boolean
+        Public Property Committee_Member() As Boolean
             Get
                 Try 
-                    Return CType(Me(Me.tableUser_ID.Commitee_MemberColumn),Boolean)
+                    Return CType(Me(Me.tableUser_ID.Committee_MemberColumn),Boolean)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Commitee_Member' in table 'User_ID' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Committee_Member' in table 'User_ID' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableUser_ID.Commitee_MemberColumn) = value
+                Me(Me.tableUser_ID.Committee_MemberColumn) = value
             End Set
         End Property
         
@@ -8891,14 +11063,14 @@ Partial Public Class PROJECTS1747DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsCommitee_MemberNull() As Boolean
-            Return Me.IsNull(Me.tableUser_ID.Commitee_MemberColumn)
+        Public Function IsCommittee_MemberNull() As Boolean
+            Return Me.IsNull(Me.tableUser_ID.Committee_MemberColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetCommitee_MemberNull()
-            Me(Me.tableUser_ID.Commitee_MemberColumn) = Global.System.Convert.DBNull
+        Public Sub SetCommittee_MemberNull()
+            Me(Me.tableUser_ID.Committee_MemberColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8953,6 +11125,179 @@ Partial Public Class PROJECTS1747DataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
+    Partial Public Class ApplicantViewRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableApplicantView As ApplicantViewDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableApplicantView = CType(Me.Table,ApplicantViewDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ID() As Integer
+            Get
+                Return CType(Me(Me.tableApplicantView.IDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableApplicantView.IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property First_Name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableApplicantView.First_NameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'First Name' in table 'ApplicantView' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableApplicantView.First_NameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Last_Name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableApplicantView.Last_NameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Last Name' in table 'ApplicantView' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableApplicantView.Last_NameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Program() As String
+            Get
+                Return CType(Me(Me.tableApplicantView.ProgramColumn),String)
+            End Get
+            Set
+                Me(Me.tableApplicantView.ProgramColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Concentration() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableApplicantView.ConcentrationColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Concentration' in table 'ApplicantView' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableApplicantView.ConcentrationColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Application_Date() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableApplicantView.Application_DateColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Application Date' in table 'ApplicantView' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableApplicantView.Application_DateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Residency() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableApplicantView.ResidencyColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Residency' in table 'ApplicantView' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableApplicantView.ResidencyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFirst_NameNull() As Boolean
+            Return Me.IsNull(Me.tableApplicantView.First_NameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFirst_NameNull()
+            Me(Me.tableApplicantView.First_NameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsLast_NameNull() As Boolean
+            Return Me.IsNull(Me.tableApplicantView.Last_NameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetLast_NameNull()
+            Me(Me.tableApplicantView.Last_NameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsConcentrationNull() As Boolean
+            Return Me.IsNull(Me.tableApplicantView.ConcentrationColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetConcentrationNull()
+            Me(Me.tableApplicantView.ConcentrationColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsApplication_DateNull() As Boolean
+            Return Me.IsNull(Me.tableApplicantView.Application_DateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetApplication_DateNull()
+            Me(Me.tableApplicantView.Application_DateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsResidencyNull() As Boolean
+            Return Me.IsNull(Me.tableApplicantView.ResidencyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetResidencyNull()
+            Me(Me.tableApplicantView.ResidencyColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
     Partial Public Class ApplicationViewRow
         Inherits Global.System.Data.DataRow
         
@@ -8996,6 +11341,1253 @@ Partial Public Class PROJECTS1747DataSet
             MyBase.New(rb)
             Me.tableTestScoresView = CType(Me.Table,TestScoresViewDataTable)
         End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class viewApplicantRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableviewApplicant As viewApplicantDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableviewApplicant = CType(Me.Table,viewApplicantDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ID() As Integer
+            Get
+                Return CType(Me(Me.tableviewApplicant.IDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableviewApplicant.IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property First_Name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.First_NameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'First Name' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.First_NameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Last_Name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.Last_NameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Last Name' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.Last_NameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Program() As String
+            Get
+                Return CType(Me(Me.tableviewApplicant.ProgramColumn),String)
+            End Get
+            Set
+                Me(Me.tableviewApplicant.ProgramColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Application_Date() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.Application_DateColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Application Date' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.Application_DateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Missing_Status() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.Missing_StatusColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Missing Status' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.Missing_StatusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Received() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.ReceivedColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Received' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.ReceivedColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Notes() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.NotesColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Notes' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.NotesColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property _Verbal___Quantitative() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant._Verbal___QuantitativeColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Verbal + Quantitative' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant._Verbal___QuantitativeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GMAT() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.GMATColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GMAT' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.GMATColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GMAT_Verbal() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.GMAT_VerbalColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GMAT Verbal' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.GMAT_VerbalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property _GMAT_Verbal__() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant._GMAT_Verbal__Column),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GMAT Verbal %' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant._GMAT_Verbal__Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GMAT_Quantitative() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.GMAT_QuantitativeColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GMAT Quantitative' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.GMAT_QuantitativeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property _GMAT_Quantitative__() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant._GMAT_Quantitative__Column),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GMAT Quantitative %' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant._GMAT_Quantitative__Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property AWA() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.AWAColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'AWA' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.AWAColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GRE() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.GREColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GRE' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.GREColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GRE_Verbal() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.GRE_VerbalColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GRE Verbal' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.GRE_VerbalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property _GRE_Verbal__() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant._GRE_Verbal__Column),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GRE Verbal %' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant._GRE_Verbal__Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GRE_Quantitative() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.GRE_QuantitativeColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GRE Quantitative' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.GRE_QuantitativeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property _GRE_Quantitative__() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant._GRE_Quantitative__Column),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GRE Quantitative %' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant._GRE_Quantitative__Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property WR() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.WRColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'WR' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.WRColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property TOEFL() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.TOEFLColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'TOEFL' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.TOEFLColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Time_With_Employer() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.Time_With_EmployerColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Time With Employer' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.Time_With_EmployerColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Current_Employer() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.Current_EmployerColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Current Employer' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.Current_EmployerColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Undergraduate_GPA() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.Undergraduate_GPAColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Undergraduate GPA' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.Undergraduate_GPAColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Graduate_GPA() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.Graduate_GPAColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Graduate GPA' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.Graduate_GPAColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Undergraduate_Institution() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.Undergraduate_InstitutionColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Undergraduate Institution' in table 'viewApplicant' is DBNu"& _ 
+                            "ll.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.Undergraduate_InstitutionColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Undergraduate_Degree() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.Undergraduate_DegreeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Undergraduate Degree' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.Undergraduate_DegreeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Undergraduate_Major() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.Undergraduate_MajorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Undergraduate Major' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.Undergraduate_MajorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Graduate_Institution() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.Graduate_InstitutionColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Graduate Institution' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.Graduate_InstitutionColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Graduate_Degree() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.Graduate_DegreeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Graduate Degree' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.Graduate_DegreeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Graduate_Major() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.Graduate_MajorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Graduate Major' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.Graduate_MajorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Gender() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.GenderColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Gender' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.GenderColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Ethnicity() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.EthnicityColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Ethnicity' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.EthnicityColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Age() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.AgeColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Age' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.AgeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property City() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.CityColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'City' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.CityColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property State() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.StateColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'State' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.StateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Postal() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.PostalColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Postal' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.PostalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Country() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.CountryColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Country' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.CountryColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Residency() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewApplicant.ResidencyColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Residency' in table 'viewApplicant' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewApplicant.ResidencyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFirst_NameNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.First_NameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFirst_NameNull()
+            Me(Me.tableviewApplicant.First_NameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsLast_NameNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.Last_NameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetLast_NameNull()
+            Me(Me.tableviewApplicant.Last_NameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsApplication_DateNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.Application_DateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetApplication_DateNull()
+            Me(Me.tableviewApplicant.Application_DateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsMissing_StatusNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.Missing_StatusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetMissing_StatusNull()
+            Me(Me.tableviewApplicant.Missing_StatusColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsReceivedNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.ReceivedColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetReceivedNull()
+            Me(Me.tableviewApplicant.ReceivedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNotesNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.NotesColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNotesNull()
+            Me(Me.tableviewApplicant.NotesColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Is_Verbal___QuantitativeNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant._Verbal___QuantitativeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Set_Verbal___QuantitativeNull()
+            Me(Me.tableviewApplicant._Verbal___QuantitativeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGMATNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.GMATColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGMATNull()
+            Me(Me.tableviewApplicant.GMATColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGMAT_VerbalNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.GMAT_VerbalColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGMAT_VerbalNull()
+            Me(Me.tableviewApplicant.GMAT_VerbalColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Is_GMAT_Verbal__Null() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant._GMAT_Verbal__Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Set_GMAT_Verbal__Null()
+            Me(Me.tableviewApplicant._GMAT_Verbal__Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGMAT_QuantitativeNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.GMAT_QuantitativeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGMAT_QuantitativeNull()
+            Me(Me.tableviewApplicant.GMAT_QuantitativeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Is_GMAT_Quantitative__Null() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant._GMAT_Quantitative__Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Set_GMAT_Quantitative__Null()
+            Me(Me.tableviewApplicant._GMAT_Quantitative__Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsAWANull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.AWAColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetAWANull()
+            Me(Me.tableviewApplicant.AWAColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGRENull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.GREColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGRENull()
+            Me(Me.tableviewApplicant.GREColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGRE_VerbalNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.GRE_VerbalColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGRE_VerbalNull()
+            Me(Me.tableviewApplicant.GRE_VerbalColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Is_GRE_Verbal__Null() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant._GRE_Verbal__Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Set_GRE_Verbal__Null()
+            Me(Me.tableviewApplicant._GRE_Verbal__Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGRE_QuantitativeNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.GRE_QuantitativeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGRE_QuantitativeNull()
+            Me(Me.tableviewApplicant.GRE_QuantitativeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Is_GRE_Quantitative__Null() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant._GRE_Quantitative__Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Set_GRE_Quantitative__Null()
+            Me(Me.tableviewApplicant._GRE_Quantitative__Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsWRNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.WRColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetWRNull()
+            Me(Me.tableviewApplicant.WRColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsTOEFLNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.TOEFLColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetTOEFLNull()
+            Me(Me.tableviewApplicant.TOEFLColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsTime_With_EmployerNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.Time_With_EmployerColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetTime_With_EmployerNull()
+            Me(Me.tableviewApplicant.Time_With_EmployerColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCurrent_EmployerNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.Current_EmployerColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCurrent_EmployerNull()
+            Me(Me.tableviewApplicant.Current_EmployerColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsUndergraduate_GPANull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.Undergraduate_GPAColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetUndergraduate_GPANull()
+            Me(Me.tableviewApplicant.Undergraduate_GPAColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGraduate_GPANull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.Graduate_GPAColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGraduate_GPANull()
+            Me(Me.tableviewApplicant.Graduate_GPAColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsUndergraduate_InstitutionNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.Undergraduate_InstitutionColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetUndergraduate_InstitutionNull()
+            Me(Me.tableviewApplicant.Undergraduate_InstitutionColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsUndergraduate_DegreeNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.Undergraduate_DegreeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetUndergraduate_DegreeNull()
+            Me(Me.tableviewApplicant.Undergraduate_DegreeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsUndergraduate_MajorNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.Undergraduate_MajorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetUndergraduate_MajorNull()
+            Me(Me.tableviewApplicant.Undergraduate_MajorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGraduate_InstitutionNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.Graduate_InstitutionColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGraduate_InstitutionNull()
+            Me(Me.tableviewApplicant.Graduate_InstitutionColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGraduate_DegreeNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.Graduate_DegreeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGraduate_DegreeNull()
+            Me(Me.tableviewApplicant.Graduate_DegreeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGraduate_MajorNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.Graduate_MajorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGraduate_MajorNull()
+            Me(Me.tableviewApplicant.Graduate_MajorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGenderNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.GenderColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGenderNull()
+            Me(Me.tableviewApplicant.GenderColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsEthnicityNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.EthnicityColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetEthnicityNull()
+            Me(Me.tableviewApplicant.EthnicityColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsAgeNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.AgeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetAgeNull()
+            Me(Me.tableviewApplicant.AgeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCityNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.CityColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCityNull()
+            Me(Me.tableviewApplicant.CityColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsStateNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.StateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetStateNull()
+            Me(Me.tableviewApplicant.StateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsPostalNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.PostalColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetPostalNull()
+            Me(Me.tableviewApplicant.PostalColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCountryNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.CountryColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCountryNull()
+            Me(Me.tableviewApplicant.CountryColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsResidencyNull() As Boolean
+            Return Me.IsNull(Me.tableviewApplicant.ResidencyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetResidencyNull()
+            Me(Me.tableviewApplicant.ResidencyColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class viewStudentRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableviewStudent As viewStudentDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableviewStudent = CType(Me.Table,viewStudentDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ID() As Integer
+            Get
+                Return CType(Me(Me.tableviewStudent.IDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableviewStudent.IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property First_Name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewStudent.First_NameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'First Name' in table 'viewStudent' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewStudent.First_NameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Last_Name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewStudent.Last_NameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Last Name' in table 'viewStudent' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewStudent.Last_NameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Program() As String
+            Get
+                Return CType(Me(Me.tableviewStudent.ProgramColumn),String)
+            End Get
+            Set
+                Me(Me.tableviewStudent.ProgramColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Concentration() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewStudent.ConcentrationColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Concentration' in table 'viewStudent' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewStudent.ConcentrationColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GPA() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewStudent.GPAColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GPA' in table 'viewStudent' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewStudent.GPAColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFirst_NameNull() As Boolean
+            Return Me.IsNull(Me.tableviewStudent.First_NameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFirst_NameNull()
+            Me(Me.tableviewStudent.First_NameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsLast_NameNull() As Boolean
+            Return Me.IsNull(Me.tableviewStudent.Last_NameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetLast_NameNull()
+            Me(Me.tableviewStudent.Last_NameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsConcentrationNull() As Boolean
+            Return Me.IsNull(Me.tableviewStudent.ConcentrationColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetConcentrationNull()
+            Me(Me.tableviewStudent.ConcentrationColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGPANull() As Boolean
+            Return Me.IsNull(Me.tableviewStudent.GPAColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGPANull()
+            Me(Me.tableviewStudent.GPAColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class AdmissionDecisionRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As AdmissionDecisionRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As AdmissionDecisionRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As AdmissionDecisionRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
     End Class
     
     '''<summary>
@@ -9470,6 +13062,42 @@ Partial Public Class PROJECTS1747DataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class ApplicantViewRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As ApplicantViewRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As ApplicantViewRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As ApplicantViewRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Class ApplicationViewRowChangeEvent
         Inherits Global.System.EventArgs
         
@@ -9573,9 +13201,320 @@ Partial Public Class PROJECTS1747DataSet
             End Get
         End Property
     End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class viewApplicantRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As viewApplicantRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As viewApplicantRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As viewApplicantRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class viewStudentRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As viewStudentRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As viewStudentRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As viewStudentRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
 End Class
 
 Namespace PROJECTS1747DataSetTableAdapters
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class AdmissionDecisionTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "AdmissionDecision"
+            tableMapping.ColumnMappings.Add("Program", "Program")
+            tableMapping.ColumnMappings.Add("Decision", "Decision")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[AdmissionDecision] ([Program], [Decision]) VALUES (@Program, @"& _ 
+                "Decision)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Program", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Program", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Decision", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Decision", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.MaintenanceProject.My.MySettings.Default.PROJECTS1747ConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT Program, Decision FROM dbo.AdmissionDecision"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As PROJECTS1747DataSet.AdmissionDecisionDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As PROJECTS1747DataSet.AdmissionDecisionDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As PROJECTS1747DataSet.AdmissionDecisionDataTable = New PROJECTS1747DataSet.AdmissionDecisionDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As PROJECTS1747DataSet.AdmissionDecisionDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As PROJECTS1747DataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "AdmissionDecision")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal Program As String, ByVal Decision As String) As Integer
+            If (Program Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Program,String)
+            End If
+            If (Decision Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Decision,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+    End Class
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -9756,6 +13695,8 @@ Namespace PROJECTS1747DataSetTableAdapters
             tableMapping.ColumnMappings.Add("Residency", "Residency")
             tableMapping.ColumnMappings.Add("G_GPA", "G_GPA")
             tableMapping.ColumnMappings.Add("Grad_Major", "Grad_Major")
+            tableMapping.ColumnMappings.Add("Program", "Program")
+            tableMapping.ColumnMappings.Add("Response", "Response")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -9816,7 +13757,9 @@ Namespace PROJECTS1747DataSetTableAdapters
                 "= 1 AND [Residency] IS NULL) OR ([Residency] = @Original_Residency)) AND ((@IsNu"& _ 
                 "ll_G_GPA = 1 AND [G_GPA] IS NULL) OR ([G_GPA] = @Original_G_GPA)) AND ((@IsNull_"& _ 
                 "Grad_Major = 1 AND [Grad_Major] IS NULL) OR ([Grad_Major] = @Original_Grad_Major"& _ 
-                ")))"
+                ")) AND ((@IsNull_Program = 1 AND [Program] IS NULL) OR ([Program] = @Original_Pr"& _ 
+                "ogram)) AND ((@IsNull_Response = 1 AND [Response] IS NULL) OR ([Response] = @Ori"& _ 
+                "ginal_Response)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Application_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Application_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Student_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Student_ID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -9848,9 +13791,9 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_V_Q_percent", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "V_Q_percent", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_V_Q_percent", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "V_Q_percent", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_U_GPA", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "U_GPA", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_U_GPA", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "U_GPA", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_U_GPA", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 3, 2, "U_GPA", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Toefl", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Toefl", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Toefl", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Toefl", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Toefl", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Toefl", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Gender", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Gender", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Gender", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Gender", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Ethnicity", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Ethnicity", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -9872,17 +13815,17 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ELAC_Reg", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ELAC_Reg", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ELAC_Reg", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ELAC_Reg", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GMAT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GMAT_Verb", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Verb", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT_Verb", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Verb", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT_Verb", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Verb", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GMAT_V_Percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_V_Percentage", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT_V_Percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_V_Percentage", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GMAT_Quan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Quan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT_Quan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Quan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT_Quan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Quan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GMAT_Q_Percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Q_Percentage", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT_Q_Percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Q_Percentage", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AWA", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AWA", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AWA", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AWA", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AWA", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 2, 1, "AWA", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_UA_Email", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UA_Email", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UA_Email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UA_Email", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Non_UA_Email", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Non_UA_Email", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -9894,17 +13837,17 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Last_Name", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Last_Name", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Last_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Last_Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GRE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GRE_Verb", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Verb", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE_Verb", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Verb", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE_Verb", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Verb", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GRE_V_percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_V_percentage", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE_V_percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_V_percentage", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GRE_Quan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Quan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE_Quan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Quan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE_Quan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Quan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GRE_Q_percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Q_percentage", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE_Q_percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Q_percentage", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_WR", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "WR", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_WR", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "WR", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_WR", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 2, 1, "WR", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Address", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Address", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Address", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Address", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_City", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "City", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -9921,6 +13864,10 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_G_GPA", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 3, 2, "G_GPA", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Grad_Major", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Grad_Major", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Grad_Major", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Grad_Major", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Program", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Program", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Program", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Program", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Response", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Response", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Response", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Response", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Application] ([Student_ID], [First_Name], [App_Date], [Decisio"& _ 
@@ -9930,22 +13877,22 @@ Namespace PROJECTS1747DataSetTableAdapters
                 "_Reg], [GMAT], [GMAT_Verb], [GMAT_V_Percentage], [GMAT_Quan], [GMAT_Q_Percentage"& _ 
                 "], [AWA], [UA_Email], [Non_UA_Email], [Age], [Phone], [Last_Name], [GRE], [GRE_V"& _ 
                 "erb], [GRE_V_percentage], [GRE_Quan], [GRE_Q_percentage], [WR], [Address], [City"& _ 
-                "], [State], [Postal], [Country], [Residency], [G_GPA], [Grad_Major]) VALUES (@St"& _ 
-                "udent_ID, @First_Name, @App_Date, @Decision, @GA, @MatR, @Eval_I20, @Status_Miss"& _ 
-                "ing, @Trsc, @Received, @Letters_Frm, @Notes, @Fee, @V_Q_percent, @U_GPA, @Toefl,"& _ 
-                " @Gender, @Ethnicity, @TWE, @Current_Employer, @U_Inst, @U_Deg, @UDRG_Major, @GR"& _ 
-                "AD, @G_Degree, @ELAC_Reg, @GMAT, @GMAT_Verb, @GMAT_V_Percentage, @GMAT_Quan, @GM"& _ 
-                "AT_Q_Percentage, @AWA, @UA_Email, @Non_UA_Email, @Age, @Phone, @Last_Name, @GRE,"& _ 
-                " @GRE_Verb, @GRE_V_percentage, @GRE_Quan, @GRE_Q_percentage, @WR, @Address, @Cit"& _ 
-                "y, @State, @Postal, @Country, @Residency, @G_GPA, @Grad_Major);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Applicat"& _ 
-                "ion_ID, Student_ID, First_Name, App_Date, Decision, GA, MatR, Eval_I20, Status_M"& _ 
-                "issing, Trsc, Received, Letters_Frm, Notes, Fee, V_Q_percent, U_GPA, Toefl, Gend"& _ 
-                "er, Ethnicity, TWE, Current_Employer, U_Inst, U_Deg, UDRG_Major, GRAD, G_Degree,"& _ 
-                " ELAC_Reg, GMAT, GMAT_Verb, GMAT_V_Percentage, GMAT_Quan, GMAT_Q_Percentage, AWA"& _ 
-                ", UA_Email, Non_UA_Email, Age, Phone, Last_Name, GRE, GRE_Verb, GRE_V_percentage"& _ 
-                ", GRE_Quan, GRE_Q_percentage, WR, Address, City, State, Postal, Country, Residen"& _ 
-                "cy, G_GPA, Grad_Major FROM Application WHERE (Application_ID = SCOPE_IDENTITY())"& _ 
-                ""
+                "], [State], [Postal], [Country], [Residency], [G_GPA], [Grad_Major], [Program], "& _ 
+                "[Response]) VALUES (@Student_ID, @First_Name, @App_Date, @Decision, @GA, @MatR, "& _ 
+                "@Eval_I20, @Status_Missing, @Trsc, @Received, @Letters_Frm, @Notes, @Fee, @V_Q_p"& _ 
+                "ercent, @U_GPA, @Toefl, @Gender, @Ethnicity, @TWE, @Current_Employer, @U_Inst, @"& _ 
+                "U_Deg, @UDRG_Major, @GRAD, @G_Degree, @ELAC_Reg, @GMAT, @GMAT_Verb, @GMAT_V_Perc"& _ 
+                "entage, @GMAT_Quan, @GMAT_Q_Percentage, @AWA, @UA_Email, @Non_UA_Email, @Age, @P"& _ 
+                "hone, @Last_Name, @GRE, @GRE_Verb, @GRE_V_percentage, @GRE_Quan, @GRE_Q_percenta"& _ 
+                "ge, @WR, @Address, @City, @State, @Postal, @Country, @Residency, @G_GPA, @Grad_M"& _ 
+                "ajor, @Program, @Response);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Application_ID, Student_ID, First_Name, App_"& _ 
+                "Date, Decision, GA, MatR, Eval_I20, Status_Missing, Trsc, Received, Letters_Frm,"& _ 
+                " Notes, Fee, V_Q_percent, U_GPA, Toefl, Gender, Ethnicity, TWE, Current_Employer"& _ 
+                ", U_Inst, U_Deg, UDRG_Major, GRAD, G_Degree, ELAC_Reg, GMAT, GMAT_Verb, GMAT_V_P"& _ 
+                "ercentage, GMAT_Quan, GMAT_Q_Percentage, AWA, UA_Email, Non_UA_Email, Age, Phone"& _ 
+                ", Last_Name, GRE, GRE_Verb, GRE_V_percentage, GRE_Quan, GRE_Q_percentage, WR, Ad"& _ 
+                "dress, City, State, Postal, Country, Residency, G_GPA, Grad_Major, Program, Resp"& _ 
+                "onse FROM Application WHERE (Application_ID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Student_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Student_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@First_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "First_Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -9961,8 +13908,8 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Notes", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Notes", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Fee", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fee", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@V_Q_percent", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "V_Q_percent", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@U_GPA", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "U_GPA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Toefl", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Toefl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@U_GPA", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 3, 2, "U_GPA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Toefl", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Toefl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Gender", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Gender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Ethnicity", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Ethnicity", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TWE", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TWE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -9973,23 +13920,23 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRAD", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRAD", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@G_Degree", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "G_Degree", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ELAC_Reg", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ELAC_Reg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT_Verb", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Verb", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT_Verb", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Verb", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT_V_Percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_V_Percentage", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT_Quan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Quan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT_Quan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Quan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT_Q_Percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Q_Percentage", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AWA", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AWA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AWA", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 2, 1, "AWA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UA_Email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UA_Email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Non_UA_Email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Non_UA_Email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Age", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Age", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Phone", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Last_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Last_Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE_Verb", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Verb", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE_Verb", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Verb", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE_V_percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_V_percentage", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE_Quan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Quan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE_Quan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Quan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE_Q_percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Q_percentage", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@WR", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "WR", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@WR", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 2, 1, "WR", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Address", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Address", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@City", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "City", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@State", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "State", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -9998,6 +13945,8 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Residency", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Residency", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@G_GPA", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 3, 2, "G_GPA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Grad_Major", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Grad_Major", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Program", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Program", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Response", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Response", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Application] SET [Student_ID] = @Student_ID, [First_Name] = @First_"& _ 
@@ -10015,71 +13964,74 @@ Namespace PROJECTS1747DataSetTableAdapters
                 "GRE_V_percentage, [GRE_Quan] = @GRE_Quan, [GRE_Q_percentage] = @GRE_Q_percentage"& _ 
                 ", [WR] = @WR, [Address] = @Address, [City] = @City, [State] = @State, [Postal] ="& _ 
                 " @Postal, [Country] = @Country, [Residency] = @Residency, [G_GPA] = @G_GPA, [Gra"& _ 
-                "d_Major] = @Grad_Major WHERE (([Application_ID] = @Original_Application_ID) AND "& _ 
-                "((@IsNull_Student_ID = 1 AND [Student_ID] IS NULL) OR ([Student_ID] = @Original_"& _ 
-                "Student_ID)) AND ((@IsNull_First_Name = 1 AND [First_Name] IS NULL) OR ([First_N"& _ 
-                "ame] = @Original_First_Name)) AND ((@IsNull_App_Date = 1 AND [App_Date] IS NULL)"& _ 
-                " OR ([App_Date] = @Original_App_Date)) AND ((@IsNull_Decision = 1 AND [Decision]"& _ 
-                " IS NULL) OR ([Decision] = @Original_Decision)) AND ((@IsNull_GA = 1 AND [GA] IS"& _ 
-                " NULL) OR ([GA] = @Original_GA)) AND ((@IsNull_MatR = 1 AND [MatR] IS NULL) OR ("& _ 
-                "[MatR] = @Original_MatR)) AND ((@IsNull_Eval_I20 = 1 AND [Eval_I20] IS NULL) OR "& _ 
-                "([Eval_I20] = @Original_Eval_I20)) AND ((@IsNull_Status_Missing = 1 AND [Status_"& _ 
-                "Missing] IS NULL) OR ([Status_Missing] = @Original_Status_Missing)) AND ((@IsNul"& _ 
-                "l_Trsc = 1 AND [Trsc] IS NULL) OR ([Trsc] = @Original_Trsc)) AND ((@IsNull_Recei"& _ 
-                "ved = 1 AND [Received] IS NULL) OR ([Received] = @Original_Received)) AND ((@IsN"& _ 
-                "ull_Letters_Frm = 1 AND [Letters_Frm] IS NULL) OR ([Letters_Frm] = @Original_Let"& _ 
-                "ters_Frm)) AND ((@IsNull_Notes = 1 AND [Notes] IS NULL) OR ([Notes] = @Original_"& _ 
-                "Notes)) AND ((@IsNull_Fee = 1 AND [Fee] IS NULL) OR ([Fee] = @Original_Fee)) AND"& _ 
-                " ((@IsNull_V_Q_percent = 1 AND [V_Q_percent] IS NULL) OR ([V_Q_percent] = @Origi"& _ 
-                "nal_V_Q_percent)) AND ((@IsNull_U_GPA = 1 AND [U_GPA] IS NULL) OR ([U_GPA] = @Or"& _ 
-                "iginal_U_GPA)) AND ((@IsNull_Toefl = 1 AND [Toefl] IS NULL) OR ([Toefl] = @Origi"& _ 
-                "nal_Toefl)) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Origi"& _ 
-                "nal_Gender)) AND ((@IsNull_Ethnicity = 1 AND [Ethnicity] IS NULL) OR ([Ethnicity"& _ 
-                "] = @Original_Ethnicity)) AND ((@IsNull_TWE = 1 AND [TWE] IS NULL) OR ([TWE] = @"& _ 
-                "Original_TWE)) AND ((@IsNull_Current_Employer = 1 AND [Current_Employer] IS NULL"& _ 
-                ") OR ([Current_Employer] = @Original_Current_Employer)) AND ((@IsNull_U_Inst = 1"& _ 
-                " AND [U_Inst] IS NULL) OR ([U_Inst] = @Original_U_Inst)) AND ((@IsNull_U_Deg = 1"& _ 
-                " AND [U_Deg] IS NULL) OR ([U_Deg] = @Original_U_Deg)) AND ((@IsNull_UDRG_Major ="& _ 
-                " 1 AND [UDRG_Major] IS NULL) OR ([UDRG_Major] = @Original_UDRG_Major)) AND ((@Is"& _ 
-                "Null_GRAD = 1 AND [GRAD] IS NULL) OR ([GRAD] = @Original_GRAD)) AND ((@IsNull_G_"& _ 
-                "Degree = 1 AND [G_Degree] IS NULL) OR ([G_Degree] = @Original_G_Degree)) AND ((@"& _ 
-                "IsNull_ELAC_Reg = 1 AND [ELAC_Reg] IS NULL) OR ([ELAC_Reg] = @Original_ELAC_Reg)"& _ 
-                ") AND ((@IsNull_GMAT = 1 AND [GMAT] IS NULL) OR ([GMAT] = @Original_GMAT)) AND ("& _ 
-                "(@IsNull_GMAT_Verb = 1 AND [GMAT_Verb] IS NULL) OR ([GMAT_Verb] = @Original_GMAT"& _ 
-                "_Verb)) AND ((@IsNull_GMAT_V_Percentage = 1 AND [GMAT_V_Percentage] IS NULL) OR "& _ 
-                "([GMAT_V_Percentage] = @Original_GMAT_V_Percentage)) AND ((@IsNull_GMAT_Quan = 1"& _ 
-                " AND [GMAT_Quan] IS NULL) OR ([GMAT_Quan] = @Original_GMAT_Quan)) AND ((@IsNull_"& _ 
-                "GMAT_Q_Percentage = 1 AND [GMAT_Q_Percentage] IS NULL) OR ([GMAT_Q_Percentage] ="& _ 
-                " @Original_GMAT_Q_Percentage)) AND ((@IsNull_AWA = 1 AND [AWA] IS NULL) OR ([AWA"& _ 
-                "] = @Original_AWA)) AND ((@IsNull_UA_Email = 1 AND [UA_Email] IS NULL) OR ([UA_E"& _ 
-                "mail] = @Original_UA_Email)) AND ((@IsNull_Non_UA_Email = 1 AND [Non_UA_Email] I"& _ 
-                "S NULL) OR ([Non_UA_Email] = @Original_Non_UA_Email)) AND ((@IsNull_Age = 1 AND "& _ 
-                "[Age] IS NULL) OR ([Age] = @Original_Age)) AND ((@IsNull_Phone = 1 AND [Phone] I"& _ 
-                "S NULL) OR ([Phone] = @Original_Phone)) AND ((@IsNull_Last_Name = 1 AND [Last_Na"& _ 
-                "me] IS NULL) OR ([Last_Name] = @Original_Last_Name)) AND ((@IsNull_GRE = 1 AND ["& _ 
-                "GRE] IS NULL) OR ([GRE] = @Original_GRE)) AND ((@IsNull_GRE_Verb = 1 AND [GRE_Ve"& _ 
-                "rb] IS NULL) OR ([GRE_Verb] = @Original_GRE_Verb)) AND ((@IsNull_GRE_V_percentag"& _ 
-                "e = 1 AND [GRE_V_percentage] IS NULL) OR ([GRE_V_percentage] = @Original_GRE_V_p"& _ 
-                "ercentage)) AND ((@IsNull_GRE_Quan = 1 AND [GRE_Quan] IS NULL) OR ([GRE_Quan] = "& _ 
-                "@Original_GRE_Quan)) AND ((@IsNull_GRE_Q_percentage = 1 AND [GRE_Q_percentage] I"& _ 
-                "S NULL) OR ([GRE_Q_percentage] = @Original_GRE_Q_percentage)) AND ((@IsNull_WR ="& _ 
-                " 1 AND [WR] IS NULL) OR ([WR] = @Original_WR)) AND ((@IsNull_Address = 1 AND [Ad"& _ 
-                "dress] IS NULL) OR ([Address] = @Original_Address)) AND ((@IsNull_City = 1 AND ["& _ 
-                "City] IS NULL) OR ([City] = @Original_City)) AND ((@IsNull_State = 1 AND [State]"& _ 
-                " IS NULL) OR ([State] = @Original_State)) AND ((@IsNull_Postal = 1 AND [Postal] "& _ 
-                "IS NULL) OR ([Postal] = @Original_Postal)) AND ((@IsNull_Country = 1 AND [Countr"& _ 
-                "y] IS NULL) OR ([Country] = @Original_Country)) AND ((@IsNull_Residency = 1 AND "& _ 
-                "[Residency] IS NULL) OR ([Residency] = @Original_Residency)) AND ((@IsNull_G_GPA"& _ 
-                " = 1 AND [G_GPA] IS NULL) OR ([G_GPA] = @Original_G_GPA)) AND ((@IsNull_Grad_Maj"& _ 
-                "or = 1 AND [Grad_Major] IS NULL) OR ([Grad_Major] = @Original_Grad_Major)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SE"& _ 
-                "LECT Application_ID, Student_ID, First_Name, App_Date, Decision, GA, MatR, Eval_"& _ 
-                "I20, Status_Missing, Trsc, Received, Letters_Frm, Notes, Fee, V_Q_percent, U_GPA"& _ 
-                ", Toefl, Gender, Ethnicity, TWE, Current_Employer, U_Inst, U_Deg, UDRG_Major, GR"& _ 
-                "AD, G_Degree, ELAC_Reg, GMAT, GMAT_Verb, GMAT_V_Percentage, GMAT_Quan, GMAT_Q_Pe"& _ 
-                "rcentage, AWA, UA_Email, Non_UA_Email, Age, Phone, Last_Name, GRE, GRE_Verb, GRE"& _ 
-                "_V_percentage, GRE_Quan, GRE_Q_percentage, WR, Address, City, State, Postal, Cou"& _ 
-                "ntry, Residency, G_GPA, Grad_Major FROM Application WHERE (Application_ID = @App"& _ 
-                "lication_ID)"
+                "d_Major] = @Grad_Major, [Program] = @Program, [Response] = @Response WHERE (([Ap"& _ 
+                "plication_ID] = @Original_Application_ID) AND ((@IsNull_Student_ID = 1 AND [Stud"& _ 
+                "ent_ID] IS NULL) OR ([Student_ID] = @Original_Student_ID)) AND ((@IsNull_First_N"& _ 
+                "ame = 1 AND [First_Name] IS NULL) OR ([First_Name] = @Original_First_Name)) AND "& _ 
+                "((@IsNull_App_Date = 1 AND [App_Date] IS NULL) OR ([App_Date] = @Original_App_Da"& _ 
+                "te)) AND ((@IsNull_Decision = 1 AND [Decision] IS NULL) OR ([Decision] = @Origin"& _ 
+                "al_Decision)) AND ((@IsNull_GA = 1 AND [GA] IS NULL) OR ([GA] = @Original_GA)) A"& _ 
+                "ND ((@IsNull_MatR = 1 AND [MatR] IS NULL) OR ([MatR] = @Original_MatR)) AND ((@I"& _ 
+                "sNull_Eval_I20 = 1 AND [Eval_I20] IS NULL) OR ([Eval_I20] = @Original_Eval_I20))"& _ 
+                " AND ((@IsNull_Status_Missing = 1 AND [Status_Missing] IS NULL) OR ([Status_Miss"& _ 
+                "ing] = @Original_Status_Missing)) AND ((@IsNull_Trsc = 1 AND [Trsc] IS NULL) OR "& _ 
+                "([Trsc] = @Original_Trsc)) AND ((@IsNull_Received = 1 AND [Received] IS NULL) OR"& _ 
+                " ([Received] = @Original_Received)) AND ((@IsNull_Letters_Frm = 1 AND [Letters_F"& _ 
+                "rm] IS NULL) OR ([Letters_Frm] = @Original_Letters_Frm)) AND ((@IsNull_Notes = 1"& _ 
+                " AND [Notes] IS NULL) OR ([Notes] = @Original_Notes)) AND ((@IsNull_Fee = 1 AND "& _ 
+                "[Fee] IS NULL) OR ([Fee] = @Original_Fee)) AND ((@IsNull_V_Q_percent = 1 AND [V_"& _ 
+                "Q_percent] IS NULL) OR ([V_Q_percent] = @Original_V_Q_percent)) AND ((@IsNull_U_"& _ 
+                "GPA = 1 AND [U_GPA] IS NULL) OR ([U_GPA] = @Original_U_GPA)) AND ((@IsNull_Toefl"& _ 
+                " = 1 AND [Toefl] IS NULL) OR ([Toefl] = @Original_Toefl)) AND ((@IsNull_Gender ="& _ 
+                " 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)) AND ((@IsNull_Ethnici"& _ 
+                "ty = 1 AND [Ethnicity] IS NULL) OR ([Ethnicity] = @Original_Ethnicity)) AND ((@I"& _ 
+                "sNull_TWE = 1 AND [TWE] IS NULL) OR ([TWE] = @Original_TWE)) AND ((@IsNull_Curre"& _ 
+                "nt_Employer = 1 AND [Current_Employer] IS NULL) OR ([Current_Employer] = @Origin"& _ 
+                "al_Current_Employer)) AND ((@IsNull_U_Inst = 1 AND [U_Inst] IS NULL) OR ([U_Inst"& _ 
+                "] = @Original_U_Inst)) AND ((@IsNull_U_Deg = 1 AND [U_Deg] IS NULL) OR ([U_Deg] "& _ 
+                "= @Original_U_Deg)) AND ((@IsNull_UDRG_Major = 1 AND [UDRG_Major] IS NULL) OR (["& _ 
+                "UDRG_Major] = @Original_UDRG_Major)) AND ((@IsNull_GRAD = 1 AND [GRAD] IS NULL) "& _ 
+                "OR ([GRAD] = @Original_GRAD)) AND ((@IsNull_G_Degree = 1 AND [G_Degree] IS NULL)"& _ 
+                " OR ([G_Degree] = @Original_G_Degree)) AND ((@IsNull_ELAC_Reg = 1 AND [ELAC_Reg]"& _ 
+                " IS NULL) OR ([ELAC_Reg] = @Original_ELAC_Reg)) AND ((@IsNull_GMAT = 1 AND [GMAT"& _ 
+                "] IS NULL) OR ([GMAT] = @Original_GMAT)) AND ((@IsNull_GMAT_Verb = 1 AND [GMAT_V"& _ 
+                "erb] IS NULL) OR ([GMAT_Verb] = @Original_GMAT_Verb)) AND ((@IsNull_GMAT_V_Perce"& _ 
+                "ntage = 1 AND [GMAT_V_Percentage] IS NULL) OR ([GMAT_V_Percentage] = @Original_G"& _ 
+                "MAT_V_Percentage)) AND ((@IsNull_GMAT_Quan = 1 AND [GMAT_Quan] IS NULL) OR ([GMA"& _ 
+                "T_Quan] = @Original_GMAT_Quan)) AND ((@IsNull_GMAT_Q_Percentage = 1 AND [GMAT_Q_"& _ 
+                "Percentage] IS NULL) OR ([GMAT_Q_Percentage] = @Original_GMAT_Q_Percentage)) AND"& _ 
+                " ((@IsNull_AWA = 1 AND [AWA] IS NULL) OR ([AWA] = @Original_AWA)) AND ((@IsNull_"& _ 
+                "UA_Email = 1 AND [UA_Email] IS NULL) OR ([UA_Email] = @Original_UA_Email)) AND ("& _ 
+                "(@IsNull_Non_UA_Email = 1 AND [Non_UA_Email] IS NULL) OR ([Non_UA_Email] = @Orig"& _ 
+                "inal_Non_UA_Email)) AND ((@IsNull_Age = 1 AND [Age] IS NULL) OR ([Age] = @Origin"& _ 
+                "al_Age)) AND ((@IsNull_Phone = 1 AND [Phone] IS NULL) OR ([Phone] = @Original_Ph"& _ 
+                "one)) AND ((@IsNull_Last_Name = 1 AND [Last_Name] IS NULL) OR ([Last_Name] = @Or"& _ 
+                "iginal_Last_Name)) AND ((@IsNull_GRE = 1 AND [GRE] IS NULL) OR ([GRE] = @Origina"& _ 
+                "l_GRE)) AND ((@IsNull_GRE_Verb = 1 AND [GRE_Verb] IS NULL) OR ([GRE_Verb] = @Ori"& _ 
+                "ginal_GRE_Verb)) AND ((@IsNull_GRE_V_percentage = 1 AND [GRE_V_percentage] IS NU"& _ 
+                "LL) OR ([GRE_V_percentage] = @Original_GRE_V_percentage)) AND ((@IsNull_GRE_Quan"& _ 
+                " = 1 AND [GRE_Quan] IS NULL) OR ([GRE_Quan] = @Original_GRE_Quan)) AND ((@IsNull"& _ 
+                "_GRE_Q_percentage = 1 AND [GRE_Q_percentage] IS NULL) OR ([GRE_Q_percentage] = @"& _ 
+                "Original_GRE_Q_percentage)) AND ((@IsNull_WR = 1 AND [WR] IS NULL) OR ([WR] = @O"& _ 
+                "riginal_WR)) AND ((@IsNull_Address = 1 AND [Address] IS NULL) OR ([Address] = @O"& _ 
+                "riginal_Address)) AND ((@IsNull_City = 1 AND [City] IS NULL) OR ([City] = @Origi"& _ 
+                "nal_City)) AND ((@IsNull_State = 1 AND [State] IS NULL) OR ([State] = @Original_"& _ 
+                "State)) AND ((@IsNull_Postal = 1 AND [Postal] IS NULL) OR ([Postal] = @Original_"& _ 
+                "Postal)) AND ((@IsNull_Country = 1 AND [Country] IS NULL) OR ([Country] = @Origi"& _ 
+                "nal_Country)) AND ((@IsNull_Residency = 1 AND [Residency] IS NULL) OR ([Residenc"& _ 
+                "y] = @Original_Residency)) AND ((@IsNull_G_GPA = 1 AND [G_GPA] IS NULL) OR ([G_G"& _ 
+                "PA] = @Original_G_GPA)) AND ((@IsNull_Grad_Major = 1 AND [Grad_Major] IS NULL) O"& _ 
+                "R ([Grad_Major] = @Original_Grad_Major)) AND ((@IsNull_Program = 1 AND [Program]"& _ 
+                " IS NULL) OR ([Program] = @Original_Program)) AND ((@IsNull_Response = 1 AND [Re"& _ 
+                "sponse] IS NULL) OR ([Response] = @Original_Response)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Application_ID,"& _ 
+                " Student_ID, First_Name, App_Date, Decision, GA, MatR, Eval_I20, Status_Missing,"& _ 
+                " Trsc, Received, Letters_Frm, Notes, Fee, V_Q_percent, U_GPA, Toefl, Gender, Eth"& _ 
+                "nicity, TWE, Current_Employer, U_Inst, U_Deg, UDRG_Major, GRAD, G_Degree, ELAC_R"& _ 
+                "eg, GMAT, GMAT_Verb, GMAT_V_Percentage, GMAT_Quan, GMAT_Q_Percentage, AWA, UA_Em"& _ 
+                "ail, Non_UA_Email, Age, Phone, Last_Name, GRE, GRE_Verb, GRE_V_percentage, GRE_Q"& _ 
+                "uan, GRE_Q_percentage, WR, Address, City, State, Postal, Country, Residency, G_G"& _ 
+                "PA, Grad_Major, Program, Response FROM Application WHERE (Application_ID = @Appl"& _ 
+                "ication_ID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Student_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Student_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@First_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "First_Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -10095,8 +14047,8 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Notes", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Notes", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Fee", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fee", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@V_Q_percent", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "V_Q_percent", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@U_GPA", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "U_GPA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Toefl", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Toefl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@U_GPA", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 3, 2, "U_GPA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Toefl", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Toefl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Gender", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Gender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Ethnicity", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Ethnicity", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TWE", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TWE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -10107,23 +14059,23 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRAD", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRAD", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@G_Degree", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "G_Degree", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ELAC_Reg", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ELAC_Reg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT_Verb", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Verb", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT_Verb", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Verb", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT_V_Percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_V_Percentage", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT_Quan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Quan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT_Quan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Quan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GMAT_Q_Percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Q_Percentage", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AWA", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AWA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AWA", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 2, 1, "AWA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UA_Email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UA_Email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Non_UA_Email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Non_UA_Email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Age", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Age", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Phone", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Last_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Last_Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE_Verb", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Verb", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE_Verb", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Verb", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE_V_percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_V_percentage", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE_Quan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Quan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE_Quan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Quan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GRE_Q_percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Q_percentage", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@WR", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "WR", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@WR", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 2, 1, "WR", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Address", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Address", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@City", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "City", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@State", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "State", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -10132,6 +14084,8 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Residency", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Residency", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@G_GPA", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 3, 2, "G_GPA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Grad_Major", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Grad_Major", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Program", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Program", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Response", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Response", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Application_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Application_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Student_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Student_ID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Student_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Student_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -10162,9 +14116,9 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_V_Q_percent", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "V_Q_percent", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_V_Q_percent", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "V_Q_percent", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_U_GPA", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "U_GPA", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_U_GPA", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "U_GPA", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_U_GPA", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 3, 2, "U_GPA", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Toefl", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Toefl", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Toefl", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Toefl", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Toefl", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Toefl", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Gender", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Gender", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Gender", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Gender", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Ethnicity", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Ethnicity", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -10186,17 +14140,17 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ELAC_Reg", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ELAC_Reg", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ELAC_Reg", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ELAC_Reg", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GMAT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GMAT_Verb", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Verb", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT_Verb", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Verb", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT_Verb", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Verb", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GMAT_V_Percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_V_Percentage", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT_V_Percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_V_Percentage", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GMAT_Quan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Quan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT_Quan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Quan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT_Quan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Quan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GMAT_Q_Percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Q_Percentage", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GMAT_Q_Percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GMAT_Q_Percentage", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AWA", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AWA", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AWA", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AWA", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AWA", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 2, 1, "AWA", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_UA_Email", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UA_Email", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UA_Email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UA_Email", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Non_UA_Email", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Non_UA_Email", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -10208,17 +14162,17 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Last_Name", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Last_Name", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Last_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Last_Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GRE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GRE_Verb", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Verb", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE_Verb", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Verb", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE_Verb", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Verb", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GRE_V_percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_V_percentage", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE_V_percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_V_percentage", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GRE_Quan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Quan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE_Quan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Quan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE_Quan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Quan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GRE_Q_percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Q_percentage", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GRE_Q_percentage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GRE_Q_percentage", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_WR", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "WR", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_WR", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "WR", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_WR", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 2, 1, "WR", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Address", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Address", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Address", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Address", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_City", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "City", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -10235,6 +14189,10 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_G_GPA", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 3, 2, "G_GPA", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Grad_Major", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Grad_Major", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Grad_Major", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Grad_Major", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Program", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Program", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Program", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Program", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Response", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Response", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Response", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Response", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Application_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Application_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -10257,7 +14215,7 @@ Namespace PROJECTS1747DataSetTableAdapters
                 "RAD, G_Degree, ELAC_Reg, GMAT, GMAT_Verb, GMAT_V_Percentage, GMAT_Quan, GMAT_Q_P"& _ 
                 "ercentage, AWA, UA_Email, Non_UA_Email, Age, Phone, Last_Name, GRE, GRE_Verb, GR"& _ 
                 "E_V_percentage, GRE_Quan, GRE_Q_percentage, WR, Address, City, State, Postal, Co"& _ 
-                "untry, Residency, G_GPA, Grad_Major FROM dbo.Application"
+                "untry, Residency, G_GPA, Grad_Major, Program, Response FROM dbo.Application"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -10333,8 +14291,8 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Original_Notes As String,  _
                     ByVal Original_Fee As String,  _
                     ByVal Original_V_Q_percent As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_U_GPA As String,  _
-                    ByVal Original_Toefl As String,  _
+                    ByVal Original_U_GPA As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_Toefl As Global.System.Nullable(Of Integer),  _
                     ByVal Original_Gender As String,  _
                     ByVal Original_Ethnicity As String,  _
                     ByVal Original_TWE As String,  _
@@ -10345,23 +14303,23 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Original_GRAD As String,  _
                     ByVal Original_G_Degree As String,  _
                     ByVal Original_ELAC_Reg As String,  _
-                    ByVal Original_GMAT As String,  _
-                    ByVal Original_GMAT_Verb As String,  _
+                    ByVal Original_GMAT As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_GMAT_Verb As Global.System.Nullable(Of Integer),  _
                     ByVal Original_GMAT_V_Percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_GMAT_Quan As String,  _
+                    ByVal Original_GMAT_Quan As Global.System.Nullable(Of Integer),  _
                     ByVal Original_GMAT_Q_Percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_AWA As String,  _
+                    ByVal Original_AWA As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_UA_Email As String,  _
                     ByVal Original_Non_UA_Email As String,  _
                     ByVal Original_Age As Global.System.Nullable(Of Integer),  _
                     ByVal Original_Phone As String,  _
                     ByVal Original_Last_Name As String,  _
-                    ByVal Original_GRE As String,  _
-                    ByVal Original_GRE_Verb As String,  _
+                    ByVal Original_GRE As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_GRE_Verb As Global.System.Nullable(Of Integer),  _
                     ByVal Original_GRE_V_percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_GRE_Quan As String,  _
+                    ByVal Original_GRE_Quan As Global.System.Nullable(Of Integer),  _
                     ByVal Original_GRE_Q_percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_WR As String,  _
+                    ByVal Original_WR As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_Address As String,  _
                     ByVal Original_City As String,  _
                     ByVal Original_State As String,  _
@@ -10369,7 +14327,9 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Original_Country As String,  _
                     ByVal Original_Residency As String,  _
                     ByVal Original_G_GPA As Global.System.Nullable(Of Decimal),  _
-                    ByVal Original_Grad_Major As String) As Integer
+                    ByVal Original_Grad_Major As String,  _
+                    ByVal Original_Program As String,  _
+                    ByVal Original_Response As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Application_ID,Integer)
             If (Original_Student_ID.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -10469,19 +14429,19 @@ Namespace PROJECTS1747DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(27).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(28).Value = Global.System.DBNull.Value
             End If
-            If (Original_U_GPA Is Nothing) Then
+            If (Original_U_GPA.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(29).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(30).Value = CType(Original_U_GPA.Value,Decimal)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(29).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(30).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(29).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(30).Value = CType(Original_U_GPA,String)
             End If
-            If (Original_Toefl Is Nothing) Then
+            If (Original_Toefl.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(31).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(32).Value = CType(Original_Toefl.Value,Integer)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(31).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(32).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(31).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(32).Value = CType(Original_Toefl,String)
             End If
             If (Original_Gender Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(33).Value = CType(1,Object)
@@ -10553,19 +14513,19 @@ Namespace PROJECTS1747DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(51).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(52).Value = CType(Original_ELAC_Reg,String)
             End If
-            If (Original_GMAT Is Nothing) Then
+            If (Original_GMAT.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(53).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(54).Value = CType(Original_GMAT.Value,Integer)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(53).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(54).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(53).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(54).Value = CType(Original_GMAT,String)
             End If
-            If (Original_GMAT_Verb Is Nothing) Then
+            If (Original_GMAT_Verb.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(55).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(56).Value = CType(Original_GMAT_Verb.Value,Integer)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(55).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(56).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(55).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(56).Value = CType(Original_GMAT_Verb,String)
             End If
             If (Original_GMAT_V_Percentage.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(57).Value = CType(0,Object)
@@ -10574,12 +14534,12 @@ Namespace PROJECTS1747DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(57).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(58).Value = Global.System.DBNull.Value
             End If
-            If (Original_GMAT_Quan Is Nothing) Then
+            If (Original_GMAT_Quan.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(59).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(60).Value = CType(Original_GMAT_Quan.Value,Integer)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(59).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(60).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(59).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(60).Value = CType(Original_GMAT_Quan,String)
             End If
             If (Original_GMAT_Q_Percentage.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(61).Value = CType(0,Object)
@@ -10588,12 +14548,12 @@ Namespace PROJECTS1747DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(61).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(62).Value = Global.System.DBNull.Value
             End If
-            If (Original_AWA Is Nothing) Then
+            If (Original_AWA.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(63).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(64).Value = CType(Original_AWA.Value,Decimal)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(63).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(64).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(63).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(64).Value = CType(Original_AWA,String)
             End If
             If (Original_UA_Email Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(65).Value = CType(1,Object)
@@ -10630,19 +14590,19 @@ Namespace PROJECTS1747DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(73).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(74).Value = CType(Original_Last_Name,String)
             End If
-            If (Original_GRE Is Nothing) Then
+            If (Original_GRE.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(75).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(76).Value = CType(Original_GRE.Value,Integer)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(75).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(76).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(75).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(76).Value = CType(Original_GRE,String)
             End If
-            If (Original_GRE_Verb Is Nothing) Then
+            If (Original_GRE_Verb.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(77).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(78).Value = CType(Original_GRE_Verb.Value,Integer)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(77).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(78).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(77).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(78).Value = CType(Original_GRE_Verb,String)
             End If
             If (Original_GRE_V_percentage.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(79).Value = CType(0,Object)
@@ -10651,12 +14611,12 @@ Namespace PROJECTS1747DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(79).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(80).Value = Global.System.DBNull.Value
             End If
-            If (Original_GRE_Quan Is Nothing) Then
+            If (Original_GRE_Quan.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(81).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(82).Value = CType(Original_GRE_Quan.Value,Integer)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(81).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(82).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(81).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(82).Value = CType(Original_GRE_Quan,String)
             End If
             If (Original_GRE_Q_percentage.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(83).Value = CType(0,Object)
@@ -10665,12 +14625,12 @@ Namespace PROJECTS1747DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(83).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(84).Value = Global.System.DBNull.Value
             End If
-            If (Original_WR Is Nothing) Then
+            If (Original_WR.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(85).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(86).Value = CType(Original_WR.Value,Decimal)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(85).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(86).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(85).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(86).Value = CType(Original_WR,String)
             End If
             If (Original_Address Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(87).Value = CType(1,Object)
@@ -10728,6 +14688,20 @@ Namespace PROJECTS1747DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(101).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(102).Value = CType(Original_Grad_Major,String)
             End If
+            If (Original_Program Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(103).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(104).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(103).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(104).Value = CType(Original_Program,String)
+            End If
+            If (Original_Response Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(105).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(106).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(105).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(106).Value = CType(Original_Response,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -10762,8 +14736,8 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Notes As String,  _
                     ByVal Fee As String,  _
                     ByVal V_Q_percent As Global.System.Nullable(Of Integer),  _
-                    ByVal U_GPA As String,  _
-                    ByVal Toefl As String,  _
+                    ByVal U_GPA As Global.System.Nullable(Of Decimal),  _
+                    ByVal Toefl As Global.System.Nullable(Of Integer),  _
                     ByVal Gender As String,  _
                     ByVal Ethnicity As String,  _
                     ByVal TWE As String,  _
@@ -10774,23 +14748,23 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal GRAD As String,  _
                     ByVal G_Degree As String,  _
                     ByVal ELAC_Reg As String,  _
-                    ByVal GMAT As String,  _
-                    ByVal GMAT_Verb As String,  _
+                    ByVal GMAT As Global.System.Nullable(Of Integer),  _
+                    ByVal GMAT_Verb As Global.System.Nullable(Of Integer),  _
                     ByVal GMAT_V_Percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal GMAT_Quan As String,  _
+                    ByVal GMAT_Quan As Global.System.Nullable(Of Integer),  _
                     ByVal GMAT_Q_Percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal AWA As String,  _
+                    ByVal AWA As Global.System.Nullable(Of Decimal),  _
                     ByVal UA_Email As String,  _
                     ByVal Non_UA_Email As String,  _
                     ByVal Age As Global.System.Nullable(Of Integer),  _
                     ByVal Phone As String,  _
                     ByVal Last_Name As String,  _
-                    ByVal GRE As String,  _
-                    ByVal GRE_Verb As String,  _
+                    ByVal GRE As Global.System.Nullable(Of Integer),  _
+                    ByVal GRE_Verb As Global.System.Nullable(Of Integer),  _
                     ByVal GRE_V_percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal GRE_Quan As String,  _
+                    ByVal GRE_Quan As Global.System.Nullable(Of Integer),  _
                     ByVal GRE_Q_percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal WR As String,  _
+                    ByVal WR As Global.System.Nullable(Of Decimal),  _
                     ByVal Address As String,  _
                     ByVal City As String,  _
                     ByVal State As String,  _
@@ -10798,7 +14772,9 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Country As String,  _
                     ByVal Residency As String,  _
                     ByVal G_GPA As Global.System.Nullable(Of Decimal),  _
-                    ByVal Grad_Major As String) As Integer
+                    ByVal Grad_Major As String,  _
+                    ByVal Program As String,  _
+                    ByVal Response As String) As Integer
             If (Student_ID.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(Student_ID.Value,Integer)
             Else
@@ -10869,15 +14845,15 @@ Namespace PROJECTS1747DataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(13).Value = Global.System.DBNull.Value
             End If
-            If (U_GPA Is Nothing) Then
+            If (U_GPA.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(14).Value = CType(U_GPA.Value,Decimal)
+            Else
                 Me.Adapter.InsertCommand.Parameters(14).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(14).Value = CType(U_GPA,String)
             End If
-            If (Toefl Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(15).Value = Global.System.DBNull.Value
+            If (Toefl.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(15).Value = CType(Toefl.Value,Integer)
             Else
-                Me.Adapter.InsertCommand.Parameters(15).Value = CType(Toefl,String)
+                Me.Adapter.InsertCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
             If (Gender Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(16).Value = Global.System.DBNull.Value
@@ -10929,35 +14905,35 @@ Namespace PROJECTS1747DataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(25).Value = CType(ELAC_Reg,String)
             End If
-            If (GMAT Is Nothing) Then
+            If (GMAT.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(26).Value = CType(GMAT.Value,Integer)
+            Else
                 Me.Adapter.InsertCommand.Parameters(26).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(26).Value = CType(GMAT,String)
             End If
-            If (GMAT_Verb Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(27).Value = Global.System.DBNull.Value
+            If (GMAT_Verb.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(27).Value = CType(GMAT_Verb.Value,Integer)
             Else
-                Me.Adapter.InsertCommand.Parameters(27).Value = CType(GMAT_Verb,String)
+                Me.Adapter.InsertCommand.Parameters(27).Value = Global.System.DBNull.Value
             End If
             If (GMAT_V_Percentage.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(28).Value = CType(GMAT_V_Percentage.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(28).Value = Global.System.DBNull.Value
             End If
-            If (GMAT_Quan Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(29).Value = Global.System.DBNull.Value
+            If (GMAT_Quan.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(29).Value = CType(GMAT_Quan.Value,Integer)
             Else
-                Me.Adapter.InsertCommand.Parameters(29).Value = CType(GMAT_Quan,String)
+                Me.Adapter.InsertCommand.Parameters(29).Value = Global.System.DBNull.Value
             End If
             If (GMAT_Q_Percentage.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(30).Value = CType(GMAT_Q_Percentage.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(30).Value = Global.System.DBNull.Value
             End If
-            If (AWA Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(31).Value = Global.System.DBNull.Value
+            If (AWA.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(31).Value = CType(AWA.Value,Decimal)
             Else
-                Me.Adapter.InsertCommand.Parameters(31).Value = CType(AWA,String)
+                Me.Adapter.InsertCommand.Parameters(31).Value = Global.System.DBNull.Value
             End If
             If (UA_Email Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(32).Value = Global.System.DBNull.Value
@@ -10984,35 +14960,35 @@ Namespace PROJECTS1747DataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(36).Value = CType(Last_Name,String)
             End If
-            If (GRE Is Nothing) Then
+            If (GRE.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(37).Value = CType(GRE.Value,Integer)
+            Else
                 Me.Adapter.InsertCommand.Parameters(37).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(37).Value = CType(GRE,String)
             End If
-            If (GRE_Verb Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(38).Value = Global.System.DBNull.Value
+            If (GRE_Verb.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(38).Value = CType(GRE_Verb.Value,Integer)
             Else
-                Me.Adapter.InsertCommand.Parameters(38).Value = CType(GRE_Verb,String)
+                Me.Adapter.InsertCommand.Parameters(38).Value = Global.System.DBNull.Value
             End If
             If (GRE_V_percentage.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(39).Value = CType(GRE_V_percentage.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(39).Value = Global.System.DBNull.Value
             End If
-            If (GRE_Quan Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(40).Value = Global.System.DBNull.Value
+            If (GRE_Quan.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(40).Value = CType(GRE_Quan.Value,Integer)
             Else
-                Me.Adapter.InsertCommand.Parameters(40).Value = CType(GRE_Quan,String)
+                Me.Adapter.InsertCommand.Parameters(40).Value = Global.System.DBNull.Value
             End If
             If (GRE_Q_percentage.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(41).Value = CType(GRE_Q_percentage.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(41).Value = Global.System.DBNull.Value
             End If
-            If (WR Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(42).Value = Global.System.DBNull.Value
+            If (WR.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(42).Value = CType(WR.Value,Decimal)
             Else
-                Me.Adapter.InsertCommand.Parameters(42).Value = CType(WR,String)
+                Me.Adapter.InsertCommand.Parameters(42).Value = Global.System.DBNull.Value
             End If
             If (Address Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(43).Value = Global.System.DBNull.Value
@@ -11054,6 +15030,16 @@ Namespace PROJECTS1747DataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(50).Value = CType(Grad_Major,String)
             End If
+            If (Program Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(51).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(51).Value = CType(Program,String)
+            End If
+            If (Response Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(52).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(52).Value = CType(Response,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -11088,8 +15074,8 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Notes As String,  _
                     ByVal Fee As String,  _
                     ByVal V_Q_percent As Global.System.Nullable(Of Integer),  _
-                    ByVal U_GPA As String,  _
-                    ByVal Toefl As String,  _
+                    ByVal U_GPA As Global.System.Nullable(Of Decimal),  _
+                    ByVal Toefl As Global.System.Nullable(Of Integer),  _
                     ByVal Gender As String,  _
                     ByVal Ethnicity As String,  _
                     ByVal TWE As String,  _
@@ -11100,23 +15086,23 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal GRAD As String,  _
                     ByVal G_Degree As String,  _
                     ByVal ELAC_Reg As String,  _
-                    ByVal GMAT As String,  _
-                    ByVal GMAT_Verb As String,  _
+                    ByVal GMAT As Global.System.Nullable(Of Integer),  _
+                    ByVal GMAT_Verb As Global.System.Nullable(Of Integer),  _
                     ByVal GMAT_V_Percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal GMAT_Quan As String,  _
+                    ByVal GMAT_Quan As Global.System.Nullable(Of Integer),  _
                     ByVal GMAT_Q_Percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal AWA As String,  _
+                    ByVal AWA As Global.System.Nullable(Of Decimal),  _
                     ByVal UA_Email As String,  _
                     ByVal Non_UA_Email As String,  _
                     ByVal Age As Global.System.Nullable(Of Integer),  _
                     ByVal Phone As String,  _
                     ByVal Last_Name As String,  _
-                    ByVal GRE As String,  _
-                    ByVal GRE_Verb As String,  _
+                    ByVal GRE As Global.System.Nullable(Of Integer),  _
+                    ByVal GRE_Verb As Global.System.Nullable(Of Integer),  _
                     ByVal GRE_V_percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal GRE_Quan As String,  _
+                    ByVal GRE_Quan As Global.System.Nullable(Of Integer),  _
                     ByVal GRE_Q_percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal WR As String,  _
+                    ByVal WR As Global.System.Nullable(Of Decimal),  _
                     ByVal Address As String,  _
                     ByVal City As String,  _
                     ByVal State As String,  _
@@ -11125,6 +15111,8 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Residency As String,  _
                     ByVal G_GPA As Global.System.Nullable(Of Decimal),  _
                     ByVal Grad_Major As String,  _
+                    ByVal Program As String,  _
+                    ByVal Response As String,  _
                     ByVal Original_Application_ID As Integer,  _
                     ByVal Original_Student_ID As Global.System.Nullable(Of Integer),  _
                     ByVal Original_First_Name As String,  _
@@ -11140,8 +15128,8 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Original_Notes As String,  _
                     ByVal Original_Fee As String,  _
                     ByVal Original_V_Q_percent As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_U_GPA As String,  _
-                    ByVal Original_Toefl As String,  _
+                    ByVal Original_U_GPA As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_Toefl As Global.System.Nullable(Of Integer),  _
                     ByVal Original_Gender As String,  _
                     ByVal Original_Ethnicity As String,  _
                     ByVal Original_TWE As String,  _
@@ -11152,23 +15140,23 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Original_GRAD As String,  _
                     ByVal Original_G_Degree As String,  _
                     ByVal Original_ELAC_Reg As String,  _
-                    ByVal Original_GMAT As String,  _
-                    ByVal Original_GMAT_Verb As String,  _
+                    ByVal Original_GMAT As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_GMAT_Verb As Global.System.Nullable(Of Integer),  _
                     ByVal Original_GMAT_V_Percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_GMAT_Quan As String,  _
+                    ByVal Original_GMAT_Quan As Global.System.Nullable(Of Integer),  _
                     ByVal Original_GMAT_Q_Percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_AWA As String,  _
+                    ByVal Original_AWA As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_UA_Email As String,  _
                     ByVal Original_Non_UA_Email As String,  _
                     ByVal Original_Age As Global.System.Nullable(Of Integer),  _
                     ByVal Original_Phone As String,  _
                     ByVal Original_Last_Name As String,  _
-                    ByVal Original_GRE As String,  _
-                    ByVal Original_GRE_Verb As String,  _
+                    ByVal Original_GRE As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_GRE_Verb As Global.System.Nullable(Of Integer),  _
                     ByVal Original_GRE_V_percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_GRE_Quan As String,  _
+                    ByVal Original_GRE_Quan As Global.System.Nullable(Of Integer),  _
                     ByVal Original_GRE_Q_percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_WR As String,  _
+                    ByVal Original_WR As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_Address As String,  _
                     ByVal Original_City As String,  _
                     ByVal Original_State As String,  _
@@ -11177,6 +15165,8 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Original_Residency As String,  _
                     ByVal Original_G_GPA As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_Grad_Major As String,  _
+                    ByVal Original_Program As String,  _
+                    ByVal Original_Response As String,  _
                     ByVal Application_ID As Integer) As Integer
             If (Student_ID.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Student_ID.Value,Integer)
@@ -11248,15 +15238,15 @@ Namespace PROJECTS1747DataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             End If
-            If (U_GPA Is Nothing) Then
+            If (U_GPA.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(U_GPA.Value,Decimal)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(U_GPA,String)
             End If
-            If (Toefl Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+            If (Toefl.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Toefl.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Toefl,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
             If (Gender Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
@@ -11308,35 +15298,35 @@ Namespace PROJECTS1747DataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(25).Value = CType(ELAC_Reg,String)
             End If
-            If (GMAT Is Nothing) Then
+            If (GMAT.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(GMAT.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(GMAT,String)
             End If
-            If (GMAT_Verb Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
+            If (GMAT_Verb.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(GMAT_Verb.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(GMAT_Verb,String)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
             End If
             If (GMAT_V_Percentage.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(28).Value = CType(GMAT_V_Percentage.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
             End If
-            If (GMAT_Quan Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
+            If (GMAT_Quan.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(GMAT_Quan.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(GMAT_Quan,String)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
             End If
             If (GMAT_Q_Percentage.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(30).Value = CType(GMAT_Q_Percentage.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
             End If
-            If (AWA Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
+            If (AWA.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(AWA.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(AWA,String)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
             End If
             If (UA_Email Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
@@ -11363,35 +15353,35 @@ Namespace PROJECTS1747DataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Last_Name,String)
             End If
-            If (GRE Is Nothing) Then
+            If (GRE.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(GRE.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(GRE,String)
             End If
-            If (GRE_Verb Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
+            If (GRE_Verb.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(GRE_Verb.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(GRE_Verb,String)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
             End If
             If (GRE_V_percentage.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(39).Value = CType(GRE_V_percentage.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
             End If
-            If (GRE_Quan Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
+            If (GRE_Quan.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(GRE_Quan.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(GRE_Quan,String)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
             End If
             If (GRE_Q_percentage.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(41).Value = CType(GRE_Q_percentage.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(41).Value = Global.System.DBNull.Value
             End If
-            If (WR Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
+            If (WR.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(WR.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(WR,String)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
             End If
             If (Address Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(43).Value = Global.System.DBNull.Value
@@ -11433,365 +15423,389 @@ Namespace PROJECTS1747DataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(50).Value = CType(Grad_Major,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(51).Value = CType(Original_Application_ID,Integer)
-            If (Original_Student_ID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(Original_Student_ID.Value,Integer)
+            If (Program Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(51).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(53).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(Program,String)
             End If
-            If (Original_First_Name Is Nothing) Then
+            If (Response Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(52).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(Response,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(53).Value = CType(Original_Application_ID,Integer)
+            If (Original_Student_ID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(Original_Student_ID.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(54).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(55).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(Original_First_Name,String)
             End If
-            If (Original_App_Date Is Nothing) Then
+            If (Original_First_Name Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(56).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(57).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(56).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(Original_App_Date,String)
+                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(Original_First_Name,String)
             End If
-            If (Original_Decision Is Nothing) Then
+            If (Original_App_Date Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(58).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(59).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(58).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(Original_Decision,String)
+                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(Original_App_Date,String)
             End If
-            If (Original_GA Is Nothing) Then
+            If (Original_Decision Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(60).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(61).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(60).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(Original_GA,String)
+                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(Original_Decision,String)
             End If
-            If (Original_MatR Is Nothing) Then
+            If (Original_GA Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(62).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(63).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(62).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Original_MatR,String)
+                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Original_GA,String)
             End If
-            If (Original_Eval_I20 Is Nothing) Then
+            If (Original_MatR Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(64).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(65).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(64).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(Original_Eval_I20,String)
+                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(Original_MatR,String)
             End If
-            If (Original_Status_Missing Is Nothing) Then
+            If (Original_Eval_I20 Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(66).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(67).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(66).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(Original_Status_Missing,String)
+                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(Original_Eval_I20,String)
             End If
-            If (Original_Trsc Is Nothing) Then
+            If (Original_Status_Missing Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(68).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(69).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(68).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(Original_Trsc,String)
+                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(Original_Status_Missing,String)
             End If
-            If (Original_Received Is Nothing) Then
+            If (Original_Trsc Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(70).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(71).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(70).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(Original_Received,String)
+                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(Original_Trsc,String)
             End If
-            If (Original_Letters_Frm Is Nothing) Then
+            If (Original_Received Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(72).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(73).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(72).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(Original_Letters_Frm,String)
+                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(Original_Received,String)
             End If
-            If (Original_Notes Is Nothing) Then
+            If (Original_Letters_Frm Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(74).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(75).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(74).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(Original_Notes,String)
+                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(Original_Letters_Frm,String)
             End If
-            If (Original_Fee Is Nothing) Then
+            If (Original_Notes Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(76).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(77).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(76).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(Original_Fee,String)
+                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(Original_Notes,String)
             End If
-            If (Original_V_Q_percent.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(78).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(Original_V_Q_percent.Value,Integer)
-            Else
+            If (Original_Fee Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(78).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(79).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(78).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(Original_Fee,String)
             End If
-            If (Original_U_GPA Is Nothing) Then
+            If (Original_V_Q_percent.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(80).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(Original_V_Q_percent.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(80).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(81).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(80).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(Original_U_GPA,String)
             End If
-            If (Original_Toefl Is Nothing) Then
+            If (Original_U_GPA.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(82).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(Original_U_GPA.Value,Decimal)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(82).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(83).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(82).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(Original_Toefl,String)
             End If
-            If (Original_Gender Is Nothing) Then
+            If (Original_Toefl.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(84).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(Original_Toefl.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(84).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(85).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(84).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(Original_Gender,String)
             End If
-            If (Original_Ethnicity Is Nothing) Then
+            If (Original_Gender Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(86).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(87).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(86).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(Original_Ethnicity,String)
+                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(Original_Gender,String)
             End If
-            If (Original_TWE Is Nothing) Then
+            If (Original_Ethnicity Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(88).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(89).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(88).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(Original_TWE,String)
+                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(Original_Ethnicity,String)
             End If
-            If (Original_Current_Employer Is Nothing) Then
+            If (Original_TWE Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(90).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(91).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(90).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(Original_Current_Employer,String)
+                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(Original_TWE,String)
             End If
-            If (Original_U_Inst Is Nothing) Then
+            If (Original_Current_Employer Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(92).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(93).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(92).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(Original_U_Inst,String)
+                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(Original_Current_Employer,String)
             End If
-            If (Original_U_Deg Is Nothing) Then
+            If (Original_U_Inst Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(94).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(95).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(94).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(Original_U_Deg,String)
+                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(Original_U_Inst,String)
             End If
-            If (Original_UDRG_Major Is Nothing) Then
+            If (Original_U_Deg Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(96).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(97).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(96).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(Original_UDRG_Major,String)
+                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(Original_U_Deg,String)
             End If
-            If (Original_GRAD Is Nothing) Then
+            If (Original_UDRG_Major Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(98).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(99).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(98).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(99).Value = CType(Original_GRAD,String)
+                Me.Adapter.UpdateCommand.Parameters(99).Value = CType(Original_UDRG_Major,String)
             End If
-            If (Original_G_Degree Is Nothing) Then
+            If (Original_GRAD Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(100).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(101).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(100).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(101).Value = CType(Original_G_Degree,String)
+                Me.Adapter.UpdateCommand.Parameters(101).Value = CType(Original_GRAD,String)
             End If
-            If (Original_ELAC_Reg Is Nothing) Then
+            If (Original_G_Degree Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(102).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(103).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(102).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(103).Value = CType(Original_ELAC_Reg,String)
+                Me.Adapter.UpdateCommand.Parameters(103).Value = CType(Original_G_Degree,String)
             End If
-            If (Original_GMAT Is Nothing) Then
+            If (Original_ELAC_Reg Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(104).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(105).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(104).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(105).Value = CType(Original_GMAT,String)
+                Me.Adapter.UpdateCommand.Parameters(105).Value = CType(Original_ELAC_Reg,String)
             End If
-            If (Original_GMAT_Verb Is Nothing) Then
+            If (Original_GMAT.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(106).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(107).Value = CType(Original_GMAT.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(106).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(107).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(106).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(107).Value = CType(Original_GMAT_Verb,String)
             End If
-            If (Original_GMAT_V_Percentage.HasValue = true) Then
+            If (Original_GMAT_Verb.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(108).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(109).Value = CType(Original_GMAT_V_Percentage.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(109).Value = CType(Original_GMAT_Verb.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(108).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(109).Value = Global.System.DBNull.Value
             End If
-            If (Original_GMAT_Quan Is Nothing) Then
+            If (Original_GMAT_V_Percentage.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(110).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(111).Value = CType(Original_GMAT_V_Percentage.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(110).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(111).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(110).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(111).Value = CType(Original_GMAT_Quan,String)
             End If
-            If (Original_GMAT_Q_Percentage.HasValue = true) Then
+            If (Original_GMAT_Quan.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(112).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(113).Value = CType(Original_GMAT_Q_Percentage.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(113).Value = CType(Original_GMAT_Quan.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(112).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(113).Value = Global.System.DBNull.Value
             End If
-            If (Original_AWA Is Nothing) Then
+            If (Original_GMAT_Q_Percentage.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(114).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(115).Value = CType(Original_GMAT_Q_Percentage.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(114).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(115).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(114).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(115).Value = CType(Original_AWA,String)
             End If
-            If (Original_UA_Email Is Nothing) Then
+            If (Original_AWA.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(116).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(117).Value = CType(Original_AWA.Value,Decimal)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(116).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(117).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(116).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(117).Value = CType(Original_UA_Email,String)
             End If
-            If (Original_Non_UA_Email Is Nothing) Then
+            If (Original_UA_Email Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(118).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(119).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(118).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(119).Value = CType(Original_Non_UA_Email,String)
+                Me.Adapter.UpdateCommand.Parameters(119).Value = CType(Original_UA_Email,String)
             End If
-            If (Original_Age.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(120).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(121).Value = CType(Original_Age.Value,Integer)
-            Else
+            If (Original_Non_UA_Email Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(120).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(121).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(120).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(121).Value = CType(Original_Non_UA_Email,String)
             End If
-            If (Original_Phone Is Nothing) Then
+            If (Original_Age.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(122).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(123).Value = CType(Original_Age.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(122).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(123).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(122).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(123).Value = CType(Original_Phone,String)
             End If
-            If (Original_Last_Name Is Nothing) Then
+            If (Original_Phone Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(124).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(125).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(124).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(125).Value = CType(Original_Last_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(125).Value = CType(Original_Phone,String)
             End If
-            If (Original_GRE Is Nothing) Then
+            If (Original_Last_Name Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(126).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(127).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(126).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(127).Value = CType(Original_GRE,String)
+                Me.Adapter.UpdateCommand.Parameters(127).Value = CType(Original_Last_Name,String)
             End If
-            If (Original_GRE_Verb Is Nothing) Then
+            If (Original_GRE.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(128).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(129).Value = CType(Original_GRE.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(128).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(129).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(128).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(129).Value = CType(Original_GRE_Verb,String)
             End If
-            If (Original_GRE_V_percentage.HasValue = true) Then
+            If (Original_GRE_Verb.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(130).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(131).Value = CType(Original_GRE_V_percentage.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(131).Value = CType(Original_GRE_Verb.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(130).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(131).Value = Global.System.DBNull.Value
             End If
-            If (Original_GRE_Quan Is Nothing) Then
+            If (Original_GRE_V_percentage.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(132).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(133).Value = CType(Original_GRE_V_percentage.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(132).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(133).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(132).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(133).Value = CType(Original_GRE_Quan,String)
             End If
-            If (Original_GRE_Q_percentage.HasValue = true) Then
+            If (Original_GRE_Quan.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(134).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(135).Value = CType(Original_GRE_Q_percentage.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(135).Value = CType(Original_GRE_Quan.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(134).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(135).Value = Global.System.DBNull.Value
             End If
-            If (Original_WR Is Nothing) Then
+            If (Original_GRE_Q_percentage.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(136).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(137).Value = CType(Original_GRE_Q_percentage.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(136).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(137).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(136).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(137).Value = CType(Original_WR,String)
             End If
-            If (Original_Address Is Nothing) Then
+            If (Original_WR.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(138).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(139).Value = CType(Original_WR.Value,Decimal)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(138).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(139).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(138).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(139).Value = CType(Original_Address,String)
             End If
-            If (Original_City Is Nothing) Then
+            If (Original_Address Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(140).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(141).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(140).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(141).Value = CType(Original_City,String)
+                Me.Adapter.UpdateCommand.Parameters(141).Value = CType(Original_Address,String)
             End If
-            If (Original_State Is Nothing) Then
+            If (Original_City Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(142).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(143).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(142).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(143).Value = CType(Original_State,String)
+                Me.Adapter.UpdateCommand.Parameters(143).Value = CType(Original_City,String)
             End If
-            If (Original_Postal Is Nothing) Then
+            If (Original_State Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(144).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(145).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(144).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(145).Value = CType(Original_Postal,String)
+                Me.Adapter.UpdateCommand.Parameters(145).Value = CType(Original_State,String)
             End If
-            If (Original_Country Is Nothing) Then
+            If (Original_Postal Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(146).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(147).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(146).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(147).Value = CType(Original_Country,String)
+                Me.Adapter.UpdateCommand.Parameters(147).Value = CType(Original_Postal,String)
             End If
-            If (Original_Residency Is Nothing) Then
+            If (Original_Country Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(148).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(149).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(148).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(149).Value = CType(Original_Residency,String)
+                Me.Adapter.UpdateCommand.Parameters(149).Value = CType(Original_Country,String)
             End If
-            If (Original_G_GPA.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(150).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(151).Value = CType(Original_G_GPA.Value,Decimal)
-            Else
+            If (Original_Residency Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(150).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(151).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(150).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(151).Value = CType(Original_Residency,String)
             End If
-            If (Original_Grad_Major Is Nothing) Then
+            If (Original_G_GPA.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(152).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(153).Value = CType(Original_G_GPA.Value,Decimal)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(152).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(153).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(152).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(153).Value = CType(Original_Grad_Major,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(154).Value = CType(Application_ID,Integer)
+            If (Original_Grad_Major Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(154).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(155).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(154).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(155).Value = CType(Original_Grad_Major,String)
+            End If
+            If (Original_Program Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(156).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(157).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(156).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(157).Value = CType(Original_Program,String)
+            End If
+            If (Original_Response Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(158).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(159).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(158).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(159).Value = CType(Original_Response,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(160).Value = CType(Application_ID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -11826,8 +15840,8 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Notes As String,  _
                     ByVal Fee As String,  _
                     ByVal V_Q_percent As Global.System.Nullable(Of Integer),  _
-                    ByVal U_GPA As String,  _
-                    ByVal Toefl As String,  _
+                    ByVal U_GPA As Global.System.Nullable(Of Decimal),  _
+                    ByVal Toefl As Global.System.Nullable(Of Integer),  _
                     ByVal Gender As String,  _
                     ByVal Ethnicity As String,  _
                     ByVal TWE As String,  _
@@ -11838,23 +15852,23 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal GRAD As String,  _
                     ByVal G_Degree As String,  _
                     ByVal ELAC_Reg As String,  _
-                    ByVal GMAT As String,  _
-                    ByVal GMAT_Verb As String,  _
+                    ByVal GMAT As Global.System.Nullable(Of Integer),  _
+                    ByVal GMAT_Verb As Global.System.Nullable(Of Integer),  _
                     ByVal GMAT_V_Percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal GMAT_Quan As String,  _
+                    ByVal GMAT_Quan As Global.System.Nullable(Of Integer),  _
                     ByVal GMAT_Q_Percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal AWA As String,  _
+                    ByVal AWA As Global.System.Nullable(Of Decimal),  _
                     ByVal UA_Email As String,  _
                     ByVal Non_UA_Email As String,  _
                     ByVal Age As Global.System.Nullable(Of Integer),  _
                     ByVal Phone As String,  _
                     ByVal Last_Name As String,  _
-                    ByVal GRE As String,  _
-                    ByVal GRE_Verb As String,  _
+                    ByVal GRE As Global.System.Nullable(Of Integer),  _
+                    ByVal GRE_Verb As Global.System.Nullable(Of Integer),  _
                     ByVal GRE_V_percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal GRE_Quan As String,  _
+                    ByVal GRE_Quan As Global.System.Nullable(Of Integer),  _
                     ByVal GRE_Q_percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal WR As String,  _
+                    ByVal WR As Global.System.Nullable(Of Decimal),  _
                     ByVal Address As String,  _
                     ByVal City As String,  _
                     ByVal State As String,  _
@@ -11863,6 +15877,8 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Residency As String,  _
                     ByVal G_GPA As Global.System.Nullable(Of Decimal),  _
                     ByVal Grad_Major As String,  _
+                    ByVal Program As String,  _
+                    ByVal Response As String,  _
                     ByVal Original_Application_ID As Integer,  _
                     ByVal Original_Student_ID As Global.System.Nullable(Of Integer),  _
                     ByVal Original_First_Name As String,  _
@@ -11878,8 +15894,8 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Original_Notes As String,  _
                     ByVal Original_Fee As String,  _
                     ByVal Original_V_Q_percent As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_U_GPA As String,  _
-                    ByVal Original_Toefl As String,  _
+                    ByVal Original_U_GPA As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_Toefl As Global.System.Nullable(Of Integer),  _
                     ByVal Original_Gender As String,  _
                     ByVal Original_Ethnicity As String,  _
                     ByVal Original_TWE As String,  _
@@ -11890,23 +15906,23 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Original_GRAD As String,  _
                     ByVal Original_G_Degree As String,  _
                     ByVal Original_ELAC_Reg As String,  _
-                    ByVal Original_GMAT As String,  _
-                    ByVal Original_GMAT_Verb As String,  _
+                    ByVal Original_GMAT As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_GMAT_Verb As Global.System.Nullable(Of Integer),  _
                     ByVal Original_GMAT_V_Percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_GMAT_Quan As String,  _
+                    ByVal Original_GMAT_Quan As Global.System.Nullable(Of Integer),  _
                     ByVal Original_GMAT_Q_Percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_AWA As String,  _
+                    ByVal Original_AWA As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_UA_Email As String,  _
                     ByVal Original_Non_UA_Email As String,  _
                     ByVal Original_Age As Global.System.Nullable(Of Integer),  _
                     ByVal Original_Phone As String,  _
                     ByVal Original_Last_Name As String,  _
-                    ByVal Original_GRE As String,  _
-                    ByVal Original_GRE_Verb As String,  _
+                    ByVal Original_GRE As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_GRE_Verb As Global.System.Nullable(Of Integer),  _
                     ByVal Original_GRE_V_percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_GRE_Quan As String,  _
+                    ByVal Original_GRE_Quan As Global.System.Nullable(Of Integer),  _
                     ByVal Original_GRE_Q_percentage As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_WR As String,  _
+                    ByVal Original_WR As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_Address As String,  _
                     ByVal Original_City As String,  _
                     ByVal Original_State As String,  _
@@ -11914,8 +15930,10 @@ Namespace PROJECTS1747DataSetTableAdapters
                     ByVal Original_Country As String,  _
                     ByVal Original_Residency As String,  _
                     ByVal Original_G_GPA As Global.System.Nullable(Of Decimal),  _
-                    ByVal Original_Grad_Major As String) As Integer
-            Return Me.Update(Student_ID, First_Name, App_Date, Decision, GA, MatR, Eval_I20, Status_Missing, Trsc, Received, Letters_Frm, Notes, Fee, V_Q_percent, U_GPA, Toefl, Gender, Ethnicity, TWE, Current_Employer, U_Inst, U_Deg, UDRG_Major, GRAD, G_Degree, ELAC_Reg, GMAT, GMAT_Verb, GMAT_V_Percentage, GMAT_Quan, GMAT_Q_Percentage, AWA, UA_Email, Non_UA_Email, Age, Phone, Last_Name, GRE, GRE_Verb, GRE_V_percentage, GRE_Quan, GRE_Q_percentage, WR, Address, City, State, Postal, Country, Residency, G_GPA, Grad_Major, Original_Application_ID, Original_Student_ID, Original_First_Name, Original_App_Date, Original_Decision, Original_GA, Original_MatR, Original_Eval_I20, Original_Status_Missing, Original_Trsc, Original_Received, Original_Letters_Frm, Original_Notes, Original_Fee, Original_V_Q_percent, Original_U_GPA, Original_Toefl, Original_Gender, Original_Ethnicity, Original_TWE, Original_Current_Employer, Original_U_Inst, Original_U_Deg, Original_UDRG_Major, Original_GRAD, Original_G_Degree, Original_ELAC_Reg, Original_GMAT, Original_GMAT_Verb, Original_GMAT_V_Percentage, Original_GMAT_Quan, Original_GMAT_Q_Percentage, Original_AWA, Original_UA_Email, Original_Non_UA_Email, Original_Age, Original_Phone, Original_Last_Name, Original_GRE, Original_GRE_Verb, Original_GRE_V_percentage, Original_GRE_Quan, Original_GRE_Q_percentage, Original_WR, Original_Address, Original_City, Original_State, Original_Postal, Original_Country, Original_Residency, Original_G_GPA, Original_Grad_Major, Original_Application_ID)
+                    ByVal Original_Grad_Major As String,  _
+                    ByVal Original_Program As String,  _
+                    ByVal Original_Response As String) As Integer
+            Return Me.Update(Student_ID, First_Name, App_Date, Decision, GA, MatR, Eval_I20, Status_Missing, Trsc, Received, Letters_Frm, Notes, Fee, V_Q_percent, U_GPA, Toefl, Gender, Ethnicity, TWE, Current_Employer, U_Inst, U_Deg, UDRG_Major, GRAD, G_Degree, ELAC_Reg, GMAT, GMAT_Verb, GMAT_V_Percentage, GMAT_Quan, GMAT_Q_Percentage, AWA, UA_Email, Non_UA_Email, Age, Phone, Last_Name, GRE, GRE_Verb, GRE_V_percentage, GRE_Quan, GRE_Q_percentage, WR, Address, City, State, Postal, Country, Residency, G_GPA, Grad_Major, Program, Response, Original_Application_ID, Original_Student_ID, Original_First_Name, Original_App_Date, Original_Decision, Original_GA, Original_MatR, Original_Eval_I20, Original_Status_Missing, Original_Trsc, Original_Received, Original_Letters_Frm, Original_Notes, Original_Fee, Original_V_Q_percent, Original_U_GPA, Original_Toefl, Original_Gender, Original_Ethnicity, Original_TWE, Original_Current_Employer, Original_U_Inst, Original_U_Deg, Original_UDRG_Major, Original_GRAD, Original_G_Degree, Original_ELAC_Reg, Original_GMAT, Original_GMAT_Verb, Original_GMAT_V_Percentage, Original_GMAT_Quan, Original_GMAT_Q_Percentage, Original_AWA, Original_UA_Email, Original_Non_UA_Email, Original_Age, Original_Phone, Original_Last_Name, Original_GRE, Original_GRE_Verb, Original_GRE_V_percentage, Original_GRE_Quan, Original_GRE_Q_percentage, Original_WR, Original_Address, Original_City, Original_State, Original_Postal, Original_Country, Original_Residency, Original_G_GPA, Original_Grad_Major, Original_Program, Original_Response, Original_Application_ID)
         End Function
     End Class
     
@@ -12050,6 +16068,7 @@ Namespace PROJECTS1747DataSetTableAdapters
             tableMapping.ColumnMappings.Add("User_ID", "User_ID")
             tableMapping.ColumnMappings.Add("Application_ID", "Application_ID")
             tableMapping.ColumnMappings.Add("Comments", "Comments")
+            tableMapping.ColumnMappings.Add("Recomendations", "Recomendations")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -12057,7 +16076,9 @@ Namespace PROJECTS1747DataSetTableAdapters
                 "nal_Application_Comment_ID) AND ((@IsNull_User_ID = 1 AND [User_ID] IS NULL) OR "& _ 
                 "([User_ID] = @Original_User_ID)) AND ((@IsNull_Application_ID = 1 AND [Applicati"& _ 
                 "on_ID] IS NULL) OR ([Application_ID] = @Original_Application_ID)) AND ((@IsNull_"& _ 
-                "Comments = 1 AND [Comments] IS NULL) OR ([Comments] = @Original_Comments)))"
+                "Comments = 1 AND [Comments] IS NULL) OR ([Comments] = @Original_Comments)) AND ("& _ 
+                "(@IsNull_Recomendations = 1 AND [Recomendations] IS NULL) OR ([Recomendations] ="& _ 
+                " @Original_Recomendations)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Application_Comment_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Application_Comment_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_User_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User_ID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -12066,30 +16087,36 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Application_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Application_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Comments", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Comments", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Recomendations", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Recomendations", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Recomendations", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Recomendations", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Application_Comment] ([User_ID], [Application_ID], [Comments])"& _ 
-                " VALUES (@User_ID, @Application_ID, @Comments);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Application_Comment_ID, "& _ 
-                "User_ID, Application_ID, Comments FROM Application_Comment WHERE (Application_Co"& _ 
-                "mment_ID = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Application_Comment] ([User_ID], [Application_ID], [Comments],"& _ 
+                " [Recomendations]) VALUES (@User_ID, @Application_ID, @Comments, @Recomendations"& _ 
+                ");"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Application_Comment_ID, User_ID, Application_ID, Comments, Recomendat"& _ 
+                "ions FROM Application_Comment WHERE (Application_Comment_ID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@User_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Application_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Application_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Comments", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Recomendations", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Recomendations", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Application_Comment] SET [User_ID] = @User_ID, [Application_ID] = @"& _ 
-                "Application_ID, [Comments] = @Comments WHERE (([Application_Comment_ID] = @Origi"& _ 
-                "nal_Application_Comment_ID) AND ((@IsNull_User_ID = 1 AND [User_ID] IS NULL) OR "& _ 
-                "([User_ID] = @Original_User_ID)) AND ((@IsNull_Application_ID = 1 AND [Applicati"& _ 
-                "on_ID] IS NULL) OR ([Application_ID] = @Original_Application_ID)) AND ((@IsNull_"& _ 
-                "Comments = 1 AND [Comments] IS NULL) OR ([Comments] = @Original_Comments)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SE"& _ 
-                "LECT Application_Comment_ID, User_ID, Application_ID, Comments FROM Application_"& _ 
-                "Comment WHERE (Application_Comment_ID = @Application_Comment_ID)"
+                "Application_ID, [Comments] = @Comments, [Recomendations] = @Recomendations WHERE"& _ 
+                " (([Application_Comment_ID] = @Original_Application_Comment_ID) AND ((@IsNull_Us"& _ 
+                "er_ID = 1 AND [User_ID] IS NULL) OR ([User_ID] = @Original_User_ID)) AND ((@IsNu"& _ 
+                "ll_Application_ID = 1 AND [Application_ID] IS NULL) OR ([Application_ID] = @Orig"& _ 
+                "inal_Application_ID)) AND ((@IsNull_Comments = 1 AND [Comments] IS NULL) OR ([Co"& _ 
+                "mments] = @Original_Comments)) AND ((@IsNull_Recomendations = 1 AND [Recomendati"& _ 
+                "ons] IS NULL) OR ([Recomendations] = @Original_Recomendations)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Applic"& _ 
+                "ation_Comment_ID, User_ID, Application_ID, Comments, Recomendations FROM Applica"& _ 
+                "tion_Comment WHERE (Application_Comment_ID = @Application_Comment_ID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@User_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Application_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Application_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Comments", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Recomendations", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Recomendations", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Application_Comment_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Application_Comment_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_User_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User_ID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_User_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -12097,6 +16124,8 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Application_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Application_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Comments", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Comments", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Recomendations", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Recomendations", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Recomendations", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Recomendations", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Application_Comment_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Application_Comment_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -12113,8 +16142,8 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Application_Comment_ID, User_ID, Application_ID, Comments FROM dbo.Applica"& _ 
-                "tion_Comment"
+            Me._commandCollection(0).CommandText = "SELECT Application_Comment_ID, User_ID, Application_ID, Comments, Recomendations "& _ 
+                "FROM dbo.Application_Comment"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -12174,7 +16203,7 @@ Namespace PROJECTS1747DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Application_Comment_ID As Integer, ByVal Original_User_ID As Global.System.Nullable(Of Integer), ByVal Original_Application_ID As Global.System.Nullable(Of Integer), ByVal Original_Comments As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Application_Comment_ID As Integer, ByVal Original_User_ID As Global.System.Nullable(Of Integer), ByVal Original_Application_ID As Global.System.Nullable(Of Integer), ByVal Original_Comments As String, ByVal Original_Recomendations As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Application_Comment_ID,Integer)
             If (Original_User_ID.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -12197,6 +16226,13 @@ Namespace PROJECTS1747DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Comments,String)
             End If
+            If (Original_Recomendations Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Recomendations,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -12216,7 +16252,7 @@ Namespace PROJECTS1747DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal User_ID As Global.System.Nullable(Of Integer), ByVal Application_ID As Global.System.Nullable(Of Integer), ByVal Comments As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal User_ID As Global.System.Nullable(Of Integer), ByVal Application_ID As Global.System.Nullable(Of Integer), ByVal Comments As String, ByVal Recomendations As String) As Integer
             If (User_ID.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(User_ID.Value,Integer)
             Else
@@ -12231,6 +16267,11 @@ Namespace PROJECTS1747DataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(Comments,String)
+            End If
+            If (Recomendations Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Recomendations,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -12251,7 +16292,7 @@ Namespace PROJECTS1747DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal User_ID As Global.System.Nullable(Of Integer), ByVal Application_ID As Global.System.Nullable(Of Integer), ByVal Comments As String, ByVal Original_Application_Comment_ID As Integer, ByVal Original_User_ID As Global.System.Nullable(Of Integer), ByVal Original_Application_ID As Global.System.Nullable(Of Integer), ByVal Original_Comments As String, ByVal Application_Comment_ID As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal User_ID As Global.System.Nullable(Of Integer), ByVal Application_ID As Global.System.Nullable(Of Integer), ByVal Comments As String, ByVal Recomendations As String, ByVal Original_Application_Comment_ID As Integer, ByVal Original_User_ID As Global.System.Nullable(Of Integer), ByVal Original_Application_ID As Global.System.Nullable(Of Integer), ByVal Original_Comments As String, ByVal Original_Recomendations As String, ByVal Application_Comment_ID As Integer) As Integer
             If (User_ID.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(User_ID.Value,Integer)
             Else
@@ -12267,29 +16308,41 @@ Namespace PROJECTS1747DataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Comments,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_Application_Comment_ID,Integer)
-            If (Original_User_ID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_User_ID.Value,Integer)
+            If (Recomendations Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Recomendations,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_Application_Comment_ID,Integer)
+            If (Original_User_ID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_User_ID.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
             If (Original_Application_ID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Application_ID.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Application_ID.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
             If (Original_Comments Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Comments,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Comments,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Application_Comment_ID,Integer)
+            If (Original_Recomendations Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Recomendations,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Application_Comment_ID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -12309,8 +16362,8 @@ Namespace PROJECTS1747DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal User_ID As Global.System.Nullable(Of Integer), ByVal Application_ID As Global.System.Nullable(Of Integer), ByVal Comments As String, ByVal Original_Application_Comment_ID As Integer, ByVal Original_User_ID As Global.System.Nullable(Of Integer), ByVal Original_Application_ID As Global.System.Nullable(Of Integer), ByVal Original_Comments As String) As Integer
-            Return Me.Update(User_ID, Application_ID, Comments, Original_Application_Comment_ID, Original_User_ID, Original_Application_ID, Original_Comments, Original_Application_Comment_ID)
+        Public Overloads Overridable Function Update(ByVal User_ID As Global.System.Nullable(Of Integer), ByVal Application_ID As Global.System.Nullable(Of Integer), ByVal Comments As String, ByVal Recomendations As String, ByVal Original_Application_Comment_ID As Integer, ByVal Original_User_ID As Global.System.Nullable(Of Integer), ByVal Original_Application_ID As Global.System.Nullable(Of Integer), ByVal Original_Comments As String, ByVal Original_Recomendations As String) As Integer
+            Return Me.Update(User_ID, Application_ID, Comments, Recomendations, Original_Application_Comment_ID, Original_User_ID, Original_Application_ID, Original_Comments, Original_Recomendations, Original_Application_Comment_ID)
         End Function
     End Class
     
@@ -12747,29 +16800,40 @@ Namespace PROJECTS1747DataSetTableAdapters
             tableMapping.DataSetTable = "Courses"
             tableMapping.ColumnMappings.Add("Course_ID", "Course_ID")
             tableMapping.ColumnMappings.Add("Course_Name", "Course_Name")
+            tableMapping.ColumnMappings.Add("Subject", "Subject")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Courses] WHERE (([Course_ID] = @Original_Course_ID) AND ([Cour"& _ 
-                "se_Name] = @Original_Course_Name))"
+                "se_Name] = @Original_Course_Name) AND ((@IsNull_Subject = 1 AND [Subject] IS NUL"& _ 
+                "L) OR ([Subject] = @Original_Subject)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Course_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Course_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Course_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Course_Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Subject", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Subject", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Subject", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Subject", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Courses] ([Course_Name]) VALUES (@Course_Name);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Course"& _ 
-                "_ID, Course_Name FROM Courses WHERE (Course_ID = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Courses] ([Course_Name], [Subject]) VALUES (@Course_Name, @Sub"& _ 
+                "ject);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Course_ID, Course_Name, Subject FROM Courses WHERE (Course_ID = S"& _ 
+                "COPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Course_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Course_Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Subject", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Subject", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Courses] SET [Course_Name] = @Course_Name WHERE (([Course_ID] = @Or"& _ 
-                "iginal_Course_ID) AND ([Course_Name] = @Original_Course_Name));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Course_I"& _ 
-                "D, Course_Name FROM Courses WHERE (Course_ID = @Course_ID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Courses] SET [Course_Name] = @Course_Name, [Subject] = @Subject WHE"& _ 
+                "RE (([Course_ID] = @Original_Course_ID) AND ([Course_Name] = @Original_Course_Na"& _ 
+                "me) AND ((@IsNull_Subject = 1 AND [Subject] IS NULL) OR ([Subject] = @Original_S"& _ 
+                "ubject)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Course_ID, Course_Name, Subject FROM Courses WHERE (Course_ID"& _ 
+                " = @Course_ID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Course_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Course_Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Subject", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Subject", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Course_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Course_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Course_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Course_Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Subject", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Subject", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Subject", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Subject", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Course_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Course_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -12786,7 +16850,7 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Course_ID, Course_Name FROM dbo.Courses"
+            Me._commandCollection(0).CommandText = "SELECT Course_ID, Course_Name, Subject FROM dbo.Courses"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -12846,12 +16910,19 @@ Namespace PROJECTS1747DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Course_ID As Integer, ByVal Original_Course_Name As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Course_ID As Integer, ByVal Original_Course_Name As String, ByVal Original_Subject As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Course_ID,Integer)
             If (Original_Course_Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Course_Name")
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_Course_Name,String)
+            End If
+            If (Original_Subject Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_Subject,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -12872,11 +16943,16 @@ Namespace PROJECTS1747DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Course_Name As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Course_Name As String, ByVal Subject As String) As Integer
             If (Course_Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Course_Name")
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(Course_Name,String)
+            End If
+            If (Subject Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Subject,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -12897,19 +16973,31 @@ Namespace PROJECTS1747DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Course_Name As String, ByVal Original_Course_ID As Integer, ByVal Original_Course_Name As String, ByVal Course_ID As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal Course_Name As String, ByVal Subject As String, ByVal Original_Course_ID As Integer, ByVal Original_Course_Name As String, ByVal Original_Subject As String, ByVal Course_ID As Integer) As Integer
             If (Course_Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Course_Name")
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Course_Name,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Original_Course_ID,Integer)
+            If (Subject Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Subject,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_Course_ID,Integer)
             If (Original_Course_Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Course_Name")
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_Course_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_Course_Name,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Course_ID,Integer)
+            If (Original_Subject Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_Subject,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Course_ID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -12929,8 +17017,8 @@ Namespace PROJECTS1747DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Course_Name As String, ByVal Original_Course_ID As Integer, ByVal Original_Course_Name As String) As Integer
-            Return Me.Update(Course_Name, Original_Course_ID, Original_Course_Name, Original_Course_ID)
+        Public Overloads Overridable Function Update(ByVal Course_Name As String, ByVal Subject As String, ByVal Original_Course_ID As Integer, ByVal Original_Course_Name As String, ByVal Original_Subject As String) As Integer
+            Return Me.Update(Course_Name, Subject, Original_Course_ID, Original_Course_Name, Original_Subject, Original_Course_ID)
         End Function
     End Class
     
@@ -13064,32 +17152,13 @@ Namespace PROJECTS1747DataSetTableAdapters
             tableMapping.ColumnMappings.Add("Program_ID", "Program_ID")
             tableMapping.ColumnMappings.Add("Course_ID", "Course_ID")
             Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Courses_Requirement] WHERE (([Program_ID] = @Original_Program_"& _ 
-                "ID) AND ([Course_ID] = @Original_Course_ID))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Program_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Program_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Course_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Course_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Courses_Requirement] ([Program_ID], [Course_ID]) VALUES (@Prog"& _ 
-                "ram_ID, @Course_ID);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Program_ID, Course_ID FROM Courses_Requirement WHER"& _ 
-                "E (Course_ID = @Course_ID) AND (Program_ID = @Program_ID)"
+                "ram_ID, @Course_ID)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Program_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Program_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Course_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Course_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Courses_Requirement] SET [Program_ID] = @Program_ID, [Course_ID] = "& _ 
-                "@Course_ID WHERE (([Program_ID] = @Original_Program_ID) AND ([Course_ID] = @Orig"& _ 
-                "inal_Course_ID));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Program_ID, Course_ID FROM Courses_Requirement WHERE ("& _ 
-                "Course_ID = @Course_ID) AND (Program_ID = @Program_ID)"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Program_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Program_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Course_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Course_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Program_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Program_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Course_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Course_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13164,28 +17233,6 @@ Namespace PROJECTS1747DataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Program_ID As Integer, ByVal Original_Course_ID As Integer) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Program_ID,Integer)
-            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_Course_ID,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
         Public Overloads Overridable Function Insert(ByVal Program_ID As Integer, ByVal Course_ID As Integer) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(Program_ID,Integer)
@@ -13203,38 +17250,6 @@ Namespace PROJECTS1747DataSetTableAdapters
                     Me.Adapter.InsertCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Program_ID As Integer, ByVal Course_ID As Integer, ByVal Original_Program_ID As Integer, ByVal Original_Course_ID As Integer) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Program_ID,Integer)
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Course_ID,Integer)
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_Program_ID,Integer)
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_Course_ID,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Original_Program_ID As Integer, ByVal Original_Course_ID As Integer) As Integer
-            Return Me.Update(Original_Program_ID, Original_Course_ID, Original_Program_ID, Original_Course_ID)
         End Function
     End Class
     
@@ -15754,7 +19769,7 @@ Namespace PROJECTS1747DataSetTableAdapters
             tableMapping.ColumnMappings.Add("First_Name", "First_Name")
             tableMapping.ColumnMappings.Add("Last_Name", "Last_Name")
             tableMapping.ColumnMappings.Add("Advisor", "Advisor")
-            tableMapping.ColumnMappings.Add("Commitee_Member", "Commitee_Member")
+            tableMapping.ColumnMappings.Add("Committee_Member", "Committee_Member")
             tableMapping.ColumnMappings.Add("Admin", "Admin")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
@@ -15763,10 +19778,10 @@ Namespace PROJECTS1747DataSetTableAdapters
                 "] = @Original_Password) AND ((@IsNull_First_Name = 1 AND [First_Name] IS NULL) O"& _ 
                 "R ([First_Name] = @Original_First_Name)) AND ((@IsNull_Last_Name = 1 AND [Last_N"& _ 
                 "ame] IS NULL) OR ([Last_Name] = @Original_Last_Name)) AND ((@IsNull_Advisor = 1 "& _ 
-                "AND [Advisor] IS NULL) OR ([Advisor] = @Original_Advisor)) AND ((@IsNull_Commite"& _ 
-                "e_Member = 1 AND [Commitee_Member] IS NULL) OR ([Commitee_Member] = @Original_Co"& _ 
-                "mmitee_Member)) AND ((@IsNull_Admin = 1 AND [Admin] IS NULL) OR ([Admin] = @Orig"& _ 
-                "inal_Admin)))"
+                "AND [Advisor] IS NULL) OR ([Advisor] = @Original_Advisor)) AND ((@IsNull_Committ"& _ 
+                "ee_Member = 1 AND [Committee_Member] IS NULL) OR ([Committee_Member] = @Original"& _ 
+                "_Committee_Member)) AND ((@IsNull_Admin = 1 AND [Admin] IS NULL) OR ([Admin] = @"& _ 
+                "Original_Admin)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_User_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -15776,42 +19791,42 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Last_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Last_Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Advisor", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Advisor", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Advisor", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Advisor", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Commitee_Member", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Commitee_Member", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Commitee_Member", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Commitee_Member", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Committee_Member", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Committee_Member", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Committee_Member", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Committee_Member", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Admin", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Admin", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Admin", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Admin", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[User_ID] ([Password], [First_Name], [Last_Name], [Advisor], [C"& _ 
-                "ommitee_Member], [Admin]) VALUES (@Password, @First_Name, @Last_Name, @Advisor, "& _ 
-                "@Commitee_Member, @Admin);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT User_ID, Password, First_Name, Last_Name, Adv"& _ 
-                "isor, Commitee_Member, Admin FROM User_ID WHERE (User_ID = SCOPE_IDENTITY())"
+                "ommittee_Member], [Admin]) VALUES (@Password, @First_Name, @Last_Name, @Advisor,"& _ 
+                " @Committee_Member, @Admin);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT User_ID, Password, First_Name, Last_Name, A"& _ 
+                "dvisor, Committee_Member, Admin FROM User_ID WHERE (User_ID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@First_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "First_Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Last_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Last_Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Advisor", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Advisor", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Commitee_Member", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Commitee_Member", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Committee_Member", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Committee_Member", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Admin", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Admin", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[User_ID] SET [Password] = @Password, [First_Name] = @First_Name, [L"& _ 
-                "ast_Name] = @Last_Name, [Advisor] = @Advisor, [Commitee_Member] = @Commitee_Memb"& _ 
-                "er, [Admin] = @Admin WHERE (([User_ID] = @Original_User_ID) AND ([Password] = @O"& _ 
-                "riginal_Password) AND ((@IsNull_First_Name = 1 AND [First_Name] IS NULL) OR ([Fi"& _ 
-                "rst_Name] = @Original_First_Name)) AND ((@IsNull_Last_Name = 1 AND [Last_Name] I"& _ 
-                "S NULL) OR ([Last_Name] = @Original_Last_Name)) AND ((@IsNull_Advisor = 1 AND [A"& _ 
-                "dvisor] IS NULL) OR ([Advisor] = @Original_Advisor)) AND ((@IsNull_Commitee_Memb"& _ 
-                "er = 1 AND [Commitee_Member] IS NULL) OR ([Commitee_Member] = @Original_Commitee"& _ 
-                "_Member)) AND ((@IsNull_Admin = 1 AND [Admin] IS NULL) OR ([Admin] = @Original_A"& _ 
-                "dmin)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT User_ID, Password, First_Name, Last_Name, Advisor, Commitee_Mem"& _ 
-                "ber, Admin FROM User_ID WHERE (User_ID = @User_ID)"
+                "ast_Name] = @Last_Name, [Advisor] = @Advisor, [Committee_Member] = @Committee_Me"& _ 
+                "mber, [Admin] = @Admin WHERE (([User_ID] = @Original_User_ID) AND ([Password] = "& _ 
+                "@Original_Password) AND ((@IsNull_First_Name = 1 AND [First_Name] IS NULL) OR (["& _ 
+                "First_Name] = @Original_First_Name)) AND ((@IsNull_Last_Name = 1 AND [Last_Name]"& _ 
+                " IS NULL) OR ([Last_Name] = @Original_Last_Name)) AND ((@IsNull_Advisor = 1 AND "& _ 
+                "[Advisor] IS NULL) OR ([Advisor] = @Original_Advisor)) AND ((@IsNull_Committee_M"& _ 
+                "ember = 1 AND [Committee_Member] IS NULL) OR ([Committee_Member] = @Original_Com"& _ 
+                "mittee_Member)) AND ((@IsNull_Admin = 1 AND [Admin] IS NULL) OR ([Admin] = @Orig"& _ 
+                "inal_Admin)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT User_ID, Password, First_Name, Last_Name, Advisor, Commit"& _ 
+                "tee_Member, Admin FROM User_ID WHERE (User_ID = @User_ID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@First_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "First_Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Last_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Last_Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Advisor", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Advisor", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Commitee_Member", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Commitee_Member", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Committee_Member", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Committee_Member", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Admin", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Admin", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_User_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "User_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -15821,8 +19836,8 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Last_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Last_Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Advisor", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Advisor", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Advisor", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Advisor", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Commitee_Member", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Commitee_Member", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Commitee_Member", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Commitee_Member", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Committee_Member", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Committee_Member", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Committee_Member", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Committee_Member", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Admin", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Admin", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Admin", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Admin", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@User_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "User_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -15841,8 +19856,8 @@ Namespace PROJECTS1747DataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT User_ID, Password, First_Name, Last_Name, Advisor, Commitee_Member, Admin "& _ 
-                "FROM dbo.User_ID"
+            Me._commandCollection(0).CommandText = "SELECT User_ID, Password, First_Name, Last_Name, Advisor, Committee_Member, Admin"& _ 
+                " FROM dbo.User_ID"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -15902,7 +19917,7 @@ Namespace PROJECTS1747DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_User_ID As Integer, ByVal Original_Password As String, ByVal Original_First_Name As String, ByVal Original_Last_Name As String, ByVal Original_Advisor As Global.System.Nullable(Of Boolean), ByVal Original_Commitee_Member As Global.System.Nullable(Of Boolean), ByVal Original_Admin As Global.System.Nullable(Of Boolean)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_User_ID As Integer, ByVal Original_Password As String, ByVal Original_First_Name As String, ByVal Original_Last_Name As String, ByVal Original_Advisor As Global.System.Nullable(Of Boolean), ByVal Original_Committee_Member As Global.System.Nullable(Of Boolean), ByVal Original_Admin As Global.System.Nullable(Of Boolean)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_User_ID,Integer)
             If (Original_Password Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Password")
@@ -15930,9 +19945,9 @@ Namespace PROJECTS1747DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
-            If (Original_Commitee_Member.HasValue = true) Then
+            If (Original_Committee_Member.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_Commitee_Member.Value,Boolean)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_Committee_Member.Value,Boolean)
             Else
                 Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
@@ -15963,7 +19978,7 @@ Namespace PROJECTS1747DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Password As String, ByVal First_Name As String, ByVal Last_Name As String, ByVal Advisor As Global.System.Nullable(Of Boolean), ByVal Commitee_Member As Global.System.Nullable(Of Boolean), ByVal Admin As Global.System.Nullable(Of Boolean)) As Integer
+        Public Overloads Overridable Function Insert(ByVal Password As String, ByVal First_Name As String, ByVal Last_Name As String, ByVal Advisor As Global.System.Nullable(Of Boolean), ByVal Committee_Member As Global.System.Nullable(Of Boolean), ByVal Admin As Global.System.Nullable(Of Boolean)) As Integer
             If (Password Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Password")
             Else
@@ -15984,8 +19999,8 @@ Namespace PROJECTS1747DataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
-            If (Commitee_Member.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Commitee_Member.Value,Boolean)
+            If (Committee_Member.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Committee_Member.Value,Boolean)
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
@@ -16013,7 +20028,7 @@ Namespace PROJECTS1747DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Password As String, ByVal First_Name As String, ByVal Last_Name As String, ByVal Advisor As Global.System.Nullable(Of Boolean), ByVal Commitee_Member As Global.System.Nullable(Of Boolean), ByVal Admin As Global.System.Nullable(Of Boolean), ByVal Original_User_ID As Integer, ByVal Original_Password As String, ByVal Original_First_Name As String, ByVal Original_Last_Name As String, ByVal Original_Advisor As Global.System.Nullable(Of Boolean), ByVal Original_Commitee_Member As Global.System.Nullable(Of Boolean), ByVal Original_Admin As Global.System.Nullable(Of Boolean), ByVal User_ID As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal Password As String, ByVal First_Name As String, ByVal Last_Name As String, ByVal Advisor As Global.System.Nullable(Of Boolean), ByVal Committee_Member As Global.System.Nullable(Of Boolean), ByVal Admin As Global.System.Nullable(Of Boolean), ByVal Original_User_ID As Integer, ByVal Original_Password As String, ByVal Original_First_Name As String, ByVal Original_Last_Name As String, ByVal Original_Advisor As Global.System.Nullable(Of Boolean), ByVal Original_Committee_Member As Global.System.Nullable(Of Boolean), ByVal Original_Admin As Global.System.Nullable(Of Boolean), ByVal User_ID As Integer) As Integer
             If (Password Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Password")
             Else
@@ -16034,8 +20049,8 @@ Namespace PROJECTS1747DataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
-            If (Commitee_Member.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Commitee_Member.Value,Boolean)
+            If (Committee_Member.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Committee_Member.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
@@ -16071,9 +20086,9 @@ Namespace PROJECTS1747DataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             End If
-            If (Original_Commitee_Member.HasValue = true) Then
+            If (Original_Committee_Member.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Commitee_Member.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Committee_Member.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
@@ -16105,8 +20120,8 @@ Namespace PROJECTS1747DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Password As String, ByVal First_Name As String, ByVal Last_Name As String, ByVal Advisor As Global.System.Nullable(Of Boolean), ByVal Commitee_Member As Global.System.Nullable(Of Boolean), ByVal Admin As Global.System.Nullable(Of Boolean), ByVal Original_User_ID As Integer, ByVal Original_Password As String, ByVal Original_First_Name As String, ByVal Original_Last_Name As String, ByVal Original_Advisor As Global.System.Nullable(Of Boolean), ByVal Original_Commitee_Member As Global.System.Nullable(Of Boolean), ByVal Original_Admin As Global.System.Nullable(Of Boolean)) As Integer
-            Return Me.Update(Password, First_Name, Last_Name, Advisor, Commitee_Member, Admin, Original_User_ID, Original_Password, Original_First_Name, Original_Last_Name, Original_Advisor, Original_Commitee_Member, Original_Admin, Original_User_ID)
+        Public Overloads Overridable Function Update(ByVal Password As String, ByVal First_Name As String, ByVal Last_Name As String, ByVal Advisor As Global.System.Nullable(Of Boolean), ByVal Committee_Member As Global.System.Nullable(Of Boolean), ByVal Admin As Global.System.Nullable(Of Boolean), ByVal Original_User_ID As Integer, ByVal Original_Password As String, ByVal Original_First_Name As String, ByVal Original_Last_Name As String, ByVal Original_Advisor As Global.System.Nullable(Of Boolean), ByVal Original_Committee_Member As Global.System.Nullable(Of Boolean), ByVal Original_Admin As Global.System.Nullable(Of Boolean)) As Integer
+            Return Me.Update(Password, First_Name, Last_Name, Advisor, Committee_Member, Admin, Original_User_ID, Original_Password, Original_First_Name, Original_Last_Name, Original_Advisor, Original_Committee_Member, Original_Admin, Original_User_ID)
         End Function
     End Class
     
@@ -16274,6 +20289,186 @@ Namespace PROJECTS1747DataSetTableAdapters
         Public Overloads Overridable Function GetData() As PROJECTS1747DataSet.AcademicsViewDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             Dim dataTable As PROJECTS1747DataSet.AcademicsViewDataTable = New PROJECTS1747DataSet.AcademicsViewDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class ApplicantViewTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "ApplicantView"
+            tableMapping.ColumnMappings.Add("ID", "ID")
+            tableMapping.ColumnMappings.Add("First Name", "First Name")
+            tableMapping.ColumnMappings.Add("Last Name", "Last Name")
+            tableMapping.ColumnMappings.Add("Program", "Program")
+            tableMapping.ColumnMappings.Add("Concentration", "Concentration")
+            tableMapping.ColumnMappings.Add("Application Date", "Application Date")
+            tableMapping.ColumnMappings.Add("Residency", "Residency")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.MaintenanceProject.My.MySettings.Default.PROJECTS1747ConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT ID, [First Name], [Last Name], Program, Concentration, [Application Date],"& _ 
+                " Residency FROM dbo.ApplicantView"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As PROJECTS1747DataSet.ApplicantViewDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As PROJECTS1747DataSet.ApplicantViewDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As PROJECTS1747DataSet.ApplicantViewDataTable = New PROJECTS1747DataSet.ApplicantViewDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -16787,6 +20982,624 @@ Namespace PROJECTS1747DataSetTableAdapters
     End Class
     
     '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class viewApplicantTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "viewApplicant"
+            tableMapping.ColumnMappings.Add("ID", "ID")
+            tableMapping.ColumnMappings.Add("First Name", "First Name")
+            tableMapping.ColumnMappings.Add("Last Name", "Last Name")
+            tableMapping.ColumnMappings.Add("Program", "Program")
+            tableMapping.ColumnMappings.Add("Application Date", "Application Date")
+            tableMapping.ColumnMappings.Add("Missing Status", "Missing Status")
+            tableMapping.ColumnMappings.Add("Received", "Received")
+            tableMapping.ColumnMappings.Add("Notes", "Notes")
+            tableMapping.ColumnMappings.Add("Verbal + Quantitative", "Verbal + Quantitative")
+            tableMapping.ColumnMappings.Add("GMAT", "GMAT")
+            tableMapping.ColumnMappings.Add("GMAT Verbal", "GMAT Verbal")
+            tableMapping.ColumnMappings.Add("GMAT Verbal %", "GMAT Verbal %")
+            tableMapping.ColumnMappings.Add("GMAT Quantitative", "GMAT Quantitative")
+            tableMapping.ColumnMappings.Add("GMAT Quantitative %", "GMAT Quantitative %")
+            tableMapping.ColumnMappings.Add("AWA", "AWA")
+            tableMapping.ColumnMappings.Add("GRE", "GRE")
+            tableMapping.ColumnMappings.Add("GRE Verbal", "GRE Verbal")
+            tableMapping.ColumnMappings.Add("GRE Verbal %", "GRE Verbal %")
+            tableMapping.ColumnMappings.Add("GRE Quantitative", "GRE Quantitative")
+            tableMapping.ColumnMappings.Add("GRE Quantitative %", "GRE Quantitative %")
+            tableMapping.ColumnMappings.Add("WR", "WR")
+            tableMapping.ColumnMappings.Add("TOEFL", "TOEFL")
+            tableMapping.ColumnMappings.Add("Time With Employer", "Time With Employer")
+            tableMapping.ColumnMappings.Add("Current Employer", "Current Employer")
+            tableMapping.ColumnMappings.Add("Undergraduate GPA", "Undergraduate GPA")
+            tableMapping.ColumnMappings.Add("Graduate GPA", "Graduate GPA")
+            tableMapping.ColumnMappings.Add("Undergraduate Institution", "Undergraduate Institution")
+            tableMapping.ColumnMappings.Add("Undergraduate Degree", "Undergraduate Degree")
+            tableMapping.ColumnMappings.Add("Undergraduate Major", "Undergraduate Major")
+            tableMapping.ColumnMappings.Add("Graduate Institution", "Graduate Institution")
+            tableMapping.ColumnMappings.Add("Graduate Degree", "Graduate Degree")
+            tableMapping.ColumnMappings.Add("Graduate Major", "Graduate Major")
+            tableMapping.ColumnMappings.Add("Gender", "Gender")
+            tableMapping.ColumnMappings.Add("Ethnicity", "Ethnicity")
+            tableMapping.ColumnMappings.Add("Age", "Age")
+            tableMapping.ColumnMappings.Add("City", "City")
+            tableMapping.ColumnMappings.Add("State", "State")
+            tableMapping.ColumnMappings.Add("Postal", "Postal")
+            tableMapping.ColumnMappings.Add("Country", "Country")
+            tableMapping.ColumnMappings.Add("Residency", "Residency")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.MaintenanceProject.My.MySettings.Default.PROJECTS1747ConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT ID, [First Name], [Last Name], Program, [Application Date], [Missing Statu"& _ 
+                "s], Received, Notes, [Verbal + Quantitative], GMAT, [GMAT Verbal], [GMAT Verbal "& _ 
+                "%], [GMAT Quantitative], [GMAT Quantitative %], AWA, GRE, [GRE Verbal], [GRE Ver"& _ 
+                "bal %], [GRE Quantitative], [GRE Quantitative %], WR, TOEFL, [Time With Employer"& _ 
+                "], [Current Employer], [Undergraduate GPA], [Graduate GPA], [Undergraduate Insti"& _ 
+                "tution], [Undergraduate Degree], [Undergraduate Major], [Graduate Institution], "& _ 
+                "[Graduate Degree], [Graduate Major], Gender, Ethnicity, Age, City, State, Postal"& _ 
+                ", Country, Residency FROM dbo.viewApplicant"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As PROJECTS1747DataSet.viewApplicantDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As PROJECTS1747DataSet.viewApplicantDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As PROJECTS1747DataSet.viewApplicantDataTable = New PROJECTS1747DataSet.viewApplicantDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class viewStudentTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "viewStudent"
+            tableMapping.ColumnMappings.Add("ID", "ID")
+            tableMapping.ColumnMappings.Add("First Name", "First Name")
+            tableMapping.ColumnMappings.Add("Last Name", "Last Name")
+            tableMapping.ColumnMappings.Add("Program", "Program")
+            tableMapping.ColumnMappings.Add("Concentration", "Concentration")
+            tableMapping.ColumnMappings.Add("GPA", "GPA")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.MaintenanceProject.My.MySettings.Default.PROJECTS1747ConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT ID, [First Name], [Last Name], Program, Concentration, GPA FROM dbo.viewSt"& _ 
+                "udent"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As PROJECTS1747DataSet.viewStudentDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As PROJECTS1747DataSet.viewStudentDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As PROJECTS1747DataSet.viewStudentDataTable = New PROJECTS1747DataSet.viewStudentDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class QueriesTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private _commandCollection() As Global.System.Data.IDbCommand
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.IDbCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.IDbCommand(3) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            CType(Me._commandCollection(0),Global.System.Data.SqlClient.SqlCommand).Connection = New Global.System.Data.SqlClient.SqlConnection(Global.MaintenanceProject.My.MySettings.Default.PROJECTS1747ConnectionString)
+            CType(Me._commandCollection(0),Global.System.Data.SqlClient.SqlCommand).CommandText = "dbo.addApplicationComment"
+            CType(Me._commandCollection(0),Global.System.Data.SqlClient.SqlCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            CType(Me._commandCollection(0),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            CType(Me._commandCollection(0),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AppID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            CType(Me._commandCollection(0),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@userID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            CType(Me._commandCollection(0),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@comment", Global.System.Data.SqlDbType.VarChar, 8000, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            CType(Me._commandCollection(0),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@recommendations", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            CType(Me._commandCollection(1),Global.System.Data.SqlClient.SqlCommand).Connection = New Global.System.Data.SqlClient.SqlConnection(Global.MaintenanceProject.My.MySettings.Default.PROJECTS1747ConnectionString)
+            CType(Me._commandCollection(1),Global.System.Data.SqlClient.SqlCommand).CommandText = "dbo.addInterviewComment"
+            CType(Me._commandCollection(1),Global.System.Data.SqlClient.SqlCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            CType(Me._commandCollection(1),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            CType(Me._commandCollection(1),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AppID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            CType(Me._commandCollection(1),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@userID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            CType(Me._commandCollection(1),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@comment", Global.System.Data.SqlDbType.VarChar, 8000, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            CType(Me._commandCollection(1),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@intscore", Global.System.Data.SqlDbType.[Decimal], 5, Global.System.Data.ParameterDirection.Input, 5, 3, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            CType(Me._commandCollection(2),Global.System.Data.SqlClient.SqlCommand).Connection = New Global.System.Data.SqlClient.SqlConnection(Global.MaintenanceProject.My.MySettings.Default.PROJECTS1747ConnectionString)
+            CType(Me._commandCollection(2),Global.System.Data.SqlClient.SqlCommand).CommandText = "dbo.procUpdateApplicationComment"
+            CType(Me._commandCollection(2),Global.System.Data.SqlClient.SqlCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            CType(Me._commandCollection(2),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            CType(Me._commandCollection(2),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@comment_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            CType(Me._commandCollection(2),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@comment", Global.System.Data.SqlDbType.VarChar, 8000, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            CType(Me._commandCollection(2),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@recommend", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            CType(Me._commandCollection(3),Global.System.Data.SqlClient.SqlCommand).Connection = New Global.System.Data.SqlClient.SqlConnection(Global.MaintenanceProject.My.MySettings.Default.PROJECTS1747ConnectionString)
+            CType(Me._commandCollection(3),Global.System.Data.SqlClient.SqlCommand).CommandText = "dbo.procUpdateInterview"
+            CType(Me._commandCollection(3),Global.System.Data.SqlClient.SqlCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            CType(Me._commandCollection(3),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            CType(Me._commandCollection(3),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@comment_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            CType(Me._commandCollection(3),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@interview_comment", Global.System.Data.SqlDbType.VarChar, 8000, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            CType(Me._commandCollection(3),Global.System.Data.SqlClient.SqlCommand).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@interview_score", Global.System.Data.SqlDbType.[Decimal], 5, Global.System.Data.ParameterDirection.Input, 5, 3, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function addApplicationComment(ByVal AppID As Global.System.Nullable(Of Integer), ByVal userID As Global.System.Nullable(Of Integer), ByVal comment As String, ByVal recommendations As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = CType(Me.CommandCollection(0),Global.System.Data.SqlClient.SqlCommand)
+            If (AppID.HasValue = true) Then
+                command.Parameters(1).Value = CType(AppID.Value,Integer)
+            Else
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (userID.HasValue = true) Then
+                command.Parameters(2).Value = CType(userID.Value,Integer)
+            Else
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (comment Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(comment,String)
+            End If
+            If (recommendations Is Nothing) Then
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(4).Value = CType(recommendations,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function addInterviewComment(ByVal AppID As Global.System.Nullable(Of Integer), ByVal userID As Global.System.Nullable(Of Integer), ByVal comment As String, ByVal intscore As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = CType(Me.CommandCollection(1),Global.System.Data.SqlClient.SqlCommand)
+            If (AppID.HasValue = true) Then
+                command.Parameters(1).Value = CType(AppID.Value,Integer)
+            Else
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (userID.HasValue = true) Then
+                command.Parameters(2).Value = CType(userID.Value,Integer)
+            Else
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (comment Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(comment,String)
+            End If
+            If (intscore.HasValue = true) Then
+                command.Parameters(4).Value = CType(intscore.Value,Decimal)
+            Else
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function procUpdateApplicationComment(ByVal comment_ID As Global.System.Nullable(Of Integer), ByVal comment As String, ByVal recommend As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = CType(Me.CommandCollection(2),Global.System.Data.SqlClient.SqlCommand)
+            If (comment_ID.HasValue = true) Then
+                command.Parameters(1).Value = CType(comment_ID.Value,Integer)
+            Else
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (comment Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(comment,String)
+            End If
+            If (recommend Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(recommend,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function procUpdateInterview(ByVal comment_ID As Global.System.Nullable(Of Integer), ByVal interview_comment As String, ByVal interview_score As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = CType(Me.CommandCollection(3),Global.System.Data.SqlClient.SqlCommand)
+            If (comment_ID.HasValue = true) Then
+                command.Parameters(1).Value = CType(comment_ID.Value,Integer)
+            Else
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (interview_comment Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(interview_comment,String)
+            End If
+            If (interview_score.HasValue = true) Then
+                command.Parameters(3).Value = CType(interview_score.Value,Decimal)
+            Else
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+    End Class
+    
+    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -16798,6 +21611,8 @@ Namespace PROJECTS1747DataSetTableAdapters
         Inherits Global.System.ComponentModel.Component
         
         Private _updateOrder As UpdateOrderOption
+        
+        Private _admissionDecisionTableAdapter As AdmissionDecisionTableAdapter
         
         Private _applicationTableAdapter As ApplicationTableAdapter
         
@@ -16835,6 +21650,20 @@ Namespace PROJECTS1747DataSetTableAdapters
             End Get
             Set
                 Me._updateOrder = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property AdmissionDecisionTableAdapter() As AdmissionDecisionTableAdapter
+            Get
+                Return Me._admissionDecisionTableAdapter
+            End Get
+            Set
+                Me._admissionDecisionTableAdapter = value
             End Set
         End Property
         
@@ -17025,6 +21854,10 @@ Namespace PROJECTS1747DataSetTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
+                If ((Not (Me._admissionDecisionTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._admissionDecisionTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._admissionDecisionTableAdapter.Connection
+                End If
                 If ((Not (Me._applicationTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._applicationTableAdapter.Connection) Is Nothing)) Then
                     Return Me._applicationTableAdapter.Connection
@@ -17086,6 +21919,9 @@ Namespace PROJECTS1747DataSetTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
+                If (Not (Me._admissionDecisionTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
                 If (Not (Me._applicationTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
@@ -17178,15 +22014,6 @@ Namespace PROJECTS1747DataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._sectionTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Section.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._sectionTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._user_IDTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.User_ID.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -17196,30 +22023,30 @@ Namespace PROJECTS1747DataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._application_CommentTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Application_Comment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._sectionTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Section.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._application_CommentTableAdapter.Update(updatedRows))
+                    result = (result + Me._sectionTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._course_InstructorTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Course_Instructor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._admissionDecisionTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.AdmissionDecision.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._course_InstructorTableAdapter.Update(updatedRows))
+                    result = (result + Me._admissionDecisionTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._courses_RequirementTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Courses_Requirement.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._interviewTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Interview.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._courses_RequirementTableAdapter.Update(updatedRows))
+                    result = (result + Me._interviewTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -17232,12 +22059,30 @@ Namespace PROJECTS1747DataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._interviewTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Interview.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._courses_RequirementTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Courses_Requirement.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._interviewTableAdapter.Update(updatedRows))
+                    result = (result + Me._courses_RequirementTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._course_InstructorTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Course_Instructor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._course_InstructorTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._application_CommentTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Application_Comment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._application_CommentTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -17291,14 +22136,6 @@ Namespace PROJECTS1747DataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._sectionTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Section.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._sectionTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._user_IDTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.User_ID.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -17307,27 +22144,27 @@ Namespace PROJECTS1747DataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._application_CommentTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Application_Comment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._sectionTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Section.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._application_CommentTableAdapter.Update(addedRows))
+                    result = (result + Me._sectionTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._course_InstructorTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Course_Instructor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._admissionDecisionTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.AdmissionDecision.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._course_InstructorTableAdapter.Update(addedRows))
+                    result = (result + Me._admissionDecisionTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._courses_RequirementTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Courses_Requirement.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._interviewTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Interview.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._courses_RequirementTableAdapter.Update(addedRows))
+                    result = (result + Me._interviewTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -17339,11 +22176,27 @@ Namespace PROJECTS1747DataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._interviewTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Interview.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._courses_RequirementTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Courses_Requirement.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._interviewTableAdapter.Update(addedRows))
+                    result = (result + Me._courses_RequirementTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._course_InstructorTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Course_Instructor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._course_InstructorTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._application_CommentTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Application_Comment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._application_CommentTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -17357,27 +22210,11 @@ Namespace PROJECTS1747DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As PROJECTS1747DataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._interviewTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Interview.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._application_CommentTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Application_Comment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._interviewTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._enrollmentTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Enrollment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._enrollmentTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._courses_RequirementTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Courses_Requirement.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._courses_RequirementTableAdapter.Update(deletedRows))
+                    result = (result + Me._application_CommentTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -17389,19 +22226,35 @@ Namespace PROJECTS1747DataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._application_CommentTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Application_Comment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._courses_RequirementTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Courses_Requirement.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._application_CommentTableAdapter.Update(deletedRows))
+                    result = (result + Me._courses_RequirementTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._user_IDTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.User_ID.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._enrollmentTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Enrollment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._user_IDTableAdapter.Update(deletedRows))
+                    result = (result + Me._enrollmentTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._interviewTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Interview.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._interviewTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._admissionDecisionTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.AdmissionDecision.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._admissionDecisionTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -17410,6 +22263,14 @@ Namespace PROJECTS1747DataSetTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._sectionTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._user_IDTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.User_ID.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._user_IDTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -17493,6 +22354,11 @@ Namespace PROJECTS1747DataSetTableAdapters
             End If
             If (dataSet.HasChanges = false) Then
                 Return 0
+            End If
+            If ((Not (Me._admissionDecisionTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._admissionDecisionTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
             End If
             If ((Not (Me._applicationTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._applicationTableAdapter.Connection) = false)) Then
@@ -17586,6 +22452,15 @@ Namespace PROJECTS1747DataSetTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
+                If (Not (Me._admissionDecisionTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._admissionDecisionTableAdapter, Me._admissionDecisionTableAdapter.Connection)
+                    Me._admissionDecisionTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._admissionDecisionTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._admissionDecisionTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._admissionDecisionTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._admissionDecisionTableAdapter.Adapter)
+                    End If
+                End If
                 If (Not (Me._applicationTableAdapter) Is Nothing) Then
                     revertConnections.Add(Me._applicationTableAdapter, Me._applicationTableAdapter.Connection)
                     Me._applicationTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
@@ -17753,6 +22628,10 @@ Namespace PROJECTS1747DataSetTableAdapters
             Finally
                 If workConnOpened Then
                     workConnection.Close
+                End If
+                If (Not (Me._admissionDecisionTableAdapter) Is Nothing) Then
+                    Me._admissionDecisionTableAdapter.Connection = CType(revertConnections(Me._admissionDecisionTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._admissionDecisionTableAdapter.Transaction = Nothing
                 End If
                 If (Not (Me._applicationTableAdapter) Is Nothing) Then
                     Me._applicationTableAdapter.Connection = CType(revertConnections(Me._applicationTableAdapter),Global.System.Data.SqlClient.SqlConnection)
