@@ -88,7 +88,7 @@ Public Class ApplicantProfile
             End If
 
         Else
-                cbDecision.SelectedIndex = -1
+            cbDecision.SelectedIndex = -1
             'If there is no decision yet, there should be no response. The textbox won't show a response if there is no decision.
             tbResponse.Clear()
         End If

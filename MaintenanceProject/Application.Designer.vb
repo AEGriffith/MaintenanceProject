@@ -27,7 +27,7 @@ Partial Class Application
         Me.tbComment = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblStuName = New System.Windows.Forms.Label()
-        Me.ComboBox_suggesteddecision = New System.Windows.Forms.ComboBox()
+        Me.cbRecommendation = New System.Windows.Forms.ComboBox()
         Me.Label_decisionsuggested = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -84,15 +84,14 @@ Partial Class Application
         Me.lblStuName.TabIndex = 4
         Me.lblStuName.Text = "Student"
         '
-        'ComboBox_suggesteddecision
+        'cbRecommendation
         '
-        Me.ComboBox_suggesteddecision.FormattingEnabled = True
-        Me.ComboBox_suggesteddecision.Items.AddRange(New Object() {"Gold", "Silver", "Assistantship", "Waitlist", "Reject"})
-        Me.ComboBox_suggesteddecision.Location = New System.Drawing.Point(347, 138)
-        Me.ComboBox_suggesteddecision.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.ComboBox_suggesteddecision.Name = "ComboBox_suggesteddecision"
-        Me.ComboBox_suggesteddecision.Size = New System.Drawing.Size(316, 39)
-        Me.ComboBox_suggesteddecision.TabIndex = 5
+        Me.cbRecommendation.FormattingEnabled = True
+        Me.cbRecommendation.Location = New System.Drawing.Point(347, 138)
+        Me.cbRecommendation.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.cbRecommendation.Name = "cbRecommendation"
+        Me.cbRecommendation.Size = New System.Drawing.Size(316, 39)
+        Me.cbRecommendation.TabIndex = 5
         '
         'Label_decisionsuggested
         '
@@ -124,7 +123,7 @@ Partial Class Application
         Me.ClientSize = New System.Drawing.Size(867, 775)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.Label_decisionsuggested)
-        Me.Controls.Add(Me.ComboBox_suggesteddecision)
+        Me.Controls.Add(Me.cbRecommendation)
         Me.Controls.Add(Me.lblStuName)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.tbComment)
@@ -143,7 +142,7 @@ Partial Class Application
     Friend WithEvents tbComment As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents lblStuName As Label
-    Friend WithEvents ComboBox_suggesteddecision As ComboBox
+    Friend WithEvents cbRecommendation As ComboBox
     Friend WithEvents Label_decisionsuggested As Label
     Friend WithEvents btnCancel As Button
 End Class
