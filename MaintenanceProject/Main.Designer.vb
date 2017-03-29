@@ -23,12 +23,34 @@ Partial Class Main
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ApplicantProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ViewApplicantBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PROJECTS1747DataSet = New MaintenanceProject.PROJECTS1747DataSet()
+        Me.btnViewApplicant = New System.Windows.Forms.Button()
+        Me.ViewApplicantTableAdapter = New MaintenanceProject.PROJECTS1747DataSetTableAdapters.viewApplicantTableAdapter()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.tbFName = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.tbLName = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cbProgram = New System.Windows.Forms.ComboBox()
+        Me.btnClear = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.tbEmployer = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.tbTWE = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.tbGender = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.tbEthnicity = New System.Windows.Forms.TextBox()
+        Me.numMinAge = New System.Windows.Forms.NumericUpDown()
+        Me.numMaxAge = New System.Windows.Forms.NumericUpDown()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -70,30 +92,39 @@ Partial Class Main
         Me.PostalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CountryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ResidencyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ViewApplicantBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PROJECTS1747DataSet = New MaintenanceProject.PROJECTS1747DataSet()
-        Me.btnViewApplicant = New System.Windows.Forms.Button()
-        Me.ViewApplicantTableAdapter = New MaintenanceProject.PROJECTS1747DataSetTableAdapters.viewApplicantTableAdapter()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.tbFName = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.tbLName = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.cbProgram = New System.Windows.Forms.ComboBox()
-        Me.btnClear = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.tbEmployer = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.tbTWE = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.tbGender = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.tbEthnicity = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.tbUDegree = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.tbResidency = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.numGMATMax = New System.Windows.Forms.NumericUpDown()
+        Me.numGMATMin = New System.Windows.Forms.NumericUpDown()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.numGREMax = New System.Windows.Forms.NumericUpDown()
+        Me.numGREMin = New System.Windows.Forms.NumericUpDown()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.numUGPAMax = New System.Windows.Forms.NumericUpDown()
+        Me.numUGPAMin = New System.Windows.Forms.NumericUpDown()
+        Me.cbGMAT = New System.Windows.Forms.CheckBox()
+        Me.cbGRE = New System.Windows.Forms.CheckBox()
         Me.MenuStrip1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ViewApplicantBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PROJECTS1747DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numMinAge, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numMaxAge, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numGMATMax, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numGMATMin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numGREMax, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numGREMin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numUGPAMax, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numUGPAMin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -126,24 +157,193 @@ Partial Class Main
         Me.ApplicantProfileToolStripMenuItem.Size = New System.Drawing.Size(350, 46)
         Me.ApplicantProfileToolStripMenuItem.Text = "Applicant Profile"
         '
-        'Panel2
+        'ViewApplicantBindingSource
         '
-        Me.Panel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.Controls.Add(Me.DataGridView1)
-        Me.Panel2.Location = New System.Drawing.Point(0, 258)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1329, 701)
-        Me.Panel2.TabIndex = 3
+        Me.ViewApplicantBindingSource.DataMember = "viewApplicant"
+        Me.ViewApplicantBindingSource.DataSource = Me.PROJECTS1747DataSet
+        '
+        'PROJECTS1747DataSet
+        '
+        Me.PROJECTS1747DataSet.DataSetName = "PROJECTS1747DataSet"
+        Me.PROJECTS1747DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'btnViewApplicant
+        '
+        Me.btnViewApplicant.Location = New System.Drawing.Point(863, 879)
+        Me.btnViewApplicant.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnViewApplicant.Name = "btnViewApplicant"
+        Me.btnViewApplicant.Size = New System.Drawing.Size(214, 55)
+        Me.btnViewApplicant.TabIndex = 10
+        Me.btnViewApplicant.Text = "View Profile"
+        Me.btnViewApplicant.UseVisualStyleBackColor = True
+        '
+        'ViewApplicantTableAdapter
+        '
+        Me.ViewApplicantTableAdapter.ClearBeforeFill = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(13, 63)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(152, 32)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "First Name"
+        '
+        'tbFName
+        '
+        Me.tbFName.Location = New System.Drawing.Point(19, 98)
+        Me.tbFName.Name = "tbFName"
+        Me.tbFName.Size = New System.Drawing.Size(214, 38)
+        Me.tbFName.TabIndex = 12
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(269, 63)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(151, 32)
+        Me.Label2.TabIndex = 13
+        Me.Label2.Text = "Last Name"
+        '
+        'tbLName
+        '
+        Me.tbLName.Location = New System.Drawing.Point(275, 98)
+        Me.tbLName.Name = "tbLName"
+        Me.tbLName.Size = New System.Drawing.Size(214, 38)
+        Me.tbLName.TabIndex = 14
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(525, 61)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(123, 32)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Program"
+        '
+        'cbProgram
+        '
+        Me.cbProgram.FormattingEnabled = True
+        Me.cbProgram.Items.AddRange(New Object() {"MIS", "PMIS"})
+        Me.cbProgram.Location = New System.Drawing.Point(531, 99)
+        Me.cbProgram.Name = "cbProgram"
+        Me.cbProgram.Size = New System.Drawing.Size(170, 39)
+        Me.cbProgram.TabIndex = 16
+        '
+        'btnClear
+        '
+        Me.btnClear.Location = New System.Drawing.Point(1093, 81)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(214, 55)
+        Me.btnClear.TabIndex = 18
+        Me.btnClear.Text = "Clear Filters"
+        Me.btnClear.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(13, 156)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(236, 32)
+        Me.Label5.TabIndex = 19
+        Me.Label5.Text = "Current Employer"
+        '
+        'tbEmployer
+        '
+        Me.tbEmployer.Location = New System.Drawing.Point(19, 191)
+        Me.tbEmployer.Name = "tbEmployer"
+        Me.tbEmployer.Size = New System.Drawing.Size(239, 38)
+        Me.tbEmployer.TabIndex = 20
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(288, 156)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(269, 32)
+        Me.Label6.TabIndex = 21
+        Me.Label6.Text = "Time With Employer"
+        '
+        'tbTWE
+        '
+        Me.tbTWE.Location = New System.Drawing.Point(294, 191)
+        Me.tbTWE.Name = "tbTWE"
+        Me.tbTWE.Size = New System.Drawing.Size(263, 38)
+        Me.tbTWE.TabIndex = 22
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(737, 61)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(110, 32)
+        Me.Label8.TabIndex = 25
+        Me.Label8.Text = "Gender"
+        '
+        'tbGender
+        '
+        Me.tbGender.Location = New System.Drawing.Point(743, 98)
+        Me.tbGender.Name = "tbGender"
+        Me.tbGender.Size = New System.Drawing.Size(94, 38)
+        Me.tbGender.TabIndex = 26
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(874, 61)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(124, 32)
+        Me.Label9.TabIndex = 27
+        Me.Label9.Text = "Ethnicity"
+        '
+        'tbEthnicity
+        '
+        Me.tbEthnicity.Location = New System.Drawing.Point(879, 98)
+        Me.tbEthnicity.Name = "tbEthnicity"
+        Me.tbEthnicity.Size = New System.Drawing.Size(180, 38)
+        Me.tbEthnicity.TabIndex = 28
+        '
+        'numMinAge
+        '
+        Me.numMinAge.Location = New System.Drawing.Point(19, 305)
+        Me.numMinAge.Name = "numMinAge"
+        Me.numMinAge.Size = New System.Drawing.Size(95, 38)
+        Me.numMinAge.TabIndex = 29
+        '
+        'numMaxAge
+        '
+        Me.numMaxAge.Location = New System.Drawing.Point(144, 305)
+        Me.numMaxAge.Name = "numMaxAge"
+        Me.numMaxAge.Size = New System.Drawing.Size(95, 38)
+        Me.numMaxAge.TabIndex = 30
+        Me.numMaxAge.Value = New Decimal(New Integer() {100, 0, 0, 0})
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(79, 245)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(66, 32)
+        Me.Label4.TabIndex = 31
+        Me.Label4.Text = "Age"
+        '
+        'btnClose
+        '
+        Me.btnClose.Location = New System.Drawing.Point(1093, 879)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(214, 55)
+        Me.btnClose.TabIndex = 32
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -153,12 +353,12 @@ Partial Class Main
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.ProgramDataGridViewTextBoxColumn, Me.ApplicationDateDataGridViewTextBoxColumn, Me.MissingStatusDataGridViewTextBoxColumn, Me.ReceivedDataGridViewTextBoxColumn, Me.NotesDataGridViewTextBoxColumn, Me.VerbalQuantitativeDataGridViewTextBoxColumn, Me.GMATDataGridViewTextBoxColumn, Me.GMATVerbalDataGridViewTextBoxColumn, Me.GMATVerbalDataGridViewTextBoxColumn1, Me.GMATQuantitativeDataGridViewTextBoxColumn, Me.GMATQuantitativeDataGridViewTextBoxColumn1, Me.AWADataGridViewTextBoxColumn, Me.GREDataGridViewTextBoxColumn, Me.GREVerbalDataGridViewTextBoxColumn, Me.GREVerbalDataGridViewTextBoxColumn1, Me.GREQuantitativeDataGridViewTextBoxColumn, Me.GREQuantitativeDataGridViewTextBoxColumn1, Me.WRDataGridViewTextBoxColumn, Me.TOEFLDataGridViewTextBoxColumn, Me.TimeWithEmployerDataGridViewTextBoxColumn, Me.CurrentEmployerDataGridViewTextBoxColumn, Me.UndergraduateGPADataGridViewTextBoxColumn, Me.GraduateGPADataGridViewTextBoxColumn, Me.UndergraduateInstitutionDataGridViewTextBoxColumn, Me.UndergraduateDegreeDataGridViewTextBoxColumn, Me.UndergraduateMajorDataGridViewTextBoxColumn, Me.GraduateInstitutionDataGridViewTextBoxColumn, Me.GraduateDegreeDataGridViewTextBoxColumn, Me.GraduateMajorDataGridViewTextBoxColumn, Me.GenderDataGridViewTextBoxColumn, Me.EthnicityDataGridViewTextBoxColumn, Me.AgeDataGridViewTextBoxColumn, Me.CityDataGridViewTextBoxColumn, Me.StateDataGridViewTextBoxColumn, Me.PostalDataGridViewTextBoxColumn, Me.CountryDataGridViewTextBoxColumn, Me.ResidencyDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ViewApplicantBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 2)
+        Me.DataGridView1.Location = New System.Drawing.Point(19, 373)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 40
-        Me.DataGridView1.Size = New System.Drawing.Size(1326, 699)
+        Me.DataGridView1.Size = New System.Drawing.Size(1291, 486)
         Me.DataGridView1.TabIndex = 0
         '
         'IDDataGridViewTextBoxColumn
@@ -481,159 +681,252 @@ Partial Class Main
         Me.ResidencyDataGridViewTextBoxColumn.ReadOnly = True
         Me.ResidencyDataGridViewTextBoxColumn.Width = 202
         '
-        'ViewApplicantBindingSource
+        'Label7
         '
-        Me.ViewApplicantBindingSource.DataMember = "viewApplicant"
-        Me.ViewApplicantBindingSource.DataSource = Me.PROJECTS1747DataSet
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(14, 273)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(76, 29)
+        Me.Label7.TabIndex = 33
+        Me.Label7.Text = "From:"
         '
-        'PROJECTS1747DataSet
+        'Label10
         '
-        Me.PROJECTS1747DataSet.DataSetName = "PROJECTS1747DataSet"
-        Me.PROJECTS1747DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(139, 273)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(49, 29)
+        Me.Label10.TabIndex = 34
+        Me.Label10.Text = "To:"
         '
-        'btnViewApplicant
+        'tbUDegree
         '
-        Me.btnViewApplicant.Location = New System.Drawing.Point(1093, 174)
-        Me.btnViewApplicant.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnViewApplicant.Name = "btnViewApplicant"
-        Me.btnViewApplicant.Size = New System.Drawing.Size(214, 55)
-        Me.btnViewApplicant.TabIndex = 10
-        Me.btnViewApplicant.Text = "View Profile"
-        Me.btnViewApplicant.UseVisualStyleBackColor = True
+        Me.tbUDegree.Location = New System.Drawing.Point(588, 191)
+        Me.tbUDegree.Name = "tbUDegree"
+        Me.tbUDegree.Size = New System.Drawing.Size(299, 38)
+        Me.tbUDegree.TabIndex = 35
         '
-        'ViewApplicantTableAdapter
+        'Label11
         '
-        Me.ViewApplicantTableAdapter.ClearBeforeFill = True
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(582, 156)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(305, 32)
+        Me.Label11.TabIndex = 36
+        Me.Label11.Text = "Undergraduate Degree"
         '
-        'Label1
+        'tbResidency
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 63)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(152, 32)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "First Name"
+        Me.tbResidency.Location = New System.Drawing.Point(916, 191)
+        Me.tbResidency.Name = "tbResidency"
+        Me.tbResidency.Size = New System.Drawing.Size(151, 38)
+        Me.tbResidency.TabIndex = 37
         '
-        'tbFName
+        'Label12
         '
-        Me.tbFName.Location = New System.Drawing.Point(19, 98)
-        Me.tbFName.Name = "tbFName"
-        Me.tbFName.Size = New System.Drawing.Size(214, 38)
-        Me.tbFName.TabIndex = 12
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(910, 156)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(148, 32)
+        Me.Label12.TabIndex = 38
+        Me.Label12.Text = "Residency"
         '
-        'Label2
+        'Label14
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(269, 63)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(151, 32)
-        Me.Label2.TabIndex = 13
-        Me.Label2.Text = "Last Name"
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(397, 273)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(49, 29)
+        Me.Label14.TabIndex = 45
+        Me.Label14.Text = "To:"
         '
-        'tbLName
+        'Label15
         '
-        Me.tbLName.Location = New System.Drawing.Point(275, 98)
-        Me.tbLName.Name = "tbLName"
-        Me.tbLName.Size = New System.Drawing.Size(214, 38)
-        Me.tbLName.TabIndex = 14
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(272, 273)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(76, 29)
+        Me.Label15.TabIndex = 44
+        Me.Label15.Text = "From:"
         '
-        'Label3
+        'numGMATMax
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(525, 61)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(123, 32)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Program"
+        Me.numGMATMax.Enabled = False
+        Me.numGMATMax.Increment = New Decimal(New Integer() {20, 0, 0, 0})
+        Me.numGMATMax.Location = New System.Drawing.Point(402, 305)
+        Me.numGMATMax.Maximum = New Decimal(New Integer() {800, 0, 0, 0})
+        Me.numGMATMax.Minimum = New Decimal(New Integer() {200, 0, 0, 0})
+        Me.numGMATMax.Name = "numGMATMax"
+        Me.numGMATMax.Size = New System.Drawing.Size(95, 38)
+        Me.numGMATMax.TabIndex = 42
+        Me.numGMATMax.Value = New Decimal(New Integer() {800, 0, 0, 0})
         '
-        'cbProgram
+        'numGMATMin
         '
-        Me.cbProgram.FormattingEnabled = True
-        Me.cbProgram.Items.AddRange(New Object() {"MIS", "PMIS"})
-        Me.cbProgram.Location = New System.Drawing.Point(531, 99)
-        Me.cbProgram.Name = "cbProgram"
-        Me.cbProgram.Size = New System.Drawing.Size(170, 39)
-        Me.cbProgram.TabIndex = 16
+        Me.numGMATMin.Enabled = False
+        Me.numGMATMin.Increment = New Decimal(New Integer() {20, 0, 0, 0})
+        Me.numGMATMin.Location = New System.Drawing.Point(277, 305)
+        Me.numGMATMin.Maximum = New Decimal(New Integer() {800, 0, 0, 0})
+        Me.numGMATMin.Minimum = New Decimal(New Integer() {200, 0, 0, 0})
+        Me.numGMATMin.Name = "numGMATMin"
+        Me.numGMATMin.Size = New System.Drawing.Size(95, 38)
+        Me.numGMATMin.TabIndex = 41
+        Me.numGMATMin.Value = New Decimal(New Integer() {200, 0, 0, 0})
         '
-        'btnClear
+        'Label17
         '
-        Me.btnClear.Location = New System.Drawing.Point(1093, 99)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(214, 55)
-        Me.btnClear.TabIndex = 18
-        Me.btnClear.Text = "Clear Filters"
-        Me.btnClear.UseVisualStyleBackColor = True
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(655, 273)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(49, 29)
+        Me.Label17.TabIndex = 50
+        Me.Label17.Text = "To:"
         '
-        'Label5
+        'Label18
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(13, 156)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(236, 32)
-        Me.Label5.TabIndex = 19
-        Me.Label5.Text = "Current Employer"
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(530, 273)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(76, 29)
+        Me.Label18.TabIndex = 49
+        Me.Label18.Text = "From:"
         '
-        'tbEmployer
+        'numGREMax
         '
-        Me.tbEmployer.Location = New System.Drawing.Point(19, 191)
-        Me.tbEmployer.Name = "tbEmployer"
-        Me.tbEmployer.Size = New System.Drawing.Size(239, 38)
-        Me.tbEmployer.TabIndex = 20
+        Me.numGREMax.Enabled = False
+        Me.numGREMax.Increment = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.numGREMax.Location = New System.Drawing.Point(660, 305)
+        Me.numGREMax.Maximum = New Decimal(New Integer() {340, 0, 0, 0})
+        Me.numGREMax.Minimum = New Decimal(New Integer() {260, 0, 0, 0})
+        Me.numGREMax.Name = "numGREMax"
+        Me.numGREMax.Size = New System.Drawing.Size(95, 38)
+        Me.numGREMax.TabIndex = 47
+        Me.numGREMax.Value = New Decimal(New Integer() {340, 0, 0, 0})
         '
-        'Label6
+        'numGREMin
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(288, 156)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(269, 32)
-        Me.Label6.TabIndex = 21
-        Me.Label6.Text = "Time With Employer"
+        Me.numGREMin.Enabled = False
+        Me.numGREMin.Increment = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.numGREMin.Location = New System.Drawing.Point(535, 305)
+        Me.numGREMin.Maximum = New Decimal(New Integer() {340, 0, 0, 0})
+        Me.numGREMin.Minimum = New Decimal(New Integer() {260, 0, 0, 0})
+        Me.numGREMin.Name = "numGREMin"
+        Me.numGREMin.Size = New System.Drawing.Size(95, 38)
+        Me.numGREMin.TabIndex = 46
+        Me.numGREMin.Value = New Decimal(New Integer() {260, 0, 0, 0})
         '
-        'tbTWE
+        'Label20
         '
-        Me.tbTWE.Location = New System.Drawing.Point(294, 191)
-        Me.tbTWE.Name = "tbTWE"
-        Me.tbTWE.Size = New System.Drawing.Size(239, 38)
-        Me.tbTWE.TabIndex = 22
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(911, 273)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(49, 29)
+        Me.Label20.TabIndex = 56
+        Me.Label20.Text = "To:"
         '
-        'Label8
+        'Label21
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(737, 61)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(110, 32)
-        Me.Label8.TabIndex = 25
-        Me.Label8.Text = "Gender"
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(786, 273)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(76, 29)
+        Me.Label21.TabIndex = 55
+        Me.Label21.Text = "From:"
         '
-        'tbGender
+        'Label22
         '
-        Me.tbGender.Location = New System.Drawing.Point(743, 98)
-        Me.tbGender.Name = "tbGender"
-        Me.tbGender.Size = New System.Drawing.Size(94, 38)
-        Me.tbGender.TabIndex = 26
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(816, 245)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(144, 32)
+        Me.Label22.TabIndex = 54
+        Me.Label22.Text = "UDG GPA"
         '
-        'Label9
+        'numUGPAMax
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(874, 61)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(124, 32)
-        Me.Label9.TabIndex = 27
-        Me.Label9.Text = "Ethnicity"
+        Me.numUGPAMax.DecimalPlaces = 2
+        Me.numUGPAMax.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
+        Me.numUGPAMax.Location = New System.Drawing.Point(916, 305)
+        Me.numUGPAMax.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
+        Me.numUGPAMax.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.numUGPAMax.Name = "numUGPAMax"
+        Me.numUGPAMax.Size = New System.Drawing.Size(98, 38)
+        Me.numUGPAMax.TabIndex = 53
+        Me.numUGPAMax.Value = New Decimal(New Integer() {4, 0, 0, 0})
         '
-        'tbEthnicity
+        'numUGPAMin
         '
-        Me.tbEthnicity.Location = New System.Drawing.Point(879, 98)
-        Me.tbEthnicity.Name = "tbEthnicity"
-        Me.tbEthnicity.Size = New System.Drawing.Size(180, 38)
-        Me.tbEthnicity.TabIndex = 28
+        Me.numUGPAMin.DecimalPlaces = 2
+        Me.numUGPAMin.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
+        Me.numUGPAMin.Location = New System.Drawing.Point(791, 305)
+        Me.numUGPAMin.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
+        Me.numUGPAMin.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.numUGPAMin.Name = "numUGPAMin"
+        Me.numUGPAMin.Size = New System.Drawing.Size(100, 38)
+        Me.numUGPAMin.TabIndex = 52
+        Me.numUGPAMin.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'cbGMAT
+        '
+        Me.cbGMAT.AutoSize = True
+        Me.cbGMAT.Location = New System.Drawing.Point(294, 243)
+        Me.cbGMAT.Name = "cbGMAT"
+        Me.cbGMAT.Size = New System.Drawing.Size(134, 36)
+        Me.cbGMAT.TabIndex = 57
+        Me.cbGMAT.Text = "GMAT"
+        Me.cbGMAT.UseVisualStyleBackColor = True
+        '
+        'cbGRE
+        '
+        Me.cbGRE.AutoSize = True
+        Me.cbGRE.Location = New System.Drawing.Point(556, 243)
+        Me.cbGRE.Name = "cbGRE"
+        Me.cbGRE.Size = New System.Drawing.Size(114, 36)
+        Me.cbGRE.TabIndex = 58
+        Me.cbGRE.Text = "GRE"
+        Me.cbGRE.UseVisualStyleBackColor = True
         '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1342, 970)
+        Me.AutoScroll = True
+        Me.AutoSize = True
+        Me.ClientSize = New System.Drawing.Size(1342, 961)
+        Me.Controls.Add(Me.cbGRE)
+        Me.Controls.Add(Me.cbGMAT)
+        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.Label21)
+        Me.Controls.Add(Me.Label22)
+        Me.Controls.Add(Me.numUGPAMax)
+        Me.Controls.Add(Me.numUGPAMin)
+        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.numGREMax)
+        Me.Controls.Add(Me.numGREMin)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.numGMATMax)
+        Me.Controls.Add(Me.numGMATMin)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.tbResidency)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.tbUDegree)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.btnClose)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.numMaxAge)
+        Me.Controls.Add(Me.numMinAge)
         Me.Controls.Add(Me.tbEthnicity)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.tbGender)
@@ -650,7 +943,6 @@ Partial Class Main
         Me.Controls.Add(Me.tbFName)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnViewApplicant)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -658,24 +950,49 @@ Partial Class Main
         Me.Text = "Applicants"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ViewApplicantBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PROJECTS1747DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numMinAge, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numMaxAge, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numGMATMax, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numGMATMin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numGREMax, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numGREMin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numUGPAMax, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numUGPAMin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ApplicantProfileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnViewApplicant As Button
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents PROJECTS1747DataSet As PROJECTS1747DataSet
     Friend WithEvents ViewApplicantBindingSource As BindingSource
     Friend WithEvents ViewApplicantTableAdapter As PROJECTS1747DataSetTableAdapters.viewApplicantTableAdapter
+    Friend WithEvents Label1 As Label
+    Friend WithEvents tbFName As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents tbLName As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents cbProgram As ComboBox
+    Friend WithEvents btnClear As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents tbEmployer As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents tbTWE As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents tbGender As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents tbEthnicity As TextBox
+    Friend WithEvents numMinAge As NumericUpDown
+    Friend WithEvents numMaxAge As NumericUpDown
+    Friend WithEvents Label4 As Label
+    Friend WithEvents btnClose As Button
+    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FirstNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -716,19 +1033,25 @@ Partial Class Main
     Friend WithEvents PostalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CountryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ResidencyDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Label1 As Label
-    Friend WithEvents tbFName As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents tbLName As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents cbProgram As ComboBox
-    Friend WithEvents btnClear As Button
-    Friend WithEvents Label5 As Label
-    Friend WithEvents tbEmployer As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents tbTWE As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents tbGender As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents tbEthnicity As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents tbUDegree As TextBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents tbResidency As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents numGMATMax As NumericUpDown
+    Friend WithEvents numGMATMin As NumericUpDown
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents numGREMax As NumericUpDown
+    Friend WithEvents numGREMin As NumericUpDown
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents numUGPAMax As NumericUpDown
+    Friend WithEvents numUGPAMin As NumericUpDown
+    Friend WithEvents cbGMAT As CheckBox
+    Friend WithEvents cbGRE As CheckBox
 End Class
