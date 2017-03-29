@@ -14,7 +14,7 @@
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
 
         'ViewApplicationTableBindingSource2.Filter = String.Format()
-        MessageBox.Show(numUGPAMin.Value)
+
 
     End Sub
 
