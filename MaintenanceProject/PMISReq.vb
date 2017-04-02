@@ -17,9 +17,6 @@
 
     End Sub
 
-    Private Sub PMISReq_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Friend Sub setES()
         rbES.Checked = True

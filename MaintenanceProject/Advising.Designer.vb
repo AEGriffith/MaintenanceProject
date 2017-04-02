@@ -24,6 +24,7 @@ Partial Class Advising
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Advising))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -65,73 +66,71 @@ Partial Class Advising
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ViewToolStripMenuItem, Me.ViewToolStripMenuItem1})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(16, 5, 0, 5)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1749, 55)
+        Me.MenuStrip1.Size = New System.Drawing.Size(478, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
         '
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 45)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'ViewToolStripMenuItem
         '
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(12, 45)
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(12, 20)
         '
         'ViewToolStripMenuItem1
         '
         Me.ViewToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MISToolStripMenuItem})
         Me.ViewToolStripMenuItem1.Name = "ViewToolStripMenuItem1"
-        Me.ViewToolStripMenuItem1.Size = New System.Drawing.Size(94, 45)
+        Me.ViewToolStripMenuItem1.Size = New System.Drawing.Size(44, 20)
         Me.ViewToolStripMenuItem1.Text = "View"
         '
         'MISToolStripMenuItem
         '
         Me.MISToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MISToolStripMenuItem1, Me.PMISToolStripMenuItem1})
         Me.MISToolStripMenuItem.Name = "MISToolStripMenuItem"
-        Me.MISToolStripMenuItem.Size = New System.Drawing.Size(316, 46)
+        Me.MISToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
         Me.MISToolStripMenuItem.Text = "Requirements"
         '
         'MISToolStripMenuItem1
         '
         Me.MISToolStripMenuItem1.Name = "MISToolStripMenuItem1"
-        Me.MISToolStripMenuItem1.Size = New System.Drawing.Size(201, 46)
+        Me.MISToolStripMenuItem1.Size = New System.Drawing.Size(101, 22)
         Me.MISToolStripMenuItem1.Text = "MIS"
         '
         'PMISToolStripMenuItem1
         '
         Me.PMISToolStripMenuItem1.Name = "PMISToolStripMenuItem1"
-        Me.PMISToolStripMenuItem1.Size = New System.Drawing.Size(201, 46)
+        Me.PMISToolStripMenuItem1.Size = New System.Drawing.Size(101, 22)
         Me.PMISToolStripMenuItem1.Text = "PMIS"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(26, 75)
+        Me.Label1.Location = New System.Drawing.Point(10, 31)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(128, 32)
+        Me.Label1.Size = New System.Drawing.Size(49, 13)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Students"
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(1511, 920)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.btnCancel.Location = New System.Drawing.Point(567, 386)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(160, 45)
+        Me.btnCancel.Size = New System.Drawing.Size(60, 19)
         Me.btnCancel.TabIndex = 3
         Me.btnCancel.Text = "&Close"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'btnView
         '
-        Me.btnView.Location = New System.Drawing.Point(1335, 920)
-        Me.btnView.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.btnView.Location = New System.Drawing.Point(501, 386)
         Me.btnView.Name = "btnView"
-        Me.btnView.Size = New System.Drawing.Size(160, 45)
+        Me.btnView.Size = New System.Drawing.Size(60, 19)
         Me.btnView.TabIndex = 4
         Me.btnView.Text = "&View"
         Me.btnView.UseVisualStyleBackColor = True
@@ -139,27 +138,30 @@ Partial Class Advising
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(538, 128)
+        Me.Label3.Location = New System.Drawing.Point(202, 54)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(123, 32)
+        Me.Label3.Size = New System.Drawing.Size(46, 13)
         Me.Label3.TabIndex = 21
         Me.Label3.Text = "Program"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(282, 130)
+        Me.Label2.Location = New System.Drawing.Point(106, 55)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(151, 32)
+        Me.Label2.Size = New System.Drawing.Size(58, 13)
         Me.Label2.TabIndex = 19
         Me.Label2.Text = "Last Name"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(26, 130)
+        Me.Label4.Location = New System.Drawing.Point(10, 55)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(152, 32)
+        Me.Label4.Size = New System.Drawing.Size(57, 13)
         Me.Label4.TabIndex = 17
         Me.Label4.Text = "First Name"
         '
@@ -167,26 +169,27 @@ Partial Class Advising
         '
         Me.cbConcentration.FormattingEnabled = True
         Me.cbConcentration.Items.AddRange(New Object() {"Enterprise Resource Planning", "Enterprise Systems", "Information Technology", "Software Engineering"})
-        Me.cbConcentration.Location = New System.Drawing.Point(755, 166)
+        Me.cbConcentration.Location = New System.Drawing.Point(283, 70)
+        Me.cbConcentration.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.cbConcentration.Name = "cbConcentration"
-        Me.cbConcentration.Size = New System.Drawing.Size(248, 39)
+        Me.cbConcentration.Size = New System.Drawing.Size(96, 21)
         Me.cbConcentration.TabIndex = 23
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(749, 128)
+        Me.Label5.Location = New System.Drawing.Point(281, 54)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(193, 32)
+        Me.Label5.Size = New System.Drawing.Size(73, 13)
         Me.Label5.TabIndex = 24
         Me.Label5.Text = "Concentration"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(1045, 147)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.Button1.Location = New System.Drawing.Point(392, 62)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(176, 45)
+        Me.Button1.Size = New System.Drawing.Size(66, 19)
         Me.Button1.TabIndex = 25
         Me.Button1.Text = "Clear Filter"
         Me.Button1.UseVisualStyleBackColor = True
@@ -207,25 +210,28 @@ Partial Class Advising
         '
         'tbFName
         '
-        Me.tbFName.Location = New System.Drawing.Point(32, 166)
+        Me.tbFName.Location = New System.Drawing.Point(12, 70)
+        Me.tbFName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.tbFName.Name = "tbFName"
-        Me.tbFName.Size = New System.Drawing.Size(226, 38)
+        Me.tbFName.Size = New System.Drawing.Size(87, 20)
         Me.tbFName.TabIndex = 27
         '
         'tbLName
         '
-        Me.tbLName.Location = New System.Drawing.Point(288, 165)
+        Me.tbLName.Location = New System.Drawing.Point(108, 69)
+        Me.tbLName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.tbLName.Name = "tbLName"
-        Me.tbLName.Size = New System.Drawing.Size(229, 38)
+        Me.tbLName.Size = New System.Drawing.Size(88, 20)
         Me.tbLName.TabIndex = 28
         '
         'cbProgram
         '
         Me.cbProgram.FormattingEnabled = True
         Me.cbProgram.Items.AddRange(New Object() {"MIS", "PMIS"})
-        Me.cbProgram.Location = New System.Drawing.Point(544, 166)
+        Me.cbProgram.Location = New System.Drawing.Point(204, 70)
+        Me.cbProgram.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.cbProgram.Name = "cbProgram"
-        Me.cbProgram.Size = New System.Drawing.Size(187, 39)
+        Me.cbProgram.Size = New System.Drawing.Size(73, 21)
         Me.cbProgram.TabIndex = 29
         '
         'DataGridView1
@@ -240,11 +246,12 @@ Partial Class Advising
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
         Me.DataGridView1.DataSource = Me.ViewStudentBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(29, 242)
+        Me.DataGridView1.Location = New System.Drawing.Point(11, 101)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 40
-        Me.DataGridView1.Size = New System.Drawing.Size(1698, 668)
+        Me.DataGridView1.Size = New System.Drawing.Size(637, 280)
         Me.DataGridView1.TabIndex = 30
         '
         'DataGridViewTextBoxColumn1
@@ -253,7 +260,7 @@ Partial Class Advising
         Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 96
+        Me.DataGridViewTextBoxColumn1.Width = 43
         '
         'DataGridViewTextBoxColumn2
         '
@@ -261,7 +268,7 @@ Partial Class Advising
         Me.DataGridViewTextBoxColumn2.HeaderText = "First Name"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 206
+        Me.DataGridViewTextBoxColumn2.Width = 82
         '
         'DataGridViewTextBoxColumn3
         '
@@ -269,7 +276,7 @@ Partial Class Advising
         Me.DataGridViewTextBoxColumn3.HeaderText = "Last Name"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 205
+        Me.DataGridViewTextBoxColumn3.Width = 83
         '
         'DataGridViewTextBoxColumn4
         '
@@ -277,7 +284,7 @@ Partial Class Advising
         Me.DataGridViewTextBoxColumn4.HeaderText = "Program"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        Me.DataGridViewTextBoxColumn4.Width = 177
+        Me.DataGridViewTextBoxColumn4.Width = 71
         '
         'DataGridViewTextBoxColumn5
         '
@@ -285,7 +292,7 @@ Partial Class Advising
         Me.DataGridViewTextBoxColumn5.HeaderText = "Concentration"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        Me.DataGridViewTextBoxColumn5.Width = 247
+        Me.DataGridViewTextBoxColumn5.Width = 98
         '
         'DataGridViewTextBoxColumn6
         '
@@ -293,15 +300,15 @@ Partial Class Advising
         Me.DataGridViewTextBoxColumn6.HeaderText = "GPA"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Width = 129
+        Me.DataGridViewTextBoxColumn6.Width = 54
         '
         'Advising
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(1749, 1014)
+        Me.ClientSize = New System.Drawing.Size(478, 418)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.cbProgram)
         Me.Controls.Add(Me.tbLName)
@@ -316,8 +323,9 @@ Partial Class Advising
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Name = "Advising"
         Me.Text = "Advising"
         Me.MenuStrip1.ResumeLayout(False)
