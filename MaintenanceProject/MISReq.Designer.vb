@@ -22,10 +22,10 @@ Partial Class MISReq
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.rbIT = New System.Windows.Forms.RadioButton()
+        Me.rbERP = New System.Windows.Forms.RadioButton()
+        Me.rbES = New System.Windows.Forms.RadioButton()
+        Me.rbSE = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -34,60 +34,66 @@ Partial Class MISReq
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'RadioButton1
+        'rbIT
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(8, 19)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(165, 17)
-        Me.RadioButton1.TabIndex = 1
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Information Technology Mgmt"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.rbIT.AutoSize = True
+        Me.rbIT.Location = New System.Drawing.Point(21, 45)
+        Me.rbIT.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.rbIT.Name = "rbIT"
+        Me.rbIT.Size = New System.Drawing.Size(426, 36)
+        Me.rbIT.TabIndex = 1
+        Me.rbIT.TabStop = True
+        Me.rbIT.Text = "Information Technology Mgmt"
+        Me.rbIT.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'rbERP
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(8, 56)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(194, 17)
-        Me.RadioButton2.TabIndex = 2
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Enterprise Resource Planning Mgmt"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.rbERP.AutoSize = True
+        Me.rbERP.Location = New System.Drawing.Point(21, 134)
+        Me.rbERP.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.rbERP.Name = "rbERP"
+        Me.rbERP.Size = New System.Drawing.Size(507, 36)
+        Me.rbERP.TabIndex = 2
+        Me.rbERP.TabStop = True
+        Me.rbERP.Text = "Enterprise Resource Planning Mgmt"
+        Me.rbERP.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'rbES
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(224, 19)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(138, 17)
-        Me.RadioButton3.TabIndex = 3
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Enterprise System Mgmt"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.rbES.AutoSize = True
+        Me.rbES.Location = New System.Drawing.Point(597, 45)
+        Me.rbES.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.rbES.Name = "rbES"
+        Me.rbES.Size = New System.Drawing.Size(360, 36)
+        Me.rbES.TabIndex = 3
+        Me.rbES.TabStop = True
+        Me.rbES.Text = "Enterprise System Mgmt"
+        Me.rbES.UseVisualStyleBackColor = True
         '
-        'RadioButton4
+        'rbSE
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(224, 56)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(155, 17)
-        Me.RadioButton4.TabIndex = 4
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "Software Engineering Mgmt"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.rbSE.AutoSize = True
+        Me.rbSE.Location = New System.Drawing.Point(597, 134)
+        Me.rbSE.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.rbSE.Name = "rbSE"
+        Me.rbSE.Size = New System.Drawing.Size(402, 36)
+        Me.rbSE.TabIndex = 4
+        Me.rbSE.TabStop = True
+        Me.rbSE.Text = "Software Engineering Mgmt"
+        Me.rbSE.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.RadioButton4)
-        Me.GroupBox1.Controls.Add(Me.RadioButton3)
-        Me.GroupBox1.Controls.Add(Me.RadioButton2)
-        Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Controls.Add(Me.rbSE)
+        Me.GroupBox1.Controls.Add(Me.rbES)
+        Me.GroupBox1.Controls.Add(Me.rbERP)
+        Me.GroupBox1.Controls.Add(Me.rbIT)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(39, 44)
+        Me.GroupBox1.Location = New System.Drawing.Point(104, 105)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(414, 98)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.GroupBox1.Size = New System.Drawing.Size(1104, 234)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         '
@@ -95,17 +101,19 @@ Partial Class MISReq
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(24, 28)
+        Me.Label1.Location = New System.Drawing.Point(64, 67)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(96, 13)
+        Me.Label1.Size = New System.Drawing.Size(230, 32)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Concentrations:"
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(39, 196)
+        Me.PictureBox1.Location = New System.Drawing.Point(104, 467)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(692, 574)
+        Me.PictureBox1.Size = New System.Drawing.Size(1845, 1369)
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
         '
@@ -113,22 +121,24 @@ Partial Class MISReq
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(24, 160)
+        Me.Label2.Location = New System.Drawing.Point(64, 382)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(92, 13)
+        Me.Label2.Size = New System.Drawing.Size(221, 32)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Requirements: "
         '
         'MISReq
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(771, 811)
+        Me.ClientSize = New System.Drawing.Size(2056, 1934)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.Name = "MISReq"
         Me.Text = "MIS Requirements"
         Me.GroupBox1.ResumeLayout(False)
@@ -139,10 +149,10 @@ Partial Class MISReq
 
     End Sub
 
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents rbIT As RadioButton
+    Friend WithEvents rbERP As RadioButton
+    Friend WithEvents rbES As RadioButton
+    Friend WithEvents rbSE As RadioButton
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
