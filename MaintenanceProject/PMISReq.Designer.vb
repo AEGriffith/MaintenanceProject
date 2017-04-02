@@ -22,6 +22,7 @@ Partial Class PMISReq
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PMISReq))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -36,10 +37,9 @@ Partial Class PMISReq
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(59, 296)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.Label2.Location = New System.Drawing.Point(22, 124)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(221, 32)
+        Me.Label2.Size = New System.Drawing.Size(92, 13)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Requirements: "
         '
@@ -47,10 +47,9 @@ Partial Class PMISReq
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(59, 62)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.Label1.Location = New System.Drawing.Point(22, 26)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(230, 32)
+        Me.Label1.Size = New System.Drawing.Size(96, 13)
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Concentrations:"
         '
@@ -59,21 +58,18 @@ Partial Class PMISReq
         Me.GroupBox1.Controls.Add(Me.rbES)
         Me.GroupBox1.Controls.Add(Me.rbERP)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(117, 124)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.GroupBox1.Location = New System.Drawing.Point(44, 52)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.GroupBox1.Size = New System.Drawing.Size(853, 122)
+        Me.GroupBox1.Size = New System.Drawing.Size(320, 51)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         '
         'rbES
         '
         Me.rbES.AutoSize = True
-        Me.rbES.Location = New System.Drawing.Point(523, 45)
-        Me.rbES.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.rbES.Location = New System.Drawing.Point(196, 19)
         Me.rbES.Name = "rbES"
-        Me.rbES.Size = New System.Drawing.Size(297, 36)
+        Me.rbES.Size = New System.Drawing.Size(114, 17)
         Me.rbES.TabIndex = 3
         Me.rbES.TabStop = True
         Me.rbES.Text = "Enterprise Systems"
@@ -82,10 +78,9 @@ Partial Class PMISReq
         'rbERP
         '
         Me.rbERP.AutoSize = True
-        Me.rbERP.Location = New System.Drawing.Point(16, 45)
-        Me.rbERP.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.rbERP.Location = New System.Drawing.Point(6, 19)
         Me.rbERP.Name = "rbERP"
-        Me.rbERP.Size = New System.Drawing.Size(430, 36)
+        Me.rbERP.Size = New System.Drawing.Size(165, 17)
         Me.rbERP.TabIndex = 2
         Me.rbERP.TabStop = True
         Me.rbERP.Text = "Enterprise Resource Planning"
@@ -93,23 +88,22 @@ Partial Class PMISReq
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(117, 365)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.PictureBox1.Location = New System.Drawing.Point(44, 153)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1869, 1493)
+        Me.PictureBox1.Size = New System.Drawing.Size(701, 626)
         Me.PictureBox1.TabIndex = 13
         Me.PictureBox1.TabStop = False
         '
         'PMISReq
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(2091, 1929)
+        Me.ClientSize = New System.Drawing.Size(774, 810)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "PMISReq"
         Me.Text = "PMIS Requirements"
         Me.GroupBox1.ResumeLayout(False)
