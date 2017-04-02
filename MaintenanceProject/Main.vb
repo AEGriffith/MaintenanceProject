@@ -6,7 +6,7 @@
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'PROJECTS1747DataSet.viewApplicant' table. You can move, or remove it, as needed.
-        
+
 
         Me.ViewApplicantTableAdapter.Fill(Me.PROJECTS1747DataSet.viewApplicant)
 
