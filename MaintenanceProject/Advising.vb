@@ -52,6 +52,10 @@
         Return Concentration
     End Function
 
+    Friend Sub refreshList()
+        ViewStudentBindingSource.ResetBindings(False)
+    End Sub
+
 
     Private Sub MISToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MISToolStripMenuItem1.Click
         MISReq.Show()
