@@ -46,7 +46,7 @@ Public Class Login
                         CommitteeCheck = commandGetCommittee.ExecuteScalar()
                         AdvisorCheck = commandGetAdvisor.ExecuteScalar()
                         If AdminCheck = True Then
-                            Main.Show()
+                            DirectorSystemChoice.Show()
                         ElseIf CommitteeCheck = True Then
                             Main.Show()
                         ElseIf AdvisorCheck = True Then
