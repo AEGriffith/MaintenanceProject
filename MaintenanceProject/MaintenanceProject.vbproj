@@ -106,6 +106,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DBConnectionInfo.vb" />
+    <Compile Include="DegreeProgress.Designer.vb">
+      <DependentUpon>DegreeProgress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DegreeProgress.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InterviewAdd.Designer.vb">
       <DependentUpon>InterviewAdd.vb</DependentUpon>
     </Compile>
@@ -191,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Application.resx">
       <DependentUpon>Application.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DegreeProgress.resx">
+      <DependentUpon>DegreeProgress.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterviewAdd.resx">
       <DependentUpon>InterviewAdd.vb</DependentUpon>

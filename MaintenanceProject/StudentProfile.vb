@@ -24,8 +24,19 @@ Public Class StudentProfile
 
         'Sets label information
         lblName.Text = StudentName
+        'find the current right alignment position
+        Dim rightAlignProgram As Integer = lblProgram.Left + lblProgram.Width
+        'set the text
         lblProgram.Text = Program
+        'adjust position so that the right hand point is in the same position as before
+        lblProgram.Left = rightAlignProgram - lblProgram.Width
+        'find the current right alignment position
+        Dim rightAlignConcentration As Integer = lblConcentration.Left + lblConcentration.Width
+        'set the text (assumes AutoSize is set to True)
         lblConcentration.Text = Concentration
+        'adjust position so the right hand point is in the same position as before
+        lblConcentration.Left = rightAlignConcentration - lblConcentration.Width
+        lblStuID.Text = StudentID
 
         'Sets the Program Selection in the Edit tab
         If lblProgram.Text = "MIS" Then
@@ -36,7 +47,6 @@ Public Class StudentProfile
 
         'Sets the concentration selection in the Edit tab
         cbConcentration.SelectedItem = Concentration
-
 
     End Sub
 
@@ -61,6 +71,8 @@ Public Class StudentProfile
             End If
             PMISReq.Show()
         End If
+
+
     End Sub
 
     'Set up Stored Procedure to Update Program
@@ -86,6 +98,8 @@ Public Class StudentProfile
 
         con.Close()
     End Sub
+
+
 
     'Changes the options in the Concentration combo box to the right list
     Private Sub cbProgram_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProgram.SelectedIndexChanged
@@ -118,10 +132,15 @@ Public Class StudentProfile
             UpdateProgram()
             Advising.ViewStudentTableAdapter.Fill(Advising.PROJECTS1747DataSet1.viewStudent)
             MessageBox.Show("Successfully Updated")
+            Me.Close()
         End If
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
+    End Sub
+
+    Private Sub DegreeProgressToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DegreeProgressToolStripMenuItem.Click
+        DegreeProgress.Show()
     End Sub
 End Class

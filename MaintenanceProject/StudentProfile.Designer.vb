@@ -26,27 +26,34 @@ Partial Class StudentProfile
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblProgram = New System.Windows.Forms.Label()
         Me.lblConcentration = New System.Windows.Forms.Label()
-        Me.tbStudentProfile = New System.Windows.Forms.TabControl()
-        Me.tpProfile = New System.Windows.Forms.TabPage()
-        Me.tbEdit = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.cbConcentration = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.cbProgram = New System.Windows.Forms.ComboBox()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.tbStudentProfile.SuspendLayout()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DegreeProgressToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tbEdit = New System.Windows.Forms.TabPage()
+        Me.cbProgram = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cbConcentration = New System.Windows.Forms.ComboBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.tpProfile = New System.Windows.Forms.TabPage()
+        Me.tbStudentProfile = New System.Windows.Forms.TabControl()
+        Me.lblStuID = New System.Windows.Forms.Label()
+        Me.ProgramConcentrationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip1.SuspendLayout()
         Me.tbEdit.SuspendLayout()
+        Me.tbStudentProfile.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblName
         '
         Me.lblName.AutoSize = True
         Me.lblName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.900001!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName.Location = New System.Drawing.Point(21, 28)
-        Me.lblName.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.lblName.Location = New System.Drawing.Point(56, 67)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(57, 17)
+        Me.lblName.Size = New System.Drawing.Size(126, 39)
         Me.lblName.TabIndex = 0
         Me.lblName.Text = "Label1"
         '
@@ -54,10 +61,9 @@ Partial Class StudentProfile
         '
         Me.lblProgram.AutoSize = True
         Me.lblProgram.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.900001!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProgram.Location = New System.Drawing.Point(21, 50)
-        Me.lblProgram.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.lblProgram.Location = New System.Drawing.Point(1044, 67)
         Me.lblProgram.Name = "lblProgram"
-        Me.lblProgram.Size = New System.Drawing.Size(51, 17)
+        Me.lblProgram.Size = New System.Drawing.Size(120, 39)
         Me.lblProgram.TabIndex = 1
         Me.lblProgram.Text = "Label1"
         '
@@ -65,34 +71,57 @@ Partial Class StudentProfile
         '
         Me.lblConcentration.AutoSize = True
         Me.lblConcentration.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblConcentration.Location = New System.Drawing.Point(21, 72)
-        Me.lblConcentration.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.lblConcentration.Location = New System.Drawing.Point(1059, 117)
         Me.lblConcentration.Name = "lblConcentration"
-        Me.lblConcentration.Size = New System.Drawing.Size(45, 15)
+        Me.lblConcentration.Size = New System.Drawing.Size(105, 36)
         Me.lblConcentration.TabIndex = 2
         Me.lblConcentration.Text = "Label1"
         '
-        'tbStudentProfile
+        'btnClose
         '
-        Me.tbStudentProfile.Controls.Add(Me.tpProfile)
-        Me.tbStudentProfile.Controls.Add(Me.tbEdit)
-        Me.tbStudentProfile.Location = New System.Drawing.Point(4, 114)
-        Me.tbStudentProfile.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.tbStudentProfile.Name = "tbStudentProfile"
-        Me.tbStudentProfile.SelectedIndex = 0
-        Me.tbStudentProfile.Size = New System.Drawing.Size(636, 269)
-        Me.tbStudentProfile.TabIndex = 3
+        Me.btnClose.Location = New System.Drawing.Point(1020, 686)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(155, 50)
+        Me.btnClose.TabIndex = 4
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = True
         '
-        'tpProfile
+        'MenuStrip1
         '
-        Me.tpProfile.Location = New System.Drawing.Point(4, 22)
-        Me.tpProfile.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.tpProfile.Name = "tpProfile"
-        Me.tpProfile.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.tpProfile.Size = New System.Drawing.Size(628, 243)
-        Me.tpProfile.TabIndex = 0
-        Me.tpProfile.Text = "Information"
-        Me.tpProfile.UseVisualStyleBackColor = True
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(40, 40)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ViewToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1204, 49)
+        Me.MenuStrip1.TabIndex = 5
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 45)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProgramConcentrationToolStripMenuItem})
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(80, 45)
+        Me.EditToolStripMenuItem.Text = "Edit"
+        '
+        'ViewToolStripMenuItem
+        '
+        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DegreeProgressToolStripMenuItem})
+        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 45)
+        Me.ViewToolStripMenuItem.Text = "View"
+        '
+        'DegreeProgressToolStripMenuItem
+        '
+        Me.DegreeProgressToolStripMenuItem.Name = "DegreeProgressToolStripMenuItem"
+        Me.DegreeProgressToolStripMenuItem.Size = New System.Drawing.Size(353, 46)
+        Me.DegreeProgressToolStripMenuItem.Text = "Degree Progress"
         '
         'tbEdit
         '
@@ -101,91 +130,122 @@ Partial Class StudentProfile
         Me.tbEdit.Controls.Add(Me.Label2)
         Me.tbEdit.Controls.Add(Me.Label1)
         Me.tbEdit.Controls.Add(Me.cbProgram)
-        Me.tbEdit.Location = New System.Drawing.Point(4, 22)
-        Me.tbEdit.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tbEdit.Location = New System.Drawing.Point(10, 48)
+        Me.tbEdit.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tbEdit.Name = "tbEdit"
-        Me.tbEdit.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.tbEdit.Size = New System.Drawing.Size(628, 243)
+        Me.tbEdit.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tbEdit.Size = New System.Drawing.Size(1143, 457)
         Me.tbEdit.TabIndex = 1
         Me.tbEdit.Text = "Edit"
         Me.tbEdit.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(68, 105)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(50, 21)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Update"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'cbConcentration
-        '
-        Me.cbConcentration.FormattingEnabled = True
-        Me.cbConcentration.Location = New System.Drawing.Point(15, 74)
-        Me.cbConcentration.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.cbConcentration.Name = "cbConcentration"
-        Me.cbConcentration.Size = New System.Drawing.Size(105, 21)
-        Me.cbConcentration.TabIndex = 3
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(17, 52)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(73, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Concentration"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(15, 10)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(46, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Program"
         '
         'cbProgram
         '
         Me.cbProgram.FormattingEnabled = True
         Me.cbProgram.Items.AddRange(New Object() {"MIS", "PMIS"})
-        Me.cbProgram.Location = New System.Drawing.Point(15, 26)
-        Me.cbProgram.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.cbProgram.Location = New System.Drawing.Point(40, 62)
+        Me.cbProgram.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbProgram.Name = "cbProgram"
-        Me.cbProgram.Size = New System.Drawing.Size(105, 21)
+        Me.cbProgram.Size = New System.Drawing.Size(273, 39)
         Me.cbProgram.TabIndex = 0
         '
-        'btnClose
+        'Label1
         '
-        Me.btnClose.Location = New System.Drawing.Point(570, 397)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(58, 21)
-        Me.btnClose.TabIndex = 4
-        Me.btnClose.Text = "Close"
-        Me.btnClose.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(40, 24)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(123, 32)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Program"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(45, 124)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(193, 32)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Concentration"
+        '
+        'cbConcentration
+        '
+        Me.cbConcentration.FormattingEnabled = True
+        Me.cbConcentration.Location = New System.Drawing.Point(40, 176)
+        Me.cbConcentration.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cbConcentration.Name = "cbConcentration"
+        Me.cbConcentration.Size = New System.Drawing.Size(273, 39)
+        Me.cbConcentration.TabIndex = 3
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(181, 250)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(133, 50)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Update"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'tpProfile
+        '
+        Me.tpProfile.Location = New System.Drawing.Point(10, 48)
+        Me.tpProfile.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tpProfile.Name = "tpProfile"
+        Me.tpProfile.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tpProfile.Size = New System.Drawing.Size(1143, 457)
+        Me.tpProfile.TabIndex = 0
+        Me.tpProfile.Text = "Information"
+        Me.tpProfile.UseVisualStyleBackColor = True
+        '
+        'tbStudentProfile
+        '
+        Me.tbStudentProfile.Controls.Add(Me.tpProfile)
+        Me.tbStudentProfile.Controls.Add(Me.tbEdit)
+        Me.tbStudentProfile.Location = New System.Drawing.Point(12, 167)
+        Me.tbStudentProfile.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tbStudentProfile.Name = "tbStudentProfile"
+        Me.tbStudentProfile.SelectedIndex = 0
+        Me.tbStudentProfile.Size = New System.Drawing.Size(1163, 515)
+        Me.tbStudentProfile.TabIndex = 3
+        '
+        'lblStuID
+        '
+        Me.lblStuID.AutoSize = True
+        Me.lblStuID.Location = New System.Drawing.Point(57, 120)
+        Me.lblStuID.Name = "lblStuID"
+        Me.lblStuID.Size = New System.Drawing.Size(102, 32)
+        Me.lblStuID.TabIndex = 12
+        Me.lblStuID.Text = "Label1"
+        '
+        'ProgramConcentrationToolStripMenuItem
+        '
+        Me.ProgramConcentrationToolStripMenuItem.Name = "ProgramConcentrationToolStripMenuItem"
+        Me.ProgramConcentrationToolStripMenuItem.Size = New System.Drawing.Size(447, 46)
+        Me.ProgramConcentrationToolStripMenuItem.Text = "Program/Concentration"
         '
         'StudentProfile
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(478, 418)
+        Me.AutoSize = True
+        Me.ClientSize = New System.Drawing.Size(1204, 750)
+        Me.Controls.Add(Me.lblStuID)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.tbStudentProfile)
         Me.Controls.Add(Me.lblConcentration)
         Me.Controls.Add(Me.lblProgram)
         Me.Controls.Add(Me.lblName)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "StudentProfile"
         Me.Text = "StudentProfile"
-        Me.tbStudentProfile.ResumeLayout(False)
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.tbEdit.ResumeLayout(False)
         Me.tbEdit.PerformLayout()
+        Me.tbStudentProfile.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -194,13 +254,20 @@ Partial Class StudentProfile
     Friend WithEvents lblName As Label
     Friend WithEvents lblProgram As Label
     Friend WithEvents lblConcentration As Label
-    Friend WithEvents tbStudentProfile As TabControl
-    Friend WithEvents tpProfile As TabPage
+    Friend WithEvents btnClose As Button
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DegreeProgressToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents tbEdit As TabPage
+    Friend WithEvents Button1 As Button
     Friend WithEvents cbConcentration As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents cbProgram As ComboBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents btnClose As Button
+    Friend WithEvents tpProfile As TabPage
+    Friend WithEvents tbStudentProfile As TabControl
+    Friend WithEvents lblStuID As Label
+    Friend WithEvents ProgramConcentrationToolStripMenuItem As ToolStripMenuItem
 End Class
