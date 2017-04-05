@@ -66,7 +66,7 @@ Partial Class Advising
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ViewToolStripMenuItem, Me.ViewToolStripMenuItem1})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(478, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(661, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -170,7 +170,7 @@ Partial Class Advising
         Me.cbConcentration.FormattingEnabled = True
         Me.cbConcentration.Items.AddRange(New Object() {"Enterprise Resource Planning", "Enterprise Systems", "Information Technology", "Software Engineering"})
         Me.cbConcentration.Location = New System.Drawing.Point(283, 70)
-        Me.cbConcentration.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.cbConcentration.Margin = New System.Windows.Forms.Padding(1)
         Me.cbConcentration.Name = "cbConcentration"
         Me.cbConcentration.Size = New System.Drawing.Size(96, 21)
         Me.cbConcentration.TabIndex = 23
@@ -211,7 +211,7 @@ Partial Class Advising
         'tbFName
         '
         Me.tbFName.Location = New System.Drawing.Point(12, 70)
-        Me.tbFName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tbFName.Margin = New System.Windows.Forms.Padding(1)
         Me.tbFName.Name = "tbFName"
         Me.tbFName.Size = New System.Drawing.Size(87, 20)
         Me.tbFName.TabIndex = 27
@@ -219,7 +219,7 @@ Partial Class Advising
         'tbLName
         '
         Me.tbLName.Location = New System.Drawing.Point(108, 69)
-        Me.tbLName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tbLName.Margin = New System.Windows.Forms.Padding(1)
         Me.tbLName.Name = "tbLName"
         Me.tbLName.Size = New System.Drawing.Size(88, 20)
         Me.tbLName.TabIndex = 28
@@ -229,7 +229,7 @@ Partial Class Advising
         Me.cbProgram.FormattingEnabled = True
         Me.cbProgram.Items.AddRange(New Object() {"MIS", "PMIS"})
         Me.cbProgram.Location = New System.Drawing.Point(204, 70)
-        Me.cbProgram.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.cbProgram.Margin = New System.Windows.Forms.Padding(1)
         Me.cbProgram.Name = "cbProgram"
         Me.cbProgram.Size = New System.Drawing.Size(73, 21)
         Me.cbProgram.TabIndex = 29
@@ -247,7 +247,7 @@ Partial Class Advising
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
         Me.DataGridView1.DataSource = Me.ViewStudentBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(11, 101)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 40
@@ -308,7 +308,7 @@ Partial Class Advising
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(478, 418)
+        Me.ClientSize = New System.Drawing.Size(661, 435)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.cbProgram)
         Me.Controls.Add(Me.tbLName)
@@ -325,7 +325,7 @@ Partial Class Advising
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Margin = New System.Windows.Forms.Padding(1)
         Me.Name = "Advising"
         Me.Text = "Advising"
         Me.MenuStrip1.ResumeLayout(False)
