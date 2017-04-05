@@ -31,6 +31,7 @@ Partial Class DegreeProgress
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblStuID = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.checkReady = New System.Windows.Forms.CheckBox()
         CType(Me.dgvTakenCourses, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvRemainingCourses, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -133,12 +134,24 @@ Partial Class DegreeProgress
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
+        'checkReady
+        '
+        Me.checkReady.AutoSize = True
+        Me.checkReady.Location = New System.Drawing.Point(42, 1094)
+        Me.checkReady.Name = "checkReady"
+        Me.checkReady.Size = New System.Drawing.Size(292, 36)
+        Me.checkReady.TabIndex = 34
+        Me.checkReady.Text = "Ready to Graduate"
+        Me.checkReady.UseVisualStyleBackColor = True
+        Me.checkReady.Visible = False
+        '
         'DegreeProgress
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1183, 1178)
+        Me.Controls.Add(Me.checkReady)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.lblStuID)
         Me.Controls.Add(Me.lblConcentration)
@@ -166,4 +179,5 @@ Partial Class DegreeProgress
     Friend WithEvents lblName As Label
     Friend WithEvents lblStuID As Label
     Friend WithEvents btnClose As Button
+    Friend WithEvents checkReady As CheckBox
 End Class
