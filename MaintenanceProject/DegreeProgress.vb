@@ -12,6 +12,8 @@ Public Class DegreeProgress
     Dim Concentration = Advising.getConcentration
     Dim StudentID = Advising.getStudentID
 
+    Dim GradCheck
+
     Private Sub DegreeProgress_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Sets label information
         lblName.Text = StudentName
@@ -31,6 +33,28 @@ Public Class DegreeProgress
 
         GetCoursesRemaining()
         GetCoursesTaken()
+
+        If Login.getAdminCheck = True Then
+            checkReady.Enabled = True
+        Else
+            checkReady.Enabled = False
+        End If
+
+        Dim commandGetGraduationCheck As New OleDbCommand("SELECT Graduation_Check FROM Student WHERE Student_ID = " & StudentID, con)
+        con.Open()
+        Try
+            GradCheck = commandGetGraduationCheck.ExecuteScalar()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
+        con.Close()
+        If IsDBNull(GradCheck) Then
+
+        ElseIf GradCheck = True Then
+            checkReady.Checked = True
+        Else
+            checkReady.Checked = False
+        End If
     End Sub
 
     Private Sub GetCoursesRemaining()
@@ -107,5 +131,26 @@ Public Class DegreeProgress
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
+    End Sub
+
+    Private Sub checkReady_CheckedChanged(sender As Object, e As EventArgs) Handles checkReady.CheckedChanged
+        Dim GraduationCheck
+        If checkReady.Checked = True Then
+            GraduationCheck = 1
+        Else
+            GraduationCheck = 0
+        End If
+        con.ConnectionString = ConnString
+        Dim commandSetGraduation As New OleDbCommand("UPDATE Student SET Graduation_Check = " & GraduationCheck & " WHERE Student_ID = " & StudentID, con)
+        con.Open()
+
+        Try
+            commandSetGraduation.ExecuteScalar()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
+
+        con.Close()
+
     End Sub
 End Class

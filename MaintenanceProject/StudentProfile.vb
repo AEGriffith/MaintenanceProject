@@ -14,8 +14,6 @@ Public Class StudentProfile
 
 
     Private Sub StudentProfile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
         'Sets label information
         lblName.Text = StudentName
         'find the current right alignment position
