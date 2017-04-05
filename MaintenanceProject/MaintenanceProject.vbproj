@@ -309,9 +309,6 @@
     <None Include="Resources\PMIS ES.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MIS ERP.PNG" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\MIS ES.PNG" />
   </ItemGroup>
   <ItemGroup>
@@ -322,6 +319,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PMIS ERP.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InClass10_Input.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MIS ERP.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
