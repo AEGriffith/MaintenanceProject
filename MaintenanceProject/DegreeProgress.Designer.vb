@@ -143,7 +143,6 @@ Partial Class DegreeProgress
         Me.checkReady.TabIndex = 34
         Me.checkReady.Text = "Ready to Graduate"
         Me.checkReady.UseVisualStyleBackColor = True
-        Me.checkReady.Visible = False
         '
         'DegreeProgress
         '

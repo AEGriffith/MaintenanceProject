@@ -35,9 +35,9 @@ Public Class DegreeProgress
         GetCoursesTaken()
 
         If Login.getAdminCheck = True Then
-            checkReady.Visible = True
+            checkReady.Enabled = True
         Else
-            checkReady.Visible = False
+            checkReady.Enabled = False
         End If
 
         Dim commandGetGraduationCheck As New OleDbCommand("SELECT Graduation_Check FROM Student WHERE Student_ID = " & StudentID, con)
