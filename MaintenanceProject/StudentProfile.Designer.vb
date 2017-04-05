@@ -30,20 +30,13 @@ Partial Class StudentProfile
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProgramConcentrationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DegreeProgressToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tbEdit = New System.Windows.Forms.TabPage()
-        Me.cbProgram = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.cbConcentration = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.tpProfile = New System.Windows.Forms.TabPage()
         Me.tbStudentProfile = New System.Windows.Forms.TabControl()
         Me.lblStuID = New System.Windows.Forms.Label()
-        Me.ProgramConcentrationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
-        Me.tbEdit.SuspendLayout()
         Me.tbStudentProfile.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -110,6 +103,12 @@ Partial Class StudentProfile
         Me.EditToolStripMenuItem.Size = New System.Drawing.Size(80, 45)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
+        'ProgramConcentrationToolStripMenuItem
+        '
+        Me.ProgramConcentrationToolStripMenuItem.Name = "ProgramConcentrationToolStripMenuItem"
+        Me.ProgramConcentrationToolStripMenuItem.Size = New System.Drawing.Size(447, 46)
+        Me.ProgramConcentrationToolStripMenuItem.Text = "Program/Concentration"
+        '
         'ViewToolStripMenuItem
         '
         Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DegreeProgressToolStripMenuItem})
@@ -122,69 +121,6 @@ Partial Class StudentProfile
         Me.DegreeProgressToolStripMenuItem.Name = "DegreeProgressToolStripMenuItem"
         Me.DegreeProgressToolStripMenuItem.Size = New System.Drawing.Size(353, 46)
         Me.DegreeProgressToolStripMenuItem.Text = "Degree Progress"
-        '
-        'tbEdit
-        '
-        Me.tbEdit.Controls.Add(Me.Button1)
-        Me.tbEdit.Controls.Add(Me.cbConcentration)
-        Me.tbEdit.Controls.Add(Me.Label2)
-        Me.tbEdit.Controls.Add(Me.Label1)
-        Me.tbEdit.Controls.Add(Me.cbProgram)
-        Me.tbEdit.Location = New System.Drawing.Point(10, 48)
-        Me.tbEdit.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.tbEdit.Name = "tbEdit"
-        Me.tbEdit.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.tbEdit.Size = New System.Drawing.Size(1143, 457)
-        Me.tbEdit.TabIndex = 1
-        Me.tbEdit.Text = "Edit"
-        Me.tbEdit.UseVisualStyleBackColor = True
-        '
-        'cbProgram
-        '
-        Me.cbProgram.FormattingEnabled = True
-        Me.cbProgram.Items.AddRange(New Object() {"MIS", "PMIS"})
-        Me.cbProgram.Location = New System.Drawing.Point(40, 62)
-        Me.cbProgram.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.cbProgram.Name = "cbProgram"
-        Me.cbProgram.Size = New System.Drawing.Size(273, 39)
-        Me.cbProgram.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(40, 24)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(123, 32)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Program"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(45, 124)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(193, 32)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Concentration"
-        '
-        'cbConcentration
-        '
-        Me.cbConcentration.FormattingEnabled = True
-        Me.cbConcentration.Location = New System.Drawing.Point(40, 176)
-        Me.cbConcentration.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.cbConcentration.Name = "cbConcentration"
-        Me.cbConcentration.Size = New System.Drawing.Size(273, 39)
-        Me.cbConcentration.TabIndex = 3
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(181, 250)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(133, 50)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Update"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'tpProfile
         '
@@ -200,7 +136,6 @@ Partial Class StudentProfile
         'tbStudentProfile
         '
         Me.tbStudentProfile.Controls.Add(Me.tpProfile)
-        Me.tbStudentProfile.Controls.Add(Me.tbEdit)
         Me.tbStudentProfile.Location = New System.Drawing.Point(12, 167)
         Me.tbStudentProfile.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tbStudentProfile.Name = "tbStudentProfile"
@@ -216,12 +151,6 @@ Partial Class StudentProfile
         Me.lblStuID.Size = New System.Drawing.Size(102, 32)
         Me.lblStuID.TabIndex = 12
         Me.lblStuID.Text = "Label1"
-        '
-        'ProgramConcentrationToolStripMenuItem
-        '
-        Me.ProgramConcentrationToolStripMenuItem.Name = "ProgramConcentrationToolStripMenuItem"
-        Me.ProgramConcentrationToolStripMenuItem.Size = New System.Drawing.Size(447, 46)
-        Me.ProgramConcentrationToolStripMenuItem.Text = "Program/Concentration"
         '
         'StudentProfile
         '
@@ -243,8 +172,6 @@ Partial Class StudentProfile
         Me.Text = "StudentProfile"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.tbEdit.ResumeLayout(False)
-        Me.tbEdit.PerformLayout()
         Me.tbStudentProfile.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -260,12 +187,6 @@ Partial Class StudentProfile
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DegreeProgressToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents tbEdit As TabPage
-    Friend WithEvents Button1 As Button
-    Friend WithEvents cbConcentration As ComboBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents cbProgram As ComboBox
     Friend WithEvents tpProfile As TabPage
     Friend WithEvents tbStudentProfile As TabControl
     Friend WithEvents lblStuID As Label

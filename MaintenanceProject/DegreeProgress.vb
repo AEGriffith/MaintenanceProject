@@ -83,6 +83,28 @@ Public Class DegreeProgress
         con.Close()
     End Sub
 
+    Private Sub lblProgram_Click(sender As Object, e As EventArgs) Handles lblProgram.Click, lblConcentration.Click
+        If lblProgram.Text = "MIS" Then
+            If lblConcentration.Text.Contains("Information Technology") Then
+                MISReq.setIT()
+            ElseIf lblConcentration.Text.Contains("Enterprise Resource") Then
+                MISReq.setERP()
+            ElseIf lblConcentration.Text.Contains("Enterprise Systems") Then
+                MISReq.setES()
+            Else
+                MISReq.setSE()
+            End If
+            MISReq.Show()
+        ElseIf lblProgram.Text = "PMIS" Then
+            If lblConcentration.Text.Contains("Enterprise Systems") Then
+                PMISReq.setES()
+            Else
+                PMISReq.setERP()
+            End If
+            PMISReq.Show()
+        End If
+    End Sub
+
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub

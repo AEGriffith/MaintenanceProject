@@ -83,4 +83,9 @@
         cbProgram.SelectedIndex = -1
         cbConcentration.SelectedIndex = -1
     End Sub
+
+    Friend Sub refreshProgram()
+        Program = Me.DataGridView1.CurrentRow.Cells(3).Value
+        Concentration = Me.DataGridView1.CurrentRow.Cells(4).Value
+    End Sub
 End Class

@@ -118,6 +118,12 @@
     <Compile Include="DirectorSystemChoice.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EditProgram.Designer.vb">
+      <DependentUpon>EditProgram.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditProgram.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InterviewAdd.Designer.vb">
       <DependentUpon>InterviewAdd.vb</DependentUpon>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DirectorSystemChoice.resx">
       <DependentUpon>DirectorSystemChoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProgram.resx">
+      <DependentUpon>EditProgram.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterviewAdd.resx">
       <DependentUpon>InterviewAdd.vb</DependentUpon>
