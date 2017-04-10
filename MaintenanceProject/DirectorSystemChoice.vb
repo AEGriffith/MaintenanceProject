@@ -6,4 +6,8 @@
     Private Sub btnEnrollment_Click(sender As Object, e As EventArgs) Handles btnEnrollment.Click
         Advising.Show()
     End Sub
+
+    Private Sub btnGA_Click(sender As Object, e As EventArgs) Handles btnGA.Click
+        GADirector.Show()
+    End Sub
 End Class

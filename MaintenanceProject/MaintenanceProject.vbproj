@@ -130,6 +130,12 @@
     <Compile Include="GA.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GADirector.Designer.vb">
+      <DependentUpon>GADirector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GADirector.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GASupervisor.Designer.vb">
       <DependentUpon>GASupervisor.vb</DependentUpon>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GA.resx">
       <DependentUpon>GA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GADirector.resx">
+      <DependentUpon>GADirector.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GASupervisor.resx">
       <DependentUpon>GASupervisor.vb</DependentUpon>

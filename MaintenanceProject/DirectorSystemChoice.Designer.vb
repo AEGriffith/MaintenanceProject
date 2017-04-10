@@ -25,22 +25,23 @@ Partial Class DirectorSystemChoice
         Me.btnAdmissions = New System.Windows.Forms.Button()
         Me.btnEnrollment = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnGA = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnAdmissions
         '
         Me.btnAdmissions.Location = New System.Drawing.Point(12, 64)
         Me.btnAdmissions.Name = "btnAdmissions"
-        Me.btnAdmissions.Size = New System.Drawing.Size(304, 298)
+        Me.btnAdmissions.Size = New System.Drawing.Size(217, 195)
         Me.btnAdmissions.TabIndex = 0
         Me.btnAdmissions.Text = "Admissions"
         Me.btnAdmissions.UseVisualStyleBackColor = True
         '
         'btnEnrollment
         '
-        Me.btnEnrollment.Location = New System.Drawing.Point(322, 64)
+        Me.btnEnrollment.Location = New System.Drawing.Point(238, 64)
         Me.btnEnrollment.Name = "btnEnrollment"
-        Me.btnEnrollment.Size = New System.Drawing.Size(304, 298)
+        Me.btnEnrollment.Size = New System.Drawing.Size(220, 195)
         Me.btnEnrollment.TabIndex = 1
         Me.btnEnrollment.Text = "Enrollment"
         Me.btnEnrollment.UseVisualStyleBackColor = True
@@ -54,11 +55,21 @@ Partial Class DirectorSystemChoice
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Welcome! Please select a system."
         '
+        'btnGA
+        '
+        Me.btnGA.Location = New System.Drawing.Point(464, 64)
+        Me.btnGA.Name = "btnGA"
+        Me.btnGA.Size = New System.Drawing.Size(220, 195)
+        Me.btnGA.TabIndex = 3
+        Me.btnGA.Text = "GA Management"
+        Me.btnGA.UseVisualStyleBackColor = True
+        '
         'DirectorSystemChoice
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(639, 374)
+        Me.ClientSize = New System.Drawing.Size(694, 275)
+        Me.Controls.Add(Me.btnGA)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnEnrollment)
         Me.Controls.Add(Me.btnAdmissions)
@@ -72,4 +83,5 @@ Partial Class DirectorSystemChoice
     Friend WithEvents btnAdmissions As Button
     Friend WithEvents btnEnrollment As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnGA As Button
 End Class
