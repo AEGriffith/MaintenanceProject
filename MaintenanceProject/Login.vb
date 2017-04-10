@@ -57,6 +57,10 @@ Public Class Login
                             Main.Show()
                         ElseIf AdvisorCheck = True Then
                             Advising.Show()
+                        ElseIf SupervisorCheck = True Then
+                            GASupervisor.Show()
+                        ElseIf GACheck = True Then
+                            GA.Show()
                         Else
                             MessageBox.Show("Please contact your System Administrator.")
                         End If
