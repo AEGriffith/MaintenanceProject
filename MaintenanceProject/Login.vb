@@ -6,6 +6,8 @@ Public Class Login
     Dim AdvisorCheck As Boolean
     Dim CommitteeCheck As Boolean
     Dim AdminCheck As Boolean
+    Dim GACheck As Boolean
+    Dim SupervisorCheck As Boolean
 
     Dim ConnInfo As New DBConnectionInfo
     Dim ConnString As String = ConnInfo.GetConnString()
@@ -32,6 +34,8 @@ Public Class Login
             Dim commandGetAdmin As New OleDbCommand("SELECT Admin FROM User_ID WHERE User_ID = " & UserName, con)
             Dim commandGetCommittee As New OleDbCommand("SELECT Committee_Member FROM User_ID WHERE User_ID = " & UserName, con)
             Dim commandGetAdvisor As New OleDbCommand("SELECT Advisor FROM User_ID WHERE User_ID = " & UserName, con)
+            Dim commandGetGA As New OleDbCommand("SELECT GA FROM User_ID WHERE User_ID = " & UserName, con)
+            Dim commandGetGASupervisor As New OleDbCommand("SELECT GA_Supervisor FROM User_ID WHERE User_ID = " & UserName, con)
             con.ConnectionString = ConnString
             con.Open()
 
@@ -45,6 +49,8 @@ Public Class Login
                         AdminCheck = commandGetAdmin.ExecuteScalar()
                         CommitteeCheck = commandGetCommittee.ExecuteScalar()
                         AdvisorCheck = commandGetAdvisor.ExecuteScalar()
+                        GACheck = commandGetGA.ExecuteScalar()
+                        SupervisorCheck = commandGetGASupervisor.ExecuteScalar()
                         If AdminCheck = True Then
                             DirectorSystemChoice.Show()
                         ElseIf CommitteeCheck = True Then
