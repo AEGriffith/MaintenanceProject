@@ -124,6 +124,24 @@
     <Compile Include="EditProgram.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GA.Designer.vb">
+      <DependentUpon>GA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GADirector.Designer.vb">
+      <DependentUpon>GADirector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GADirector.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GASupervisor.Designer.vb">
+      <DependentUpon>GASupervisor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GASupervisor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InterviewAdd.Designer.vb">
       <DependentUpon>InterviewAdd.vb</DependentUpon>
     </Compile>
@@ -218,6 +236,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditProgram.resx">
       <DependentUpon>EditProgram.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GA.resx">
+      <DependentUpon>GA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GADirector.resx">
+      <DependentUpon>GADirector.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GASupervisor.resx">
+      <DependentUpon>GASupervisor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterviewAdd.resx">
       <DependentUpon>InterviewAdd.vb</DependentUpon>
