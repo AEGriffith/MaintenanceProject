@@ -59,16 +59,16 @@ Partial Class InterviewAdd
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(4, 102)
+        Me.Label3.Location = New System.Drawing.Point(7, 108)
         Me.Label3.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(51, 13)
+        Me.Label3.Size = New System.Drawing.Size(59, 13)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Comment"
+        Me.Label3.Text = "Comments:"
         '
         'tbComment
         '
-        Me.tbComment.Location = New System.Drawing.Point(6, 119)
+        Me.tbComment.Location = New System.Drawing.Point(14, 136)
         Me.tbComment.Multiline = True
         Me.tbComment.Name = "tbComment"
         Me.tbComment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -77,8 +77,8 @@ Partial Class InterviewAdd
         '
         'btnAccept
         '
-        Me.btnAccept.Location = New System.Drawing.Point(118, 250)
-        Me.btnAccept.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.btnAccept.Location = New System.Drawing.Point(109, 259)
+        Me.btnAccept.Margin = New System.Windows.Forms.Padding(1)
         Me.btnAccept.Name = "btnAccept"
         Me.btnAccept.Size = New System.Drawing.Size(82, 24)
         Me.btnAccept.TabIndex = 5
@@ -88,8 +88,8 @@ Partial Class InterviewAdd
         'btnCancel
         '
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancel.Location = New System.Drawing.Point(204, 250)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.btnCancel.Location = New System.Drawing.Point(203, 259)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(1)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(82, 24)
         Me.btnCancel.TabIndex = 6
@@ -100,7 +100,7 @@ Partial Class InterviewAdd
         '
         Me.trackScore.LargeChange = 1
         Me.trackScore.Location = New System.Drawing.Point(50, 62)
-        Me.trackScore.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.trackScore.Margin = New System.Windows.Forms.Padding(1)
         Me.trackScore.Maximum = 5
         Me.trackScore.Minimum = 1
         Me.trackScore.Name = "trackScore"
@@ -136,7 +136,7 @@ Partial Class InterviewAdd
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancel
-        Me.ClientSize = New System.Drawing.Size(292, 302)
+        Me.ClientSize = New System.Drawing.Size(308, 302)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.trackScore)
@@ -147,7 +147,7 @@ Partial Class InterviewAdd
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblStuName)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Margin = New System.Windows.Forms.Padding(1)
         Me.Name = "InterviewAdd"
         Me.Text = "Interview Score"
         CType(Me.trackScore, System.ComponentModel.ISupportInitialize).EndInit()

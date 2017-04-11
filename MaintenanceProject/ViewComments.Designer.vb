@@ -35,7 +35,7 @@ Partial Class ViewComments
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 13)
+        Me.Label1.Location = New System.Drawing.Point(13, 26)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(85, 13)
         Me.Label1.TabIndex = 0
@@ -45,7 +45,7 @@ Partial Class ViewComments
         '
         Me.lblStuName.AutoSize = True
         Me.lblStuName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStuName.Location = New System.Drawing.Point(105, 13)
+        Me.lblStuName.Location = New System.Drawing.Point(105, 26)
         Me.lblStuName.Name = "lblStuName"
         Me.lblStuName.Size = New System.Drawing.Size(39, 13)
         Me.lblStuName.TabIndex = 1
@@ -58,7 +58,7 @@ Partial Class ViewComments
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
         Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox1.Size = New System.Drawing.Size(296, 154)
+        Me.TextBox1.Size = New System.Drawing.Size(325, 221)
         Me.TextBox1.TabIndex = 2
         '
         'Label2
@@ -72,17 +72,17 @@ Partial Class ViewComments
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(237, 268)
+        Me.Button1.Location = New System.Drawing.Point(266, 332)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 4
-        Me.Button1.Text = "E&xit"
+        Me.Button1.Text = "Close"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(13, 42)
+        Me.Label3.Location = New System.Drawing.Point(13, 52)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 13)
         Me.Label3.TabIndex = 5
@@ -92,7 +92,7 @@ Partial Class ViewComments
         '
         Me.lblAppID.AutoSize = True
         Me.lblAppID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAppID.Location = New System.Drawing.Point(105, 42)
+        Me.lblAppID.Location = New System.Drawing.Point(105, 52)
         Me.lblAppID.Name = "lblAppID"
         Me.lblAppID.Size = New System.Drawing.Size(46, 13)
         Me.lblAppID.TabIndex = 6
@@ -102,7 +102,7 @@ Partial Class ViewComments
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(324, 313)
+        Me.ClientSize = New System.Drawing.Size(353, 367)
         Me.Controls.Add(Me.lblAppID)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button1)
