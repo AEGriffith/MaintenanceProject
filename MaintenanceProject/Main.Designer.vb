@@ -50,7 +50,6 @@ Partial Class Main
         Me.tbEthnicity = New System.Windows.Forms.TextBox()
         Me.numMinAge = New System.Windows.Forms.NumericUpDown()
         Me.numMaxAge = New System.Windows.Forms.NumericUpDown()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -114,6 +113,12 @@ Partial Class Main
         Me.numUGPAMin = New System.Windows.Forms.NumericUpDown()
         Me.cbGMAT = New System.Windows.Forms.CheckBox()
         Me.cbGRE = New System.Windows.Forms.CheckBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.ViewApplicantBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PROJECTS1747DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -126,6 +131,11 @@ Partial Class Main
         CType(Me.numGREMin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numUGPAMax, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numUGPAMin, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -135,7 +145,7 @@ Partial Class Main
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(2, 1, 0, 1)
-        Me.MenuStrip1.Size = New System.Drawing.Size(490, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(831, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -170,7 +180,7 @@ Partial Class Main
         '
         'btnViewApplicant
         '
-        Me.btnViewApplicant.Location = New System.Drawing.Point(324, 369)
+        Me.btnViewApplicant.Location = New System.Drawing.Point(336, 370)
         Me.btnViewApplicant.Margin = New System.Windows.Forms.Padding(0)
         Me.btnViewApplicant.Name = "btnViewApplicant"
         Me.btnViewApplicant.Size = New System.Drawing.Size(80, 23)
@@ -185,7 +195,7 @@ Partial Class Main
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(5, 26)
+        Me.Label1.Location = New System.Drawing.Point(2, 2)
         Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(57, 13)
@@ -194,8 +204,8 @@ Partial Class Main
         '
         'tbFName
         '
-        Me.tbFName.Location = New System.Drawing.Point(7, 41)
-        Me.tbFName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tbFName.Location = New System.Drawing.Point(4, 17)
+        Me.tbFName.Margin = New System.Windows.Forms.Padding(1)
         Me.tbFName.Name = "tbFName"
         Me.tbFName.Size = New System.Drawing.Size(83, 20)
         Me.tbFName.TabIndex = 12
@@ -203,7 +213,7 @@ Partial Class Main
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(101, 26)
+        Me.Label2.Location = New System.Drawing.Point(98, 2)
         Me.Label2.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 13)
@@ -212,8 +222,8 @@ Partial Class Main
         '
         'tbLName
         '
-        Me.tbLName.Location = New System.Drawing.Point(103, 41)
-        Me.tbLName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tbLName.Location = New System.Drawing.Point(100, 17)
+        Me.tbLName.Margin = New System.Windows.Forms.Padding(1)
         Me.tbLName.Name = "tbLName"
         Me.tbLName.Size = New System.Drawing.Size(83, 20)
         Me.tbLName.TabIndex = 14
@@ -221,7 +231,7 @@ Partial Class Main
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(197, 26)
+        Me.Label3.Location = New System.Drawing.Point(194, 2)
         Me.Label3.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(46, 13)
@@ -232,15 +242,15 @@ Partial Class Main
         '
         Me.cbProgram.FormattingEnabled = True
         Me.cbProgram.Items.AddRange(New Object() {"MIS", "PMIS"})
-        Me.cbProgram.Location = New System.Drawing.Point(199, 42)
-        Me.cbProgram.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.cbProgram.Location = New System.Drawing.Point(196, 18)
+        Me.cbProgram.Margin = New System.Windows.Forms.Padding(1)
         Me.cbProgram.Name = "cbProgram"
         Me.cbProgram.Size = New System.Drawing.Size(66, 21)
         Me.cbProgram.TabIndex = 16
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(410, 34)
+        Me.btnClear.Location = New System.Drawing.Point(464, 39)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(0)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(80, 23)
@@ -251,7 +261,7 @@ Partial Class Main
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(5, 65)
+        Me.Label5.Location = New System.Drawing.Point(2, 41)
         Me.Label5.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(87, 13)
@@ -260,16 +270,16 @@ Partial Class Main
         '
         'tbEmployer
         '
-        Me.tbEmployer.Location = New System.Drawing.Point(7, 80)
-        Me.tbEmployer.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tbEmployer.Location = New System.Drawing.Point(4, 56)
+        Me.tbEmployer.Margin = New System.Windows.Forms.Padding(1)
         Me.tbEmployer.Name = "tbEmployer"
-        Me.tbEmployer.Size = New System.Drawing.Size(92, 20)
+        Me.tbEmployer.Size = New System.Drawing.Size(85, 20)
         Me.tbEmployer.TabIndex = 20
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(108, 65)
+        Me.Label6.Location = New System.Drawing.Point(97, 41)
         Me.Label6.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(101, 13)
@@ -278,8 +288,8 @@ Partial Class Main
         '
         'tbTWE
         '
-        Me.tbTWE.Location = New System.Drawing.Point(110, 80)
-        Me.tbTWE.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tbTWE.Location = New System.Drawing.Point(101, 56)
+        Me.tbTWE.Margin = New System.Windows.Forms.Padding(1)
         Me.tbTWE.Name = "tbTWE"
         Me.tbTWE.Size = New System.Drawing.Size(101, 20)
         Me.tbTWE.TabIndex = 22
@@ -287,7 +297,7 @@ Partial Class Main
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(276, 26)
+        Me.Label8.Location = New System.Drawing.Point(273, 2)
         Me.Label8.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(42, 13)
@@ -296,8 +306,8 @@ Partial Class Main
         '
         'tbGender
         '
-        Me.tbGender.Location = New System.Drawing.Point(279, 41)
-        Me.tbGender.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tbGender.Location = New System.Drawing.Point(276, 17)
+        Me.tbGender.Margin = New System.Windows.Forms.Padding(1)
         Me.tbGender.Name = "tbGender"
         Me.tbGender.Size = New System.Drawing.Size(38, 20)
         Me.tbGender.TabIndex = 26
@@ -305,7 +315,7 @@ Partial Class Main
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(328, 26)
+        Me.Label9.Location = New System.Drawing.Point(325, 2)
         Me.Label9.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(47, 13)
@@ -314,43 +324,33 @@ Partial Class Main
         '
         'tbEthnicity
         '
-        Me.tbEthnicity.Location = New System.Drawing.Point(330, 41)
-        Me.tbEthnicity.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tbEthnicity.Location = New System.Drawing.Point(327, 17)
+        Me.tbEthnicity.Margin = New System.Windows.Forms.Padding(1)
         Me.tbEthnicity.Name = "tbEthnicity"
         Me.tbEthnicity.Size = New System.Drawing.Size(70, 20)
         Me.tbEthnicity.TabIndex = 28
         '
         'numMinAge
         '
-        Me.numMinAge.Location = New System.Drawing.Point(7, 128)
-        Me.numMinAge.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.numMinAge.Location = New System.Drawing.Point(6, 44)
+        Me.numMinAge.Margin = New System.Windows.Forms.Padding(1)
         Me.numMinAge.Name = "numMinAge"
         Me.numMinAge.Size = New System.Drawing.Size(36, 20)
         Me.numMinAge.TabIndex = 29
         '
         'numMaxAge
         '
-        Me.numMaxAge.Location = New System.Drawing.Point(54, 128)
-        Me.numMaxAge.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.numMaxAge.Location = New System.Drawing.Point(61, 45)
+        Me.numMaxAge.Margin = New System.Windows.Forms.Padding(1)
         Me.numMaxAge.Name = "numMaxAge"
         Me.numMaxAge.Size = New System.Drawing.Size(36, 20)
         Me.numMaxAge.TabIndex = 30
         Me.numMaxAge.Value = New Decimal(New Integer() {100, 0, 0, 0})
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(30, 103)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(26, 13)
-        Me.Label4.TabIndex = 31
-        Me.Label4.Text = "Age"
-        '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(410, 369)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.btnClose.Location = New System.Drawing.Point(451, 370)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(1)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(80, 23)
         Me.btnClose.TabIndex = 32
@@ -372,12 +372,12 @@ Partial Class Main
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.ProgramDataGridViewTextBoxColumn, Me.ApplicationDateDataGridViewTextBoxColumn, Me.MissingStatusDataGridViewTextBoxColumn, Me.ReceivedDataGridViewTextBoxColumn, Me.NotesDataGridViewTextBoxColumn, Me.VerbalQuantitativeDataGridViewTextBoxColumn, Me.GMATDataGridViewTextBoxColumn, Me.GMATVerbalDataGridViewTextBoxColumn, Me.GMATVerbalDataGridViewTextBoxColumn1, Me.GMATQuantitativeDataGridViewTextBoxColumn, Me.GMATQuantitativeDataGridViewTextBoxColumn1, Me.AWADataGridViewTextBoxColumn, Me.GREDataGridViewTextBoxColumn, Me.GREVerbalDataGridViewTextBoxColumn, Me.GREVerbalDataGridViewTextBoxColumn1, Me.GREQuantitativeDataGridViewTextBoxColumn, Me.GREQuantitativeDataGridViewTextBoxColumn1, Me.WRDataGridViewTextBoxColumn, Me.TOEFLDataGridViewTextBoxColumn, Me.TimeWithEmployerDataGridViewTextBoxColumn, Me.CurrentEmployerDataGridViewTextBoxColumn, Me.UndergraduateGPADataGridViewTextBoxColumn, Me.GraduateGPADataGridViewTextBoxColumn, Me.UndergraduateInstitutionDataGridViewTextBoxColumn, Me.UndergraduateDegreeDataGridViewTextBoxColumn, Me.UndergraduateMajorDataGridViewTextBoxColumn, Me.GraduateInstitutionDataGridViewTextBoxColumn, Me.GraduateDegreeDataGridViewTextBoxColumn, Me.GraduateMajorDataGridViewTextBoxColumn, Me.GenderDataGridViewTextBoxColumn, Me.EthnicityDataGridViewTextBoxColumn, Me.AgeDataGridViewTextBoxColumn, Me.CityDataGridViewTextBoxColumn, Me.StateDataGridViewTextBoxColumn, Me.PostalDataGridViewTextBoxColumn, Me.CountryDataGridViewTextBoxColumn, Me.ResidencyDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ViewApplicantBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(7, 156)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.DataGridView1.Location = New System.Drawing.Point(7, 190)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 40
-        Me.DataGridView1.Size = New System.Drawing.Size(531, 160)
+        Me.DataGridView1.Size = New System.Drawing.Size(891, 171)
         Me.DataGridView1.TabIndex = 0
         '
         'IDDataGridViewTextBoxColumn
@@ -704,7 +704,7 @@ Partial Class Main
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(5, 114)
+        Me.Label7.Location = New System.Drawing.Point(4, 30)
         Me.Label7.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(33, 13)
@@ -715,7 +715,7 @@ Partial Class Main
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(52, 114)
+        Me.Label10.Location = New System.Drawing.Point(58, 30)
         Me.Label10.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(21, 13)
@@ -724,8 +724,8 @@ Partial Class Main
         '
         'tbUDegree
         '
-        Me.tbUDegree.Location = New System.Drawing.Point(220, 80)
-        Me.tbUDegree.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tbUDegree.Location = New System.Drawing.Point(212, 56)
+        Me.tbUDegree.Margin = New System.Windows.Forms.Padding(1)
         Me.tbUDegree.Name = "tbUDegree"
         Me.tbUDegree.Size = New System.Drawing.Size(115, 20)
         Me.tbUDegree.TabIndex = 35
@@ -733,7 +733,7 @@ Partial Class Main
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(218, 65)
+        Me.Label11.Location = New System.Drawing.Point(209, 41)
         Me.Label11.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(116, 13)
@@ -742,8 +742,8 @@ Partial Class Main
         '
         'tbResidency
         '
-        Me.tbResidency.Location = New System.Drawing.Point(344, 80)
-        Me.tbResidency.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tbResidency.Location = New System.Drawing.Point(333, 56)
+        Me.tbResidency.Margin = New System.Windows.Forms.Padding(1)
         Me.tbResidency.Name = "tbResidency"
         Me.tbResidency.Size = New System.Drawing.Size(59, 20)
         Me.tbResidency.TabIndex = 37
@@ -751,7 +751,7 @@ Partial Class Main
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(341, 65)
+        Me.Label12.Location = New System.Drawing.Point(330, 41)
         Me.Label12.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(57, 13)
@@ -762,7 +762,7 @@ Partial Class Main
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(149, 114)
+        Me.Label14.Location = New System.Drawing.Point(51, 32)
         Me.Label14.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(21, 13)
@@ -773,7 +773,7 @@ Partial Class Main
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(102, 114)
+        Me.Label15.Location = New System.Drawing.Point(5, 31)
         Me.Label15.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(33, 13)
@@ -784,8 +784,8 @@ Partial Class Main
         '
         Me.numGMATMax.Enabled = False
         Me.numGMATMax.Increment = New Decimal(New Integer() {20, 0, 0, 0})
-        Me.numGMATMax.Location = New System.Drawing.Point(151, 128)
-        Me.numGMATMax.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.numGMATMax.Location = New System.Drawing.Point(54, 45)
+        Me.numGMATMax.Margin = New System.Windows.Forms.Padding(1)
         Me.numGMATMax.Maximum = New Decimal(New Integer() {800, 0, 0, 0})
         Me.numGMATMax.Minimum = New Decimal(New Integer() {200, 0, 0, 0})
         Me.numGMATMax.Name = "numGMATMax"
@@ -797,8 +797,8 @@ Partial Class Main
         '
         Me.numGMATMin.Enabled = False
         Me.numGMATMin.Increment = New Decimal(New Integer() {20, 0, 0, 0})
-        Me.numGMATMin.Location = New System.Drawing.Point(104, 128)
-        Me.numGMATMin.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.numGMATMin.Location = New System.Drawing.Point(7, 45)
+        Me.numGMATMin.Margin = New System.Windows.Forms.Padding(1)
         Me.numGMATMin.Maximum = New Decimal(New Integer() {800, 0, 0, 0})
         Me.numGMATMin.Minimum = New Decimal(New Integer() {200, 0, 0, 0})
         Me.numGMATMin.Name = "numGMATMin"
@@ -810,7 +810,7 @@ Partial Class Main
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(246, 114)
+        Me.Label17.Location = New System.Drawing.Point(64, 32)
         Me.Label17.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(21, 13)
@@ -821,7 +821,7 @@ Partial Class Main
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(199, 114)
+        Me.Label18.Location = New System.Drawing.Point(8, 31)
         Me.Label18.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(33, 13)
@@ -832,8 +832,8 @@ Partial Class Main
         '
         Me.numGREMax.Enabled = False
         Me.numGREMax.Increment = New Decimal(New Integer() {5, 0, 0, 0})
-        Me.numGREMax.Location = New System.Drawing.Point(248, 128)
-        Me.numGREMax.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.numGREMax.Location = New System.Drawing.Point(67, 45)
+        Me.numGREMax.Margin = New System.Windows.Forms.Padding(1)
         Me.numGREMax.Maximum = New Decimal(New Integer() {340, 0, 0, 0})
         Me.numGREMax.Minimum = New Decimal(New Integer() {260, 0, 0, 0})
         Me.numGREMax.Name = "numGREMax"
@@ -845,8 +845,8 @@ Partial Class Main
         '
         Me.numGREMin.Enabled = False
         Me.numGREMin.Increment = New Decimal(New Integer() {5, 0, 0, 0})
-        Me.numGREMin.Location = New System.Drawing.Point(201, 128)
-        Me.numGREMin.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.numGREMin.Location = New System.Drawing.Point(11, 45)
+        Me.numGREMin.Margin = New System.Windows.Forms.Padding(1)
         Me.numGREMin.Maximum = New Decimal(New Integer() {340, 0, 0, 0})
         Me.numGREMin.Minimum = New Decimal(New Integer() {260, 0, 0, 0})
         Me.numGREMin.Name = "numGREMin"
@@ -858,7 +858,7 @@ Partial Class Main
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(342, 114)
+        Me.Label20.Location = New System.Drawing.Point(64, 32)
         Me.Label20.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(21, 13)
@@ -869,7 +869,7 @@ Partial Class Main
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(295, 114)
+        Me.Label21.Location = New System.Drawing.Point(12, 32)
         Me.Label21.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(33, 13)
@@ -879,7 +879,7 @@ Partial Class Main
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(306, 103)
+        Me.Label22.Location = New System.Drawing.Point(25, 13)
         Me.Label22.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(56, 13)
@@ -890,8 +890,8 @@ Partial Class Main
         '
         Me.numUGPAMax.DecimalPlaces = 2
         Me.numUGPAMax.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
-        Me.numUGPAMax.Location = New System.Drawing.Point(344, 128)
-        Me.numUGPAMax.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.numUGPAMax.Location = New System.Drawing.Point(67, 46)
+        Me.numUGPAMax.Margin = New System.Windows.Forms.Padding(1)
         Me.numUGPAMax.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
         Me.numUGPAMax.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.numUGPAMax.Name = "numUGPAMax"
@@ -903,8 +903,8 @@ Partial Class Main
         '
         Me.numUGPAMin.DecimalPlaces = 2
         Me.numUGPAMin.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
-        Me.numUGPAMin.Location = New System.Drawing.Point(297, 128)
-        Me.numUGPAMin.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.numUGPAMin.Location = New System.Drawing.Point(15, 46)
+        Me.numUGPAMin.Margin = New System.Windows.Forms.Padding(1)
         Me.numUGPAMin.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
         Me.numUGPAMin.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.numUGPAMin.Name = "numUGPAMin"
@@ -915,8 +915,8 @@ Partial Class Main
         'cbGMAT
         '
         Me.cbGMAT.AutoSize = True
-        Me.cbGMAT.Location = New System.Drawing.Point(110, 102)
-        Me.cbGMAT.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.cbGMAT.Location = New System.Drawing.Point(15, 11)
+        Me.cbGMAT.Margin = New System.Windows.Forms.Padding(1)
         Me.cbGMAT.Name = "cbGMAT"
         Me.cbGMAT.Size = New System.Drawing.Size(57, 17)
         Me.cbGMAT.TabIndex = 57
@@ -926,13 +926,100 @@ Partial Class Main
         'cbGRE
         '
         Me.cbGRE.AutoSize = True
-        Me.cbGRE.Location = New System.Drawing.Point(208, 102)
-        Me.cbGRE.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.cbGRE.Location = New System.Drawing.Point(25, 13)
+        Me.cbGRE.Margin = New System.Windows.Forms.Padding(1)
         Me.cbGRE.Name = "cbGRE"
         Me.cbGRE.Size = New System.Drawing.Size(49, 17)
         Me.cbGRE.TabIndex = 58
         Me.cbGRE.Text = "GRE"
         Me.cbGRE.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.numMaxAge)
+        Me.GroupBox1.Controls.Add(Me.numMinAge)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 106)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(105, 80)
+        Me.GroupBox1.TabIndex = 59
+        Me.GroupBox1.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(32, 12)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(29, 13)
+        Me.Label4.TabIndex = 35
+        Me.Label4.Text = "AGE"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Label20)
+        Me.GroupBox2.Controls.Add(Me.Label21)
+        Me.GroupBox2.Controls.Add(Me.Label22)
+        Me.GroupBox2.Controls.Add(Me.numUGPAMax)
+        Me.GroupBox2.Controls.Add(Me.numUGPAMin)
+        Me.GroupBox2.Location = New System.Drawing.Point(342, 106)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(111, 82)
+        Me.GroupBox2.TabIndex = 60
+        Me.GroupBox2.TabStop = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.cbGRE)
+        Me.GroupBox3.Controls.Add(Me.Label17)
+        Me.GroupBox3.Controls.Add(Me.Label18)
+        Me.GroupBox3.Controls.Add(Me.numGREMax)
+        Me.GroupBox3.Controls.Add(Me.numGREMin)
+        Me.GroupBox3.Location = New System.Drawing.Point(227, 106)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(109, 81)
+        Me.GroupBox3.TabIndex = 61
+        Me.GroupBox3.TabStop = False
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.cbGMAT)
+        Me.GroupBox4.Controls.Add(Me.Label14)
+        Me.GroupBox4.Controls.Add(Me.Label15)
+        Me.GroupBox4.Controls.Add(Me.numGMATMax)
+        Me.GroupBox4.Controls.Add(Me.numGMATMin)
+        Me.GroupBox4.Location = New System.Drawing.Point(118, 106)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(103, 80)
+        Me.GroupBox4.TabIndex = 62
+        Me.GroupBox4.TabStop = False
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.Label12)
+        Me.GroupBox5.Controls.Add(Me.tbResidency)
+        Me.GroupBox5.Controls.Add(Me.Label11)
+        Me.GroupBox5.Controls.Add(Me.tbUDegree)
+        Me.GroupBox5.Controls.Add(Me.tbEthnicity)
+        Me.GroupBox5.Controls.Add(Me.Label9)
+        Me.GroupBox5.Controls.Add(Me.tbGender)
+        Me.GroupBox5.Controls.Add(Me.Label8)
+        Me.GroupBox5.Controls.Add(Me.tbTWE)
+        Me.GroupBox5.Controls.Add(Me.Label6)
+        Me.GroupBox5.Controls.Add(Me.tbEmployer)
+        Me.GroupBox5.Controls.Add(Me.Label5)
+        Me.GroupBox5.Controls.Add(Me.cbProgram)
+        Me.GroupBox5.Controls.Add(Me.Label3)
+        Me.GroupBox5.Controls.Add(Me.tbLName)
+        Me.GroupBox5.Controls.Add(Me.Label2)
+        Me.GroupBox5.Controls.Add(Me.tbFName)
+        Me.GroupBox5.Controls.Add(Me.Label1)
+        Me.GroupBox5.Location = New System.Drawing.Point(3, 24)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(449, 82)
+        Me.GroupBox5.TabIndex = 63
+        Me.GroupBox5.TabStop = False
         '
         'Main
         '
@@ -940,53 +1027,20 @@ Partial Class Main
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(478, 403)
-        Me.Controls.Add(Me.cbGRE)
-        Me.Controls.Add(Me.cbGMAT)
-        Me.Controls.Add(Me.Label20)
-        Me.Controls.Add(Me.Label21)
-        Me.Controls.Add(Me.Label22)
-        Me.Controls.Add(Me.numUGPAMax)
-        Me.Controls.Add(Me.numUGPAMin)
-        Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.numGREMax)
-        Me.Controls.Add(Me.numGREMin)
-        Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.numGMATMax)
-        Me.Controls.Add(Me.numGMATMin)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.tbResidency)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.tbUDegree)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label7)
+        Me.ClientSize = New System.Drawing.Size(831, 414)
+        Me.Controls.Add(Me.GroupBox5)
+        Me.Controls.Add(Me.GroupBox4)
+        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnClose)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.numMaxAge)
-        Me.Controls.Add(Me.numMinAge)
-        Me.Controls.Add(Me.tbEthnicity)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.tbGender)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.tbTWE)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.tbEmployer)
-        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.btnClear)
-        Me.Controls.Add(Me.cbProgram)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.tbLName)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.tbFName)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnViewApplicant)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Margin = New System.Windows.Forms.Padding(1)
         Me.Name = "Main"
         Me.Text = "Applicants"
         Me.MenuStrip1.ResumeLayout(False)
@@ -1002,6 +1056,16 @@ Partial Class Main
         CType(Me.numGREMin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.numUGPAMax, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.numUGPAMin, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1031,7 +1095,6 @@ Partial Class Main
     Friend WithEvents tbEthnicity As TextBox
     Friend WithEvents numMinAge As NumericUpDown
     Friend WithEvents numMaxAge As NumericUpDown
-    Friend WithEvents Label4 As Label
     Friend WithEvents btnClose As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -1095,4 +1158,10 @@ Partial Class Main
     Friend WithEvents numUGPAMin As NumericUpDown
     Friend WithEvents cbGMAT As CheckBox
     Friend WithEvents cbGRE As CheckBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents GroupBox5 As GroupBox
 End Class
