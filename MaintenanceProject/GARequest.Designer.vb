@@ -88,6 +88,8 @@ Partial Class GARequest
         Me.lbGAsRequested = New System.Windows.Forms.ListBox()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.numGAHours = New System.Windows.Forms.NumericUpDown()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.numGAs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numHours, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -720,12 +722,33 @@ Partial Class GARequest
         Me.numGAHours.TabIndex = 26
         Me.numGAHours.Value = New Decimal(New Integer() {20, 0, 0, 0})
         '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(336, 960)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(98, 32)
+        Me.Label33.TabIndex = 27
+        Me.Label33.Text = "Hours:"
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(902, 945)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(120, 51)
+        Me.Button1.TabIndex = 28
+        Me.Button1.Text = "Clear"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'GARequest
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1895, 1146)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label33)
         Me.Controls.Add(Me.numGAHours)
         Me.Controls.Add(Me.Label32)
         Me.Controls.Add(Me.lbGAsRequested)
@@ -843,4 +866,6 @@ Partial Class GARequest
     Friend WithEvents lbGAsRequested As ListBox
     Friend WithEvents Label32 As Label
     Friend WithEvents numGAHours As NumericUpDown
+    Friend WithEvents Label33 As Label
+    Friend WithEvents Button1 As Button
 End Class
