@@ -47,6 +47,8 @@ Public Class GARequest
             GAHours.Add(numGAHours.Value)
         End If
 
+        cbRequest.SelectedIndex = -1
+        numGAHours.Value = 20
     End Sub
 
 
@@ -144,5 +146,36 @@ Public Class GARequest
         SubmitRequest()
         'MessageBox.Show(formID)
         AddGAs()
+
+        MessageBox.Show("Request Submitted Successfully.", "Request Submitted")
+
+        tbDuties.Clear()
+        tbEmail.Clear()
+        tbOther.Clear()
+        tbOther2.Clear()
+        tbRequestReason.Clear()
+        tbStatisticalPackages.Clear()
+        cbRequest.SelectedIndex = -1
+        numGAHours.Value = 20
+        numGAs.Value = 0
+        numHours.Value = 0
+        trackDatabase.Value = 1
+        trackEditing.Value = 1
+        trackEnglish.Value = 1
+        trackInternet.Value = 1
+        trackSpreadsheet.Value = 1
+        trackWordProcess.Value = 1
+        trackWriting.Value = 1
+        lbGAsRequested.Items.Clear()
+        GAs.Clear()
+        GAHours.Clear()
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        lbGAsRequested.Items.Clear()
+        GAs.Clear()
+        GAHours.Clear()
+        numGAHours.Value = 20
     End Sub
 End Class
