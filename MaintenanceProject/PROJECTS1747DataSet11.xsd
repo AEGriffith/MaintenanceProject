@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PROJECTS1747DataSet11" targetNamespace="http://tempuri.org/PROJECTS1747DataSet11.xsd" xmlns:mstns="http://tempuri.org/PROJECTS1747DataSet11.xsd" xmlns="http://tempuri.org/PROJECTS1747DataSet11.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="PROJECTS1747ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PROJECTS1747ConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MaintenanceProject.My.MySettings.GlobalReference.Default.PROJECTS1747ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="viewGAsRequestedByTableAdapter" GeneratorDataComponentClassName="viewGAsRequestedByTableAdapter" Name="viewGAsRequestedBy" UserDataComponentName="viewGAsRequestedByTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PROJECTS1747ConnectionString (MySettings)" DbObjectName="PROJECTS1747.dbo.viewGAsRequestedBy" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [First Name], [Last Name], Hours, [Reason for Request], Duties, Internet, [Word Processing], Spreadsheet, [Database], [Statistical Packages], Writing, Editing, [English Speaking], [Other Communication Skills], Comments, GAForm_ID, Student_ID FROM dbo.viewGAsRequestedBy</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="First Name" DataSetColumn="First Name" />
+              <Mapping SourceColumn="Last Name" DataSetColumn="Last Name" />
+              <Mapping SourceColumn="Hours" DataSetColumn="Hours" />
+              <Mapping SourceColumn="Reason for Request" DataSetColumn="Reason for Request" />
+              <Mapping SourceColumn="Duties" DataSetColumn="Duties" />
+              <Mapping SourceColumn="Internet" DataSetColumn="Internet" />
+              <Mapping SourceColumn="Word Processing" DataSetColumn="Word Processing" />
+              <Mapping SourceColumn="Spreadsheet" DataSetColumn="Spreadsheet" />
+              <Mapping SourceColumn="Database" DataSetColumn="Database" />
+              <Mapping SourceColumn="Statistical Packages" DataSetColumn="Statistical Packages" />
+              <Mapping SourceColumn="Writing" DataSetColumn="Writing" />
+              <Mapping SourceColumn="Editing" DataSetColumn="Editing" />
+              <Mapping SourceColumn="English Speaking" DataSetColumn="English Speaking" />
+              <Mapping SourceColumn="Other Communication Skills" DataSetColumn="Other Communication Skills" />
+              <Mapping SourceColumn="Comments" DataSetColumn="Comments" />
+              <Mapping SourceColumn="GAForm_ID" DataSetColumn="GAForm_ID" />
+              <Mapping SourceColumn="Student_ID" DataSetColumn="Student_ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PROJECTS1747DataSet11" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PROJECTS1747DataSet11" msprop:Generator_UserDSName="PROJECTS1747DataSet11">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="viewGAsRequestedBy" msprop:Generator_TableClassName="viewGAsRequestedByDataTable" msprop:Generator_TableVarName="tableviewGAsRequestedBy" msprop:Generator_TablePropName="viewGAsRequestedBy" msprop:Generator_RowDeletingName="viewGAsRequestedByRowDeleting" msprop:Generator_RowChangingName="viewGAsRequestedByRowChanging" msprop:Generator_RowEvHandlerName="viewGAsRequestedByRowChangeEventHandler" msprop:Generator_RowDeletedName="viewGAsRequestedByRowDeleted" msprop:Generator_UserTableName="viewGAsRequestedBy" msprop:Generator_RowChangedName="viewGAsRequestedByRowChanged" msprop:Generator_RowEvArgName="viewGAsRequestedByRowChangeEvent" msprop:Generator_RowClassName="viewGAsRequestedByRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="First_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnFirst_Name" msprop:Generator_ColumnPropNameInRow="First_Name" msprop:Generator_ColumnPropNameInTable="First_NameColumn" msprop:Generator_UserColumnName="First Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Last_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnLast_Name" msprop:Generator_ColumnPropNameInRow="Last_Name" msprop:Generator_ColumnPropNameInTable="Last_NameColumn" msprop:Generator_UserColumnName="Last Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Hours" msprop:Generator_ColumnVarNameInTable="columnHours" msprop:Generator_ColumnPropNameInRow="Hours" msprop:Generator_ColumnPropNameInTable="HoursColumn" msprop:Generator_UserColumnName="Hours" type="xs:int" minOccurs="0" />
+              <xs:element name="Reason_x0020_for_x0020_Request" msprop:Generator_ColumnVarNameInTable="columnReason_for_Request" msprop:Generator_ColumnPropNameInRow="Reason_for_Request" msprop:Generator_ColumnPropNameInTable="Reason_for_RequestColumn" msprop:Generator_UserColumnName="Reason for Request" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Duties" msprop:Generator_ColumnVarNameInTable="columnDuties" msprop:Generator_ColumnPropNameInRow="Duties" msprop:Generator_ColumnPropNameInTable="DutiesColumn" msprop:Generator_UserColumnName="Duties" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Internet" msprop:Generator_ColumnVarNameInTable="columnInternet" msprop:Generator_ColumnPropNameInRow="Internet" msprop:Generator_ColumnPropNameInTable="InternetColumn" msprop:Generator_UserColumnName="Internet" type="xs:int" minOccurs="0" />
+              <xs:element name="Word_x0020_Processing" msprop:Generator_ColumnVarNameInTable="columnWord_Processing" msprop:Generator_ColumnPropNameInRow="Word_Processing" msprop:Generator_ColumnPropNameInTable="Word_ProcessingColumn" msprop:Generator_UserColumnName="Word Processing" type="xs:int" minOccurs="0" />
+              <xs:element name="Spreadsheet" msprop:Generator_ColumnVarNameInTable="columnSpreadsheet" msprop:Generator_ColumnPropNameInRow="Spreadsheet" msprop:Generator_ColumnPropNameInTable="SpreadsheetColumn" msprop:Generator_UserColumnName="Spreadsheet" type="xs:int" minOccurs="0" />
+              <xs:element name="Database" msprop:Generator_ColumnVarNameInTable="columnDatabase" msprop:Generator_ColumnPropNameInRow="Database" msprop:Generator_ColumnPropNameInTable="DatabaseColumn" msprop:Generator_UserColumnName="Database" type="xs:int" minOccurs="0" />
+              <xs:element name="Statistical_x0020_Packages" msprop:Generator_ColumnVarNameInTable="columnStatistical_Packages" msprop:Generator_ColumnPropNameInRow="Statistical_Packages" msprop:Generator_ColumnPropNameInTable="Statistical_PackagesColumn" msprop:Generator_UserColumnName="Statistical Packages" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Writing" msprop:Generator_ColumnVarNameInTable="columnWriting" msprop:Generator_ColumnPropNameInRow="Writing" msprop:Generator_ColumnPropNameInTable="WritingColumn" msprop:Generator_UserColumnName="Writing" type="xs:int" minOccurs="0" />
+              <xs:element name="Editing" msprop:Generator_ColumnVarNameInTable="columnEditing" msprop:Generator_ColumnPropNameInRow="Editing" msprop:Generator_ColumnPropNameInTable="EditingColumn" msprop:Generator_UserColumnName="Editing" type="xs:int" minOccurs="0" />
+              <xs:element name="English_x0020_Speaking" msprop:Generator_ColumnVarNameInTable="columnEnglish_Speaking" msprop:Generator_ColumnPropNameInRow="English_Speaking" msprop:Generator_ColumnPropNameInTable="English_SpeakingColumn" msprop:Generator_UserColumnName="English Speaking" type="xs:int" minOccurs="0" />
+              <xs:element name="Other_x0020_Communication_x0020_Skills" msprop:Generator_ColumnVarNameInTable="columnOther_Communication_Skills" msprop:Generator_ColumnPropNameInRow="Other_Communication_Skills" msprop:Generator_ColumnPropNameInTable="Other_Communication_SkillsColumn" msprop:Generator_UserColumnName="Other Communication Skills" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Comments" msprop:Generator_ColumnVarNameInTable="columnComments" msprop:Generator_ColumnPropNameInRow="Comments" msprop:Generator_ColumnPropNameInTable="CommentsColumn" msprop:Generator_UserColumnName="Comments" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GAForm_ID" msprop:Generator_ColumnVarNameInTable="columnGAForm_ID" msprop:Generator_ColumnPropNameInRow="GAForm_ID" msprop:Generator_ColumnPropNameInTable="GAForm_IDColumn" msprop:Generator_UserColumnName="GAForm_ID" type="xs:int" />
+              <xs:element name="Student_ID" msprop:Generator_ColumnVarNameInTable="columnStudent_ID" msprop:Generator_ColumnPropNameInRow="Student_ID" msprop:Generator_ColumnPropNameInTable="Student_IDColumn" msprop:Generator_UserColumnName="Student_ID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
