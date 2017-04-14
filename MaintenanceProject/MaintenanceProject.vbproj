@@ -148,6 +148,12 @@
     <Compile Include="GASupervisor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GAViewRequest.Designer.vb">
+      <DependentUpon>GAViewRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GAViewRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InterviewAdd.Designer.vb">
       <DependentUpon>InterviewAdd.vb</DependentUpon>
     </Compile>
@@ -220,6 +226,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PROJECTS1747DataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PROJECTS1747DataSet5.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PROJECTS1747DataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="StudentProfile.Designer.vb">
       <DependentUpon>StudentProfile.vb</DependentUpon>
     </Compile>
@@ -230,6 +241,12 @@
       <DependentUpon>ViewComments.vb</DependentUpon>
     </Compile>
     <Compile Include="ViewComments.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm.Designer.vb">
+      <DependentUpon>ViewForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewInterviewComments.Designer.vb">
@@ -270,6 +287,9 @@
     <EmbeddedResource Include="GASupervisor.resx">
       <DependentUpon>GASupervisor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GAViewRequest.resx">
+      <DependentUpon>GAViewRequest.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterviewAdd.resx">
       <DependentUpon>InterviewAdd.vb</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComments.resx">
       <DependentUpon>ViewComments.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm.resx">
+      <DependentUpon>ViewForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewInterviewComments.resx">
       <DependentUpon>ViewInterviewComments.vb</DependentUpon>
@@ -368,6 +391,17 @@
     </None>
     <None Include="PROJECTS1747DataSet4.xss">
       <DependentUpon>PROJECTS1747DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="PROJECTS1747DataSet5.xsc">
+      <DependentUpon>PROJECTS1747DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="PROJECTS1747DataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PROJECTS1747DataSet5.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PROJECTS1747DataSet5.xss">
+      <DependentUpon>PROJECTS1747DataSet5.xsd</DependentUpon>
     </None>
     <None Include="Resources\Test.png" />
   </ItemGroup>
