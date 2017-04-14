@@ -30,6 +30,7 @@ Public Class DegreeProgress
         'adjust position so the right hand point is in the same position as before
         lblConcentration.Left = rightAlignConcentration - lblConcentration.Width
         lblStuID.Text = StudentID
+        Me.Width = -lblConcentration.Width
 
         GetCoursesRemaining()
         GetCoursesTaken()

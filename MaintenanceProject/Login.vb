@@ -8,6 +8,8 @@ Public Class Login
     Dim AdminCheck As Boolean
     Dim GACheck As Boolean
     Dim SupervisorCheck As Boolean
+    Dim FirstName As String
+    Dim LastName As String
 
     Dim ConnInfo As New DBConnectionInfo
     Dim ConnString As String = ConnInfo.GetConnString()
@@ -36,6 +38,8 @@ Public Class Login
             Dim commandGetAdvisor As New OleDbCommand("SELECT Advisor FROM User_ID WHERE User_ID = " & UserName, con)
             Dim commandGetGA As New OleDbCommand("SELECT GA FROM User_ID WHERE User_ID = " & UserName, con)
             Dim commandGetGASupervisor As New OleDbCommand("SELECT GA_Supervisor FROM User_ID WHERE User_ID = " & UserName, con)
+            Dim commandGetFirstName As New OleDbCommand("SELECT First_Name FROM User_ID WHERE User_ID = " & UserName, con)
+            Dim commandGetLastName As New OleDbCommand("SELECT Last_Name FROM User_ID WHERE User_ID = " & UserName, con)
             con.ConnectionString = ConnString
             con.Open()
 
@@ -51,6 +55,8 @@ Public Class Login
                         AdvisorCheck = commandGetAdvisor.ExecuteScalar()
                         GACheck = commandGetGA.ExecuteScalar()
                         SupervisorCheck = commandGetGASupervisor.ExecuteScalar()
+                        FirstName = commandGetFirstName.ExecuteScalar()
+                        LastName = commandGetLastName.ExecuteScalar()
                         If AdminCheck = True Then
                             DirectorSystemChoice.Show()
                         ElseIf CommitteeCheck = True Then
@@ -104,5 +110,9 @@ Public Class Login
 
     Friend Function getAdvisorCheck()
         Return AdvisorCheck
+    End Function
+
+    Friend Function getName()
+        Return LastName & ", " & FirstName
     End Function
 End Class
