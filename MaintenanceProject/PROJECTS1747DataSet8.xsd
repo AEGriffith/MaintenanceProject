@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PROJECTS1747DataSet8" targetNamespace="http://tempuri.org/PROJECTS1747DataSet8.xsd" xmlns:mstns="http://tempuri.org/PROJECTS1747DataSet8.xsd" xmlns="http://tempuri.org/PROJECTS1747DataSet8.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="PROJECTS1747ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PROJECTS1747ConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MaintenanceProject.My.MySettings.GlobalReference.Default.PROJECTS1747ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="viewAvailableGAsTableAdapter" GeneratorDataComponentClassName="viewAvailableGAsTableAdapter" Name="viewAvailableGAs" UserDataComponentName="viewAvailableGAsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PROJECTS1747ConnectionString (MySettings)" DbObjectName="PROJECTS1747.dbo.viewAvailableGAs" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [First name], [Last Name], [Hours Assigned], Internet, [Word Processing], Spreadsheet, [Database], [Statistical Packages], Writing, Editing, [English Speaking], Other, Student_ID, Application_ID, Program_Name, Status FROM dbo.viewAvailableGAs</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="First name" DataSetColumn="First name" />
+              <Mapping SourceColumn="Last Name" DataSetColumn="Last Name" />
+              <Mapping SourceColumn="Hours Assigned" DataSetColumn="Hours Assigned" />
+              <Mapping SourceColumn="Internet" DataSetColumn="Internet" />
+              <Mapping SourceColumn="Word Processing" DataSetColumn="Word Processing" />
+              <Mapping SourceColumn="Spreadsheet" DataSetColumn="Spreadsheet" />
+              <Mapping SourceColumn="Database" DataSetColumn="Database" />
+              <Mapping SourceColumn="Statistical Packages" DataSetColumn="Statistical Packages" />
+              <Mapping SourceColumn="Writing" DataSetColumn="Writing" />
+              <Mapping SourceColumn="Editing" DataSetColumn="Editing" />
+              <Mapping SourceColumn="English Speaking" DataSetColumn="English Speaking" />
+              <Mapping SourceColumn="Other" DataSetColumn="Other" />
+              <Mapping SourceColumn="Student_ID" DataSetColumn="Student_ID" />
+              <Mapping SourceColumn="Application_ID" DataSetColumn="Application_ID" />
+              <Mapping SourceColumn="Program_Name" DataSetColumn="Program_Name" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PROJECTS1747DataSet8" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PROJECTS1747DataSet8" msprop:Generator_UserDSName="PROJECTS1747DataSet8">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="viewAvailableGAs" msprop:Generator_TableClassName="viewAvailableGAsDataTable" msprop:Generator_TableVarName="tableviewAvailableGAs" msprop:Generator_TablePropName="viewAvailableGAs" msprop:Generator_RowDeletingName="viewAvailableGAsRowDeleting" msprop:Generator_RowChangingName="viewAvailableGAsRowChanging" msprop:Generator_RowEvHandlerName="viewAvailableGAsRowChangeEventHandler" msprop:Generator_RowDeletedName="viewAvailableGAsRowDeleted" msprop:Generator_UserTableName="viewAvailableGAs" msprop:Generator_RowChangedName="viewAvailableGAsRowChanged" msprop:Generator_RowEvArgName="viewAvailableGAsRowChangeEvent" msprop:Generator_RowClassName="viewAvailableGAsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="First_x0020_name" msprop:Generator_ColumnVarNameInTable="columnFirst_name" msprop:Generator_ColumnPropNameInRow="First_name" msprop:Generator_ColumnPropNameInTable="First_nameColumn" msprop:Generator_UserColumnName="First name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Last_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnLast_Name" msprop:Generator_ColumnPropNameInRow="Last_Name" msprop:Generator_ColumnPropNameInTable="Last_NameColumn" msprop:Generator_UserColumnName="Last Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Hours_x0020_Assigned" msprop:Generator_ColumnVarNameInTable="columnHours_Assigned" msprop:Generator_ColumnPropNameInRow="Hours_Assigned" msprop:Generator_ColumnPropNameInTable="Hours_AssignedColumn" msprop:Generator_UserColumnName="Hours Assigned" type="xs:int" minOccurs="0" />
+              <xs:element name="Internet" msprop:Generator_ColumnVarNameInTable="columnInternet" msprop:Generator_ColumnPropNameInRow="Internet" msprop:Generator_ColumnPropNameInTable="InternetColumn" msprop:Generator_UserColumnName="Internet" type="xs:int" minOccurs="0" />
+              <xs:element name="Word_x0020_Processing" msprop:Generator_ColumnVarNameInTable="columnWord_Processing" msprop:Generator_ColumnPropNameInRow="Word_Processing" msprop:Generator_ColumnPropNameInTable="Word_ProcessingColumn" msprop:Generator_UserColumnName="Word Processing" type="xs:int" minOccurs="0" />
+              <xs:element name="Spreadsheet" msprop:Generator_ColumnVarNameInTable="columnSpreadsheet" msprop:Generator_ColumnPropNameInRow="Spreadsheet" msprop:Generator_ColumnPropNameInTable="SpreadsheetColumn" msprop:Generator_UserColumnName="Spreadsheet" type="xs:int" minOccurs="0" />
+              <xs:element name="Database" msprop:Generator_ColumnVarNameInTable="columnDatabase" msprop:Generator_ColumnPropNameInRow="Database" msprop:Generator_ColumnPropNameInTable="DatabaseColumn" msprop:Generator_UserColumnName="Database" type="xs:int" minOccurs="0" />
+              <xs:element name="Statistical_x0020_Packages" msprop:Generator_ColumnVarNameInTable="columnStatistical_Packages" msprop:Generator_ColumnPropNameInRow="Statistical_Packages" msprop:Generator_ColumnPropNameInTable="Statistical_PackagesColumn" msprop:Generator_UserColumnName="Statistical Packages" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Writing" msprop:Generator_ColumnVarNameInTable="columnWriting" msprop:Generator_ColumnPropNameInRow="Writing" msprop:Generator_ColumnPropNameInTable="WritingColumn" msprop:Generator_UserColumnName="Writing" type="xs:int" minOccurs="0" />
+              <xs:element name="Editing" msprop:Generator_ColumnVarNameInTable="columnEditing" msprop:Generator_ColumnPropNameInRow="Editing" msprop:Generator_ColumnPropNameInTable="EditingColumn" msprop:Generator_UserColumnName="Editing" type="xs:int" minOccurs="0" />
+              <xs:element name="English_x0020_Speaking" msprop:Generator_ColumnVarNameInTable="columnEnglish_Speaking" msprop:Generator_ColumnPropNameInRow="English_Speaking" msprop:Generator_ColumnPropNameInTable="English_SpeakingColumn" msprop:Generator_UserColumnName="English Speaking" type="xs:int" minOccurs="0" />
+              <xs:element name="Other" msprop:Generator_ColumnVarNameInTable="columnOther" msprop:Generator_ColumnPropNameInRow="Other" msprop:Generator_ColumnPropNameInTable="OtherColumn" msprop:Generator_UserColumnName="Other" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Student_ID" msprop:Generator_ColumnVarNameInTable="columnStudent_ID" msprop:Generator_ColumnPropNameInRow="Student_ID" msprop:Generator_ColumnPropNameInTable="Student_IDColumn" msprop:Generator_UserColumnName="Student_ID" type="xs:int" />
+              <xs:element name="Application_ID" msprop:Generator_ColumnVarNameInTable="columnApplication_ID" msprop:Generator_ColumnPropNameInRow="Application_ID" msprop:Generator_ColumnPropNameInTable="Application_IDColumn" msprop:Generator_UserColumnName="Application_ID" type="xs:int" />
+              <xs:element name="Program_Name" msprop:Generator_ColumnVarNameInTable="columnProgram_Name" msprop:Generator_ColumnPropNameInRow="Program_Name" msprop:Generator_ColumnPropNameInTable="Program_NameColumn" msprop:Generator_UserColumnName="Program_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
