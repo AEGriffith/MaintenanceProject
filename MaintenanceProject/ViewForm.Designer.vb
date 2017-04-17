@@ -62,6 +62,23 @@ Partial Class GAViewRequestForm
         Me.lblName = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HoursRequestedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalHoursAssignedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InternetDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WordProcessingDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SpreadsheetsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DatabaseDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatisticalPackagesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WritingDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EditingDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EnglishSpeakingDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OtherCommunicationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FormDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ViewRequestedGABindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PROJECTS1747DataSet12 = New MaintenanceProject.PROJECTS1747DataSet12()
         Me.GA_RequestTableAdapter = New MaintenanceProject.PROJECTS1747DataSet5TableAdapters.GA_RequestTableAdapter()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.FirstNameDataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -82,24 +99,8 @@ Partial Class GAViewRequestForm
         Me.PROJECTS1747DataSet9 = New MaintenanceProject.PROJECTS1747DataSet9()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ViewAvailableGAsTableAdapter = New MaintenanceProject.PROJECTS1747DataSet9TableAdapters.viewAvailableGAsTableAdapter()
-        Me.PROJECTS1747DataSet12 = New MaintenanceProject.PROJECTS1747DataSet12()
-        Me.ViewRequestedGABindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ViewRequestedGATableAdapter = New MaintenanceProject.PROJECTS1747DataSet12TableAdapters.viewRequestedGATableAdapter()
-        Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HoursRequestedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TotalHoursAssignedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.InternetDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.WordProcessingDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SpreadsheetsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DatabaseDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StatisticalPackagesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.WritingDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EditingDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EnglishSpeakingDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.OtherCommunicationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FormDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.GARequestBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PROJECTS1747DataSet5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -107,11 +108,11 @@ Partial Class GAViewRequestForm
         CType(Me.numHours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numGAs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ViewRequestedGABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PROJECTS1747DataSet12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ViewAvailableGAsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PROJECTS1747DataSet9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PROJECTS1747DataSet12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ViewRequestedGABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label32
@@ -499,6 +500,136 @@ Partial Class GAViewRequestForm
         Me.DataGridView1.Size = New System.Drawing.Size(1841, 312)
         Me.DataGridView1.TabIndex = 52
         '
+        'FirstNameDataGridViewTextBoxColumn
+        '
+        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name"
+        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "First Name"
+        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
+        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.FirstNameDataGridViewTextBoxColumn.Width = 190
+        '
+        'LastNameDataGridViewTextBoxColumn
+        '
+        Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "Last Name"
+        Me.LastNameDataGridViewTextBoxColumn.HeaderText = "Last Name"
+        Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
+        Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.LastNameDataGridViewTextBoxColumn.Width = 189
+        '
+        'HoursRequestedDataGridViewTextBoxColumn
+        '
+        Me.HoursRequestedDataGridViewTextBoxColumn.DataPropertyName = "Hours Requested"
+        Me.HoursRequestedDataGridViewTextBoxColumn.HeaderText = "Hours Requested"
+        Me.HoursRequestedDataGridViewTextBoxColumn.Name = "HoursRequestedDataGridViewTextBoxColumn"
+        Me.HoursRequestedDataGridViewTextBoxColumn.ReadOnly = True
+        Me.HoursRequestedDataGridViewTextBoxColumn.Width = 265
+        '
+        'TotalHoursAssignedDataGridViewTextBoxColumn
+        '
+        Me.TotalHoursAssignedDataGridViewTextBoxColumn.DataPropertyName = "Total Hours Assigned"
+        Me.TotalHoursAssignedDataGridViewTextBoxColumn.HeaderText = "Total Hours Assigned"
+        Me.TotalHoursAssignedDataGridViewTextBoxColumn.Name = "TotalHoursAssignedDataGridViewTextBoxColumn"
+        Me.TotalHoursAssignedDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TotalHoursAssignedDataGridViewTextBoxColumn.Width = 311
+        '
+        'InternetDataGridViewTextBoxColumn
+        '
+        Me.InternetDataGridViewTextBoxColumn.DataPropertyName = "Internet"
+        Me.InternetDataGridViewTextBoxColumn.HeaderText = "Internet"
+        Me.InternetDataGridViewTextBoxColumn.Name = "InternetDataGridViewTextBoxColumn"
+        Me.InternetDataGridViewTextBoxColumn.ReadOnly = True
+        Me.InternetDataGridViewTextBoxColumn.Width = 165
+        '
+        'WordProcessingDataGridViewTextBoxColumn
+        '
+        Me.WordProcessingDataGridViewTextBoxColumn.DataPropertyName = "Word Processing"
+        Me.WordProcessingDataGridViewTextBoxColumn.HeaderText = "Word Processing"
+        Me.WordProcessingDataGridViewTextBoxColumn.Name = "WordProcessingDataGridViewTextBoxColumn"
+        Me.WordProcessingDataGridViewTextBoxColumn.ReadOnly = True
+        Me.WordProcessingDataGridViewTextBoxColumn.Width = 260
+        '
+        'SpreadsheetsDataGridViewTextBoxColumn
+        '
+        Me.SpreadsheetsDataGridViewTextBoxColumn.DataPropertyName = "Spreadsheets"
+        Me.SpreadsheetsDataGridViewTextBoxColumn.HeaderText = "Spreadsheets"
+        Me.SpreadsheetsDataGridViewTextBoxColumn.Name = "SpreadsheetsDataGridViewTextBoxColumn"
+        Me.SpreadsheetsDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SpreadsheetsDataGridViewTextBoxColumn.Width = 245
+        '
+        'DatabaseDataGridViewTextBoxColumn
+        '
+        Me.DatabaseDataGridViewTextBoxColumn.DataPropertyName = "Database"
+        Me.DatabaseDataGridViewTextBoxColumn.HeaderText = "Database"
+        Me.DatabaseDataGridViewTextBoxColumn.Name = "DatabaseDataGridViewTextBoxColumn"
+        Me.DatabaseDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DatabaseDataGridViewTextBoxColumn.Width = 191
+        '
+        'StatisticalPackagesDataGridViewTextBoxColumn
+        '
+        Me.StatisticalPackagesDataGridViewTextBoxColumn.DataPropertyName = "Statistical Packages"
+        Me.StatisticalPackagesDataGridViewTextBoxColumn.HeaderText = "Statistical Packages"
+        Me.StatisticalPackagesDataGridViewTextBoxColumn.Name = "StatisticalPackagesDataGridViewTextBoxColumn"
+        Me.StatisticalPackagesDataGridViewTextBoxColumn.ReadOnly = True
+        Me.StatisticalPackagesDataGridViewTextBoxColumn.Width = 297
+        '
+        'WritingDataGridViewTextBoxColumn
+        '
+        Me.WritingDataGridViewTextBoxColumn.DataPropertyName = "Writing"
+        Me.WritingDataGridViewTextBoxColumn.HeaderText = "Writing"
+        Me.WritingDataGridViewTextBoxColumn.Name = "WritingDataGridViewTextBoxColumn"
+        Me.WritingDataGridViewTextBoxColumn.ReadOnly = True
+        Me.WritingDataGridViewTextBoxColumn.Width = 158
+        '
+        'EditingDataGridViewTextBoxColumn
+        '
+        Me.EditingDataGridViewTextBoxColumn.DataPropertyName = "Editing"
+        Me.EditingDataGridViewTextBoxColumn.HeaderText = "Editing"
+        Me.EditingDataGridViewTextBoxColumn.Name = "EditingDataGridViewTextBoxColumn"
+        Me.EditingDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EditingDataGridViewTextBoxColumn.Width = 158
+        '
+        'EnglishSpeakingDataGridViewTextBoxColumn
+        '
+        Me.EnglishSpeakingDataGridViewTextBoxColumn.DataPropertyName = "English Speaking"
+        Me.EnglishSpeakingDataGridViewTextBoxColumn.HeaderText = "English Speaking"
+        Me.EnglishSpeakingDataGridViewTextBoxColumn.Name = "EnglishSpeakingDataGridViewTextBoxColumn"
+        Me.EnglishSpeakingDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EnglishSpeakingDataGridViewTextBoxColumn.Width = 267
+        '
+        'OtherCommunicationDataGridViewTextBoxColumn
+        '
+        Me.OtherCommunicationDataGridViewTextBoxColumn.DataPropertyName = "Other Communication"
+        Me.OtherCommunicationDataGridViewTextBoxColumn.HeaderText = "Other Communication"
+        Me.OtherCommunicationDataGridViewTextBoxColumn.Name = "OtherCommunicationDataGridViewTextBoxColumn"
+        Me.OtherCommunicationDataGridViewTextBoxColumn.ReadOnly = True
+        Me.OtherCommunicationDataGridViewTextBoxColumn.Width = 315
+        '
+        'FormDataGridViewTextBoxColumn
+        '
+        Me.FormDataGridViewTextBoxColumn.DataPropertyName = "Form"
+        Me.FormDataGridViewTextBoxColumn.HeaderText = "Form"
+        Me.FormDataGridViewTextBoxColumn.Name = "FormDataGridViewTextBoxColumn"
+        Me.FormDataGridViewTextBoxColumn.ReadOnly = True
+        Me.FormDataGridViewTextBoxColumn.Width = 134
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Student_ID"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Student_ID"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        Me.DataGridViewTextBoxColumn6.Width = 210
+        '
+        'ViewRequestedGABindingSource
+        '
+        Me.ViewRequestedGABindingSource.DataMember = "viewRequestedGA"
+        Me.ViewRequestedGABindingSource.DataSource = Me.PROJECTS1747DataSet12
+        '
+        'PROJECTS1747DataSet12
+        '
+        Me.PROJECTS1747DataSet12.DataSetName = "PROJECTS1747DataSet12"
+        Me.PROJECTS1747DataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'GA_RequestTableAdapter
         '
         Me.GA_RequestTableAdapter.ClearBeforeFill = True
@@ -655,139 +786,18 @@ Partial Class GAViewRequestForm
         '
         Me.ViewAvailableGAsTableAdapter.ClearBeforeFill = True
         '
-        'PROJECTS1747DataSet12
-        '
-        Me.PROJECTS1747DataSet12.DataSetName = "PROJECTS1747DataSet12"
-        Me.PROJECTS1747DataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ViewRequestedGABindingSource
-        '
-        Me.ViewRequestedGABindingSource.DataMember = "viewRequestedGA"
-        Me.ViewRequestedGABindingSource.DataSource = Me.PROJECTS1747DataSet12
-        '
         'ViewRequestedGATableAdapter
         '
         Me.ViewRequestedGATableAdapter.ClearBeforeFill = True
         '
-        'FirstNameDataGridViewTextBoxColumn
+        'Button1
         '
-        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name"
-        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "First Name"
-        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
-        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.FirstNameDataGridViewTextBoxColumn.Width = 206
-        '
-        'LastNameDataGridViewTextBoxColumn
-        '
-        Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "Last Name"
-        Me.LastNameDataGridViewTextBoxColumn.HeaderText = "Last Name"
-        Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
-        Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.LastNameDataGridViewTextBoxColumn.Width = 205
-        '
-        'HoursRequestedDataGridViewTextBoxColumn
-        '
-        Me.HoursRequestedDataGridViewTextBoxColumn.DataPropertyName = "Hours Requested"
-        Me.HoursRequestedDataGridViewTextBoxColumn.HeaderText = "Hours Requested"
-        Me.HoursRequestedDataGridViewTextBoxColumn.Name = "HoursRequestedDataGridViewTextBoxColumn"
-        Me.HoursRequestedDataGridViewTextBoxColumn.ReadOnly = True
-        Me.HoursRequestedDataGridViewTextBoxColumn.Width = 265
-        '
-        'TotalHoursAssignedDataGridViewTextBoxColumn
-        '
-        Me.TotalHoursAssignedDataGridViewTextBoxColumn.DataPropertyName = "Total Hours Assigned"
-        Me.TotalHoursAssignedDataGridViewTextBoxColumn.HeaderText = "Total Hours Assigned"
-        Me.TotalHoursAssignedDataGridViewTextBoxColumn.Name = "TotalHoursAssignedDataGridViewTextBoxColumn"
-        Me.TotalHoursAssignedDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TotalHoursAssignedDataGridViewTextBoxColumn.Width = 311
-        '
-        'InternetDataGridViewTextBoxColumn
-        '
-        Me.InternetDataGridViewTextBoxColumn.DataPropertyName = "Internet"
-        Me.InternetDataGridViewTextBoxColumn.HeaderText = "Internet"
-        Me.InternetDataGridViewTextBoxColumn.Name = "InternetDataGridViewTextBoxColumn"
-        Me.InternetDataGridViewTextBoxColumn.ReadOnly = True
-        Me.InternetDataGridViewTextBoxColumn.Width = 165
-        '
-        'WordProcessingDataGridViewTextBoxColumn
-        '
-        Me.WordProcessingDataGridViewTextBoxColumn.DataPropertyName = "Word Processing"
-        Me.WordProcessingDataGridViewTextBoxColumn.HeaderText = "Word Processing"
-        Me.WordProcessingDataGridViewTextBoxColumn.Name = "WordProcessingDataGridViewTextBoxColumn"
-        Me.WordProcessingDataGridViewTextBoxColumn.ReadOnly = True
-        Me.WordProcessingDataGridViewTextBoxColumn.Width = 260
-        '
-        'SpreadsheetsDataGridViewTextBoxColumn
-        '
-        Me.SpreadsheetsDataGridViewTextBoxColumn.DataPropertyName = "Spreadsheets"
-        Me.SpreadsheetsDataGridViewTextBoxColumn.HeaderText = "Spreadsheets"
-        Me.SpreadsheetsDataGridViewTextBoxColumn.Name = "SpreadsheetsDataGridViewTextBoxColumn"
-        Me.SpreadsheetsDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SpreadsheetsDataGridViewTextBoxColumn.Width = 245
-        '
-        'DatabaseDataGridViewTextBoxColumn
-        '
-        Me.DatabaseDataGridViewTextBoxColumn.DataPropertyName = "Database"
-        Me.DatabaseDataGridViewTextBoxColumn.HeaderText = "Database"
-        Me.DatabaseDataGridViewTextBoxColumn.Name = "DatabaseDataGridViewTextBoxColumn"
-        Me.DatabaseDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DatabaseDataGridViewTextBoxColumn.Width = 191
-        '
-        'StatisticalPackagesDataGridViewTextBoxColumn
-        '
-        Me.StatisticalPackagesDataGridViewTextBoxColumn.DataPropertyName = "Statistical Packages"
-        Me.StatisticalPackagesDataGridViewTextBoxColumn.HeaderText = "Statistical Packages"
-        Me.StatisticalPackagesDataGridViewTextBoxColumn.Name = "StatisticalPackagesDataGridViewTextBoxColumn"
-        Me.StatisticalPackagesDataGridViewTextBoxColumn.ReadOnly = True
-        Me.StatisticalPackagesDataGridViewTextBoxColumn.Width = 297
-        '
-        'WritingDataGridViewTextBoxColumn
-        '
-        Me.WritingDataGridViewTextBoxColumn.DataPropertyName = "Writing"
-        Me.WritingDataGridViewTextBoxColumn.HeaderText = "Writing"
-        Me.WritingDataGridViewTextBoxColumn.Name = "WritingDataGridViewTextBoxColumn"
-        Me.WritingDataGridViewTextBoxColumn.ReadOnly = True
-        Me.WritingDataGridViewTextBoxColumn.Width = 158
-        '
-        'EditingDataGridViewTextBoxColumn
-        '
-        Me.EditingDataGridViewTextBoxColumn.DataPropertyName = "Editing"
-        Me.EditingDataGridViewTextBoxColumn.HeaderText = "Editing"
-        Me.EditingDataGridViewTextBoxColumn.Name = "EditingDataGridViewTextBoxColumn"
-        Me.EditingDataGridViewTextBoxColumn.ReadOnly = True
-        Me.EditingDataGridViewTextBoxColumn.Width = 158
-        '
-        'EnglishSpeakingDataGridViewTextBoxColumn
-        '
-        Me.EnglishSpeakingDataGridViewTextBoxColumn.DataPropertyName = "English Speaking"
-        Me.EnglishSpeakingDataGridViewTextBoxColumn.HeaderText = "English Speaking"
-        Me.EnglishSpeakingDataGridViewTextBoxColumn.Name = "EnglishSpeakingDataGridViewTextBoxColumn"
-        Me.EnglishSpeakingDataGridViewTextBoxColumn.ReadOnly = True
-        Me.EnglishSpeakingDataGridViewTextBoxColumn.Width = 267
-        '
-        'OtherCommunicationDataGridViewTextBoxColumn
-        '
-        Me.OtherCommunicationDataGridViewTextBoxColumn.DataPropertyName = "Other Communication"
-        Me.OtherCommunicationDataGridViewTextBoxColumn.HeaderText = "Other Communication"
-        Me.OtherCommunicationDataGridViewTextBoxColumn.Name = "OtherCommunicationDataGridViewTextBoxColumn"
-        Me.OtherCommunicationDataGridViewTextBoxColumn.ReadOnly = True
-        Me.OtherCommunicationDataGridViewTextBoxColumn.Width = 315
-        '
-        'FormDataGridViewTextBoxColumn
-        '
-        Me.FormDataGridViewTextBoxColumn.DataPropertyName = "Form"
-        Me.FormDataGridViewTextBoxColumn.HeaderText = "Form"
-        Me.FormDataGridViewTextBoxColumn.Name = "FormDataGridViewTextBoxColumn"
-        Me.FormDataGridViewTextBoxColumn.ReadOnly = True
-        Me.FormDataGridViewTextBoxColumn.Width = 134
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Student_ID"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Student_ID"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Width = 210
+        Me.Button1.Location = New System.Drawing.Point(1522, 1371)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(185, 67)
+        Me.Button1.TabIndex = 55
+        Me.Button1.Text = "Assign GA"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'GAViewRequestForm
         '
@@ -795,6 +805,7 @@ Partial Class GAViewRequestForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1889, 1450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.DataGridView1)
@@ -827,11 +838,11 @@ Partial Class GAViewRequestForm
         CType(Me.numHours, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.numGAs, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ViewRequestedGABindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PROJECTS1747DataSet12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ViewAvailableGAsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PROJECTS1747DataSet9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PROJECTS1747DataSet12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ViewRequestedGABindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -929,4 +940,5 @@ Partial Class GAViewRequestForm
     Friend WithEvents OtherCommunicationDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FormDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
 End Class
