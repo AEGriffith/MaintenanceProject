@@ -3,11 +3,11 @@
 Public Class Login
     Dim UserName As Integer
     Dim Password As String
-    Dim AdvisorCheck As Boolean
-    Dim CommitteeCheck As Boolean
-    Dim AdminCheck As Boolean
-    Dim GACheck As Boolean
-    Dim SupervisorCheck As Boolean
+    Dim AdvisorCheck
+    Dim CommitteeCheck
+    Dim AdminCheck
+    Dim GACheck
+    Dim SupervisorCheck
     Dim FirstName As String
     Dim LastName As String
 
@@ -57,30 +57,30 @@ Public Class Login
                         SupervisorCheck = commandGetGASupervisor.ExecuteScalar()
                         FirstName = commandGetFirstName.ExecuteScalar()
                         LastName = commandGetLastName.ExecuteScalar()
-                        If AdminCheck = True Then
+                        If Not IsDBNull(AdminCheck) And AdminCheck = True Then
                             DirectorSystemChoice.Show()
-                        ElseIf CommitteeCheck = True Then
+                        ElseIf Not IsDBNull(CommitteeCheck) And CommitteeCheck = True Then
                             Main.Show()
-                        ElseIf AdvisorCheck = True Then
+                        ElseIf Not IsDBNull(AdvisorCheck) And AdvisorCheck = True Then
                             Advising.Show()
-                        ElseIf SupervisorCheck = True Then
+                        ElseIf Not IsDBNull(SupervisorCheck) And SupervisorCheck = True Then
                             GASupervisor.Show()
-                        ElseIf GACheck = True Then
+                        ElseIf Not IsDBNull(GACheck) And GACheck = True Then
                             GA.Show()
                         Else
                             MessageBox.Show("Please contact your System Administrator.")
                         End If
+
                     Catch ex As Exception
                         MsgBox(ex.ToString)
                     End Try
                 Else
                     MessageBox.Show("Incorrect Password", "Data Entry Error")
                 End If
-
             Catch ex As Exception
-
             End Try
         End If
+
         con.Close()
     End Sub
     Private Sub cbShowPass_CheckedChanged(sender As Object, e As EventArgs) Handles cbShowPass.CheckedChanged

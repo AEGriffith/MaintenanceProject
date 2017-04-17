@@ -7,13 +7,10 @@
     Private Sub GAViewRequest_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'PROJECTS1747DataSet7.viewRequestedGA' table. You can move, or remove it, as needed.
         Me.ViewRequestedGATableAdapter.Fill(Me.PROJECTS1747DataSet7.viewRequestedGA)
-
-
         'TODO: This line of code loads data into the 'PROJECTS1747DataSet5.viewGARequest' table. You can move, or remove it, as needed.
         Me.ViewGARequestTableAdapter.Fill(Me.PROJECTS1747DataSet5.viewGARequest)
-
-
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+
 
     End Sub
 
@@ -53,5 +50,9 @@
         SelectedStudent = Me.DataGridView2.CurrentRow.Cells(14).Value
         StudentName = Me.DataGridView2.CurrentRow.Cells(1).Value & ", " & Me.DataGridView2.CurrentRow.Cells(0).Value
         GAProfile.Show()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        GAAssignment.ShowDialog()
     End Sub
 End Class
