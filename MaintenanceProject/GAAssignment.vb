@@ -12,6 +12,8 @@ Public Class GAAssignment
     Dim AssignedHours
     Dim Supervisor
     Dim Student
+    Dim TotalHours
+    Dim TotalStudents
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs)
         Me.Close()
@@ -23,7 +25,10 @@ Public Class GAAssignment
         Me.ViewAvailableGAsTableAdapter.Fill(Me.PROJECTS1747DataSet9.viewAvailableGAs)
         'TODO: This line of code loads data into the 'PROJECTS1747DataSet6.viewGARequest' table. You can move, or remove it, as needed.
         Me.ViewGARequestTableAdapter.Fill(Me.PROJECTS1747DataSet6.viewGARequest)
+        SelectedRequest = Me.dgvRequest.CurrentRow.Cells(0).Value
         cbSemester.SelectedIndex = 0
+
+        'GetAssignedStudents()
 
     End Sub
 
@@ -32,13 +37,15 @@ Public Class GAAssignment
             MessageBox.Show("Please Select a Semester", "Data Entry Error")
         Else
             'Set Variables
-            SelectedRequest = Me.DataGridView1.CurrentRow.Cells(0).Value
-            SelectedStudent = Me.DataGridView2.CurrentRow.Cells(12).Value
+            SelectedRequest = Me.dgvRequest.CurrentRow.Cells(0).Value
+            SelectedStudent = Me.dgvGA.CurrentRow.Cells(12).Value
             Hours = numHours.Value
             Semester = cbSemester.Text
+            tbGAs.Text = TotalStudents
+            tbSupervisorHours.Text = TotalHours
 
-            Supervisor = Me.DataGridView1.CurrentRow.Cells(1).Value & " " & Me.DataGridView1.CurrentRow.Cells(2).Value
-            Student = Me.DataGridView2.CurrentRow.Cells(0).Value & Me.DataGridView2.CurrentRow.Cells(1).Value
+            Supervisor = Me.dgvRequest.CurrentRow.Cells(1).Value & " " & Me.dgvRequest.CurrentRow.Cells(2).Value
+            Student = Me.dgvGA.CurrentRow.Cells(0).Value & Me.dgvGA.CurrentRow.Cells(1).Value
             'Get Assigned Hours
             GetAssignedHours()
             If AssignedHours + Hours > 20 Then
@@ -56,9 +63,13 @@ Public Class GAAssignment
     Private Sub numHours_ValueChanged(sender As Object, e As EventArgs) Handles numHours.ValueChanged
         Hours = numHours.Value
         If SelectedStudent IsNot vbNullString Then
-            SelectedStudent = Me.DataGridView2.CurrentRow.Cells(12).Value
+            SelectedStudent = Me.dgvGA.CurrentRow.Cells(12).Value
             Semester = cbSemester.Text
             GetAssignedHours()
+            GetAssignedStudents()
+            GetTotalSupervisorHours()
+            tbGAs.Text = TotalStudents
+            tbSupervisorHours.Text = TotalHours
             If AssignedHours > 0 Then
                 tbHours.Text = AssignedHours
             Else
@@ -68,9 +79,13 @@ Public Class GAAssignment
     End Sub
 
     Private Sub cbSemester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSemester.SelectedIndexChanged
-        SelectedStudent = Me.DataGridView2.CurrentRow.Cells(12).Value
+        SelectedStudent = Me.dgvGA.CurrentRow.Cells(12).Value
         Semester = cbSemester.Text
         GetAssignedHours()
+        GetAssignedStudents()
+        GetTotalSupervisorHours()
+        tbGAs.Text = TotalStudents
+        tbSupervisorHours.Text = TotalHours
         If AssignedHours > 0 Then
             tbHours.Text = AssignedHours
         Else
@@ -104,6 +119,34 @@ Public Class GAAssignment
         con.Close()
     End Sub
 
+    Private Sub GetTotalSupervisorHours()
+        con.ConnectionString = ConnString
+
+        Dim sqlComm As New OleDbCommand
+        Dim dr As OleDbDataReader
+
+
+        sqlComm.Connection = con
+
+        'setup for stored procedure
+        sqlComm.CommandText = "procGetTotalSupervisorHours"
+        sqlComm.CommandType = CommandType.StoredProcedure
+        sqlComm.Connection = con
+
+
+        'sets values for stored procedure
+        sqlComm.Parameters.AddWithValue("FormID", SelectedRequest)
+        sqlComm.Parameters.AddWithValue("Semester", Semester)
+
+        con.Open()
+        dr = sqlComm.ExecuteReader()
+        While dr.Read()
+            TotalHours = Integer.Parse(dr.GetInt32(0))
+            TotalStudents = dr.GetInt32(1)
+        End While
+        con.Close()
+    End Sub
+
     Private Sub SubmitRequest()
         con.ConnectionString = ConnString
 
@@ -132,10 +175,40 @@ Public Class GAAssignment
         con.Close()
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick, DataGridView1.CellEnter, DataGridView1.CellLeave
-        SelectedStudent = Me.DataGridView2.CurrentRow.Cells(12).Value
+    Private Sub GetAssignedStudents()
+        con.ConnectionString = ConnString
+
+        Dim sqlComm As New OleDbCommand
+        Dim ds As New DataSet
+
+
+        sqlComm.Connection = con
+
+        'setup for stored procedure
+        sqlComm.CommandText = "procGetAssignedStudents"
+        sqlComm.CommandType = CommandType.StoredProcedure
+        sqlComm.Connection = con
+
+
+        'sets values for stored procedure
+        sqlComm.Parameters.AddWithValue("FormID", Integer.Parse(SelectedRequest))
+        sqlComm.Parameters.AddWithValue("Semester", Semester)
+
+        con.Open()
+        Dim Adpt = New OleDbDataAdapter(sqlComm)
+        Adpt.Fill(ds)
+        dgvAssigned.DataSource = ds.Tables(0)
+        con.Close()
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRequest.CellContentClick, dgvRequest.CellLeave
+        SelectedStudent = Me.dgvGA.CurrentRow.Cells(12).Value
         Semester = cbSemester.Text
         GetAssignedHours()
+        GetAssignedStudents()
+        GetTotalSupervisorHours()
+        tbGAs.Text = TotalStudents
+        tbSupervisorHours.Text = TotalHours
         If AssignedHours > 0 Then
             tbHours.Text = AssignedHours
         Else
@@ -143,8 +216,8 @@ Public Class GAAssignment
         End If
     End Sub
 
-    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick, DataGridView2.CellLeave, DataGridView2.CellEnter
-        SelectedStudent = Me.DataGridView2.CurrentRow.Cells(12).Value
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGA.CellContentClick, dgvGA.CellLeave, dgvGA.CellEnter
+        SelectedStudent = Me.dgvGA.CurrentRow.Cells(12).Value
         Semester = cbSemester.Text
         GetAssignedHours()
         If AssignedHours > 0 Then

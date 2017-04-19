@@ -28,7 +28,7 @@ Partial Class GAAssignment
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.numHours = New System.Windows.Forms.NumericUpDown()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvRequest = New System.Windows.Forms.DataGridView()
         Me.FormDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,7 +47,7 @@ Partial Class GAAssignment
         Me.CommentsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ViewGARequestBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PROJECTS1747DataSet6 = New MaintenanceProject.PROJECTS1747DataSet6()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.dgvGA = New System.Windows.Forms.DataGridView()
         Me.FirstNameDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LastNameDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HoursAssignedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -72,13 +72,19 @@ Partial Class GAAssignment
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbHours = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.tbSupervisorHours = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.tbGAs = New System.Windows.Forms.TextBox()
+        Me.dgvAssigned = New System.Windows.Forms.DataGridView()
         CType(Me.numHours, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvRequest, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ViewGARequestBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PROJECTS1747DataSet6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvGA, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ViewAvailableGAsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PROJECTS1747DataSet9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvAssigned, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -95,7 +101,7 @@ Partial Class GAAssignment
         '
         Me.cbSemester.FormattingEnabled = True
         Me.cbSemester.Items.AddRange(New Object() {"Fa2017", "Sp2018"})
-        Me.cbSemester.Location = New System.Drawing.Point(163, 937)
+        Me.cbSemester.Location = New System.Drawing.Point(1683, 652)
         Me.cbSemester.Name = "cbSemester"
         Me.cbSemester.Size = New System.Drawing.Size(219, 39)
         Me.cbSemester.TabIndex = 5
@@ -103,7 +109,7 @@ Partial Class GAAssignment
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(21, 940)
+        Me.Label4.Location = New System.Drawing.Point(1541, 655)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(136, 32)
         Me.Label4.TabIndex = 6
@@ -112,7 +118,7 @@ Partial Class GAAssignment
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(409, 940)
+        Me.Label5.Location = New System.Drawing.Point(1541, 713)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(190, 32)
         Me.Label5.TabIndex = 7
@@ -120,7 +126,7 @@ Partial Class GAAssignment
         '
         'numHours
         '
-        Me.numHours.Location = New System.Drawing.Point(624, 938)
+        Me.numHours.Location = New System.Drawing.Point(1765, 711)
         Me.numHours.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.numHours.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.numHours.Name = "numHours"
@@ -128,23 +134,23 @@ Partial Class GAAssignment
         Me.numHours.TabIndex = 8
         Me.numHours.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
-        'DataGridView1
+        'dgvRequest
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FormDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.ReasonsForRequestDataGridViewTextBoxColumn, Me.NumberOfGAsDataGridViewTextBoxColumn, Me.WeeklyHoursDataGridViewTextBoxColumn, Me.InternetDataGridViewTextBoxColumn, Me.WordProcessingDataGridViewTextBoxColumn, Me.SpreadsheetsDataGridViewTextBoxColumn, Me.DatabaseDataGridViewTextBoxColumn, Me.StatisticalPackagesDataGridViewTextBoxColumn, Me.WritingDataGridViewTextBoxColumn, Me.EditingDataGridViewTextBoxColumn, Me.EnglishSpeakingDataGridViewTextBoxColumn, Me.OtherCommunicationDataGridViewTextBoxColumn, Me.CommentsDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ViewGARequestBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(20, 133)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowTemplate.Height = 40
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(1383, 334)
-        Me.DataGridView1.TabIndex = 9
+        Me.dgvRequest.AllowUserToAddRows = False
+        Me.dgvRequest.AllowUserToDeleteRows = False
+        Me.dgvRequest.AutoGenerateColumns = False
+        Me.dgvRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvRequest.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgvRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvRequest.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FormDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.ReasonsForRequestDataGridViewTextBoxColumn, Me.NumberOfGAsDataGridViewTextBoxColumn, Me.WeeklyHoursDataGridViewTextBoxColumn, Me.InternetDataGridViewTextBoxColumn, Me.WordProcessingDataGridViewTextBoxColumn, Me.SpreadsheetsDataGridViewTextBoxColumn, Me.DatabaseDataGridViewTextBoxColumn, Me.StatisticalPackagesDataGridViewTextBoxColumn, Me.WritingDataGridViewTextBoxColumn, Me.EditingDataGridViewTextBoxColumn, Me.EnglishSpeakingDataGridViewTextBoxColumn, Me.OtherCommunicationDataGridViewTextBoxColumn, Me.CommentsDataGridViewTextBoxColumn})
+        Me.dgvRequest.DataSource = Me.ViewGARequestBindingSource
+        Me.dgvRequest.Location = New System.Drawing.Point(20, 133)
+        Me.dgvRequest.Name = "dgvRequest"
+        Me.dgvRequest.ReadOnly = True
+        Me.dgvRequest.RowTemplate.Height = 40
+        Me.dgvRequest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvRequest.Size = New System.Drawing.Size(1421, 334)
+        Me.dgvRequest.TabIndex = 9
         '
         'FormDataGridViewTextBoxColumn
         '
@@ -284,24 +290,24 @@ Partial Class GAAssignment
         Me.PROJECTS1747DataSet6.DataSetName = "PROJECTS1747DataSet6"
         Me.PROJECTS1747DataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'DataGridView2
+        'dgvGA
         '
-        Me.DataGridView2.AllowUserToAddRows = False
-        Me.DataGridView2.AllowUserToDeleteRows = False
-        Me.DataGridView2.AllowUserToOrderColumns = True
-        Me.DataGridView2.AutoGenerateColumns = False
-        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.DataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FirstNameDataGridViewTextBoxColumn1, Me.LastNameDataGridViewTextBoxColumn1, Me.HoursAssignedDataGridViewTextBoxColumn, Me.InternetDataGridViewTextBoxColumn1, Me.WordProcessingDataGridViewTextBoxColumn1, Me.SpreadsheetDataGridViewTextBoxColumn, Me.DatabaseDataGridViewTextBoxColumn1, Me.StatisticalPackagesDataGridViewTextBoxColumn1, Me.WritingDataGridViewTextBoxColumn1, Me.EditingDataGridViewTextBoxColumn1, Me.EnglishSpeakingDataGridViewTextBoxColumn1, Me.OtherDataGridViewTextBoxColumn, Me.StudentIDDataGridViewTextBoxColumn, Me.ApplicationIDDataGridViewTextBoxColumn})
-        Me.DataGridView2.DataSource = Me.ViewAvailableGAsBindingSource
-        Me.DataGridView2.Location = New System.Drawing.Point(20, 547)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.RowTemplate.Height = 40
-        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(1383, 358)
-        Me.DataGridView2.TabIndex = 10
+        Me.dgvGA.AllowUserToAddRows = False
+        Me.dgvGA.AllowUserToDeleteRows = False
+        Me.dgvGA.AllowUserToOrderColumns = True
+        Me.dgvGA.AutoGenerateColumns = False
+        Me.dgvGA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvGA.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgvGA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvGA.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FirstNameDataGridViewTextBoxColumn1, Me.LastNameDataGridViewTextBoxColumn1, Me.HoursAssignedDataGridViewTextBoxColumn, Me.InternetDataGridViewTextBoxColumn1, Me.WordProcessingDataGridViewTextBoxColumn1, Me.SpreadsheetDataGridViewTextBoxColumn, Me.DatabaseDataGridViewTextBoxColumn1, Me.StatisticalPackagesDataGridViewTextBoxColumn1, Me.WritingDataGridViewTextBoxColumn1, Me.EditingDataGridViewTextBoxColumn1, Me.EnglishSpeakingDataGridViewTextBoxColumn1, Me.OtherDataGridViewTextBoxColumn, Me.StudentIDDataGridViewTextBoxColumn, Me.ApplicationIDDataGridViewTextBoxColumn})
+        Me.dgvGA.DataSource = Me.ViewAvailableGAsBindingSource
+        Me.dgvGA.Location = New System.Drawing.Point(20, 547)
+        Me.dgvGA.Name = "dgvGA"
+        Me.dgvGA.ReadOnly = True
+        Me.dgvGA.RowTemplate.Height = 40
+        Me.dgvGA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvGA.Size = New System.Drawing.Size(1416, 358)
+        Me.dgvGA.TabIndex = 10
         '
         'FirstNameDataGridViewTextBoxColumn1
         '
@@ -427,7 +433,7 @@ Partial Class GAAssignment
         '
         'btnAssignment
         '
-        Me.btnAssignment.Location = New System.Drawing.Point(1070, 925)
+        Me.btnAssignment.Location = New System.Drawing.Point(1625, 899)
         Me.btnAssignment.Name = "btnAssignment"
         Me.btnAssignment.Size = New System.Drawing.Size(189, 60)
         Me.btnAssignment.TabIndex = 12
@@ -436,7 +442,7 @@ Partial Class GAAssignment
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(1265, 925)
+        Me.btnClose.Location = New System.Drawing.Point(1820, 899)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(138, 60)
         Me.btnClose.TabIndex = 11
@@ -463,7 +469,7 @@ Partial Class GAAssignment
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(25, 488)
+        Me.Label3.Location = New System.Drawing.Point(25, 512)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(143, 32)
         Me.Label3.TabIndex = 14
@@ -471,7 +477,7 @@ Partial Class GAAssignment
         '
         'tbHours
         '
-        Me.tbHours.Location = New System.Drawing.Point(1303, 485)
+        Me.tbHours.Location = New System.Drawing.Point(1336, 911)
         Me.tbHours.Name = "tbHours"
         Me.tbHours.ReadOnly = True
         Me.tbHours.Size = New System.Drawing.Size(100, 38)
@@ -480,26 +486,80 @@ Partial Class GAAssignment
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(976, 488)
+        Me.Label6.Location = New System.Drawing.Point(1009, 914)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(321, 32)
         Me.Label6.TabIndex = 16
         Me.Label6.Text = "Current Hours Per Week"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(761, 479)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(291, 32)
+        Me.Label7.TabIndex = 18
+        Me.Label7.Text = "Total Hours Per Week"
+        '
+        'tbSupervisorHours
+        '
+        Me.tbSupervisorHours.Location = New System.Drawing.Point(1069, 476)
+        Me.tbSupervisorHours.Name = "tbSupervisorHours"
+        Me.tbSupervisorHours.ReadOnly = True
+        Me.tbSupervisorHours.Size = New System.Drawing.Size(100, 38)
+        Me.tbSupervisorHours.TabIndex = 17
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(1189, 479)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(141, 32)
+        Me.Label8.TabIndex = 20
+        Me.Label8.Text = "Total GAs"
+        '
+        'tbGAs
+        '
+        Me.tbGAs.Location = New System.Drawing.Point(1336, 476)
+        Me.tbGAs.Name = "tbGAs"
+        Me.tbGAs.ReadOnly = True
+        Me.tbGAs.Size = New System.Drawing.Size(100, 38)
+        Me.tbGAs.TabIndex = 19
+        '
+        'dgvAssigned
+        '
+        Me.dgvAssigned.AllowUserToAddRows = False
+        Me.dgvAssigned.AllowUserToDeleteRows = False
+        Me.dgvAssigned.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvAssigned.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgvAssigned.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAssigned.Location = New System.Drawing.Point(1466, 133)
+        Me.dgvAssigned.Name = "dgvAssigned"
+        Me.dgvAssigned.ReadOnly = True
+        Me.dgvAssigned.RowTemplate.Height = 40
+        Me.dgvAssigned.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvAssigned.Size = New System.Drawing.Size(501, 334)
+        Me.dgvAssigned.TabIndex = 21
         '
         'GAAssignment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1435, 1036)
+        Me.ClientSize = New System.Drawing.Size(1975, 981)
+        Me.Controls.Add(Me.dgvAssigned)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.tbGAs)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.tbSupervisorHours)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.tbHours)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnAssignment)
         Me.Controls.Add(Me.btnClose)
-        Me.Controls.Add(Me.DataGridView2)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvGA)
+        Me.Controls.Add(Me.dgvRequest)
         Me.Controls.Add(Me.numHours)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -509,12 +569,13 @@ Partial Class GAAssignment
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.Text = "GAAssignment"
         CType(Me.numHours, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvRequest, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ViewGARequestBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PROJECTS1747DataSet6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvGA, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ViewAvailableGAsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PROJECTS1747DataSet9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvAssigned, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -524,8 +585,8 @@ Partial Class GAAssignment
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents numHours As NumericUpDown
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents dgvRequest As DataGridView
+    Friend WithEvents dgvGA As DataGridView
     Friend WithEvents btnAssignment As Button
     Friend WithEvents btnClose As Button
     Friend WithEvents PROJECTS1747DataSet6 As PROJECTS1747DataSet6
@@ -568,4 +629,9 @@ Partial Class GAAssignment
     Friend WithEvents Label3 As Label
     Friend WithEvents tbHours As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents tbSupervisorHours As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents tbGAs As TextBox
+    Friend WithEvents dgvAssigned As DataGridView
 End Class
