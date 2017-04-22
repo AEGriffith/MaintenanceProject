@@ -166,6 +166,12 @@
     <Compile Include="GAViewRequest.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GAViewUserAssignments.Designer.vb">
+      <DependentUpon>GAViewUserAssignments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GAViewUserAssignments.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InterviewAdd.Designer.vb">
       <DependentUpon>InterviewAdd.vb</DependentUpon>
     </Compile>
@@ -223,20 +229,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PROJECTS1747DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="PROJECTS1747DataSet10.Designer.vb">
+    <Compile Include="PROJECTS1747DataSet15.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1747DataSet10.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PROJECTS1747DataSet11.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1747DataSet11.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PROJECTS1747DataSet12.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1747DataSet12.xsd</DependentUpon>
+      <DependentUpon>PROJECTS1747DataSet15.xsd</DependentUpon>
     </Compile>
     <Compile Include="PROJECTS1747DataSet2.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -262,21 +258,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PROJECTS1747DataSet6.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PROJECTS1747DataSet7.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1747DataSet7.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PROJECTS1747DataSet8.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1747DataSet8.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PROJECTS1747DataSet9.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PROJECTS1747DataSet9.xsd</DependentUpon>
     </Compile>
     <Compile Include="StudentProfile.Designer.vb">
       <DependentUpon>StudentProfile.vb</DependentUpon>
@@ -342,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GAViewRequest.resx">
       <DependentUpon>GAViewRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GAViewUserAssignments.resx">
+      <DependentUpon>GAViewUserAssignments.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterviewAdd.resx">
       <DependentUpon>InterviewAdd.vb</DependentUpon>
@@ -412,38 +396,16 @@
     <None Include="PROJECTS1747DataSet1.xss">
       <DependentUpon>PROJECTS1747DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="PROJECTS1747DataSet10.xsc">
-      <DependentUpon>PROJECTS1747DataSet10.xsd</DependentUpon>
+    <None Include="PROJECTS1747DataSet15.xsc">
+      <DependentUpon>PROJECTS1747DataSet15.xsd</DependentUpon>
     </None>
-    <None Include="PROJECTS1747DataSet10.xsd">
+    <None Include="PROJECTS1747DataSet15.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1747DataSet10.Designer.vb</LastGenOutput>
+      <LastGenOutput>PROJECTS1747DataSet15.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="PROJECTS1747DataSet10.xss">
-      <DependentUpon>PROJECTS1747DataSet10.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet11.xsc">
-      <DependentUpon>PROJECTS1747DataSet11.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet11.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1747DataSet11.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PROJECTS1747DataSet11.xss">
-      <DependentUpon>PROJECTS1747DataSet11.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet12.xsc">
-      <DependentUpon>PROJECTS1747DataSet12.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet12.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1747DataSet12.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PROJECTS1747DataSet12.xss">
-      <DependentUpon>PROJECTS1747DataSet12.xsd</DependentUpon>
+    <None Include="PROJECTS1747DataSet15.xss">
+      <DependentUpon>PROJECTS1747DataSet15.xsd</DependentUpon>
     </None>
     <None Include="PROJECTS1747DataSet2.xsc">
       <DependentUpon>PROJECTS1747DataSet2.xsd</DependentUpon>
@@ -499,39 +461,6 @@
     </None>
     <None Include="PROJECTS1747DataSet6.xss">
       <DependentUpon>PROJECTS1747DataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet7.xsc">
-      <DependentUpon>PROJECTS1747DataSet7.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet7.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1747DataSet7.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PROJECTS1747DataSet7.xss">
-      <DependentUpon>PROJECTS1747DataSet7.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet8.xsc">
-      <DependentUpon>PROJECTS1747DataSet8.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet8.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1747DataSet8.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PROJECTS1747DataSet8.xss">
-      <DependentUpon>PROJECTS1747DataSet8.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet9.xsc">
-      <DependentUpon>PROJECTS1747DataSet9.xsd</DependentUpon>
-    </None>
-    <None Include="PROJECTS1747DataSet9.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PROJECTS1747DataSet9.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PROJECTS1747DataSet9.xss">
-      <DependentUpon>PROJECTS1747DataSet9.xsd</DependentUpon>
     </None>
     <None Include="Resources\Test.png" />
   </ItemGroup>
