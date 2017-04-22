@@ -15,8 +15,8 @@ Public Class GARequest
     Dim GANumber As Integer
     Dim WeekHours As Integer
     Dim Duties As String
-    Dim Internet As Integer
-    Dim WordProcessing As Integer
+    Dim Research As Integer
+    Dim Programming As Integer
     Dim Spreadsheet As Integer
     Dim Database As Integer
     Dim StatsPkg As String
@@ -70,13 +70,11 @@ Public Class GARequest
 
         'sets values for stored procedure
         sqlComm.Parameters.AddWithValue("RequestorID", UserID)
-        sqlComm.Parameters.AddWithValue("Email", Email)
-        sqlComm.Parameters.AddWithValue("RequestReason", Reason)
         sqlComm.Parameters.AddWithValue("TotalGAs", GANumber)
         sqlComm.Parameters.AddWithValue("TotalHours", WeekHours)
         sqlComm.Parameters.AddWithValue("JobDescription", Duties)
-        sqlComm.Parameters.AddWithValue("Internet", Internet)
-        sqlComm.Parameters.AddWithValue("WordProcess", WordProcessing)
+        sqlComm.Parameters.AddWithValue("Research", Research)
+        sqlComm.Parameters.AddWithValue("Programming", Programming)
         sqlComm.Parameters.AddWithValue("Spreadsheet", Spreadsheet)
         sqlComm.Parameters.AddWithValue("Database", Database)
         sqlComm.Parameters.AddWithValue("StatisticalPkg", StatsPkg)
@@ -127,13 +125,11 @@ Public Class GARequest
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
 
 
-        Email = tbEmail.Text
-        Reason = tbRequestReason.Text
         GANumber = numGAs.Value
         WeekHours = numHours.Value
         Duties = tbDuties.Text
-        Internet = trackInternet.Value
-        WordProcessing = trackWordProcess.Value
+        Research = trackInternet.Value
+        Programming = trackWordProcess.Value
         Spreadsheet = trackSpreadsheet.Value
         Database = trackDatabase.Value
         StatsPkg = tbStatisticalPackages.Text
@@ -150,10 +146,8 @@ Public Class GARequest
         MessageBox.Show("Request Submitted Successfully.", "Request Submitted")
 
         tbDuties.Clear()
-        tbEmail.Clear()
         tbOther.Clear()
         tbOther2.Clear()
-        tbRequestReason.Clear()
         tbStatisticalPackages.Clear()
         cbRequest.SelectedIndex = -1
         numGAHours.Value = 20
@@ -177,5 +171,9 @@ Public Class GARequest
         GAs.Clear()
         GAHours.Clear()
         numGAHours.Value = 20
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
     End Sub
 End Class

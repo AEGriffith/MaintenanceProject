@@ -21,11 +21,14 @@ Public Class GAAssignment
     End Sub
 
     Private Sub GAAssignment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'PROJECTS1747DataSet9.viewAvailableGAs' table. You can move, or remove it, as needed.
-        Me.ViewAvailableGAsTableAdapter.Fill(Me.PROJECTS1747DataSet9.viewAvailableGAs)
-        'TODO: This line of code loads data into the 'PROJECTS1747DataSet6.viewGARequest' table. You can move, or remove it, as needed.
-        Me.ViewGARequestTableAdapter.Fill(Me.PROJECTS1747DataSet6.viewGARequest)
-        SelectedRequest = Me.dgvRequest.CurrentRow.Cells(0).Value
+        'TODO: This line of code loads data into the 'PROJECTS1747DataSet15.viewAvailableGAs' table. You can move, or remove it, as needed.
+        Me.ViewAvailableGAsTableAdapter.Fill(Me.PROJECTS1747DataSet15.viewAvailableGAs)
+        'TODO: This line of code loads data into the 'PROJECTS1747DataSet15.viewGARequest' table. You can move, or remove it, as needed.
+        Me.ViewGARequestTableAdapter.Fill(Me.PROJECTS1747DataSet15.viewGARequest)
+        'TODO: This line of code loads data into the 'PROJECTS1747DataSet15.viewGARequest' table. You can move, or remove it, as needed.
+        Me.ViewGARequestTableAdapter.Fill(Me.PROJECTS1747DataSet15.viewGARequest)
+
+        'SelectedRequest = Me.dgvRequest.CurrentRow.Cells(0).Value
         cbSemester.SelectedIndex = 0
 
         'GetAssignedStudents()
@@ -38,7 +41,7 @@ Public Class GAAssignment
         Else
             'Set Variables
             SelectedRequest = Me.dgvRequest.CurrentRow.Cells(0).Value
-            SelectedStudent = Me.dgvGA.CurrentRow.Cells(12).Value
+            SelectedStudent = Me.dgvGA.CurrentRow.Cells(11).Value
             Hours = numHours.Value
             Semester = cbSemester.Text
             tbGAs.Text = TotalStudents
@@ -63,7 +66,7 @@ Public Class GAAssignment
     Private Sub numHours_ValueChanged(sender As Object, e As EventArgs) Handles numHours.ValueChanged
         Hours = numHours.Value
         If SelectedStudent IsNot vbNullString Then
-            SelectedStudent = Me.dgvGA.CurrentRow.Cells(12).Value
+            SelectedStudent = Me.dgvGA.CurrentRow.Cells(11).Value
             Semester = cbSemester.Text
             GetAssignedHours()
             GetAssignedStudents()
@@ -79,7 +82,7 @@ Public Class GAAssignment
     End Sub
 
     Private Sub cbSemester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSemester.SelectedIndexChanged
-        SelectedStudent = Me.dgvGA.CurrentRow.Cells(12).Value
+        SelectedStudent = Me.dgvGA.CurrentRow.Cells(11).Value
         Semester = cbSemester.Text
         GetAssignedHours()
         GetAssignedStudents()
@@ -141,9 +144,19 @@ Public Class GAAssignment
         con.Open()
         dr = sqlComm.ExecuteReader()
         While dr.Read()
-            TotalHours = Integer.Parse(dr.GetInt32(0))
-            TotalStudents = dr.GetInt32(1)
+            If dr.IsDBNull(0) Then
+                TotalHours = 0
+            Else
+                TotalHours = dr.GetInt32(0).ToString
+            End If
+            If dr.IsDBNull(1) Then
+                TotalStudents = 0
+            Else
+                TotalStudents = dr.GetInt32(1)
+            End If
+
         End While
+
         con.Close()
     End Sub
 
@@ -201,8 +214,9 @@ Public Class GAAssignment
         con.Close()
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRequest.CellContentClick, dgvRequest.CellLeave
-        SelectedStudent = Me.dgvGA.CurrentRow.Cells(12).Value
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRequest.CellContentClick, dgvRequest.CellLeave, dgvRequest.CellEnter
+        SelectedRequest = Me.dgvRequest.CurrentRow.Cells(0).Value
+        SelectedStudent = Me.dgvGA.CurrentRow.Cells(11).Value
         Semester = cbSemester.Text
         GetAssignedHours()
         GetAssignedStudents()
@@ -217,7 +231,7 @@ Public Class GAAssignment
     End Sub
 
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGA.CellContentClick, dgvGA.CellLeave, dgvGA.CellEnter
-        SelectedStudent = Me.dgvGA.CurrentRow.Cells(12).Value
+        SelectedStudent = Me.dgvGA.CurrentRow.Cells(11).Value
         Semester = cbSemester.Text
         GetAssignedHours()
         If AssignedHours > 0 Then
@@ -227,4 +241,15 @@ Public Class GAAssignment
         End If
 
     End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click, CloseToolStripMenuItem.Click
+        Me.Close()
+    End Sub
+
+    Private Sub GAAssignmentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GAAssignmentToolStripMenuItem.Click
+        GAViewUserAssignments.Show()
+        Me.Close()
+    End Sub
+
+
 End Class
