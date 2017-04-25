@@ -39,6 +39,7 @@ Partial Class GAViewUserAssignments
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ViewGAAssignmentsTableAdapter = New MaintenanceProject.PROJECTS1747DataSet6TableAdapters.viewGAAssignmentsTableAdapter()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.btnReassign = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ViewGAAssignmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -175,12 +176,22 @@ Partial Class GAViewUserAssignments
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
+        'btnReassign
+        '
+        Me.btnReassign.Location = New System.Drawing.Point(1087, 953)
+        Me.btnReassign.Name = "btnReassign"
+        Me.btnReassign.Size = New System.Drawing.Size(188, 45)
+        Me.btnReassign.TabIndex = 4
+        Me.btnReassign.Text = "Reassign"
+        Me.btnReassign.UseVisualStyleBackColor = True
+        '
         'GAViewUserAssignments
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1493, 1032)
+        Me.Controls.Add(Me.btnReassign)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DataGridView1)
@@ -213,4 +224,5 @@ Partial Class GAViewUserAssignments
     Friend WithEvents StudentIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SupervisorIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnClose As Button
+    Friend WithEvents btnReassign As Button
 End Class
