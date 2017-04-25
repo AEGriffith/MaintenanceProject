@@ -148,6 +148,12 @@
     <Compile Include="GAProfile.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GAReassignment.Designer.vb">
+      <DependentUpon>GAReassignment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GAReassignment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GARequest.Designer.vb">
       <DependentUpon>GARequest.vb</DependentUpon>
     </Compile>
@@ -277,6 +283,11 @@
     <Compile Include="ViewForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="viewGASupervisors.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>viewGASupervisors.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ViewInterviewComments.Designer.vb">
       <DependentUpon>ViewInterviewComments.vb</DependentUpon>
     </Compile>
@@ -314,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GAProfile.resx">
       <DependentUpon>GAProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GAReassignment.resx">
+      <DependentUpon>GAReassignment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GARequest.resx">
       <DependentUpon>GARequest.vb</DependentUpon>
@@ -372,6 +386,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="viewGASupervisors.xsc">
+      <DependentUpon>viewGASupervisors.xsd</DependentUpon>
+    </None>
+    <None Include="viewGASupervisors.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>viewGASupervisors.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="viewGASupervisors.xss">
+      <DependentUpon>viewGASupervisors.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="PROJECTS1747DataSet.xsc">
