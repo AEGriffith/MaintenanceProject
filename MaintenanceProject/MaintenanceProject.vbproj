@@ -136,6 +136,12 @@
     <Compile Include="GAAssignment.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GAAssignTask.Designer.vb">
+      <DependentUpon>GAAssignTask.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GAAssignTask.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GADirector.Designer.vb">
       <DependentUpon>GADirector.vb</DependentUpon>
     </Compile>
@@ -319,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GAAssignment.resx">
       <DependentUpon>GAAssignment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GAAssignTask.resx">
+      <DependentUpon>GAAssignTask.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GADirector.resx">
       <DependentUpon>GADirector.vb</DependentUpon>

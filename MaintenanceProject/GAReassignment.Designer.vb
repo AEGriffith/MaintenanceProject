@@ -24,21 +24,21 @@ Partial Class GAReassignment
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.cbSupervisor = New System.Windows.Forms.ComboBox()
+        Me.ViewGASupervisorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ViewGASupervisors = New MaintenanceProject.viewGASupervisors()
         Me.numHours = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblStudent = New System.Windows.Forms.Label()
         Me.lblSemester = New System.Windows.Forms.Label()
         Me.lblHours = New System.Windows.Forms.Label()
-        Me.ViewGASupervisors = New MaintenanceProject.viewGASupervisors()
-        Me.ViewGASupervisorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ViewGASupervisorsTableAdapter = New MaintenanceProject.viewGASupervisorsTableAdapters.viewGASupervisorsTableAdapter()
         Me.btnReassign = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.lblHours1 = New System.Windows.Forms.Label()
-        CType(Me.numHours, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ViewGASupervisors, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ViewGASupervisorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ViewGASupervisors, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numHours, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cbSupervisor
@@ -52,12 +52,25 @@ Partial Class GAReassignment
         Me.cbSupervisor.TabIndex = 0
         Me.cbSupervisor.ValueMember = "User_ID"
         '
+        'ViewGASupervisorsBindingSource
+        '
+        Me.ViewGASupervisorsBindingSource.DataMember = "viewGASupervisors"
+        Me.ViewGASupervisorsBindingSource.DataSource = Me.ViewGASupervisors
+        '
+        'ViewGASupervisors
+        '
+        Me.ViewGASupervisors.DataSetName = "viewGASupervisors"
+        Me.ViewGASupervisors.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'numHours
         '
+        Me.numHours.Increment = New Decimal(New Integer() {10, 0, 0, 0})
         Me.numHours.Location = New System.Drawing.Point(342, 278)
+        Me.numHours.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.numHours.Name = "numHours"
         Me.numHours.Size = New System.Drawing.Size(120, 38)
         Me.numHours.TabIndex = 1
+        Me.numHours.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'Label1
         '
@@ -105,16 +118,6 @@ Partial Class GAReassignment
         Me.lblHours.Size = New System.Drawing.Size(77, 29)
         Me.lblHours.TabIndex = 6
         Me.lblHours.Text = "Hours"
-        '
-        'ViewGASupervisors
-        '
-        Me.ViewGASupervisors.DataSetName = "viewGASupervisors"
-        Me.ViewGASupervisors.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ViewGASupervisorsBindingSource
-        '
-        Me.ViewGASupervisorsBindingSource.DataMember = "viewGASupervisors"
-        Me.ViewGASupervisorsBindingSource.DataSource = Me.ViewGASupervisors
         '
         'ViewGASupervisorsTableAdapter
         '
@@ -166,9 +169,9 @@ Partial Class GAReassignment
         Me.Controls.Add(Me.cbSupervisor)
         Me.Name = "GAReassignment"
         Me.Text = "GAReassignment"
-        CType(Me.numHours, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ViewGASupervisors, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ViewGASupervisorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ViewGASupervisors, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numHours, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

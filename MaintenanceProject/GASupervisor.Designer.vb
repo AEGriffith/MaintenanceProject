@@ -33,6 +33,7 @@ Partial Class GASupervisor
         Me.rb2 = New System.Windows.Forms.RadioButton()
         Me.rb1 = New System.Windows.Forms.RadioButton()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.AssignTasksToGAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -44,21 +45,21 @@ Partial Class GASupervisor
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem1, Me.ViewToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(943, 49)
+        Me.MenuStrip1.Size = New System.Drawing.Size(961, 52)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
         '
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 45)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 48)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'EditToolStripMenuItem1
         '
-        Me.EditToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RequestGraduateAssistantToolStripMenuItem})
+        Me.EditToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RequestGraduateAssistantToolStripMenuItem, Me.AssignTasksToGAsToolStripMenuItem})
         Me.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1"
-        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(80, 45)
+        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(80, 48)
         Me.EditToolStripMenuItem1.Text = "Edit"
         '
         'RequestGraduateAssistantToolStripMenuItem
@@ -70,7 +71,7 @@ Partial Class GASupervisor
         'ViewToolStripMenuItem
         '
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 45)
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 48)
         Me.ViewToolStripMenuItem.Text = "View"
         '
         'Label1
@@ -138,12 +139,18 @@ Partial Class GASupervisor
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
+        'AssignTasksToGAsToolStripMenuItem
+        '
+        Me.AssignTasksToGAsToolStripMenuItem.Name = "AssignTasksToGAsToolStripMenuItem"
+        Me.AssignTasksToGAsToolStripMenuItem.Size = New System.Drawing.Size(495, 46)
+        Me.AssignTasksToGAsToolStripMenuItem.Text = "Assign Tasks"
+        '
         'GASupervisor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(943, 439)
+        Me.ClientSize = New System.Drawing.Size(961, 434)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DataGridView1)
@@ -173,4 +180,5 @@ Partial Class GASupervisor
     Friend WithEvents rb2 As RadioButton
     Friend WithEvents rb1 As RadioButton
     Friend WithEvents btnClose As Button
+    Friend WithEvents AssignTasksToGAsToolStripMenuItem As ToolStripMenuItem
 End Class
