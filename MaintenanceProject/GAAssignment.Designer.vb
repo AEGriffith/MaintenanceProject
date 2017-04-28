@@ -130,9 +130,10 @@ Partial Class GAAssignment
         '
         'numHours
         '
+        Me.numHours.Increment = New Decimal(New Integer() {10, 0, 0, 0})
         Me.numHours.Location = New System.Drawing.Point(1765, 771)
         Me.numHours.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
-        Me.numHours.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.numHours.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.numHours.Name = "numHours"
         Me.numHours.Size = New System.Drawing.Size(137, 38)
         Me.numHours.TabIndex = 8
@@ -538,7 +539,7 @@ Partial Class GAAssignment
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FilesToolStripMenuItem, Me.EditToolStripMenuItem, Me.ViewToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(5, 5)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1965, 52)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1965, 49)
         Me.MenuStrip1.TabIndex = 57
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -546,26 +547,26 @@ Partial Class GAAssignment
         '
         Me.FilesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem})
         Me.FilesToolStripMenuItem.Name = "FilesToolStripMenuItem"
-        Me.FilesToolStripMenuItem.Size = New System.Drawing.Size(88, 48)
+        Me.FilesToolStripMenuItem.Size = New System.Drawing.Size(88, 45)
         Me.FilesToolStripMenuItem.Text = "Files"
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(327, 46)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(206, 46)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(80, 48)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(80, 45)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'ViewToolStripMenuItem
         '
         Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GAAssignmentToolStripMenuItem})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 48)
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 45)
         Me.ViewToolStripMenuItem.Text = "View"
         '
         'GAAssignmentToolStripMenuItem

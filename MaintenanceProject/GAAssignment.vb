@@ -58,7 +58,7 @@ Public Class GAAssignment
                 MessageBox.Show(Student & " assigned to " & Supervisor & " for " & Hours & " during " & Semester)
             End If
 
-            Me.Close()
+
         End If
 
     End Sub

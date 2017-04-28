@@ -39,7 +39,14 @@ Public Class GAReassignment
         'TODO: This line of code loads data into the 'ViewGASupervisors._viewGASupervisors' table. You can move, or remove it, as needed.
         Me.ViewGASupervisorsTableAdapter.Fill(Me.ViewGASupervisors._viewGASupervisors)
         GetAssignedHours()
-        AssignableHours = 20 - AssignedHours + Hours
+        If AssignedHours - Hours = 0 Then
+            AssignableHours = 20
+        ElseIf AssignedHours - Hours <= 10 Then
+            AssignableHours = 10
+        Else
+            AssignableHours = 0
+        End If
+
         lblHours.Text = "*This student is available to be assigned"
         lblHours1.Text = "for up to " & AssignableHours & " hours."
         cbSupervisor.SelectedValue = SupervisorID
