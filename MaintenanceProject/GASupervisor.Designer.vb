@@ -26,6 +26,7 @@ Partial Class GASupervisor
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RequestGraduateAssistantToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AssignTasksToGAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -33,7 +34,6 @@ Partial Class GASupervisor
         Me.rb2 = New System.Windows.Forms.RadioButton()
         Me.rb1 = New System.Windows.Forms.RadioButton()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.AssignTasksToGAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -67,6 +67,12 @@ Partial Class GASupervisor
         Me.RequestGraduateAssistantToolStripMenuItem.Name = "RequestGraduateAssistantToolStripMenuItem"
         Me.RequestGraduateAssistantToolStripMenuItem.Size = New System.Drawing.Size(495, 46)
         Me.RequestGraduateAssistantToolStripMenuItem.Text = "Request Graduate Assistant"
+        '
+        'AssignTasksToGAsToolStripMenuItem
+        '
+        Me.AssignTasksToGAsToolStripMenuItem.Name = "AssignTasksToGAsToolStripMenuItem"
+        Me.AssignTasksToGAsToolStripMenuItem.Size = New System.Drawing.Size(495, 46)
+        Me.AssignTasksToGAsToolStripMenuItem.Text = "Assign Tasks"
         '
         'ViewToolStripMenuItem
         '
@@ -138,12 +144,6 @@ Partial Class GASupervisor
         Me.btnClose.TabIndex = 4
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
-        '
-        'AssignTasksToGAsToolStripMenuItem
-        '
-        Me.AssignTasksToGAsToolStripMenuItem.Name = "AssignTasksToGAsToolStripMenuItem"
-        Me.AssignTasksToGAsToolStripMenuItem.Size = New System.Drawing.Size(495, 46)
-        Me.AssignTasksToGAsToolStripMenuItem.Text = "Assign Tasks"
         '
         'GASupervisor
         '

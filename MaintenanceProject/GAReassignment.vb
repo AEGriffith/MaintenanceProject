@@ -36,8 +36,7 @@ Public Class GAReassignment
         Semester = GAViewUserAssignments.getSemester
         SupervisorName = GAViewUserAssignments.getSupervisorName
 
-        'TODO: This line of code loads data into the 'ViewGASupervisors._viewGASupervisors' table. You can move, or remove it, as needed.
-        Me.ViewGASupervisorsTableAdapter.Fill(Me.ViewGASupervisors._viewGASupervisors)
+
         GetAssignedHours()
         If AssignedHours - Hours = 0 Then
             AssignableHours = 20

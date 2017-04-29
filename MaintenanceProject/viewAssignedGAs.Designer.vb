@@ -20,12 +20,12 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("viewGASupervisors"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("viewAssignedGAs"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class viewGASupervisors
+Partial Public Class viewAssignedGAs
     Inherits Global.System.Data.DataSet
     
-    Private tableviewGASupervisors As viewGASupervisorsDataTable
+    Private tableviewAssignedGAs As viewAssignedGAsDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class viewGASupervisors
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("viewGASupervisors")) Is Nothing) Then
-                MyBase.Tables.Add(New viewGASupervisorsDataTable(ds.Tables("viewGASupervisors")))
+            If (Not (ds.Tables("viewAssignedGAs")) Is Nothing) Then
+                MyBase.Tables.Add(New viewAssignedGAsDataTable(ds.Tables("viewAssignedGAs")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class viewGASupervisors
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property _viewGASupervisors() As viewGASupervisorsDataTable
+    Public ReadOnly Property _viewAssignedGAs() As viewAssignedGAsDataTable
         Get
-            Return Me.tableviewGASupervisors
+            Return Me.tableviewAssignedGAs
         End Get
     End Property
     
@@ -128,7 +128,7 @@ Partial Public Class viewGASupervisors
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As viewGASupervisors = CType(MyBase.Clone,viewGASupervisors)
+        Dim cln As viewAssignedGAs = CType(MyBase.Clone,viewAssignedGAs)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -153,8 +153,8 @@ Partial Public Class viewGASupervisors
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("viewGASupervisors")) Is Nothing) Then
-                MyBase.Tables.Add(New viewGASupervisorsDataTable(ds.Tables("viewGASupervisors")))
+            If (Not (ds.Tables("viewAssignedGAs")) Is Nothing) Then
+                MyBase.Tables.Add(New viewAssignedGAsDataTable(ds.Tables("viewAssignedGAs")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class viewGASupervisors
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableviewGASupervisors = CType(MyBase.Tables("viewGASupervisors"),viewGASupervisorsDataTable)
+        Me.tableviewAssignedGAs = CType(MyBase.Tables("viewAssignedGAs"),viewAssignedGAsDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableviewGASupervisors) Is Nothing) Then
-                Me.tableviewGASupervisors.InitVars
+            If (Not (Me.tableviewAssignedGAs) Is Nothing) Then
+                Me.tableviewAssignedGAs.InitVars
             End If
         End If
     End Sub
@@ -199,18 +199,18 @@ Partial Public Class viewGASupervisors
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "viewGASupervisors"
+        Me.DataSetName = "viewAssignedGAs"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/viewGASupervisors.xsd"
+        Me.Namespace = "http://tempuri.org/viewAssignedGAs.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableviewGASupervisors = New viewGASupervisorsDataTable()
-        MyBase.Tables.Add(Me.tableviewGASupervisors)
+        Me.tableviewAssignedGAs = New viewAssignedGAsDataTable()
+        MyBase.Tables.Add(Me.tableviewAssignedGAs)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerialize_viewGASupervisors() As Boolean
+    Private Function ShouldSerialize_viewAssignedGAs() As Boolean
         Return false
     End Function
     
@@ -225,7 +225,7 @@ Partial Public Class viewGASupervisors
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As viewGASupervisors = New viewGASupervisors()
+        Dim ds As viewAssignedGAs = New viewAssignedGAs()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -273,25 +273,27 @@ Partial Public Class viewGASupervisors
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub viewGASupervisorsRowChangeEventHandler(ByVal sender As Object, ByVal e As viewGASupervisorsRowChangeEvent)
+    Public Delegate Sub viewAssignedGAsRowChangeEventHandler(ByVal sender As Object, ByVal e As viewAssignedGAsRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class viewGASupervisorsDataTable
-        Inherits Global.System.Data.TypedTableBase(Of viewGASupervisorsRow)
+    Partial Public Class viewAssignedGAsDataTable
+        Inherits Global.System.Data.TypedTableBase(Of viewAssignedGAsRow)
         
-        Private columnSupervisor As Global.System.Data.DataColumn
+        Private columnGA As Global.System.Data.DataColumn
         
-        Private columnUser_ID As Global.System.Data.DataColumn
+        Private columnStudent_ID As Global.System.Data.DataColumn
+        
+        Private columnSupervisor_ID As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "viewGASupervisors"
+            Me.TableName = "viewAssignedGAs"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -324,17 +326,25 @@ Partial Public Class viewGASupervisors
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property SupervisorColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property GAColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnSupervisor
+                Return Me.columnGA
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property User_IDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property Student_IDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnUser_ID
+                Return Me.columnStudent_ID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Supervisor_IDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSupervisor_ID
             End Get
         End Property
         
@@ -349,50 +359,50 @@ Partial Public Class viewGASupervisors
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As viewGASupervisorsRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As viewAssignedGAsRow
             Get
-                Return CType(Me.Rows(index),viewGASupervisorsRow)
+                Return CType(Me.Rows(index),viewAssignedGAsRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event viewGASupervisorsRowChanging As viewGASupervisorsRowChangeEventHandler
+        Public Event viewAssignedGAsRowChanging As viewAssignedGAsRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event viewGASupervisorsRowChanged As viewGASupervisorsRowChangeEventHandler
+        Public Event viewAssignedGAsRowChanged As viewAssignedGAsRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event viewGASupervisorsRowDeleting As viewGASupervisorsRowChangeEventHandler
+        Public Event viewAssignedGAsRowDeleting As viewAssignedGAsRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event viewGASupervisorsRowDeleted As viewGASupervisorsRowChangeEventHandler
+        Public Event viewAssignedGAsRowDeleted As viewAssignedGAsRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddviewGASupervisorsRow(ByVal row As viewGASupervisorsRow)
+        Public Overloads Sub AddviewAssignedGAsRow(ByVal row As viewAssignedGAsRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddviewGASupervisorsRow(ByVal Supervisor As String) As viewGASupervisorsRow
-            Dim rowviewGASupervisorsRow As viewGASupervisorsRow = CType(Me.NewRow,viewGASupervisorsRow)
-            Dim columnValuesArray() As Object = New Object() {Supervisor, Nothing}
-            rowviewGASupervisorsRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowviewGASupervisorsRow)
-            Return rowviewGASupervisorsRow
+        Public Overloads Function AddviewAssignedGAsRow(ByVal GA As String, ByVal Student_ID As Integer, ByVal Supervisor_ID As Integer) As viewAssignedGAsRow
+            Dim rowviewAssignedGAsRow As viewAssignedGAsRow = CType(Me.NewRow,viewAssignedGAsRow)
+            Dim columnValuesArray() As Object = New Object() {GA, Student_ID, Supervisor_ID}
+            rowviewAssignedGAsRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowviewAssignedGAsRow)
+            Return rowviewAssignedGAsRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByUser_ID(ByVal User_ID As Integer) As viewGASupervisorsRow
-            Return CType(Me.Rows.Find(New Object() {User_ID}),viewGASupervisorsRow)
+        Public Function FindByStudent_ID(ByVal Student_ID As Integer) As viewAssignedGAsRow
+            Return CType(Me.Rows.Find(New Object() {Student_ID}),viewAssignedGAsRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As viewGASupervisorsDataTable = CType(MyBase.Clone,viewGASupervisorsDataTable)
+            Dim cln As viewAssignedGAsDataTable = CType(MyBase.Clone,viewAssignedGAsDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -400,60 +410,59 @@ Partial Public Class viewGASupervisors
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New viewGASupervisorsDataTable()
+            Return New viewAssignedGAsDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnSupervisor = MyBase.Columns("Supervisor")
-            Me.columnUser_ID = MyBase.Columns("User_ID")
+            Me.columnGA = MyBase.Columns("GA")
+            Me.columnStudent_ID = MyBase.Columns("Student_ID")
+            Me.columnSupervisor_ID = MyBase.Columns("Supervisor_ID")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnSupervisor = New Global.System.Data.DataColumn("Supervisor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnSupervisor)
-            Me.columnUser_ID = New Global.System.Data.DataColumn("User_ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnUser_ID)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnUser_ID}, true))
-            Me.columnSupervisor.ReadOnly = true
-            Me.columnSupervisor.MaxLength = 101
-            Me.columnUser_ID.AutoIncrement = true
-            Me.columnUser_ID.AutoIncrementSeed = -1
-            Me.columnUser_ID.AutoIncrementStep = -1
-            Me.columnUser_ID.AllowDBNull = false
-            Me.columnUser_ID.ReadOnly = true
-            Me.columnUser_ID.Unique = true
-            Me.ExtendedProperties.Add("Generator_TablePropName", "_viewGASupervisors")
-            Me.ExtendedProperties.Add("Generator_UserTableName", "viewGASupervisors")
+            Me.columnGA = New Global.System.Data.DataColumn("GA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGA)
+            Me.columnStudent_ID = New Global.System.Data.DataColumn("Student_ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnStudent_ID)
+            Me.columnSupervisor_ID = New Global.System.Data.DataColumn("Supervisor_ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSupervisor_ID)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnStudent_ID}, true))
+            Me.columnGA.ReadOnly = true
+            Me.columnGA.MaxLength = 100
+            Me.columnStudent_ID.AllowDBNull = false
+            Me.columnStudent_ID.Unique = true
+            Me.ExtendedProperties.Add("Generator_TablePropName", "_viewAssignedGAs")
+            Me.ExtendedProperties.Add("Generator_UserTableName", "viewAssignedGAs")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewviewGASupervisorsRow() As viewGASupervisorsRow
-            Return CType(Me.NewRow,viewGASupervisorsRow)
+        Public Function NewviewAssignedGAsRow() As viewAssignedGAsRow
+            Return CType(Me.NewRow,viewAssignedGAsRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New viewGASupervisorsRow(builder)
+            Return New viewAssignedGAsRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(viewGASupervisorsRow)
+            Return GetType(viewAssignedGAsRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.viewGASupervisorsRowChangedEvent) Is Nothing) Then
-                RaiseEvent viewGASupervisorsRowChanged(Me, New viewGASupervisorsRowChangeEvent(CType(e.Row,viewGASupervisorsRow), e.Action))
+            If (Not (Me.viewAssignedGAsRowChangedEvent) Is Nothing) Then
+                RaiseEvent viewAssignedGAsRowChanged(Me, New viewAssignedGAsRowChangeEvent(CType(e.Row,viewAssignedGAsRow), e.Action))
             End If
         End Sub
         
@@ -461,8 +470,8 @@ Partial Public Class viewGASupervisors
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.viewGASupervisorsRowChangingEvent) Is Nothing) Then
-                RaiseEvent viewGASupervisorsRowChanging(Me, New viewGASupervisorsRowChangeEvent(CType(e.Row,viewGASupervisorsRow), e.Action))
+            If (Not (Me.viewAssignedGAsRowChangingEvent) Is Nothing) Then
+                RaiseEvent viewAssignedGAsRowChanging(Me, New viewAssignedGAsRowChangeEvent(CType(e.Row,viewAssignedGAsRow), e.Action))
             End If
         End Sub
         
@@ -470,8 +479,8 @@ Partial Public Class viewGASupervisors
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.viewGASupervisorsRowDeletedEvent) Is Nothing) Then
-                RaiseEvent viewGASupervisorsRowDeleted(Me, New viewGASupervisorsRowChangeEvent(CType(e.Row,viewGASupervisorsRow), e.Action))
+            If (Not (Me.viewAssignedGAsRowDeletedEvent) Is Nothing) Then
+                RaiseEvent viewAssignedGAsRowDeleted(Me, New viewAssignedGAsRowChangeEvent(CType(e.Row,viewAssignedGAsRow), e.Action))
             End If
         End Sub
         
@@ -479,14 +488,14 @@ Partial Public Class viewGASupervisors
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.viewGASupervisorsRowDeletingEvent) Is Nothing) Then
-                RaiseEvent viewGASupervisorsRowDeleting(Me, New viewGASupervisorsRowChangeEvent(CType(e.Row,viewGASupervisorsRow), e.Action))
+            If (Not (Me.viewAssignedGAsRowDeletingEvent) Is Nothing) Then
+                RaiseEvent viewAssignedGAsRowDeleting(Me, New viewAssignedGAsRowChangeEvent(CType(e.Row,viewAssignedGAsRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveviewGASupervisorsRow(ByVal row As viewGASupervisorsRow)
+        Public Sub RemoveviewAssignedGAsRow(ByVal row As viewAssignedGAsRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -495,7 +504,7 @@ Partial Public Class viewGASupervisors
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As viewGASupervisors = New viewGASupervisors()
+            Dim ds As viewAssignedGAs = New viewAssignedGAs()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -513,7 +522,7 @@ Partial Public Class viewGASupervisors
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "viewGASupervisorsDataTable"
+            attribute2.FixedValue = "viewAssignedGAsDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -560,54 +569,81 @@ Partial Public Class viewGASupervisors
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class viewGASupervisorsRow
+    Partial Public Class viewAssignedGAsRow
         Inherits Global.System.Data.DataRow
         
-        Private tableviewGASupervisors As viewGASupervisorsDataTable
+        Private tableviewAssignedGAs As viewAssignedGAsDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableviewGASupervisors = CType(Me.Table,viewGASupervisorsDataTable)
+            Me.tableviewAssignedGAs = CType(Me.Table,viewAssignedGAsDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Supervisor() As String
+        Public Property GA() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableviewGASupervisors.SupervisorColumn),String)
+                    Return CType(Me(Me.tableviewAssignedGAs.GAColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Supervisor' in table 'viewGASupervisors' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GA' in table 'viewAssignedGAs' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableviewGASupervisors.SupervisorColumn) = value
+                Me(Me.tableviewAssignedGAs.GAColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property User_ID() As Integer
+        Public Property Student_ID() As Integer
             Get
-                Return CType(Me(Me.tableviewGASupervisors.User_IDColumn),Integer)
+                Return CType(Me(Me.tableviewAssignedGAs.Student_IDColumn),Integer)
             End Get
             Set
-                Me(Me.tableviewGASupervisors.User_IDColumn) = value
+                Me(Me.tableviewAssignedGAs.Student_IDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsSupervisorNull() As Boolean
-            Return Me.IsNull(Me.tableviewGASupervisors.SupervisorColumn)
+        Public Property Supervisor_ID() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableviewAssignedGAs.Supervisor_IDColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Supervisor_ID' in table 'viewAssignedGAs' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableviewAssignedGAs.Supervisor_IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGANull() As Boolean
+            Return Me.IsNull(Me.tableviewAssignedGAs.GAColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetSupervisorNull()
-            Me(Me.tableviewGASupervisors.SupervisorColumn) = Global.System.Convert.DBNull
+        Public Sub SetGANull()
+            Me(Me.tableviewAssignedGAs.GAColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsSupervisor_IDNull() As Boolean
+            Return Me.IsNull(Me.tableviewAssignedGAs.Supervisor_IDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetSupervisor_IDNull()
+            Me(Me.tableviewAssignedGAs.Supervisor_IDColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -615,16 +651,16 @@ Partial Public Class viewGASupervisors
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class viewGASupervisorsRowChangeEvent
+    Public Class viewAssignedGAsRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As viewGASupervisorsRow
+        Private eventRow As viewAssignedGAsRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As viewGASupervisorsRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As viewAssignedGAsRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -632,7 +668,7 @@ Partial Public Class viewGASupervisors
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As viewGASupervisorsRow
+        Public ReadOnly Property Row() As viewAssignedGAsRow
             Get
                 Return Me.eventRow
             End Get
@@ -648,7 +684,7 @@ Partial Public Class viewGASupervisors
     End Class
 End Class
 
-Namespace viewGASupervisorsTableAdapters
+Namespace viewAssignedGAsTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -659,7 +695,7 @@ Namespace viewGASupervisorsTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class viewGASupervisorsTableAdapter
+    Partial Public Class viewAssignedGAsTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -776,9 +812,10 @@ Namespace viewGASupervisorsTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "viewGASupervisors"
-            tableMapping.ColumnMappings.Add("Supervisor", "Supervisor")
-            tableMapping.ColumnMappings.Add("User_ID", "User_ID")
+            tableMapping.DataSetTable = "viewAssignedGAs"
+            tableMapping.ColumnMappings.Add("GA", "GA")
+            tableMapping.ColumnMappings.Add("Student_ID", "Student_ID")
+            tableMapping.ColumnMappings.Add("Supervisor_ID", "Supervisor_ID")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -795,7 +832,7 @@ Namespace viewGASupervisorsTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Supervisor, User_ID FROM dbo.viewGASupervisors"
+            Me._commandCollection(0).CommandText = "SELECT GA, Student_ID, Supervisor_ID FROM dbo.viewAssignedGAs"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -803,7 +840,7 @@ Namespace viewGASupervisorsTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As viewGASupervisors.viewGASupervisorsDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As viewAssignedGAs.viewAssignedGAsDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -816,9 +853,9 @@ Namespace viewGASupervisorsTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As viewGASupervisors.viewGASupervisorsDataTable
+        Public Overloads Overridable Function GetData() As viewAssignedGAs.viewAssignedGAsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As viewGASupervisors.viewGASupervisorsDataTable = New viewGASupervisors.viewGASupervisorsDataTable()
+            Dim dataTable As viewAssignedGAs.viewAssignedGAsDataTable = New viewAssignedGAs.viewAssignedGAsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -893,7 +930,7 @@ Namespace viewGASupervisorsTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As viewGASupervisors, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As viewAssignedGAs, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -903,7 +940,7 @@ Namespace viewGASupervisorsTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As viewGASupervisors, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As viewAssignedGAs, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -913,7 +950,7 @@ Namespace viewGASupervisorsTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As viewGASupervisors, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As viewAssignedGAs, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -949,7 +986,7 @@ Namespace viewGASupervisorsTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As viewGASupervisors) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As viewAssignedGAs) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If

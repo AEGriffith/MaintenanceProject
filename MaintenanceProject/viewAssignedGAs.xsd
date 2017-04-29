@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="viewAssignedGAs" targetNamespace="http://tempuri.org/viewAssignedGAs.xsd" xmlns:mstns="http://tempuri.org/viewAssignedGAs.xsd" xmlns="http://tempuri.org/viewAssignedGAs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="PROJECTS1747ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PROJECTS1747ConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MaintenanceProject.My.MySettings.GlobalReference.Default.PROJECTS1747ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="viewAssignedGAsTableAdapter" GeneratorDataComponentClassName="viewAssignedGAsTableAdapter" Name="viewAssignedGAs" UserDataComponentName="viewAssignedGAsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PROJECTS1747ConnectionString (MySettings)" DbObjectName="PROJECTS1747.dbo.viewAssignedGAs" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT GA, Student_ID, Supervisor_ID FROM dbo.viewAssignedGAs</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="GA" DataSetColumn="GA" />
+              <Mapping SourceColumn="Student_ID" DataSetColumn="Student_ID" />
+              <Mapping SourceColumn="Supervisor_ID" DataSetColumn="Supervisor_ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="viewAssignedGAs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="viewAssignedGAs" msprop:Generator_UserDSName="viewAssignedGAs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="viewAssignedGAs" msprop:Generator_TableClassName="viewAssignedGAsDataTable" msprop:Generator_TableVarName="tableviewAssignedGAs" msprop:Generator_TablePropName="_viewAssignedGAs" msprop:Generator_RowDeletingName="viewAssignedGAsRowDeleting" msprop:Generator_RowChangingName="viewAssignedGAsRowChanging" msprop:Generator_RowEvHandlerName="viewAssignedGAsRowChangeEventHandler" msprop:Generator_RowDeletedName="viewAssignedGAsRowDeleted" msprop:Generator_UserTableName="viewAssignedGAs" msprop:Generator_RowChangedName="viewAssignedGAsRowChanged" msprop:Generator_RowEvArgName="viewAssignedGAsRowChangeEvent" msprop:Generator_RowClassName="viewAssignedGAsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGA" msprop:Generator_ColumnPropNameInRow="GA" msprop:Generator_ColumnPropNameInTable="GAColumn" msprop:Generator_UserColumnName="GA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Student_ID" msprop:Generator_ColumnVarNameInTable="columnStudent_ID" msprop:Generator_ColumnPropNameInRow="Student_ID" msprop:Generator_ColumnPropNameInTable="Student_IDColumn" msprop:Generator_UserColumnName="Student_ID" type="xs:int" />
+              <xs:element name="Supervisor_ID" msprop:Generator_ColumnVarNameInTable="columnSupervisor_ID" msprop:Generator_ColumnPropNameInRow="Supervisor_ID" msprop:Generator_ColumnPropNameInTable="Supervisor_IDColumn" msprop:Generator_UserColumnName="Supervisor_ID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:viewAssignedGAs" />
+      <xs:field xpath="mstns:Student_ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

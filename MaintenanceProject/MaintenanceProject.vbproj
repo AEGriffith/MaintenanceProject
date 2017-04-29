@@ -136,12 +136,6 @@
     <Compile Include="GAAssignment.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GAAssignTask.Designer.vb">
-      <DependentUpon>GAAssignTask.vb</DependentUpon>
-    </Compile>
-    <Compile Include="GAAssignTask.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="GADirector.Designer.vb">
       <DependentUpon>GADirector.vb</DependentUpon>
     </Compile>
@@ -170,6 +164,12 @@
       <DependentUpon>GASupervisor.vb</DependentUpon>
     </Compile>
     <Compile Include="GASupervisor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GASupervisorTask.Designer.vb">
+      <DependentUpon>GASupervisorTask.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GASupervisorTask.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GAViewRequest.Designer.vb">
@@ -277,6 +277,11 @@
     <Compile Include="StudentProfile.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="viewAssignedGAs.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>viewAssignedGAs.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ViewComments.Designer.vb">
       <DependentUpon>ViewComments.vb</DependentUpon>
     </Compile>
@@ -288,11 +293,6 @@
     </Compile>
     <Compile Include="ViewForm.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="viewGASupervisors.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>viewGASupervisors.xsd</DependentUpon>
     </Compile>
     <Compile Include="ViewInterviewComments.Designer.vb">
       <DependentUpon>ViewInterviewComments.vb</DependentUpon>
@@ -326,9 +326,6 @@
     <EmbeddedResource Include="GAAssignment.resx">
       <DependentUpon>GAAssignment.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GAAssignTask.resx">
-      <DependentUpon>GAAssignTask.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GADirector.resx">
       <DependentUpon>GADirector.vb</DependentUpon>
     </EmbeddedResource>
@@ -343,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GASupervisor.resx">
       <DependentUpon>GASupervisor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GASupervisorTask.resx">
+      <DependentUpon>GASupervisorTask.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GAViewRequest.resx">
       <DependentUpon>GAViewRequest.vb</DependentUpon>
@@ -395,16 +395,16 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="viewGASupervisors.xsc">
-      <DependentUpon>viewGASupervisors.xsd</DependentUpon>
+    <None Include="viewAssignedGAs.xsc">
+      <DependentUpon>viewAssignedGAs.xsd</DependentUpon>
     </None>
-    <None Include="viewGASupervisors.xsd">
+    <None Include="viewAssignedGAs.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>viewGASupervisors.Designer.vb</LastGenOutput>
+      <LastGenOutput>viewAssignedGAs.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="viewGASupervisors.xss">
-      <DependentUpon>viewGASupervisors.xsd</DependentUpon>
+    <None Include="viewAssignedGAs.xss">
+      <DependentUpon>viewAssignedGAs.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
