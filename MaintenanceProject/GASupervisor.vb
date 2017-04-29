@@ -68,4 +68,8 @@ Public Class GASupervisor
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
+
+    Private Sub AssignTasksToGAsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AssignTasksToGAsToolStripMenuItem.Click
+        GASupervisorTask.Show()
+    End Sub
 End Class

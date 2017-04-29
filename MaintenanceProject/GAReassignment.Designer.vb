@@ -25,19 +25,19 @@ Partial Class GAReassignment
         Me.components = New System.ComponentModel.Container()
         Me.cbSupervisor = New System.Windows.Forms.ComboBox()
         Me.ViewGASupervisorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ViewGASupervisors = New MaintenanceProject.viewGASupervisors()
+
         Me.numHours = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblStudent = New System.Windows.Forms.Label()
         Me.lblSemester = New System.Windows.Forms.Label()
         Me.lblHours = New System.Windows.Forms.Label()
-        Me.ViewGASupervisorsTableAdapter = New MaintenanceProject.viewGASupervisorsTableAdapters.viewGASupervisorsTableAdapter()
+
         Me.btnReassign = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.lblHours1 = New System.Windows.Forms.Label()
         CType(Me.ViewGASupervisorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ViewGASupervisors, System.ComponentModel.ISupportInitialize).BeginInit()
+
         CType(Me.numHours, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -55,12 +55,7 @@ Partial Class GAReassignment
         'ViewGASupervisorsBindingSource
         '
         Me.ViewGASupervisorsBindingSource.DataMember = "viewGASupervisors"
-        Me.ViewGASupervisorsBindingSource.DataSource = Me.ViewGASupervisors
-        '
-        'ViewGASupervisors
-        '
-        Me.ViewGASupervisors.DataSetName = "viewGASupervisors"
-        Me.ViewGASupervisors.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+
         '
         'numHours
         '
@@ -121,7 +116,7 @@ Partial Class GAReassignment
         '
         'ViewGASupervisorsTableAdapter
         '
-        Me.ViewGASupervisorsTableAdapter.ClearBeforeFill = True
+
         '
         'btnReassign
         '
@@ -170,7 +165,7 @@ Partial Class GAReassignment
         Me.Name = "GAReassignment"
         Me.Text = "GAReassignment"
         CType(Me.ViewGASupervisorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ViewGASupervisors, System.ComponentModel.ISupportInitialize).EndInit()
+
         CType(Me.numHours, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -184,9 +179,9 @@ Partial Class GAReassignment
     Friend WithEvents lblStudent As Label
     Friend WithEvents lblSemester As Label
     Friend WithEvents lblHours As Label
-    Friend WithEvents ViewGASupervisors As viewGASupervisors
+
     Friend WithEvents ViewGASupervisorsBindingSource As BindingSource
-    Friend WithEvents ViewGASupervisorsTableAdapter As viewGASupervisorsTableAdapters.viewGASupervisorsTableAdapter
+
     Friend WithEvents btnReassign As Button
     Friend WithEvents btnCancel As Button
     Friend WithEvents lblHours1 As Label
