@@ -31,8 +31,12 @@ Partial Class GADirector
         Me.GAAssignmentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvTaskTypeHours = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.dgvHoursProgress = New System.Windows.Forms.DataGridView()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvTaskTypeHours, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvHoursProgress, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -41,7 +45,7 @@ Partial Class GADirector
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ViewToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1545, 49)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1662, 49)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -94,7 +98,7 @@ Partial Class GADirector
         Me.dgvTaskTypeHours.Name = "dgvTaskTypeHours"
         Me.dgvTaskTypeHours.ReadOnly = True
         Me.dgvTaskTypeHours.RowTemplate.Height = 40
-        Me.dgvTaskTypeHours.Size = New System.Drawing.Size(1467, 436)
+        Me.dgvTaskTypeHours.Size = New System.Drawing.Size(1617, 436)
         Me.dgvTaskTypeHours.TabIndex = 1
         '
         'Label1
@@ -106,11 +110,47 @@ Partial Class GADirector
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Total Task Hours by Type and Semester:"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(12, 620)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(533, 32)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Assistantship Hours Fulfillment Progress:"
+        '
+        'dgvHoursProgress
+        '
+        Me.dgvHoursProgress.AllowUserToAddRows = False
+        Me.dgvHoursProgress.AllowUserToDeleteRows = False
+        Me.dgvHoursProgress.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvHoursProgress.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgvHoursProgress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvHoursProgress.Location = New System.Drawing.Point(12, 664)
+        Me.dgvHoursProgress.Name = "dgvHoursProgress"
+        Me.dgvHoursProgress.ReadOnly = True
+        Me.dgvHoursProgress.RowTemplate.Height = 40
+        Me.dgvHoursProgress.Size = New System.Drawing.Size(1617, 436)
+        Me.dgvHoursProgress.TabIndex = 3
+        '
+        'btnClose
+        '
+        Me.btnClose.Location = New System.Drawing.Point(1491, 1124)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(138, 60)
+        Me.btnClose.TabIndex = 5
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = True
+        '
         'GADirector
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1545, 1003)
+        Me.AutoSize = True
+        Me.ClientSize = New System.Drawing.Size(1662, 1208)
+        Me.Controls.Add(Me.btnClose)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.dgvHoursProgress)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgvTaskTypeHours)
         Me.Controls.Add(Me.MenuStrip1)
@@ -120,6 +160,7 @@ Partial Class GADirector
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.dgvTaskTypeHours, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvHoursProgress, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -134,4 +175,7 @@ Partial Class GADirector
     Friend WithEvents AssignGAToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents dgvTaskTypeHours As DataGridView
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents dgvHoursProgress As DataGridView
+    Friend WithEvents btnClose As Button
 End Class
