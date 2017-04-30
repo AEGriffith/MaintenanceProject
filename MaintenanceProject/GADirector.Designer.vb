@@ -24,12 +24,15 @@ Partial Class GADirector
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AssignGAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GARequestsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GAAssignmentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AssignGAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.dgvTaskTypeHours = New System.Windows.Forms.DataGridView()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.dgvTaskTypeHours, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -38,21 +41,34 @@ Partial Class GADirector
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ViewToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(625, 49)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1545, 49)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
         '
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 48)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 45)
         Me.FileToolStripMenuItem.Text = "File"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssignGAToolStripMenuItem})
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(80, 45)
+        Me.EditToolStripMenuItem.Text = "Edit"
+        '
+        'AssignGAToolStripMenuItem
+        '
+        Me.AssignGAToolStripMenuItem.Name = "AssignGAToolStripMenuItem"
+        Me.AssignGAToolStripMenuItem.Size = New System.Drawing.Size(268, 46)
+        Me.AssignGAToolStripMenuItem.Text = "Assign GA"
         '
         'ViewToolStripMenuItem
         '
         Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GARequestsToolStripMenuItem, Me.GAAssignmentsToolStripMenuItem})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 48)
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 45)
         Me.ViewToolStripMenuItem.Text = "View"
         '
         'GARequestsToolStripMenuItem
@@ -67,30 +83,43 @@ Partial Class GADirector
         Me.GAAssignmentsToolStripMenuItem.Size = New System.Drawing.Size(350, 46)
         Me.GAAssignmentsToolStripMenuItem.Text = "GA Assignments"
         '
-        'EditToolStripMenuItem
+        'dgvTaskTypeHours
         '
-        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssignGAToolStripMenuItem})
-        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(80, 48)
-        Me.EditToolStripMenuItem.Text = "Edit"
+        Me.dgvTaskTypeHours.AllowUserToAddRows = False
+        Me.dgvTaskTypeHours.AllowUserToDeleteRows = False
+        Me.dgvTaskTypeHours.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvTaskTypeHours.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgvTaskTypeHours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvTaskTypeHours.Location = New System.Drawing.Point(12, 161)
+        Me.dgvTaskTypeHours.Name = "dgvTaskTypeHours"
+        Me.dgvTaskTypeHours.ReadOnly = True
+        Me.dgvTaskTypeHours.RowTemplate.Height = 40
+        Me.dgvTaskTypeHours.Size = New System.Drawing.Size(1467, 436)
+        Me.dgvTaskTypeHours.TabIndex = 1
         '
-        'AssignGAToolStripMenuItem
+        'Label1
         '
-        Me.AssignGAToolStripMenuItem.Name = "AssignGAToolStripMenuItem"
-        Me.AssignGAToolStripMenuItem.Size = New System.Drawing.Size(327, 46)
-        Me.AssignGAToolStripMenuItem.Text = "Assign GA"
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 117)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(527, 32)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Total Task Hours by Type and Semester:"
         '
         'GADirector
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(625, 442)
+        Me.ClientSize = New System.Drawing.Size(1545, 1003)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.dgvTaskTypeHours)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "GADirector"
         Me.Text = "Graduate Assistant Management"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.dgvTaskTypeHours, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -103,4 +132,6 @@ Partial Class GADirector
     Friend WithEvents GAAssignmentsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AssignGAToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents dgvTaskTypeHours As DataGridView
+    Friend WithEvents Label1 As Label
 End Class
