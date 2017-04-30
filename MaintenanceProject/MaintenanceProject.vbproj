@@ -172,6 +172,12 @@
     <Compile Include="GASupervisorTask.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GAViewGATask.Designer.vb">
+      <DependentUpon>GAViewGATask.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GAViewGATask.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GAViewRequest.Designer.vb">
       <DependentUpon>GAViewRequest.vb</DependentUpon>
     </Compile>
@@ -271,6 +277,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PROJECTS1747DataSet6.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PROJECTS1747DataSet7.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PROJECTS1747DataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="StudentProfile.Designer.vb">
       <DependentUpon>StudentProfile.vb</DependentUpon>
     </Compile>
@@ -344,6 +355,9 @@
     <EmbeddedResource Include="GASupervisorTask.resx">
       <DependentUpon>GASupervisorTask.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GAViewGATask.resx">
+      <DependentUpon>GAViewGATask.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GAViewRequest.resx">
       <DependentUpon>GAViewRequest.vb</DependentUpon>
     </EmbeddedResource>
@@ -395,6 +409,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="PROJECTS1747DataSet7.xsc">
+      <DependentUpon>PROJECTS1747DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="PROJECTS1747DataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PROJECTS1747DataSet7.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PROJECTS1747DataSet7.xss">
+      <DependentUpon>PROJECTS1747DataSet7.xsd</DependentUpon>
+    </None>
     <None Include="viewAssignedGAs.xsc">
       <DependentUpon>viewAssignedGAs.xsd</DependentUpon>
     </None>

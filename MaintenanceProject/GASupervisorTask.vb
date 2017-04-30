@@ -71,8 +71,8 @@ Public Class GASupervisorTask
             GAID = cbGA.SelectedValue
             EstHours = NumericUpDown1.Value
             DueDate = dateDue.Value
-            TaskType = cbTaskType.SelectedText
-            Priority = cbTaskType.SelectedText
+            TaskType = cbTaskType.Text
+            Priority = cbPriority.Text
             Instructions = tbInstructions.Text
             CreateTask()
             MessageBox.Show("Task successfully assigned to " & cbGA.Text & ".")
