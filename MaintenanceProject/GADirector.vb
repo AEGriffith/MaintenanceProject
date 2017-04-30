@@ -28,6 +28,28 @@ Public Class GADirector
         con.Close()
     End Sub
 
+    Friend Sub GetHoursProgress()
+        con.ConnectionString = ConnString
+
+        Dim sqlComm As New OleDbCommand
+        Dim ds As New DataSet
+
+
+        sqlComm.Connection = con
+
+        'setup for stored procedure
+        sqlComm.CommandText = "procGetAssistantshipProgress"
+        sqlComm.CommandType = CommandType.StoredProcedure
+        sqlComm.Connection = con
+
+
+        con.Open()
+        Dim Adpt = New OleDbDataAdapter(sqlComm)
+        Adpt.Fill(ds)
+        dgvHoursProgress.DataSource = ds.Tables(0)
+        con.Close()
+    End Sub
+
     Private Sub GARequestsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GARequestsToolStripMenuItem.Click
         GAViewRequest.Show()
         Me.Close()
@@ -45,5 +67,10 @@ Public Class GADirector
 
     Private Sub GADirector_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GetTaskTypeHours()
+        GetHoursProgress()
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
     End Sub
 End Class
