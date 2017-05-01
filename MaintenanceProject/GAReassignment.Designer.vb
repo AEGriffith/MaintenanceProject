@@ -24,25 +24,26 @@ Partial Class GAReassignment
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.cbSupervisor = New System.Windows.Forms.ComboBox()
-        Me.ViewGASupervisorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-
         Me.numHours = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblStudent = New System.Windows.Forms.Label()
         Me.lblSemester = New System.Windows.Forms.Label()
         Me.lblHours = New System.Windows.Forms.Label()
-
         Me.btnReassign = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.lblHours1 = New System.Windows.Forms.Label()
-        CType(Me.ViewGASupervisorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-
+        Me.PROJECTS1747DataSet7 = New MaintenanceProject.PROJECTS1747DataSet7()
+        Me.ViewGASupervisorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ViewGASupervisorsTableAdapter = New MaintenanceProject.PROJECTS1747DataSet7TableAdapters.viewGASupervisorsTableAdapter()
         CType(Me.numHours, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PROJECTS1747DataSet7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ViewGASupervisorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cbSupervisor
         '
+        Me.cbSupervisor.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.ViewGASupervisorsBindingSource, "User_ID", True))
         Me.cbSupervisor.DataSource = Me.ViewGASupervisorsBindingSource
         Me.cbSupervisor.DisplayMember = "Supervisor"
         Me.cbSupervisor.FormattingEnabled = True
@@ -51,11 +52,6 @@ Partial Class GAReassignment
         Me.cbSupervisor.Size = New System.Drawing.Size(272, 39)
         Me.cbSupervisor.TabIndex = 0
         Me.cbSupervisor.ValueMember = "User_ID"
-        '
-        'ViewGASupervisorsBindingSource
-        '
-        Me.ViewGASupervisorsBindingSource.DataMember = "viewGASupervisors"
-
         '
         'numHours
         '
@@ -114,10 +110,6 @@ Partial Class GAReassignment
         Me.lblHours.TabIndex = 6
         Me.lblHours.Text = "Hours"
         '
-        'ViewGASupervisorsTableAdapter
-        '
-
-        '
         'btnReassign
         '
         Me.btnReassign.Location = New System.Drawing.Point(120, 512)
@@ -146,6 +138,20 @@ Partial Class GAReassignment
         Me.lblHours1.TabIndex = 9
         Me.lblHours1.Text = "Hours"
         '
+        'PROJECTS1747DataSet7
+        '
+        Me.PROJECTS1747DataSet7.DataSetName = "PROJECTS1747DataSet7"
+        Me.PROJECTS1747DataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ViewGASupervisorsBindingSource
+        '
+        Me.ViewGASupervisorsBindingSource.DataMember = "viewGASupervisors"
+        Me.ViewGASupervisorsBindingSource.DataSource = Me.PROJECTS1747DataSet7
+        '
+        'ViewGASupervisorsTableAdapter
+        '
+        Me.ViewGASupervisorsTableAdapter.ClearBeforeFill = True
+        '
         'GAReassignment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
@@ -163,10 +169,10 @@ Partial Class GAReassignment
         Me.Controls.Add(Me.numHours)
         Me.Controls.Add(Me.cbSupervisor)
         Me.Name = "GAReassignment"
-        Me.Text = "GAReassignment"
-        CType(Me.ViewGASupervisorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-
+        Me.Text = "Reassign GA"
         CType(Me.numHours, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PROJECTS1747DataSet7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ViewGASupervisorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -180,9 +186,10 @@ Partial Class GAReassignment
     Friend WithEvents lblSemester As Label
     Friend WithEvents lblHours As Label
 
-    Friend WithEvents ViewGASupervisorsBindingSource As BindingSource
-
     Friend WithEvents btnReassign As Button
     Friend WithEvents btnCancel As Button
     Friend WithEvents lblHours1 As Label
+    Friend WithEvents PROJECTS1747DataSet7 As PROJECTS1747DataSet7
+    Friend WithEvents ViewGASupervisorsBindingSource As BindingSource
+    Friend WithEvents ViewGASupervisorsTableAdapter As PROJECTS1747DataSet7TableAdapters.viewGASupervisorsTableAdapter
 End Class

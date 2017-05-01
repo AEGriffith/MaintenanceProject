@@ -27,6 +27,8 @@ Public Class GAReassignment
 
 
     Private Sub GAReassignment_Load(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.Activated
+        'TODO: This line of code loads data into the 'PROJECTS1747DataSet7.viewGASupervisors' table. You can move, or remove it, as needed.
+        Me.ViewGASupervisorsTableAdapter.Fill(Me.PROJECTS1747DataSet7.viewGASupervisors)
         ' Get Values from GAViewUserAssignments
         StudentID = GAViewUserAssignments.getStudentID
         StudentName = GAViewUserAssignments.getStudentName
