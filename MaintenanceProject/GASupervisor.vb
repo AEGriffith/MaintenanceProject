@@ -59,7 +59,7 @@ Public Class GASupervisor
 
         'sets values for stored procedure
         sqlComm.Parameters.AddWithValue("UserID", Supervisor_ID)
-        sqlComm.Parameters.AddWithValue("Semester", SemesterTask)
+
 
 
         con.Open()
@@ -73,14 +73,14 @@ Public Class GASupervisor
 
     Private Sub GASupervisor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SemesterSelect()
-        Semester2Select()
+
         GetAssignedStudentsHours()
         GetAssignedTasks()
     End Sub
 
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
         SemesterSelect()
-        Semester2Select()
+
         GetAssignedStudentsHours()
         GetAssignedTasks()
     End Sub
@@ -93,13 +93,7 @@ Public Class GASupervisor
         End If
     End Sub
 
-    Private Sub Semester2Select()
-        If rb2Fall.Checked = True Then
-            SemesterTask = "Fa2017"
-        Else
-            SemesterTask = "Sp2018"
-        End If
-    End Sub
+
 
     Private Sub rb1_CheckedChanged(sender As Object, e As EventArgs) Handles rb1.CheckedChanged, rb2.CheckedChanged
         SemesterSelect()
@@ -114,8 +108,8 @@ Public Class GASupervisor
         GASupervisorTask.Show()
     End Sub
 
-    Private Sub rb2Fall_CheckedChanged(sender As Object, e As EventArgs) Handles rb2Fall.CheckedChanged, rb2Spring.CheckedChanged
-        Semester2Select()
+    Private Sub rb2Fall_CheckedChanged(sender As Object, e As EventArgs)
+
         GetAssignedTasks()
     End Sub
 End Class

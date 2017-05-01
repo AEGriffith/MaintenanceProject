@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class GASupervisor
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class GASupervisor
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -36,15 +36,11 @@ Partial Class GASupervisor
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.rb2Spring = New System.Windows.Forms.RadioButton()
-        Me.rb2Fall = New System.Windows.Forms.RadioButton()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -53,39 +49,40 @@ Partial Class GASupervisor
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem1, Me.ViewToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1288, 49)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(2, 1, 0, 1)
+        Me.MenuStrip1.Size = New System.Drawing.Size(483, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
         '
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(75, 45)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 22)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'EditToolStripMenuItem1
         '
         Me.EditToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RequestGraduateAssistantToolStripMenuItem, Me.AssignTasksToGAsToolStripMenuItem})
         Me.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1"
-        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(80, 45)
+        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(39, 22)
         Me.EditToolStripMenuItem1.Text = "Edit"
         '
         'RequestGraduateAssistantToolStripMenuItem
         '
         Me.RequestGraduateAssistantToolStripMenuItem.Name = "RequestGraduateAssistantToolStripMenuItem"
-        Me.RequestGraduateAssistantToolStripMenuItem.Size = New System.Drawing.Size(495, 46)
+        Me.RequestGraduateAssistantToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
         Me.RequestGraduateAssistantToolStripMenuItem.Text = "Request Graduate Assistant"
         '
         'AssignTasksToGAsToolStripMenuItem
         '
         Me.AssignTasksToGAsToolStripMenuItem.Name = "AssignTasksToGAsToolStripMenuItem"
-        Me.AssignTasksToGAsToolStripMenuItem.Size = New System.Drawing.Size(495, 46)
+        Me.AssignTasksToGAsToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
         Me.AssignTasksToGAsToolStripMenuItem.Text = "Assign Tasks"
         '
         'ViewToolStripMenuItem
         '
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(94, 45)
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(44, 22)
         Me.ViewToolStripMenuItem.Text = "View"
         '
         'DataGridView1
@@ -95,20 +92,23 @@ Partial Class GASupervisor
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(31, 68)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 29)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 40
-        Me.DataGridView1.Size = New System.Drawing.Size(668, 272)
+        Me.DataGridView1.Size = New System.Drawing.Size(250, 114)
         Me.DataGridView1.TabIndex = 2
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.rb2)
         Me.GroupBox1.Controls.Add(Me.rb1)
-        Me.GroupBox1.Location = New System.Drawing.Point(738, 68)
+        Me.GroupBox1.Location = New System.Drawing.Point(277, 29)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(263, 160)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.GroupBox1.Size = New System.Drawing.Size(99, 67)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Semester"
@@ -116,9 +116,10 @@ Partial Class GASupervisor
         'rb2
         '
         Me.rb2.AutoSize = True
-        Me.rb2.Location = New System.Drawing.Point(25, 96)
+        Me.rb2.Location = New System.Drawing.Point(9, 40)
+        Me.rb2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.rb2.Name = "rb2"
-        Me.rb2.Size = New System.Drawing.Size(206, 36)
+        Me.rb2.Size = New System.Drawing.Size(82, 17)
         Me.rb2.TabIndex = 1
         Me.rb2.Text = "Spring 2018"
         Me.rb2.UseVisualStyleBackColor = True
@@ -127,9 +128,10 @@ Partial Class GASupervisor
         '
         Me.rb1.AutoSize = True
         Me.rb1.Checked = True
-        Me.rb1.Location = New System.Drawing.Point(25, 54)
+        Me.rb1.Location = New System.Drawing.Point(9, 23)
+        Me.rb1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.rb1.Name = "rb1"
-        Me.rb1.Size = New System.Drawing.Size(170, 36)
+        Me.rb1.Size = New System.Drawing.Size(68, 17)
         Me.rb1.TabIndex = 0
         Me.rb1.TabStop = True
         Me.rb1.Text = "Fall 2017"
@@ -137,9 +139,10 @@ Partial Class GASupervisor
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(1104, 953)
+        Me.btnClose.Location = New System.Drawing.Point(414, 400)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(159, 54)
+        Me.btnClose.Size = New System.Drawing.Size(60, 23)
         Me.btnClose.TabIndex = 4
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
@@ -149,9 +152,11 @@ Partial Class GASupervisor
         Me.GroupBox2.BackColor = System.Drawing.SystemColors.Control
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Controls.Add(Me.GroupBox1)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 113)
+        Me.GroupBox2.Location = New System.Drawing.Point(4, 47)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1030, 373)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.GroupBox2.Size = New System.Drawing.Size(386, 156)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Assigned GAs"
@@ -163,68 +168,37 @@ Partial Class GASupervisor
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.DataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(12, 552)
+        Me.DataGridView2.Location = New System.Drawing.Point(4, 231)
+        Me.DataGridView2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowTemplate.Height = 40
-        Me.DataGridView2.Size = New System.Drawing.Size(1251, 380)
+        Me.DataGridView2.Size = New System.Drawing.Size(469, 159)
         Me.DataGridView2.TabIndex = 6
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 517)
+        Me.Label1.Location = New System.Drawing.Point(4, 217)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(215, 32)
+        Me.Label1.Size = New System.Drawing.Size(82, 13)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Tasks Assigned"
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.rb2Spring)
-        Me.GroupBox3.Controls.Add(Me.rb2Fall)
-        Me.GroupBox3.Location = New System.Drawing.Point(18, 938)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(429, 88)
-        Me.GroupBox3.TabIndex = 8
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Semester"
-        '
-        'rb2Spring
-        '
-        Me.rb2Spring.AutoSize = True
-        Me.rb2Spring.Location = New System.Drawing.Point(201, 37)
-        Me.rb2Spring.Name = "rb2Spring"
-        Me.rb2Spring.Size = New System.Drawing.Size(206, 36)
-        Me.rb2Spring.TabIndex = 1
-        Me.rb2Spring.Text = "Spring 2018"
-        Me.rb2Spring.UseVisualStyleBackColor = True
-        '
-        'rb2Fall
-        '
-        Me.rb2Fall.AutoSize = True
-        Me.rb2Fall.Checked = True
-        Me.rb2Fall.Location = New System.Drawing.Point(9, 37)
-        Me.rb2Fall.Name = "rb2Fall"
-        Me.rb2Fall.Size = New System.Drawing.Size(170, 36)
-        Me.rb2Fall.TabIndex = 0
-        Me.rb2Fall.TabStop = True
-        Me.rb2Fall.Text = "Fall 2017"
-        Me.rb2Fall.UseVisualStyleBackColor = True
-        '
         'GASupervisor
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1288, 1050)
-        Me.Controls.Add(Me.GroupBox3)
+        Me.ClientSize = New System.Drawing.Size(483, 440)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Name = "GASupervisor"
         Me.Text = "GASupervisor"
         Me.MenuStrip1.ResumeLayout(False)
@@ -234,8 +208,6 @@ Partial Class GASupervisor
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -255,7 +227,4 @@ Partial Class GASupervisor
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents Label1 As Label
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents rb2Spring As RadioButton
-    Friend WithEvents rb2Fall As RadioButton
 End Class
