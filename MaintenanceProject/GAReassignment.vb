@@ -125,26 +125,32 @@ Public Class GAReassignment
     End Sub
 
     Private Sub btnReassign_Click(sender As Object, e As EventArgs) Handles btnReassign.Click
-        NewSupervisorID = Integer.Parse(cbSupervisor.SelectedValue)
+
 
         HoursAssigned = Integer.Parse(numHours.Value)
-        If NewSupervisorID = SupervisorID And HoursAssigned = Hours Then
-            MessageBox.Show("No changes were made.")
-        ElseIf NewSupervisorID = SupervisorID And HoursAssigned <> Hours Then
-            If MessageBox.Show("Supervisor has not changed. Are you sure you wish to update?", "Confirmation", MessageBoxButtons.YesNo) = DialogResult.Yes Then
+        If cbSupervisor.SelectedIndex = -1 Then
+            MessageBox.Show("Please Select a Supervisor.", "Data Entry Error")
+        Else
+            NewSupervisorID = Integer.Parse(cbSupervisor.SelectedValue)
+            If NewSupervisorID = SupervisorID And HoursAssigned = Hours Then
+                MessageBox.Show("No changes were made.")
+            ElseIf NewSupervisorID = SupervisorID And HoursAssigned <> Hours Then
+                If MessageBox.Show("Supervisor has not changed. Are you sure you wish to update?", "Confirmation", MessageBoxButtons.YesNo) = DialogResult.Yes Then
+                    Reassign()
+                    MessageBox.Show("Hours changed from " & Hours & " weekly hours to " & HoursAssigned & " weekly hours.")
+                    GAViewUserAssignments.ViewGAAssignmentsTableAdapter.Fill(GAViewUserAssignments.PROJECTS1747DataSet6.viewGAAssignments)
+                    Me.Close()
+
+                End If
+            Else
                 Reassign()
-                MessageBox.Show("Hours changed from " & Hours & " weekly hours to " & HoursAssigned & " weekly hours.")
+                GAViewUserAssignments.ViewGAAssignmentsTableAdapter.Fill(GAViewUserAssignments.PROJECTS1747DataSet6.viewGAAssignments)
+                SupervisorName = GAViewUserAssignments.DataGridView1.CurrentRow.Cells(0).Value
+                MessageBox.Show(StudentName & " reassigned to " & SupervisorName & " for " & HoursAssigned & " hours.")
                 GAViewUserAssignments.ViewGAAssignmentsTableAdapter.Fill(GAViewUserAssignments.PROJECTS1747DataSet6.viewGAAssignments)
                 Me.Close()
-            End If
-        Else
-            Reassign()
-            GAViewUserAssignments.ViewGAAssignmentsTableAdapter.Fill(GAViewUserAssignments.PROJECTS1747DataSet6.viewGAAssignments)
-            SupervisorName = GAViewUserAssignments.DataGridView1.CurrentRow.Cells(0).Value
-            MessageBox.Show(StudentName & " reassigned to " & SupervisorName & " for " & HoursAssigned & " hours.")
-            GAViewUserAssignments.ViewGAAssignmentsTableAdapter.Fill(GAViewUserAssignments.PROJECTS1747DataSet6.viewGAAssignments)
-            Me.Close()
 
+            End If
         End If
 
     End Sub
