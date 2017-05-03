@@ -18,6 +18,7 @@ Public Class GAReassignment
     'Variable set by Form
     Dim NewSupervisorID
     Dim HoursAssigned
+    Dim NewSupervisorName
 
 
     'Setup Connection Variables
@@ -37,6 +38,7 @@ Public Class GAReassignment
         Hours = GAViewUserAssignments.getHours
         Semester = GAViewUserAssignments.getSemester
         SupervisorName = GAViewUserAssignments.getSupervisorName
+
 
 
         GetAssignedHours()
@@ -146,12 +148,16 @@ Public Class GAReassignment
                 Reassign()
                 GAViewUserAssignments.ViewGAAssignmentsTableAdapter.Fill(GAViewUserAssignments.PROJECTS1747DataSet6.viewGAAssignments)
                 SupervisorName = GAViewUserAssignments.DataGridView1.CurrentRow.Cells(0).Value
-                MessageBox.Show(StudentName & " reassigned to " & SupervisorName & " for " & HoursAssigned & " hours.")
+                MessageBox.Show(StudentName & " reassigned to " & NewSupervisorName & " for " & HoursAssigned & " hours.")
                 GAViewUserAssignments.ViewGAAssignmentsTableAdapter.Fill(GAViewUserAssignments.PROJECTS1747DataSet6.viewGAAssignments)
                 Me.Close()
 
             End If
         End If
 
+    End Sub
+
+    Private Sub cbSupervisor_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSupervisor.SelectedIndexChanged
+        NewSupervisorName = cbSupervisor.Text
     End Sub
 End Class

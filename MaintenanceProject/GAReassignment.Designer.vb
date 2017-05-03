@@ -24,6 +24,8 @@ Partial Class GAReassignment
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.cbSupervisor = New System.Windows.Forms.ComboBox()
+        Me.ViewGASupervisorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PROJECTS1747DataSet7 = New MaintenanceProject.PROJECTS1747DataSet7()
         Me.numHours = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -33,12 +35,10 @@ Partial Class GAReassignment
         Me.btnReassign = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.lblHours1 = New System.Windows.Forms.Label()
-        Me.PROJECTS1747DataSet7 = New MaintenanceProject.PROJECTS1747DataSet7()
-        Me.ViewGASupervisorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ViewGASupervisorsTableAdapter = New MaintenanceProject.PROJECTS1747DataSet7TableAdapters.viewGASupervisorsTableAdapter()
-        CType(Me.numHours, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PROJECTS1747DataSet7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ViewGASupervisorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PROJECTS1747DataSet7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numHours, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cbSupervisor
@@ -52,6 +52,16 @@ Partial Class GAReassignment
         Me.cbSupervisor.Size = New System.Drawing.Size(272, 39)
         Me.cbSupervisor.TabIndex = 0
         Me.cbSupervisor.ValueMember = "User_ID"
+        '
+        'ViewGASupervisorsBindingSource
+        '
+        Me.ViewGASupervisorsBindingSource.DataMember = "viewGASupervisors"
+        Me.ViewGASupervisorsBindingSource.DataSource = Me.PROJECTS1747DataSet7
+        '
+        'PROJECTS1747DataSet7
+        '
+        Me.PROJECTS1747DataSet7.DataSetName = "PROJECTS1747DataSet7"
+        Me.PROJECTS1747DataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'numHours
         '
@@ -138,16 +148,6 @@ Partial Class GAReassignment
         Me.lblHours1.TabIndex = 9
         Me.lblHours1.Text = "Hours"
         '
-        'PROJECTS1747DataSet7
-        '
-        Me.PROJECTS1747DataSet7.DataSetName = "PROJECTS1747DataSet7"
-        Me.PROJECTS1747DataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ViewGASupervisorsBindingSource
-        '
-        Me.ViewGASupervisorsBindingSource.DataMember = "viewGASupervisors"
-        Me.ViewGASupervisorsBindingSource.DataSource = Me.PROJECTS1747DataSet7
-        '
         'ViewGASupervisorsTableAdapter
         '
         Me.ViewGASupervisorsTableAdapter.ClearBeforeFill = True
@@ -170,9 +170,9 @@ Partial Class GAReassignment
         Me.Controls.Add(Me.cbSupervisor)
         Me.Name = "GAReassignment"
         Me.Text = "Reassign GA"
-        CType(Me.numHours, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PROJECTS1747DataSet7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ViewGASupervisorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PROJECTS1747DataSet7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numHours, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
