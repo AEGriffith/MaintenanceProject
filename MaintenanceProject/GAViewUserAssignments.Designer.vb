@@ -23,6 +23,7 @@ Partial Class GAViewUserAssignments
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GAViewUserAssignments))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.SupervisorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StudentDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,10 +53,11 @@ Partial Class GAViewUserAssignments
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SupervisorDataGridViewTextBoxColumn, Me.StudentDataGridViewTextBoxColumn, Me.SemesterDataGridViewTextBoxColumn, Me.HoursDataGridViewTextBoxColumn, Me.AssignmentIDDataGridViewTextBoxColumn, Me.StudentIDDataGridViewTextBoxColumn, Me.SupervisorIDDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ViewGAAssignmentsBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 226)
+        Me.DataGridView1.Location = New System.Drawing.Point(4, 95)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 40
-        Me.DataGridView1.Size = New System.Drawing.Size(1462, 623)
+        Me.DataGridView1.Size = New System.Drawing.Size(548, 261)
         Me.DataGridView1.TabIndex = 1
         '
         'SupervisorDataGridViewTextBoxColumn
@@ -64,7 +66,7 @@ Partial Class GAViewUserAssignments
         Me.SupervisorDataGridViewTextBoxColumn.HeaderText = "Supervisor"
         Me.SupervisorDataGridViewTextBoxColumn.Name = "SupervisorDataGridViewTextBoxColumn"
         Me.SupervisorDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SupervisorDataGridViewTextBoxColumn.Width = 205
+        Me.SupervisorDataGridViewTextBoxColumn.Width = 82
         '
         'StudentDataGridViewTextBoxColumn
         '
@@ -72,42 +74,42 @@ Partial Class GAViewUserAssignments
         Me.StudentDataGridViewTextBoxColumn.HeaderText = "Student"
         Me.StudentDataGridViewTextBoxColumn.Name = "StudentDataGridViewTextBoxColumn"
         Me.StudentDataGridViewTextBoxColumn.ReadOnly = True
-        Me.StudentDataGridViewTextBoxColumn.Width = 168
+        Me.StudentDataGridViewTextBoxColumn.Width = 69
         '
         'SemesterDataGridViewTextBoxColumn
         '
         Me.SemesterDataGridViewTextBoxColumn.DataPropertyName = "Semester"
         Me.SemesterDataGridViewTextBoxColumn.HeaderText = "Semester"
         Me.SemesterDataGridViewTextBoxColumn.Name = "SemesterDataGridViewTextBoxColumn"
-        Me.SemesterDataGridViewTextBoxColumn.Width = 190
+        Me.SemesterDataGridViewTextBoxColumn.Width = 76
         '
         'HoursDataGridViewTextBoxColumn
         '
         Me.HoursDataGridViewTextBoxColumn.DataPropertyName = "Hours"
         Me.HoursDataGridViewTextBoxColumn.HeaderText = "Hours"
         Me.HoursDataGridViewTextBoxColumn.Name = "HoursDataGridViewTextBoxColumn"
-        Me.HoursDataGridViewTextBoxColumn.Width = 144
+        Me.HoursDataGridViewTextBoxColumn.Width = 60
         '
         'AssignmentIDDataGridViewTextBoxColumn
         '
         Me.AssignmentIDDataGridViewTextBoxColumn.DataPropertyName = "Assignment_ID"
         Me.AssignmentIDDataGridViewTextBoxColumn.HeaderText = "Assignment_ID"
         Me.AssignmentIDDataGridViewTextBoxColumn.Name = "AssignmentIDDataGridViewTextBoxColumn"
-        Me.AssignmentIDDataGridViewTextBoxColumn.Width = 260
+        Me.AssignmentIDDataGridViewTextBoxColumn.Width = 103
         '
         'StudentIDDataGridViewTextBoxColumn
         '
         Me.StudentIDDataGridViewTextBoxColumn.DataPropertyName = "Student_ID"
         Me.StudentIDDataGridViewTextBoxColumn.HeaderText = "Student_ID"
         Me.StudentIDDataGridViewTextBoxColumn.Name = "StudentIDDataGridViewTextBoxColumn"
-        Me.StudentIDDataGridViewTextBoxColumn.Width = 210
+        Me.StudentIDDataGridViewTextBoxColumn.Width = 86
         '
         'SupervisorIDDataGridViewTextBoxColumn
         '
         Me.SupervisorIDDataGridViewTextBoxColumn.DataPropertyName = "Supervisor_ID"
         Me.SupervisorIDDataGridViewTextBoxColumn.HeaderText = "Supervisor_ID"
         Me.SupervisorIDDataGridViewTextBoxColumn.Name = "SupervisorIDDataGridViewTextBoxColumn"
-        Me.SupervisorIDDataGridViewTextBoxColumn.Width = 247
+        Me.SupervisorIDDataGridViewTextBoxColumn.Width = 99
         '
         'ViewGAAssignmentsBindingSource
         '
@@ -122,9 +124,10 @@ Partial Class GAViewUserAssignments
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 175)
+        Me.Label1.Location = New System.Drawing.Point(2, 73)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(427, 32)
+        Me.Label1.Size = New System.Drawing.Size(158, 13)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Graduate Assistant Assignments"
         '
@@ -134,50 +137,56 @@ Partial Class GAViewUserAssignments
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(1284, 879)
+        Me.btnClose.Location = New System.Drawing.Point(482, 369)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(188, 45)
+        Me.btnClose.Size = New System.Drawing.Size(70, 19)
         Me.btnClose.TabIndex = 3
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
         'btnReassign
         '
-        Me.btnReassign.Location = New System.Drawing.Point(1078, 879)
+        Me.btnReassign.Location = New System.Drawing.Point(404, 369)
+        Me.btnReassign.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.btnReassign.Name = "btnReassign"
-        Me.btnReassign.Size = New System.Drawing.Size(188, 45)
+        Me.btnReassign.Size = New System.Drawing.Size(70, 19)
         Me.btnReassign.TabIndex = 4
         Me.btnReassign.Text = "Reassign"
         Me.btnReassign.UseVisualStyleBackColor = True
         '
         'tbSemester
         '
-        Me.tbSemester.Location = New System.Drawing.Point(1193, 175)
+        Me.tbSemester.Location = New System.Drawing.Point(447, 73)
+        Me.tbSemester.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.tbSemester.Name = "tbSemester"
-        Me.tbSemester.Size = New System.Drawing.Size(279, 38)
+        Me.tbSemester.Size = New System.Drawing.Size(107, 20)
         Me.tbSemester.TabIndex = 5
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(1051, 178)
+        Me.Label2.Location = New System.Drawing.Point(394, 75)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(136, 32)
+        Me.Label2.Size = New System.Drawing.Size(51, 13)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Semester"
         '
         'GAViewUserAssignments
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1493, 1032)
+        Me.ClientSize = New System.Drawing.Size(560, 433)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.tbSemester)
         Me.Controls.Add(Me.btnReassign)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Name = "GAViewUserAssignments"
         Me.Text = "GA Assignments"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

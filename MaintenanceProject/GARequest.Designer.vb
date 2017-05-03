@@ -23,6 +23,7 @@ Partial Class GARequest
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GARequest))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -111,9 +112,10 @@ Partial Class GARequest
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(22, 24)
+        Me.Label1.Location = New System.Drawing.Point(8, 10)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(517, 46)
+        Me.Label1.Size = New System.Drawing.Size(212, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Graduate Assistant Request"
         '
@@ -121,42 +123,47 @@ Partial Class GARequest
         '
         Me.lblName.AutoSize = True
         Me.lblName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName.Location = New System.Drawing.Point(36, 98)
+        Me.lblName.Location = New System.Drawing.Point(14, 41)
+        Me.lblName.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(92, 36)
+        Me.lblName.Size = New System.Drawing.Size(41, 15)
         Me.lblName.TabIndex = 1
         Me.lblName.Text = "Name"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(49, 176)
+        Me.Label5.Location = New System.Drawing.Point(18, 74)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(208, 32)
+        Me.Label5.Size = New System.Drawing.Size(79, 13)
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Number of GAs"
         '
         'numGAs
         '
-        Me.numGAs.Location = New System.Drawing.Point(312, 170)
+        Me.numGAs.Location = New System.Drawing.Point(117, 71)
+        Me.numGAs.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.numGAs.Name = "numGAs"
-        Me.numGAs.Size = New System.Drawing.Size(120, 38)
+        Me.numGAs.Size = New System.Drawing.Size(45, 20)
         Me.numGAs.TabIndex = 8
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(45, 258)
+        Me.Label6.Location = New System.Drawing.Point(17, 108)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(261, 32)
+        Me.Label6.Size = New System.Drawing.Size(101, 13)
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "Total Weekly Hours"
         '
         'numHours
         '
-        Me.numHours.Location = New System.Drawing.Point(312, 256)
+        Me.numHours.Location = New System.Drawing.Point(117, 107)
+        Me.numHours.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.numHours.Name = "numHours"
-        Me.numHours.Size = New System.Drawing.Size(120, 38)
+        Me.numHours.Size = New System.Drawing.Size(45, 20)
         Me.numHours.TabIndex = 10
         '
         'GroupBox1
@@ -180,28 +187,32 @@ Partial Class GARequest
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.trackInternet)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(499, 118)
+        Me.GroupBox1.Location = New System.Drawing.Point(187, 49)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(655, 779)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.GroupBox1.Size = New System.Drawing.Size(246, 327)
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Technical Skills"
         '
         'tbStatisticalPackages
         '
-        Me.tbStatisticalPackages.Location = New System.Drawing.Point(12, 672)
+        Me.tbStatisticalPackages.Location = New System.Drawing.Point(4, 282)
+        Me.tbStatisticalPackages.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.tbStatisticalPackages.Multiline = True
         Me.tbStatisticalPackages.Name = "tbStatisticalPackages"
-        Me.tbStatisticalPackages.Size = New System.Drawing.Size(621, 77)
+        Me.tbStatisticalPackages.Size = New System.Drawing.Size(235, 35)
         Me.tbStatisticalPackages.TabIndex = 12
         '
         'Label18
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.1!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(6, 624)
+        Me.Label18.Location = New System.Drawing.Point(2, 262)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(279, 32)
+        Me.Label18.Size = New System.Drawing.Size(106, 13)
         Me.Label18.TabIndex = 12
         Me.Label18.Text = "Statistical Packages:"
         '
@@ -209,9 +220,10 @@ Partial Class GARequest
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.1!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(6, 342)
+        Me.Label17.Location = New System.Drawing.Point(2, 143)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(177, 32)
+        Me.Label17.Size = New System.Drawing.Size(67, 13)
         Me.Label17.TabIndex = 15
         Me.Label17.Text = "Spreadsheet"
         '
@@ -219,9 +231,10 @@ Partial Class GARequest
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.1!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(6, 482)
+        Me.Label16.Location = New System.Drawing.Point(2, 202)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(137, 32)
+        Me.Label16.Size = New System.Drawing.Size(53, 13)
         Me.Label16.TabIndex = 14
         Me.Label16.Text = "Database"
         '
@@ -229,9 +242,10 @@ Partial Class GARequest
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(535, 514)
+        Me.Label14.Location = New System.Drawing.Point(201, 216)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(82, 25)
+        Me.Label14.Size = New System.Drawing.Size(33, 9)
         Me.Label14.TabIndex = 13
         Me.Label14.Text = "5 (High)"
         '
@@ -239,19 +253,21 @@ Partial Class GARequest
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(24, 514)
+        Me.Label15.Location = New System.Drawing.Point(9, 216)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(78, 25)
+        Me.Label15.Size = New System.Drawing.Size(31, 9)
         Me.Label15.TabIndex = 12
         Me.Label15.Text = "1 (Low)"
         '
         'trackDatabase
         '
-        Me.trackDatabase.Location = New System.Drawing.Point(29, 542)
+        Me.trackDatabase.Location = New System.Drawing.Point(11, 227)
+        Me.trackDatabase.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.trackDatabase.Maximum = 5
         Me.trackDatabase.Minimum = 1
         Me.trackDatabase.Name = "trackDatabase"
-        Me.trackDatabase.Size = New System.Drawing.Size(595, 114)
+        Me.trackDatabase.Size = New System.Drawing.Size(223, 45)
         Me.trackDatabase.TabIndex = 11
         Me.trackDatabase.TickStyle = System.Windows.Forms.TickStyle.TopLeft
         Me.trackDatabase.Value = 1
@@ -260,9 +276,10 @@ Partial Class GARequest
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(535, 374)
+        Me.Label12.Location = New System.Drawing.Point(201, 157)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(82, 25)
+        Me.Label12.Size = New System.Drawing.Size(33, 9)
         Me.Label12.TabIndex = 10
         Me.Label12.Text = "5 (High)"
         '
@@ -270,19 +287,21 @@ Partial Class GARequest
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(24, 374)
+        Me.Label13.Location = New System.Drawing.Point(9, 157)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(78, 25)
+        Me.Label13.Size = New System.Drawing.Size(31, 9)
         Me.Label13.TabIndex = 9
         Me.Label13.Text = "1 (Low)"
         '
         'trackSpreadsheet
         '
-        Me.trackSpreadsheet.Location = New System.Drawing.Point(29, 397)
+        Me.trackSpreadsheet.Location = New System.Drawing.Point(11, 166)
+        Me.trackSpreadsheet.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.trackSpreadsheet.Maximum = 5
         Me.trackSpreadsheet.Minimum = 1
         Me.trackSpreadsheet.Name = "trackSpreadsheet"
-        Me.trackSpreadsheet.Size = New System.Drawing.Size(595, 114)
+        Me.trackSpreadsheet.Size = New System.Drawing.Size(223, 45)
         Me.trackSpreadsheet.TabIndex = 8
         Me.trackSpreadsheet.TickStyle = System.Windows.Forms.TickStyle.TopLeft
         Me.trackSpreadsheet.Value = 1
@@ -291,9 +310,10 @@ Partial Class GARequest
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(535, 224)
+        Me.Label9.Location = New System.Drawing.Point(201, 94)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(82, 25)
+        Me.Label9.Size = New System.Drawing.Size(33, 9)
         Me.Label9.TabIndex = 6
         Me.Label9.Text = "5 (High)"
         '
@@ -301,19 +321,21 @@ Partial Class GARequest
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(24, 224)
+        Me.Label10.Location = New System.Drawing.Point(9, 94)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(78, 25)
+        Me.Label10.Size = New System.Drawing.Size(31, 9)
         Me.Label10.TabIndex = 5
         Me.Label10.Text = "1 (Low)"
         '
         'trackWordProcess
         '
-        Me.trackWordProcess.Location = New System.Drawing.Point(29, 252)
+        Me.trackWordProcess.Location = New System.Drawing.Point(11, 106)
+        Me.trackWordProcess.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.trackWordProcess.Maximum = 5
         Me.trackWordProcess.Minimum = 1
         Me.trackWordProcess.Name = "trackWordProcess"
-        Me.trackWordProcess.Size = New System.Drawing.Size(595, 114)
+        Me.trackWordProcess.Size = New System.Drawing.Size(223, 45)
         Me.trackWordProcess.TabIndex = 4
         Me.trackWordProcess.TickStyle = System.Windows.Forms.TickStyle.TopLeft
         Me.trackWordProcess.Value = 1
@@ -322,9 +344,10 @@ Partial Class GARequest
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.1!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(6, 189)
+        Me.Label11.Location = New System.Drawing.Point(2, 79)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(185, 32)
+        Me.Label11.Size = New System.Drawing.Size(68, 13)
         Me.Label11.TabIndex = 7
         Me.Label11.Text = "Programming"
         '
@@ -332,18 +355,20 @@ Partial Class GARequest
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(535, 79)
+        Me.Label8.Location = New System.Drawing.Point(201, 33)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(82, 25)
+        Me.Label8.Size = New System.Drawing.Size(33, 9)
         Me.Label8.TabIndex = 3
         Me.Label8.Text = "5 (High)"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 43)
+        Me.Label3.Location = New System.Drawing.Point(2, 18)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(142, 36)
+        Me.Label3.Size = New System.Drawing.Size(60, 15)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Research"
         '
@@ -351,19 +376,21 @@ Partial Class GARequest
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(24, 79)
+        Me.Label7.Location = New System.Drawing.Point(9, 33)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(78, 25)
+        Me.Label7.Size = New System.Drawing.Size(31, 9)
         Me.Label7.TabIndex = 2
         Me.Label7.Text = "1 (Low)"
         '
         'trackInternet
         '
-        Me.trackInternet.Location = New System.Drawing.Point(29, 107)
+        Me.trackInternet.Location = New System.Drawing.Point(11, 45)
+        Me.trackInternet.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.trackInternet.Maximum = 5
         Me.trackInternet.Minimum = 1
         Me.trackInternet.Name = "trackInternet"
-        Me.trackInternet.Size = New System.Drawing.Size(595, 114)
+        Me.trackInternet.Size = New System.Drawing.Size(223, 45)
         Me.trackInternet.TabIndex = 0
         Me.trackInternet.TickStyle = System.Windows.Forms.TickStyle.TopLeft
         Me.trackInternet.Value = 1
@@ -385,28 +412,32 @@ Partial Class GARequest
         Me.GroupBox2.Controls.Add(Me.Label31)
         Me.GroupBox2.Controls.Add(Me.trackWriting)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(1218, 118)
+        Me.GroupBox2.Location = New System.Drawing.Point(457, 49)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(655, 686)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.GroupBox2.Size = New System.Drawing.Size(246, 288)
         Me.GroupBox2.TabIndex = 16
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Communication Skills"
         '
         'tbOther
         '
-        Me.tbOther.Location = New System.Drawing.Point(12, 562)
+        Me.tbOther.Location = New System.Drawing.Point(4, 236)
+        Me.tbOther.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.tbOther.Multiline = True
         Me.tbOther.Name = "tbOther"
-        Me.tbOther.Size = New System.Drawing.Size(621, 94)
+        Me.tbOther.Size = New System.Drawing.Size(235, 42)
         Me.tbOther.TabIndex = 12
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.1!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(6, 507)
+        Me.Label19.Location = New System.Drawing.Point(2, 213)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(413, 32)
+        Me.Label19.Size = New System.Drawing.Size(153, 13)
         Me.Label19.TabIndex = 12
         Me.Label19.Text = "Other Communication (specify):"
         '
@@ -414,9 +445,10 @@ Partial Class GARequest
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.1!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(6, 342)
+        Me.Label20.Location = New System.Drawing.Point(2, 143)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(237, 32)
+        Me.Label20.Size = New System.Drawing.Size(89, 13)
         Me.Label20.TabIndex = 15
         Me.Label20.Text = "English Speaking"
         '
@@ -424,9 +456,10 @@ Partial Class GARequest
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(535, 374)
+        Me.Label24.Location = New System.Drawing.Point(201, 157)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(82, 25)
+        Me.Label24.Size = New System.Drawing.Size(33, 9)
         Me.Label24.TabIndex = 10
         Me.Label24.Text = "5 (High)"
         '
@@ -434,19 +467,21 @@ Partial Class GARequest
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(24, 374)
+        Me.Label25.Location = New System.Drawing.Point(9, 157)
+        Me.Label25.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(78, 25)
+        Me.Label25.Size = New System.Drawing.Size(31, 9)
         Me.Label25.TabIndex = 9
         Me.Label25.Text = "1 (Low)"
         '
         'trackEnglish
         '
-        Me.trackEnglish.Location = New System.Drawing.Point(29, 397)
+        Me.trackEnglish.Location = New System.Drawing.Point(11, 166)
+        Me.trackEnglish.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.trackEnglish.Maximum = 5
         Me.trackEnglish.Minimum = 1
         Me.trackEnglish.Name = "trackEnglish"
-        Me.trackEnglish.Size = New System.Drawing.Size(595, 114)
+        Me.trackEnglish.Size = New System.Drawing.Size(223, 45)
         Me.trackEnglish.TabIndex = 8
         Me.trackEnglish.TickStyle = System.Windows.Forms.TickStyle.TopLeft
         Me.trackEnglish.Value = 1
@@ -455,9 +490,10 @@ Partial Class GARequest
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(535, 224)
+        Me.Label26.Location = New System.Drawing.Point(201, 94)
+        Me.Label26.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(82, 25)
+        Me.Label26.Size = New System.Drawing.Size(33, 9)
         Me.Label26.TabIndex = 6
         Me.Label26.Text = "5 (High)"
         '
@@ -465,19 +501,21 @@ Partial Class GARequest
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(24, 224)
+        Me.Label27.Location = New System.Drawing.Point(9, 94)
+        Me.Label27.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(78, 25)
+        Me.Label27.Size = New System.Drawing.Size(31, 9)
         Me.Label27.TabIndex = 5
         Me.Label27.Text = "1 (Low)"
         '
         'trackEditing
         '
-        Me.trackEditing.Location = New System.Drawing.Point(29, 252)
+        Me.trackEditing.Location = New System.Drawing.Point(11, 106)
+        Me.trackEditing.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.trackEditing.Maximum = 5
         Me.trackEditing.Minimum = 1
         Me.trackEditing.Name = "trackEditing"
-        Me.trackEditing.Size = New System.Drawing.Size(595, 114)
+        Me.trackEditing.Size = New System.Drawing.Size(223, 45)
         Me.trackEditing.TabIndex = 4
         Me.trackEditing.TickStyle = System.Windows.Forms.TickStyle.TopLeft
         Me.trackEditing.Value = 1
@@ -486,9 +524,10 @@ Partial Class GARequest
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.1!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(6, 189)
+        Me.Label28.Location = New System.Drawing.Point(2, 79)
+        Me.Label28.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(104, 32)
+        Me.Label28.Size = New System.Drawing.Size(39, 13)
         Me.Label28.TabIndex = 7
         Me.Label28.Text = "Editing"
         '
@@ -496,18 +535,20 @@ Partial Class GARequest
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(535, 79)
+        Me.Label29.Location = New System.Drawing.Point(201, 33)
+        Me.Label29.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(82, 25)
+        Me.Label29.Size = New System.Drawing.Size(33, 9)
         Me.Label29.TabIndex = 3
         Me.Label29.Text = "5 (High)"
         '
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(6, 43)
+        Me.Label30.Location = New System.Drawing.Point(2, 18)
+        Me.Label30.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(110, 36)
+        Me.Label30.Size = New System.Drawing.Size(45, 15)
         Me.Label30.TabIndex = 1
         Me.Label30.Text = "Writing"
         '
@@ -515,37 +556,41 @@ Partial Class GARequest
         '
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(24, 79)
+        Me.Label31.Location = New System.Drawing.Point(9, 33)
+        Me.Label31.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(78, 25)
+        Me.Label31.Size = New System.Drawing.Size(31, 9)
         Me.Label31.TabIndex = 2
         Me.Label31.Text = "1 (Low)"
         '
         'trackWriting
         '
-        Me.trackWriting.Location = New System.Drawing.Point(29, 107)
+        Me.trackWriting.Location = New System.Drawing.Point(11, 45)
+        Me.trackWriting.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.trackWriting.Maximum = 5
         Me.trackWriting.Minimum = 1
         Me.trackWriting.Name = "trackWriting"
-        Me.trackWriting.Size = New System.Drawing.Size(595, 114)
+        Me.trackWriting.Size = New System.Drawing.Size(223, 45)
         Me.trackWriting.TabIndex = 0
         Me.trackWriting.TickStyle = System.Windows.Forms.TickStyle.TopLeft
         Me.trackWriting.Value = 1
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(1723, 1109)
+        Me.btnCancel.Location = New System.Drawing.Point(646, 465)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(150, 67)
+        Me.btnCancel.Size = New System.Drawing.Size(56, 28)
         Me.btnCancel.TabIndex = 17
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'btnSubmit
         '
-        Me.btnSubmit.Location = New System.Drawing.Point(1567, 1109)
+        Me.btnSubmit.Location = New System.Drawing.Point(588, 465)
+        Me.btnSubmit.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.btnSubmit.Name = "btnSubmit"
-        Me.btnSubmit.Size = New System.Drawing.Size(150, 67)
+        Me.btnSubmit.Size = New System.Drawing.Size(56, 28)
         Me.btnSubmit.TabIndex = 18
         Me.btnSubmit.Text = "Submit"
         Me.btnSubmit.UseVisualStyleBackColor = True
@@ -553,9 +598,10 @@ Partial Class GARequest
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(42, 645)
+        Me.Label21.Location = New System.Drawing.Point(16, 270)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(285, 32)
+        Me.Label21.Size = New System.Drawing.Size(109, 13)
         Me.Label21.TabIndex = 19
         Me.Label21.Text = "Request Specific GA:"
         '
@@ -565,9 +611,10 @@ Partial Class GARequest
         Me.cbRequest.DataSource = Me.ViewPossibleGAListBindingSource1
         Me.cbRequest.DisplayMember = "Student"
         Me.cbRequest.FormattingEnabled = True
-        Me.cbRequest.Location = New System.Drawing.Point(48, 694)
+        Me.cbRequest.Location = New System.Drawing.Point(18, 291)
+        Me.cbRequest.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.cbRequest.Name = "cbRequest"
-        Me.cbRequest.Size = New System.Drawing.Size(279, 39)
+        Me.cbRequest.Size = New System.Drawing.Size(107, 21)
         Me.cbRequest.TabIndex = 20
         Me.cbRequest.ValueMember = "Student_ID"
         '
@@ -584,9 +631,10 @@ Partial Class GARequest
         'btnAdd
         '
         Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(312, 750)
+        Me.btnAdd.Location = New System.Drawing.Point(117, 315)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(120, 51)
+        Me.btnAdd.Size = New System.Drawing.Size(45, 21)
         Me.btnAdd.TabIndex = 21
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = True
@@ -594,35 +642,39 @@ Partial Class GARequest
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(42, 345)
+        Me.Label22.Location = New System.Drawing.Point(16, 145)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(325, 32)
+        Me.Label22.Size = New System.Drawing.Size(123, 13)
         Me.Label22.TabIndex = 23
         Me.Label22.Text = "Description of GA Duties"
         '
         'tbDuties
         '
-        Me.tbDuties.Location = New System.Drawing.Point(42, 380)
+        Me.tbDuties.Location = New System.Drawing.Point(16, 159)
+        Me.tbDuties.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.tbDuties.Multiline = True
         Me.tbDuties.Name = "tbDuties"
-        Me.tbDuties.Size = New System.Drawing.Size(390, 234)
+        Me.tbDuties.Size = New System.Drawing.Size(149, 100)
         Me.tbDuties.TabIndex = 22
         '
         'tbOther2
         '
-        Me.tbOther2.Location = New System.Drawing.Point(511, 974)
+        Me.tbOther2.Location = New System.Drawing.Point(192, 408)
+        Me.tbOther2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.tbOther2.Multiline = True
         Me.tbOther2.Name = "tbOther2"
-        Me.tbOther2.Size = New System.Drawing.Size(1340, 99)
+        Me.tbOther2.Size = New System.Drawing.Size(505, 44)
         Me.tbOther2.TabIndex = 16
         '
         'Label23
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.1!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(505, 919)
+        Me.Label23.Location = New System.Drawing.Point(189, 385)
+        Me.Label23.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(268, 32)
+        Me.Label23.Size = New System.Drawing.Size(99, 13)
         Me.Label23.TabIndex = 17
         Me.Label23.Text = "General Comments:"
         '
@@ -662,55 +714,59 @@ Partial Class GARequest
         'lbGAsRequested
         '
         Me.lbGAsRequested.FormattingEnabled = True
-        Me.lbGAsRequested.ItemHeight = 31
-        Me.lbGAsRequested.Location = New System.Drawing.Point(42, 833)
+        Me.lbGAsRequested.Location = New System.Drawing.Point(16, 349)
+        Me.lbGAsRequested.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.lbGAsRequested.Name = "lbGAsRequested"
-        Me.lbGAsRequested.Size = New System.Drawing.Size(385, 159)
+        Me.lbGAsRequested.Size = New System.Drawing.Size(147, 69)
         Me.lbGAsRequested.TabIndex = 24
         '
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(42, 795)
+        Me.Label32.Location = New System.Drawing.Point(16, 333)
+        Me.Label32.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(215, 32)
+        Me.Label32.Size = New System.Drawing.Size(82, 13)
         Me.Label32.TabIndex = 25
         Me.Label32.Text = "Requested GAs"
         '
         'numGAHours
         '
-        Me.numGAHours.Location = New System.Drawing.Point(348, 694)
+        Me.numGAHours.Location = New System.Drawing.Point(130, 291)
+        Me.numGAHours.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.numGAHours.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.numGAHours.Name = "numGAHours"
-        Me.numGAHours.Size = New System.Drawing.Size(84, 38)
+        Me.numGAHours.Size = New System.Drawing.Size(32, 20)
         Me.numGAHours.TabIndex = 26
         Me.numGAHours.Value = New Decimal(New Integer() {20, 0, 0, 0})
         '
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(342, 645)
+        Me.Label33.Location = New System.Drawing.Point(128, 270)
+        Me.Label33.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(98, 32)
+        Me.Label33.Size = New System.Drawing.Size(38, 13)
         Me.Label33.TabIndex = 27
         Me.Label33.Text = "Hours:"
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(307, 1007)
+        Me.Button1.Location = New System.Drawing.Point(115, 422)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(120, 51)
+        Me.Button1.Size = New System.Drawing.Size(45, 21)
         Me.Button1.TabIndex = 28
         Me.Button1.Text = "Clear"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'GARequest
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1895, 1197)
+        Me.ClientSize = New System.Drawing.Size(759, 524)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label33)
         Me.Controls.Add(Me.numGAHours)
@@ -733,6 +789,8 @@ Partial Class GARequest
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Name = "GARequest"
         Me.Text = "Request Graduate Assistant"
         CType(Me.numGAs, System.ComponentModel.ISupportInitialize).EndInit()
