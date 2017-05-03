@@ -23,6 +23,7 @@ Partial Class GAReassignment
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GAReassignment))
         Me.cbSupervisor = New System.Windows.Forms.ComboBox()
         Me.ViewGASupervisorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PROJECTS1747DataSet7 = New MaintenanceProject.PROJECTS1747DataSet7()
@@ -47,9 +48,10 @@ Partial Class GAReassignment
         Me.cbSupervisor.DataSource = Me.ViewGASupervisorsBindingSource
         Me.cbSupervisor.DisplayMember = "Supervisor"
         Me.cbSupervisor.FormattingEnabled = True
-        Me.cbSupervisor.Location = New System.Drawing.Point(190, 208)
+        Me.cbSupervisor.Location = New System.Drawing.Point(71, 87)
+        Me.cbSupervisor.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.cbSupervisor.Name = "cbSupervisor"
-        Me.cbSupervisor.Size = New System.Drawing.Size(272, 39)
+        Me.cbSupervisor.Size = New System.Drawing.Size(104, 21)
         Me.cbSupervisor.TabIndex = 0
         Me.cbSupervisor.ValueMember = "User_ID"
         '
@@ -66,28 +68,31 @@ Partial Class GAReassignment
         'numHours
         '
         Me.numHours.Increment = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.numHours.Location = New System.Drawing.Point(342, 278)
+        Me.numHours.Location = New System.Drawing.Point(128, 117)
+        Me.numHours.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.numHours.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.numHours.Name = "numHours"
-        Me.numHours.Size = New System.Drawing.Size(120, 38)
+        Me.numHours.Size = New System.Drawing.Size(45, 20)
         Me.numHours.TabIndex = 1
         Me.numHours.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(19, 211)
+        Me.Label1.Location = New System.Drawing.Point(7, 88)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(151, 32)
+        Me.Label1.Size = New System.Drawing.Size(57, 13)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Supervisor"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(19, 280)
+        Me.Label2.Location = New System.Drawing.Point(7, 117)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(261, 32)
+        Me.Label2.Size = New System.Drawing.Size(101, 13)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Total Weekly Hours"
         '
@@ -95,18 +100,20 @@ Partial Class GAReassignment
         '
         Me.lblStudent.AutoSize = True
         Me.lblStudent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStudent.Location = New System.Drawing.Point(17, 27)
+        Me.lblStudent.Location = New System.Drawing.Point(6, 11)
+        Me.lblStudent.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblStudent.Name = "lblStudent"
-        Me.lblStudent.Size = New System.Drawing.Size(274, 46)
+        Me.lblStudent.Size = New System.Drawing.Size(112, 20)
         Me.lblStudent.TabIndex = 4
         Me.lblStudent.Text = "Student Name"
         '
         'lblSemester
         '
         Me.lblSemester.AutoSize = True
-        Me.lblSemester.Location = New System.Drawing.Point(25, 77)
+        Me.lblSemester.Location = New System.Drawing.Point(9, 32)
+        Me.lblSemester.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblSemester.Name = "lblSemester"
-        Me.lblSemester.Size = New System.Drawing.Size(136, 32)
+        Me.lblSemester.Size = New System.Drawing.Size(51, 13)
         Me.lblSemester.TabIndex = 5
         Me.lblSemester.Text = "Semester"
         '
@@ -114,26 +121,29 @@ Partial Class GAReassignment
         '
         Me.lblHours.AutoSize = True
         Me.lblHours.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHours.Location = New System.Drawing.Point(20, 328)
+        Me.lblHours.Location = New System.Drawing.Point(8, 138)
+        Me.lblHours.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblHours.Name = "lblHours"
-        Me.lblHours.Size = New System.Drawing.Size(77, 29)
+        Me.lblHours.Size = New System.Drawing.Size(34, 13)
         Me.lblHours.TabIndex = 6
         Me.lblHours.Text = "Hours"
         '
         'btnReassign
         '
-        Me.btnReassign.Location = New System.Drawing.Point(120, 512)
+        Me.btnReassign.Location = New System.Drawing.Point(45, 215)
+        Me.btnReassign.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.btnReassign.Name = "btnReassign"
-        Me.btnReassign.Size = New System.Drawing.Size(160, 53)
+        Me.btnReassign.Size = New System.Drawing.Size(60, 22)
         Me.btnReassign.TabIndex = 7
         Me.btnReassign.Text = "Reassign"
         Me.btnReassign.UseVisualStyleBackColor = True
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(302, 512)
+        Me.btnCancel.Location = New System.Drawing.Point(113, 215)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(160, 53)
+        Me.btnCancel.Size = New System.Drawing.Size(60, 22)
         Me.btnCancel.TabIndex = 8
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
@@ -142,9 +152,10 @@ Partial Class GAReassignment
         '
         Me.lblHours1.AutoSize = True
         Me.lblHours1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHours1.Location = New System.Drawing.Point(26, 368)
+        Me.lblHours1.Location = New System.Drawing.Point(10, 154)
+        Me.lblHours1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblHours1.Name = "lblHours1"
-        Me.lblHours1.Size = New System.Drawing.Size(77, 29)
+        Me.lblHours1.Size = New System.Drawing.Size(34, 13)
         Me.lblHours1.TabIndex = 9
         Me.lblHours1.Text = "Hours"
         '
@@ -154,10 +165,10 @@ Partial Class GAReassignment
         '
         'GAReassignment
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(500, 593)
+        Me.ClientSize = New System.Drawing.Size(188, 249)
         Me.Controls.Add(Me.lblHours1)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnReassign)
@@ -168,6 +179,8 @@ Partial Class GAReassignment
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.numHours)
         Me.Controls.Add(Me.cbSupervisor)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Name = "GAReassignment"
         Me.Text = "Reassign GA"
         CType(Me.ViewGASupervisorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

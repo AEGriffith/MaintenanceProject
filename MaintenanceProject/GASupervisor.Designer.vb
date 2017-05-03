@@ -22,6 +22,7 @@ Partial Class GASupervisor
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GASupervisor))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -93,7 +94,7 @@ Partial Class GASupervisor
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 29)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 40
@@ -105,9 +106,9 @@ Partial Class GASupervisor
         Me.GroupBox1.Controls.Add(Me.rb2)
         Me.GroupBox1.Controls.Add(Me.rb1)
         Me.GroupBox1.Location = New System.Drawing.Point(277, 29)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(1)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(1)
         Me.GroupBox1.Size = New System.Drawing.Size(99, 67)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
@@ -117,7 +118,7 @@ Partial Class GASupervisor
         '
         Me.rb2.AutoSize = True
         Me.rb2.Location = New System.Drawing.Point(9, 40)
-        Me.rb2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.rb2.Margin = New System.Windows.Forms.Padding(1)
         Me.rb2.Name = "rb2"
         Me.rb2.Size = New System.Drawing.Size(82, 17)
         Me.rb2.TabIndex = 1
@@ -129,7 +130,7 @@ Partial Class GASupervisor
         Me.rb1.AutoSize = True
         Me.rb1.Checked = True
         Me.rb1.Location = New System.Drawing.Point(9, 23)
-        Me.rb1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.rb1.Margin = New System.Windows.Forms.Padding(1)
         Me.rb1.Name = "rb1"
         Me.rb1.Size = New System.Drawing.Size(68, 17)
         Me.rb1.TabIndex = 0
@@ -140,7 +141,7 @@ Partial Class GASupervisor
         'btnClose
         '
         Me.btnClose.Location = New System.Drawing.Point(414, 400)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(1)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(60, 23)
         Me.btnClose.TabIndex = 4
@@ -153,9 +154,9 @@ Partial Class GASupervisor
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Controls.Add(Me.GroupBox1)
         Me.GroupBox2.Location = New System.Drawing.Point(4, 47)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(1)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(1)
         Me.GroupBox2.Size = New System.Drawing.Size(386, 156)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
@@ -169,7 +170,7 @@ Partial Class GASupervisor
         Me.DataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Location = New System.Drawing.Point(4, 231)
-        Me.DataGridView2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.DataGridView2.Margin = New System.Windows.Forms.Padding(1)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowTemplate.Height = 40
@@ -197,8 +198,9 @@ Partial Class GASupervisor
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Margin = New System.Windows.Forms.Padding(1)
         Me.Name = "GASupervisor"
         Me.Text = "GASupervisor"
         Me.MenuStrip1.ResumeLayout(False)

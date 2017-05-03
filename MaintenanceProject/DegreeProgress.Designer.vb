@@ -22,6 +22,7 @@ Partial Class DegreeProgress
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DegreeProgress))
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dgvTakenCourses = New System.Windows.Forms.DataGridView()
@@ -39,18 +40,20 @@ Partial Class DegreeProgress
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(18, 596)
+        Me.Label4.Location = New System.Drawing.Point(7, 250)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(268, 32)
+        Me.Label4.Size = New System.Drawing.Size(99, 13)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Classes Remaining:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 128)
+        Me.Label3.Location = New System.Drawing.Point(4, 54)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(210, 32)
+        Me.Label3.Size = New System.Drawing.Size(80, 13)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Classes Taken:"
         '
@@ -59,10 +62,11 @@ Partial Class DegreeProgress
         Me.dgvTakenCourses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvTakenCourses.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvTakenCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTakenCourses.Location = New System.Drawing.Point(12, 163)
+        Me.dgvTakenCourses.Location = New System.Drawing.Point(4, 68)
+        Me.dgvTakenCourses.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.dgvTakenCourses.Name = "dgvTakenCourses"
         Me.dgvTakenCourses.RowTemplate.Height = 40
-        Me.dgvTakenCourses.Size = New System.Drawing.Size(1132, 405)
+        Me.dgvTakenCourses.Size = New System.Drawing.Size(424, 170)
         Me.dgvTakenCourses.TabIndex = 5
         '
         'dgvRemainingCourses
@@ -72,11 +76,12 @@ Partial Class DegreeProgress
         Me.dgvRemainingCourses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvRemainingCourses.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvRemainingCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRemainingCourses.Location = New System.Drawing.Point(12, 631)
+        Me.dgvRemainingCourses.Location = New System.Drawing.Point(4, 265)
+        Me.dgvRemainingCourses.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.dgvRemainingCourses.Name = "dgvRemainingCourses"
         Me.dgvRemainingCourses.ReadOnly = True
         Me.dgvRemainingCourses.RowTemplate.Height = 40
-        Me.dgvRemainingCourses.Size = New System.Drawing.Size(1132, 416)
+        Me.dgvRemainingCourses.Size = New System.Drawing.Size(424, 174)
         Me.dgvRemainingCourses.TabIndex = 4
         '
         'lblConcentration
@@ -84,10 +89,11 @@ Partial Class DegreeProgress
         Me.lblConcentration.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblConcentration.AutoSize = True
         Me.lblConcentration.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblConcentration.Location = New System.Drawing.Point(1045, 61)
+        Me.lblConcentration.Location = New System.Drawing.Point(392, 26)
+        Me.lblConcentration.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblConcentration.Name = "lblConcentration"
         Me.lblConcentration.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.lblConcentration.Size = New System.Drawing.Size(105, 36)
+        Me.lblConcentration.Size = New System.Drawing.Size(45, 15)
         Me.lblConcentration.TabIndex = 10
         Me.lblConcentration.Text = "Label1"
         Me.lblConcentration.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -97,10 +103,11 @@ Partial Class DegreeProgress
         Me.lblProgram.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblProgram.AutoSize = True
         Me.lblProgram.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.900001!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProgram.Location = New System.Drawing.Point(1031, 9)
+        Me.lblProgram.Location = New System.Drawing.Point(387, 4)
+        Me.lblProgram.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblProgram.Name = "lblProgram"
         Me.lblProgram.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.lblProgram.Size = New System.Drawing.Size(120, 39)
+        Me.lblProgram.Size = New System.Drawing.Size(51, 17)
         Me.lblProgram.TabIndex = 9
         Me.lblProgram.Text = "Label1"
         Me.lblProgram.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -109,27 +116,29 @@ Partial Class DegreeProgress
         '
         Me.lblName.AutoSize = True
         Me.lblName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.900001!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName.Location = New System.Drawing.Point(17, 9)
+        Me.lblName.Location = New System.Drawing.Point(6, 4)
+        Me.lblName.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(126, 39)
+        Me.lblName.Size = New System.Drawing.Size(57, 17)
         Me.lblName.TabIndex = 8
         Me.lblName.Text = "Label1"
         '
         'lblStuID
         '
         Me.lblStuID.AutoSize = True
-        Me.lblStuID.Location = New System.Drawing.Point(18, 61)
+        Me.lblStuID.Location = New System.Drawing.Point(7, 26)
+        Me.lblStuID.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblStuID.Name = "lblStuID"
-        Me.lblStuID.Size = New System.Drawing.Size(102, 32)
+        Me.lblStuID.Size = New System.Drawing.Size(39, 13)
         Me.lblStuID.TabIndex = 11
         Me.lblStuID.Text = "Label1"
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(931, 1112)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnClose.Location = New System.Drawing.Point(349, 466)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(213, 55)
+        Me.btnClose.Size = New System.Drawing.Size(80, 23)
         Me.btnClose.TabIndex = 33
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
@@ -137,19 +146,20 @@ Partial Class DegreeProgress
         'checkReady
         '
         Me.checkReady.AutoSize = True
-        Me.checkReady.Location = New System.Drawing.Point(42, 1094)
+        Me.checkReady.Location = New System.Drawing.Point(16, 459)
+        Me.checkReady.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.checkReady.Name = "checkReady"
-        Me.checkReady.Size = New System.Drawing.Size(292, 36)
+        Me.checkReady.Size = New System.Drawing.Size(116, 17)
         Me.checkReady.TabIndex = 34
         Me.checkReady.Text = "Ready to Graduate"
         Me.checkReady.UseVisualStyleBackColor = True
         '
         'DegreeProgress
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1183, 1178)
+        Me.ClientSize = New System.Drawing.Size(444, 442)
         Me.Controls.Add(Me.checkReady)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.lblStuID)
@@ -160,6 +170,8 @@ Partial Class DegreeProgress
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.dgvTakenCourses)
         Me.Controls.Add(Me.dgvRemainingCourses)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Name = "DegreeProgress"
         Me.Text = "DegreeProgress"
         CType(Me.dgvTakenCourses, System.ComponentModel.ISupportInitialize).EndInit()

@@ -22,6 +22,7 @@ Partial Class GA
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GA))
         Me.dgvTasks = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
@@ -36,29 +37,32 @@ Partial Class GA
         Me.dgvTasks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvTasks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTasks.Location = New System.Drawing.Point(12, 131)
+        Me.dgvTasks.Location = New System.Drawing.Point(4, 55)
+        Me.dgvTasks.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.dgvTasks.Name = "dgvTasks"
         Me.dgvTasks.ReadOnly = True
         Me.dgvTasks.RowTemplate.Height = 40
         Me.dgvTasks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvTasks.Size = New System.Drawing.Size(1149, 364)
+        Me.dgvTasks.Size = New System.Drawing.Size(431, 153)
         Me.dgvTasks.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 92)
+        Me.Label1.Location = New System.Drawing.Point(4, 39)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(235, 36)
+        Me.Label1.Size = New System.Drawing.Size(95, 15)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Assigned Tasks:"
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(1028, 518)
+        Me.btnClose.Location = New System.Drawing.Point(386, 217)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(130, 57)
+        Me.btnClose.Size = New System.Drawing.Size(49, 24)
         Me.btnClose.TabIndex = 2
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
@@ -67,22 +71,25 @@ Partial Class GA
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(245, 98)
+        Me.Label2.Location = New System.Drawing.Point(92, 41)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(293, 29)
+        Me.Label2.Size = New System.Drawing.Size(128, 13)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "(Double-click to view task)"
         '
         'GA
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1170, 607)
+        Me.ClientSize = New System.Drawing.Size(439, 255)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgvTasks)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Name = "GA"
         Me.Text = "GA"
         CType(Me.dgvTasks, System.ComponentModel.ISupportInitialize).EndInit()
