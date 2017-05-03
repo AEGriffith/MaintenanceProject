@@ -42,7 +42,7 @@ Public Class GASupervisor
         con.Close()
     End Sub
 
-    Private Sub GetAssignedTasks()
+    Friend Sub GetAssignedTasks()
         con.ConnectionString = ConnString
 
         Dim sqlComm As New OleDbCommand

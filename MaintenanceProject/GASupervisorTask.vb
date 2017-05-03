@@ -76,8 +76,14 @@ Public Class GASupervisorTask
             Instructions = tbInstructions.Text
             CreateTask()
             MessageBox.Show("Task successfully assigned to " & cbGA.Text & ".")
+            GASupervisor.GetAssignedTasks()
             Me.Close()
         End If
 
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+
+        Me.Close()
     End Sub
 End Class
